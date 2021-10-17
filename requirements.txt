@@ -1,0 +1,5 @@
+bs4
+langdetect
+nltk
+requests
+setuptools

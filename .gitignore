@@ -1,0 +1,8 @@
+.idea/
+__pycache__
+._*
+
+# Build
+build/
+dist/
+**.egg-info

@@ -5,7 +5,10 @@ https://github.com/ppizarror/PyMultiDictionary
 PyMultiDictionary is a Dictionary Module for Python 2 to get meanings, translations, synonyms and antonyms of words in 20 different languages.
 """
 
-from PyMultiDictionary._dictionary import MultiDictionary
+try:
+    from PyMultiDictionary._dictionary import MultiDictionary
+except ModuleNotFoundError:
+    pass
 import PyMultiDictionary.version
 
 __author__ = 'Pablo Pizarro R.'

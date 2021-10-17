@@ -3,7 +3,7 @@ PyMultiDictionary
 https://github.com/ppizarror/PyMultiDictionary
 
 TOKENIZER
-Implements a tokenizer from nltk.
+Implements a tokenizer from nltk library.
 """
 
 __all__ = ['RegexpTokenizer']

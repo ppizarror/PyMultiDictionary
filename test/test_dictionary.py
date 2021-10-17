@@ -17,18 +17,18 @@ class DictionaryTest(unittest.TestCase):
 
     # noinspection HttpUrlsUsage
     @staticmethod
-    def _get_dictionary() -> 'MultiDictionary':
+    def _get_dictionary(*args) -> 'MultiDictionary':
         """
         Returns a dictionary prepared for tests.
         """
-        d = MultiDictionary()
+        d = MultiDictionary(*args)
 
         # Set example pages
         __actualpath = str(os.path.abspath(os.path.dirname(__file__))).replace('\\', '/') + '/'
         d._test_cached_file = {
-            'https://educalingo.com/en/dic-en/good': __actualpath + 'data/educalingo_en_good.html',
-            'https://www.synonym.com/synonyms/good': __actualpath + 'data/synonyms_en_good.html',
-            'http://wordnetweb.princeton.edu/perl/webwn?s=good': __actualpath + 'data/wordnet_en_good.html'
+            'https://educalingo.com/en/dic-en/good': __actualpath + 'data/educalingo_en_good.txt',
+            'https://www.synonym.com/synonyms/good': __actualpath + 'data/synonyms_en_good.txt',
+            'http://wordnetweb.princeton.edu/perl/webwn?s=good': __actualpath + 'data/wordnet_en_good.txt'
         }
 
         return d
@@ -207,3 +207,19 @@ class DictionaryTest(unittest.TestCase):
         self.assertEqual(d.get_language_name('es'), 'Spanish')
         self.assertEqual(d.get_language_name('unknown'), 'Unknown')
         self.assertEqual(d.get_language_name('zh'), 'Chinese')
+
+    def test_from_list(self) -> None:
+        """
+        Test words from list.
+        """
+        d = self._get_dictionary('words!', 'epic1234')
+        self.assertEqual(d._words, ['words', 'epic'])
+
+        # Lang not defined yet
+        self.assertRaises(AssertionError, lambda: d.get_synonyms())
+        d.set_words_lang('en')
+        self.assertEqual(len(d.get_synonyms()), 2)
+        self.assertEqual(len(d.get_antonyms()), 2)
+        self.assertEqual(len(d.get_meanings()), 2)
+        self.assertEqual(len(d.get_meanings_wordnet()), 2)
+        self.assertEqual(len(d.get_translations()), 2)

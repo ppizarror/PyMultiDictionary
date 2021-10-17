@@ -15,6 +15,7 @@ import unittest
 
 class DictionaryTest(unittest.TestCase):
 
+    # noinspection HttpUrlsUsage
     @staticmethod
     def _get_dictionary() -> 'MultiDictionary':
         """
@@ -26,7 +27,8 @@ class DictionaryTest(unittest.TestCase):
         __actualpath = str(os.path.abspath(os.path.dirname(__file__))).replace('\\', '/') + '/'
         d._test_cached_file = {
             'https://educalingo.com/en/dic-en/good': __actualpath + 'data/educalingo_en_good.html',
-            'https://www.synonym.com/synonyms/good': __actualpath + 'data/synonyms_en_good.html'
+            'https://www.synonym.com/synonyms/good': __actualpath + 'data/synonyms_en_good.html',
+            'http://wordnetweb.princeton.edu/perl/webwn?s=good': __actualpath + 'data/wordnet_en_good.html'
         }
 
         return d
@@ -73,6 +75,29 @@ class DictionaryTest(unittest.TestCase):
         # Test invalid link
         self.assertIsNone(d._bsoup('abc'))
         self.assertIsNone(d._bsoup('abc1234aaaaaa.com'))
+
+    def test_meaning_wordnet(self) -> None:
+        """
+        Test word meaning in wordnet.
+        """
+        d = self._get_dictionary()
+        out = {'Noun': ['benefit', 'moral excellence or admirableness', 'that which is pleasing or valuable or useful',
+                        'articles of commerce'],
+               'Adjective': ['having desirable or positive qualities especially those suitable for a thing specified',
+                             'having the normally expected amount', 'morally admirable',
+                             'deserving of esteem and respect', 'promoting or enhancing well-being',
+                             'agreeable or pleasing', 'of moral excellence',
+                             'having or showing knowledge and skill and aptitude', 'thorough',
+                             'with or in a close or intimate relationship', 'financially safe',
+                             'most suitable or right for a particular purpose', 'resulting favorably',
+                             'exerting force or influence', 'or in force', 'capable of pleasing',
+                             'appealing to the mind', 'in excellent physical condition',
+                             'tending to promote physical well-being; beneficial to health', 'not forged',
+                             'not left to spoil', 'generally admired'],
+               'Adverb': ['(often used as a combining form', "`good' is a nonstandard dialectal variant for `well'",
+                          "completely and absolutely (`good' is sometimes used informally for `thoroughly'"]}
+        print(out)
+        self.assertEqual(d.meaning_wordnet('good'), out)
 
     def test_translate(self) -> None:
         """

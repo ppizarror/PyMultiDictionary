@@ -10,6 +10,7 @@ __all__ = [
     'MultiDictionary'
 ]
 
+import re
 import goslate
 import urllib.error
 
@@ -233,11 +234,32 @@ class MultiDictionary(object):
                 if len(results) > 0:
                     wiki = results[0].text.strip().replace('\n', '')
 
-        # Custom languages
-        if lang == 'en':
-            pass
-
         return types, words, wiki
+
+    # noinspection HttpUrlsUsage
+    def meaning_wordnet(self, word: str) -> Dict[str, List[str]]:
+        """
+        Query the definition of an english word in WordNet.
+
+        :param word: Word to query in English
+        :return: Dict with Type, List of definitions
+        """
+        word = self._process(word)
+        html = self._bsoup(f'http://wordnetweb.princeton.edu/perl/webwn?s={word}')
+        types = html.findAll('h3')
+        lists = html.findAll('ul')
+        out = {}
+        for a in types:
+            reg = str(lists[types.index(a)])
+            meanings = []
+            for x in re.findall(r'\((.*?)\)', reg):
+                if 'often followed by' in x:
+                    pass
+                elif len(x) > 5 or ' ' in str(x):
+                    meanings.append(x.strip())
+            name = a.text.strip()
+            out[name] = meanings
+        return out
 
     def translate(self, lang: str, word: str, to='') -> List[Tuple[str, str]]:
         """

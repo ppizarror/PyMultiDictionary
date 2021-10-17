@@ -46,7 +46,8 @@ PyMultiDictionary
     :target: https://pepy.tech/project/PyMultiDictionary
     :alt: Total downloads
 
-PyMultiDictionary is a Dictionary Module for Python 3+ to get meanings, translations, synonyms and antonyms of words in 20 different languages. It uses educalingo.com, synonym.com, and WordNet for getting meanings, translations, synonyms, and antonyms.
+PyMultiDictionary is a Dictionary Module for Python 3+ to get meanings, translations, synonyms and antonyms of words
+in 20 different languages. It uses educalingo.com, synonym.com, and WordNet for getting meanings, translations, synonyms, and antonyms.
 
 This module uses Python Requests and BeautifulSoup4.
 
@@ -111,7 +112,18 @@ This will return a dictionary containing the meanings of the word. For example t
 
     (['Noun', 'Adjective', 'Exclamation'], 'The first definition of good in the dictionary is having admirable, pleasing, superior, or positive qualities; not negative, bad or mediocre. Other definition of good is morally excellent or admirable; virtuous; righteous. Good is also suitable or efficient for a purpose.', 'Good may refer to: ▪ Good and evil, the distinction between positive and negative entities ▪ Good, objects produced for market ▪ Good ▪ Good ▪ Good, West Virginia, USA ▪ Form of the Good, Plato\'s macrocosmic view of goodness in living Expressive works: ▪ Good ▪ Good, a 2008 film starring Viggo Mortensen ▪ Good ▪ Good ▪ Good, by Cecil Philip Taylor Companies: ▪ Good Entertainment ▪ GOOD Music, a record label ▪ Good Technology Music: ▪ "Good", a song by Better Than Ezra from Deluxe...')
 
-The dictionary keys are the different types of the word, the meaning, and the wikipedia first paragrah of the word.
+The dictionary keys are the different types of the word, the meaning, and the wikipedia first paragrah of the word. Words
+in English can be also obtained from WordNet:
+
+.. code-block:: python
+
+    print (dictionary.meaning_wordnet('good'))
+
+Will return:
+
+.. code-block:: python
+
+    {'Noun': ['benefit', 'moral excellence or admirableness', 'that which is pleasing or valuable or useful', 'articles of commerce'], 'Adjective': ['having desirable or positive qualities especially those suitable for a thing specified', 'having the normally expected amount', 'morally admirable', 'deserving of esteem and respect', 'promoting or enhancing well-being', 'agreeable or pleasing', 'of moral excellence', 'having or showing knowledge and skill and aptitude', 'thorough', 'with or in a close or intimate relationship', 'financially safe', 'most suitable or right for a particular purpose', 'resulting favorably', 'exerting force or influence', 'or in force', 'capable of pleasing', 'appealing to the mind', 'in excellent physical condition', 'tending to promote physical well-being; beneficial to health', 'not forged', 'not left to spoil', 'generally admired'], 'Adverb': ['(often used as a combining form', "`good' is a nonstandard dialectal variant for `well'", "completely and absolutely (`good' is sometimes used informally for `thoroughly'"]}
 
 For **Synonyms**,
 

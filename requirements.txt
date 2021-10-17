@@ -1,7 +1,5 @@
 bs4
 goslate
 iso639-lang
-langdetect
-nltk
 requests
 setuptools

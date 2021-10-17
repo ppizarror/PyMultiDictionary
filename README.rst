@@ -106,7 +106,7 @@ For **Meanings**,
 
 .. code-block:: python
 
-    print (dictionary.meaning('en', 'good'))
+    print(dictionary.meaning('en', 'good'))
 
 This will return a tuple containing the meanings of the word, in the format
 *(word_type, word_meaning, word_wikipedia)*. For example the above code will return:
@@ -122,7 +122,7 @@ WordNet:
 
 .. code-block:: python
 
-    print (dictionary.meaning_wordnet('good'))
+    print(dictionary.meaning_wordnet('good'))
 
 Will return:
 
@@ -138,7 +138,7 @@ For **Synonyms**,
 
 .. code-block:: python
 
-    print (dictionary.synonym('es', 'Bueno'))
+    print(dictionary.synonym('es', 'Bueno'))
 
 This will return a list containing the Synonyms of the word.
 
@@ -146,7 +146,7 @@ For **Antonyms**,
 
 .. code-block:: python
 
-    print (dictionary.antonym('en', 'Life'))
+    print(dictionary.antonym('en', 'Life'))
 
 This will return a list containing the Antonyms of the word. Currently only English is supported.
 
@@ -154,7 +154,7 @@ For **Translations**,
 
 .. code-block:: python
 
-    print (dictionary.translate('en', 'Range'))
+    print(dictionary.translate('en', 'Range'))
 
 This will return the Translation of the word 'Range' in 20 different languages.
 You can also extendthe scope of the translations by providing a target language,
@@ -162,7 +162,7 @@ which will use google translate API, for example:
 
 .. code-block:: python
 
-    print (dictionary.translate('en', 'Range', to='ru'))
+    print(dictionary.translate('en', 'Range', to='ru'))
 
 Alternatively, you can set a fixed number of words to the Dictionary Instance. This
 is useful if you just want to get the meanings of some words quickly without any development need.

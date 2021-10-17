@@ -196,3 +196,14 @@ class DictionaryTest(unittest.TestCase):
                'unrespectable', 'unrighteous', 'unsoundness', 'unworthiness', 'unworthy', 'wicked', 'worse', 'worst',
                'worthlessness', 'wrong']
         self.assertEqual(d.antonym('en', 'good'), ant)
+
+    def test_language_name(self) -> None:
+        """
+        Test language name.
+        """
+        d = self._get_dictionary()
+        self.assertEqual(d.get_language_name('en'), 'English')
+        self.assertEqual(d.get_language_name('en', 'es'), 'Inglés')
+        self.assertEqual(d.get_language_name('es'), 'Spanish')
+        self.assertEqual(d.get_language_name('unknown'), 'Unknown')
+        self.assertEqual(d.get_language_name('zh'), 'Chinese')

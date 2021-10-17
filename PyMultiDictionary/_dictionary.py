@@ -138,6 +138,17 @@ class MultiDictionary(object):
                         en_words.append(wr)
         return en_words
 
+    @staticmethod
+    def get_language_name(lang: str, lang_out: str = '') -> str:
+        """
+        Returns the name of a language.
+
+        :param lang: Language tag (ISO 639)
+        :param lang_out: Target language (ISO 639). If not supported, will return the English name
+        :return: Language name from tag
+        """
+        return ut.get_language_name(lang, lang_out)
+
     def synonym(self, lang: str, word: str) -> List[str]:
         """
         Finds a synonyms for a given word.

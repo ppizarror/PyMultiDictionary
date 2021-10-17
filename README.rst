@@ -164,11 +164,11 @@ Example:
     dictionary=MultiDictionary('hotel', 'ambush', 'nonchalant', 'perceptive')
     dictionary.setLang('en') # All words are english
     
-    print(dictionary.getMeanings()) # This print the meanings of all the words
-    print(dictionary.getMeanings()) # This will return meanings as dictionaries
-    print(dictionary.getSynonyms()) # Get synonyms
-    print(dictionary.getTranslation()) # This will translate all words to over 20 languages
-    print(dictionary.getTranslation(to='ru')) # This will translate all words to Russian
+    print(dictionary.get_meanings()) # This print the meanings of all the words
+    print(dictionary.get_synonyms()) # Get synonyms
+    print(dictionary.get_antonyms()) # Get antonyms
+    print(dictionary.get_translations()) # This will translate all words to over 20 languages
+    print(dictionary.get_translations(to='ru')) # This will translate all words to Russian (if Google API available)
 
 Author
 ------

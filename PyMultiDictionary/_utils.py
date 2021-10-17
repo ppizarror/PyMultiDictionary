@@ -146,6 +146,8 @@ def get_language_name(tag: str, lang: str = '') -> str:
     :param lang: Target language (ISO 639). If not supported, will return the English name
     :return: Language name
     """
+    assert isinstance(tag, str)
+    assert isinstance(lang, str)
     if lang != '':
         if lang in LANG_NAMES.keys():
             for j in LANG_NAMES[lang]:

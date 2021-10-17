@@ -13,8 +13,7 @@ __all__ = [
 import re
 import goslate
 import urllib.error
-
-from PyMultiDictionary._utils import *
+import PyMultiDictionary._utils as ut
 
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
@@ -75,7 +74,7 @@ class MultiDictionary(object):
         """
         assert isinstance(word, str), 'word must be an string'
         s = ''.join(i for i in word if not i.isdigit())  # remove numbers
-        s = tokenize(s).lower()  # tokenize
+        s = ut.tokenize(s).lower()  # tokenize
         s = s.replace(' ', '').replace('\n', '')  # remove spaces
         return s
 

@@ -289,7 +289,7 @@ l
             gs = goslate.Goslate()
             try:
                 return [(to, gs.translate(word, to, lang))]
-            except urllib.error.HTTPError:
+            except (urllib.error.HTTPError, IndexError):
                 warn(f'{word} cannot be translated to {to} as Google API is not available')
 
         if lang not in self._langs.keys() or not self._langs[lang][2]:

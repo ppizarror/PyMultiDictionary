@@ -1,4 +1,5 @@
 bs4
+goslate
 iso639
 langdetect
 nltk

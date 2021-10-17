@@ -103,19 +103,15 @@ For **Meanings**,
 
 .. code-block:: python
 
-    print (dictionary.meaning('en', 'indentation'))
+    print (dictionary.meaning('en', 'good'))
 
-This will return a dictionary containing the meanings of the word for 'English' language. For example the above code will return:
+This will return a dictionary containing the meanings of the word. For example the above code will return:
 
 .. code-block:: python
 
-    {'Noun': ['a concave cut into a surface or edge (as in a coastline', 'the
-    formation of small pits in a surface as a consequence of corrosion', 'th
-    e space left between the margin and the start of an indented line', 'the 
-    act of cutting into an edge with toothlike notches or angular incisions']}                                                                        
+    (['Noun', 'Adjective', 'Exclamation'], 'The first definition of good in the dictionary is having admirable, pleasing, superior, or positive qualities; not negative, bad or mediocre. Other definition of good is morally excellent or admirable; virtuous; righteous. Good is also suitable or efficient for a purpose.', 'Good may refer to: ▪ Good and evil, the distinction between positive and negative entities ▪ Good, objects produced for market ▪ Good ▪ Good ▪ Good, West Virginia, USA ▪ Form of the Good, Plato\'s macrocosmic view of goodness in living Expressive works: ▪ Good ▪ Good, a 2008 film starring Viggo Mortensen ▪ Good ▪ Good ▪ Good, by Cecil Philip Taylor Companies: ▪ Good Entertainment ▪ GOOD Music, a record label ▪ Good Technology Music: ▪ "Good", a song by Better Than Ezra from Deluxe...')
 
-The dictionary keys are the different types of the word. If a word is both a verb and a noun then there will be 2 keys: 'Noun' and 'Verb'.
-Each key refers to a list containing the meanings.
+The dictionary keys are the different types of the word, the meaning, and the wikipedia first paragrah of the word.
 
 For **Synonyms**,
 
@@ -131,7 +127,7 @@ For **Antonyms**,
 
     print (dictionary.antonym('en', 'Life'))
 
-This will return a list containing the Antonyms of the word.
+This will return a list containing the Antonyms of the word. Currently only English is supported.
 
 For **Translations**,
 
@@ -139,7 +135,7 @@ For **Translations**,
 
     print (dictionary.translate('en', 'Range'))
 
-This will return the Translation of the word "Range" in 20 different languages. You can also extend the scope of the translations by providing a target, which will use google translate API, for example:
+This will return the Translation of the word 'Range' in 20 different languages. You can also extend the scope of the translations by providing a target language, which will use google translate API, for example:
 
 .. code-block:: python
 

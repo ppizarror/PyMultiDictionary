@@ -35,10 +35,14 @@ class MultiDictionary(object):
 
     _langs: Dict[str, Tuple[bool, bool]]  # synonyms, definition, translation, antonym
     _test_cached_file: Dict[str, str]  # If defined, loads that file instead
+    _words: List[str]
+    _words_lang: str
 
-    def __init__(self) -> None:
+    def __init__(self, *words: Tuple[str, ...]) -> None:
         """
         Constructor.
+
+        :param words: List of words
         """
         self._langs = {  # iso 639 codes
             'bn': (True, True, True, False),
@@ -63,6 +67,22 @@ class MultiDictionary(object):
             'zh': (True, True, True, False)
         }
         self._test_cached_file = {}
+        self._words = []
+        self._words_lang = ''
+        for w in words:
+            # noinspection PyTypeChecker
+            w = self._process(w)
+            if w != '' and w not in self._words:
+                self._words.append(w)
+
+    def set_words_lang(self, lang) -> None:
+        """
+        Set words lang passed to the Dictionary.
+
+        :param lang: Language of the words
+        """
+        assert lang in self._langs.keys(), f'{lang} is not supported'
+        self._words_lang = lang
 
     @staticmethod
     def _process(word: str) -> str:
@@ -138,6 +158,16 @@ class MultiDictionary(object):
                         en_words.append(wr)
         return en_words
 
+    def get_synonyms(self) -> List[List[str]]:
+        """
+        Get the synonyms for all words of the dictionary.
+
+        :return: Synonyms list
+        """
+        assert self._words_lang != '', \
+            'words list have not been defined yet, call dictionary.set_words_lang(lang) first'
+        return [self.synonym(self._words_lang, w) for w in self._words]
+
     @staticmethod
     def get_language_name(lang: str, lang_out: str = '') -> str:
         """
@@ -204,6 +234,16 @@ class MultiDictionary(object):
             words.sort()
         return words
 
+    def get_antonyms(self) -> List[List[str]]:
+        """
+        Get the antonyms for all words of the dictionary.
+
+        :return: Antonyms list
+        """
+        assert self._words_lang != '', \
+            'words list have not been defined yet, call dictionary.set_words_lang(lang) first'
+        return [self.antonym(self._words_lang, w) for w in self._words]
+
     def meaning(self, lang: str, word: str) -> Tuple[List[str], str, str]:
         """
         Finds the meaning for a given word.
@@ -246,6 +286,16 @@ class MultiDictionary(object):
 
         return types, words, wiki
 
+    def get_meanings(self) -> List[Tuple[List[str], str, str]]:
+        """
+        Get the ameanings for all words of the dictionary.
+
+        :return: Meanings list
+        """
+        assert self._words_lang != '', \
+            'words list have not been defined yet, call dictionary.set_words_lang(lang) first'
+        return [self.meaning(self._words_lang, w) for w in self._words]
+
     # noinspection HttpUrlsUsage
     def meaning_wordnet(self, word: str) -> Dict[str, List[str]]:
         """
@@ -271,10 +321,18 @@ class MultiDictionary(object):
             out[name] = meanings
         return out
 
+    def get_meanings_wordnet(self) -> List[Dict[str, List[str]]]:
+        """
+        Get the wordnet meanings for all words of the dictionary.
+
+        :return: Wordnet's meanings list
+        """
+        return [self.meaning_wordnet(w) for w in self._words]
+
     def translate(self, lang: str, word: str, to='') -> List[Tuple[str, str]]:
         """
         Translate a word.
-l
+
         :param lang: Lang tag (ISO 639)
         :param word: Word to translate
         :param to: Target language (Google API)
@@ -330,6 +388,15 @@ l
             words = sorted(words, key=lambda x: x[0])
 
         return words
+
+    def get_translations(self, to: str = '') -> List[List[Tuple[str, str]]]:
+        """
+        Get the wordnet meanings for all words of the dictionary.
+
+        :param to: Target language (Google API)
+        :return: Translations list
+        """
+        return [self.translate(self._words_lang, w, to) for w in self._words]
 
 
 class InvalidLangCode(Exception):

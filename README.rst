@@ -49,8 +49,6 @@ PyMultiDictionary
 PyMultiDictionary is a Dictionary Module for Python 3+ to get meanings, translations, synonyms and antonyms of words
 in 20 different languages. It uses educalingo.com, synonym.com, and WordNet for getting meanings, translations, synonyms, and antonyms.
 
-This module uses Python Requests and BeautifulSoup4.
-
 Supported languages
 -------------------
 

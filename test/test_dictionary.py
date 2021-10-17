@@ -1,27 +1,25 @@
 """
-PyDetex
-https://github.com/ppizarror/PyDetex
+PyMultiDictionary
+https://github.com/ppizarror/PyMultiDictionary
 
-TEST UTILS
-Test utils.
+TEST DICTIONARY
+Test dictionary object.
 """
 
+from PyMultiDictionary import MultiDictionary
+# noinspection PyProtectedMember
+from PyMultiDictionary._dictionary import InvalidLangCode
 import os
 import unittest
 
 
-class UtilsTest(unittest.TestCase):
+class DictionaryTest(unittest.TestCase):
 
-    def test_dictionary(self) -> None:
+    def test_process(self) -> None:
         """
-        Test dictionary.
+        Test word parse before process.
         """
-        d = ut.Dictionary()
-
-        # Get lang names
-        s = d.translate('en', 'good')
-        print([(tag, lang) for (lang, tag, _) in sorted(s, key=lambda x: x[1])])
-        return
+        d = MultiDictionary()
 
         # Test word parse
         self.assertEqual(d._process('word!!!  '), 'word')
@@ -37,16 +35,32 @@ class UtilsTest(unittest.TestCase):
         self.assertEqual(d._process('\n\n!\nthis word'), 'this')
         self.assertEqual(d._process('<hack>'), 'hack')
 
-        # Definition
+    def test_meaning(self) -> None:
+        """
+        Test word meaning.
+        """
+        d = MultiDictionary()
+
+        # Get lang names
+        s = d.translate('en', 'good')
+        print([(tag, lang) for (lang, tag, _) in sorted(s, key=lambda x: x[1])])
+
+        # Test
         __actualpath = str(os.path.abspath(os.path.dirname(__file__))).replace('\\', '/') + '/'
         d._test_cached_file = __actualpath + 'data/educalingo_en_good.html'
         tr = """The first definition of good in the dictionary is having admirable, pleasing, superior, or positive qualities; not negative, bad or mediocre. Other definition of good is morally excellent or admirable; virtuous; righteous. Good is also suitable or efficient for a purpose. 
 
 Good may refer to: ▪ Good and evil, the distinction between positive and negative entities ▪ Good, objects produced for market ▪ Good ▪ Good ▪ Good, West Virginia, USA ▪ Form of the Good, Plato's macrocosmic view of goodness in living Expressive works: ▪ Good ▪ Good, a 2008 film starring Viggo Mortensen ▪ Good ▪ Good ▪ Good, by Cecil Philip Taylor Companies: ▪ Good Entertainment ▪ GOOD Music, a record label ▪ Good Technology Music: ▪ "Good", a song by Better Than Ezra from Deluxe..."""
-        self.assertEqual(d.definition('en', 'good'), tr)
+        self.assertEqual(d.meaning('en', 'good'), tr)
+
+    def test_translate(self) -> None:
+        """
+        Test word parse before process.
+        """
+        d = MultiDictionary()
 
         # Translate
-        tr = [('Chinese', 'zh-cn', '好的'),
+        tr = [('Chinese', 'zh', '好的'),
               ('Spanish', 'es', 'bueno'),
               ('English', 'en', 'good'),
               ('Hindi', 'hi', 'अच्छा'),
@@ -75,32 +89,45 @@ Good may refer to: ▪ Good and evil, the distinction between positive and negat
         s = d.translate('en', 'good')
         self.assertEqual(s, tr)
 
+    def test_synonym(self) -> None:
+        """
+        Test word synonym.
+        """
+        d = MultiDictionary()
+        __actualpath = str(os.path.abspath(os.path.dirname(__file__))).replace('\\', '/') + '/'
+        d._test_cached_file = __actualpath + 'data/educalingo_en_good.html'
+
         # Synonyms
         syn = ['able', 'acceptable', 'accomplished', 'accurate', 'adept', 'adequate', 'admirable', 'adroit',
                'advantage', 'advantageous', 'agreeable', 'altruistic', 'ample', 'appropriate', 'auspicious',
-               'authentic', 'avail', 'awesome', 'bad', 'balmy', 'barrie', 'beaut', 'behalf', 'belting', 'beneficent',
+               'authentic', 'avail', 'awesome', 'bad', 'balmy', 'barrie', 'beaut', 'behalf', 'belting',
+               'beneficent',
                'beneficial', 'benefit', 'benevolent', 'best', 'bitchin´', 'bona fide', 'booshit', 'bright', 'calm',
                'capable', 'capital', 'charitable', 'cheerful', 'choice', 'clear', 'clement', 'clever', 'cloudless',
                'commendable', 'compelling', 'competent', 'complete', 'congenial', 'considerable', 'constructive',
                'convenient', 'convincing', 'convivial', 'correct', 'crucial', 'decorous', 'definite', 'dependable',
                'desirable', 'dexterous', 'dinkum', 'divine', 'dope', 'dutiful', 'eatable', 'edible', 'efficient',
-               'enjoyable', 'entire', 'estimable', 'ethical', 'exact', 'excellence', 'excellent', 'exemplary', 'exo',
+               'enjoyable', 'entire', 'estimable', 'ethical', 'exact', 'excellence', 'excellent', 'exemplary',
+               'exo',
                'expert', 'extensive', 'fair', 'fancy', 'favourable', 'fine', 'finest', 'first-class', 'first-rate',
-               'fit', 'fitting', 'friendly', 'full', 'gain', 'genuine', 'goodness', 'gracious', 'gratifying', 'great',
+               'fit', 'fitting', 'friendly', 'full', 'gain', 'genuine', 'goodness', 'gracious', 'gratifying',
+               'great',
                'halcyon', 'happy', 'healthy', 'helpful', 'honest', 'honourable', 'humane', 'interest', 'judicious',
                'kind', 'kind-hearted', 'kindly', 'large', 'legitimate', 'long', 'lucrative', 'mannerly', 'merciful',
                'merit', 'mild', 'moral', 'morality', 'obedient', 'obliging', 'opportune', 'orderly', 'pearler',
                'persuasive', 'phat', 'pleasant', 'pleasing', 'pleasurable', 'polite', 'positive', 'praiseworthy',
                'precise', 'probity', 'productive', 'proficient', 'profit', 'profitable', 'proper', 'propitious',
-               'prudent', 'rad', 'real', 'reasonable', 'rectitude', 'reliable', 'right', 'righteous', 'righteousness',
+               'prudent', 'rad', 'real', 'reasonable', 'rectitude', 'reliable', 'right', 'righteous',
+               'righteousness',
                'salubrious', 'salutary', 'satisfactory', 'satisfying', 'schmick', 'seemly', 'sensible', 'service',
                'shrewd', 'sik', 'skilled', 'solid', 'sound', 'special', 'splendid', 'substantial', 'sufficient',
                'suitable', 'sunny', 'sunshiny', 'super', 'superb', 'superior', 'talented', 'tasty', 'thorough',
-               'timely', 'tiptop', 'true', 'trustworthy', 'uncorrupted', 'untainted', 'upright', 'uprightness', 'use',
+               'timely', 'tiptop', 'true', 'trustworthy', 'uncorrupted', 'untainted', 'upright', 'uprightness',
+               'use',
                'useful', 'usefulness', 'valid', 'valuable', 'virtue', 'virtuous', 'welfare', 'well-behaved',
                'well-disposed', 'well-mannered', 'well-reasoned', 'well-thought-out', 'well-timed', 'wellbeing',
                'whole', 'wholesome', 'wicked', 'wise', 'world-class', 'worth', 'worthwhile', 'worthy']
         self.assertEqual(d.synonym('en', 'good'), syn)
 
         # Synonyms
-        self.assertEqual(d.synonym('unknown', 'word'), [])
+        self.assertRaises(InvalidLangCode, lambda: d.synonym('unknown', 'word'))

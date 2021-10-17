@@ -2,125 +2,34 @@
 PyMultiDictionary
 https://github.com/ppizarror/PyMultiDictionary
 
-UTILS LANG
-Language utils.
+DICTIONARY
+Dictionary object.
 """
 
 __all__ = [
-    'check_repeated_words',
-    'detect_language',
-    'Dictionary',
-    'get_diff_startend_word',
-    'get_language_name',
-    'tokenize'
+    'MultiDictionary'
 ]
 
-# langdetect supports:
-# af, ar, bg, bn, ca, cs, cy, da, de, el, en, es, et, fa, fi, fr, gu, he,
-# hi, hr, hu, id, it, ja, kn, ko, lt, lv, mk, ml, mr, ne, nl, no, pa, pl,
-# pt, ro, ru, sk, sl, so, sq, sv, sw, ta, te, th, tl, tr, uk, ur, vi, zh-cn, zh-tw
-import langdetect
-
-import json
-import os
 import urllib.error
 
-from nltk.stem import SnowballStemmer
-from nltk.tokenize import RegexpTokenizer as _RegexpTokenizer
+from PyMultiDictionary._utils import *
 
-# Dictionaries
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
-
-# Resources path
-__actualpath = str(os.path.abspath(os.path.dirname(__file__))).replace('\\', '/') + '/'
-
-# Load all stopwords
-with open(__actualpath + 'res/' + 'stopwords.json', encoding='UTF-8') as json_data:
-    _STOPWORDS = json.load(json_data)
-
-# Tokenizer
-TOKENIZER = _RegexpTokenizer(r'\w+')
+from typing import Dict, Tuple, Optional, List
 
 # Dicts
 _EDUCALINGO = ('bn', 'de', 'en', 'es', 'fr', 'hi', 'it', 'ja', 'jv', 'ko', 'mr',
                'ms', 'pl', 'pt', 'ro', 'ru', 'ta', 'tr', 'uk', 'zh')
 
-# Enhanced lang names
-_LANG_NAMES = {
-    'bn': [('af', 'আফ্রিকান'), ('ar', 'আরবী'), ('bn', 'বাংলা'), ('de', 'জার্মান'), ('el', 'গ্রীক্\u200c'),
-           ('en', 'ইংরেজী'), ('es', 'স্পেনীয়'), ('fr', 'ফরাসি'), ('hi', 'হিন্দি'), ('it', 'ইতালীয়'), ('ja', 'জাপানি'),
-           ('jv', 'জাভানি'), ('ko', 'কোরিয়ান'), ('mr', 'মারাঠি'), ('ms', 'মালে'), ('no', 'নরওয়েজীয়'),
-           ('pl', 'পোলীশ'), ('pt', 'পর্তুগীজ'), ('ro', 'রোমানীয়'), ('ru', 'রুশ'), ('sv', 'সুইডিশ'), ('ta', 'তামিল'),
-           ('tr', 'তুর্কী'), ('uk', 'ইউক্রেনীয়'), ('vi', 'ভিয়েতনামিয়'), ('zh', 'চীনা')],
-    'de': [('af', 'Afrikaans'), ('ar', 'Arabisch'), ('bn', 'Bengalisch'), ('de', 'Deutsch'), ('el', 'Griechisch'),
-           ('en', 'Englisch'), ('es', 'Spanisch'), ('fr', 'Französisch'), ('hi', 'Hindi'), ('it', 'Italienisch'),
-           ('ja', 'Japanisch'), ('jv', 'Javanisch'), ('ko', 'Koreanisch'), ('mr', 'Marathi'), ('ms', 'Malaysisch'),
-           ('no', 'Norwegisch'), ('pl', 'Polnisch'), ('pt', 'Portugiesisch'), ('ro', 'Rumänisch'), ('ru', 'Russisch'),
-           ('sv', 'Schwedisch'), ('ta', 'Tamil'), ('tr', 'Türkisch'), ('uk', 'Ukrainisch'), ('vi', 'Vietnamesisch'),
-           ('zh', 'Chinesisch')],
-    'en': [('af', 'Afrikaans'), ('ar', 'Arabic'), ('bn', 'Bengali'), ('de', 'German'), ('el', 'Greek'),
-           ('en', 'English'), ('es', 'Spanish'), ('fr', 'French'), ('hi', 'Hindi'), ('it', 'Italian'),
-           ('ja', 'Japanese'), ('jv', 'Javanese'), ('ko', 'Korean'), ('mr', 'Marathi'), ('ms', 'Malay'),
-           ('no', 'Norwegian'), ('pl', 'Polish'), ('pt', 'Portuguese'), ('ro', 'Romanian'), ('ru', 'Russian'),
-           ('sv', 'Swedish'), ('ta', 'Tamil'), ('tr', 'Turkish'), ('uk', 'Ukrainian'), ('vi', 'Vietnamese'),
-           ('zh', 'Chinese')],
-    'es': [('af', 'Afrikáans'), ('ar', 'Árabe'), ('bn', 'Bengalí'), ('de', 'Alemán'), ('el', 'Griego'),
-           ('en', 'Inglés'), ('es', 'Español'), ('fr', 'Francés'), ('hi', 'Hindi'), ('it', 'Italiano'),
-           ('ja', 'Japonés'), ('jv', 'Javanés'), ('ko', 'Coreano'), ('mr', 'Maratí'), ('ms', 'Malayo'),
-           ('no', 'Noruego'), ('pl', 'Polaco'), ('pt', 'Portugués'), ('ro', 'Rumano'), ('ru', 'Ruso'), ('sv', 'Sueco'),
-           ('ta', 'Tamil'), ('tr', 'Turco'), ('uk', 'Ucraniano'), ('vi', 'Vietnamita'), ('zh', 'Chino')],
-    'fr': [('af', 'Afrikaans'), ('ar', 'Arabe'), ('bn', 'Bengali'), ('de', 'Allemand'), ('el', 'Grec'),
-           ('en', 'Anglais'), ('es', 'Espagnol'), ('fr', 'Français'), ('hi', 'Hindi'), ('it', 'Italien'),
-           ('ja', 'Japonais'), ('jv', 'Javanais'), ('ko', 'Coréen'), ('mr', 'Marathi'), ('ms', 'Malaisien'),
-           ('no', 'Norvégien'), ('pl', 'Polonais'), ('pt', 'Portugais'), ('ro', 'Roumain'), ('ru', 'Russe'),
-           ('sv', 'Suédois'), ('ta', 'Tamoul'), ('tr', 'Turc'), ('uk', 'Ukrainien'), ('vi', 'Vietnamien'),
-           ('zh', 'Chinois')],
-    'hi': [
 
-    ]
-}
-
-
-def tokenize(s: str) -> str:
-    """
-    Tokenize a given word.
-
-    :param s: Word
-    :return: Tokenized word
-    """
-    try:
-        return TOKENIZER.tokenize(s)[0]
-    except IndexError:
-        pass
-    return s
-
-
-def detect_language(s: str) -> str:
-    """
-    Detects languages.
-
-    :param s: String
-    :return: Detected language
-    """
-    if s == '':
-        return '–'
-    try:
-        lang = langdetect.detect(s)
-        if lang == 'zh-cn' or lang == 'zh-tw':
-            lang = 'zh'
-        return lang
-    except langdetect.lang_detect_exception.LangDetectException:  # No features in text
-        return '–'
-
-
-class Dictionary(object):
+class MultiDictionary(object):
     """
     Dictionary. Support synonyms, antonyms and definitions from some languages.
     """
 
     _cached_soups: Dict[str, 'BeautifulSoup']  # Stores cached web
-    _langs: Dict[str, Tuple[bool, bool]]  # synonyms, definition, translation
+    _langs: Dict[str, Tuple[bool, bool]]  # synonyms, definition, translation, antonym
     _test_cached_file: str = ''  # If defined, loads that file instead
 
     def __init__(self) -> None:
@@ -128,8 +37,26 @@ class Dictionary(object):
         Constructor.
         """
         self._langs = {  # iso 639 codes
-            'en': (True, True),
-            'es': (True, True)
+            'bn': (True, True, True, False),
+            'de': (True, True, True, False),
+            'en': (True, True, True, True),
+            'es': (True, True, True, False),
+            'fr': (True, True, True, False),
+            'hi': (True, True, True, False),
+            'it': (True, True, True, False),
+            'ja': (True, True, True, False),
+            'jv': (True, True, True, False),
+            'ko': (True, True, True, False),
+            'mr': (True, True, True, False),
+            'ms': (True, True, True, False),
+            'pl': (True, True, True, False),
+            'pt': (True, True, True, False),
+            'ro': (True, True, True, False),
+            'ru': (True, True, True, False),
+            'ta': (True, True, True, False),
+            'tr': (True, True, True, False),
+            'uk': (True, True, True, False),
+            'zh': (True, True, True, False)
         }
         self._cached_soups = {}
         self._test_cached_file = ''
@@ -142,6 +69,7 @@ class Dictionary(object):
         :param word: Word
         :return: Word without invalid chars
         """
+        assert isinstance(word, str), 'word must be an string'
         s = ''.join(i for i in word if not i.isdigit())  # remove numbers
         s = tokenize(s).lower()  # tokenize
         s = s.replace(' ', '').replace('\n', '')  # remove spaces
@@ -184,7 +112,7 @@ class Dictionary(object):
         words = []
         word = self._process(word)
         if lang not in self._langs.keys():
-            return words
+            raise InvalidLangCode(f'{lang} code is not supported for synonyms')
         if lang in _EDUCALINGO:
             bs = self._bsoup(f'https://educalingo.com/en/dic-{lang}/{word}')
             if bs is None:
@@ -209,7 +137,7 @@ class Dictionary(object):
         words = ''
         word = self._process(word)
         if lang not in self._langs.keys():
-            return words
+            raise InvalidLangCode(f'{lang} code is not supported for meanings')
         if lang in _EDUCALINGO:
             bs = self._bsoup(f'https://educalingo.com/en/dic-{lang}/{word}')
             if bs is None:
@@ -235,18 +163,21 @@ class Dictionary(object):
 
         return words.strip()
 
-    def translate(self, lang: str, word: str) -> List[Tuple[str, str, str]]:
+    def translate(self, lang: str, word: str, to='') -> List[Tuple[str, str, str]]:
         """
         Translate a word.
 l
         :param lang: Lang tag
         :param word: Word to translate
+        :param to: Target language
         :return: List of (Lang name, Lang tag, translated word)
         """
+        assert isinstance(lang, str), 'lang code must be an string'
+        assert isinstance(to, str), 'to lang code must be an string'
         words = []
         word = self._process(word)
         if lang not in self._langs.keys():
-            return words
+            raise InvalidLangCode(f'{lang} code is not supported for translation')
         if lang in _EDUCALINGO:
             bs = self._bsoup(f'https://educalingo.com/fr/dic-{lang}/{word}')
             if bs is None:
@@ -279,3 +210,9 @@ l
                     words.append((lang_name, lang_tag, lang_link[0].text.strip()))
 
         return words
+
+
+class InvalidLangCode(Exception):
+    """
+    Invalid lang.
+    """

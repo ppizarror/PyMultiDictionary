@@ -62,7 +62,7 @@ setup(
     ],
     include_package_data=True,
     packages=find_packages(exclude=['test']),
-    python_requires='>=2.7',
+    python_requires='>=3.6, <4',
     install_requires=requirements,
     extras_require={
         'docs': requirements_docs,

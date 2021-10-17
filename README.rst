@@ -178,7 +178,7 @@ Example:
     
     print(dictionary.get_meanings()) # This print the meanings of all the words
     print(dictionary.get_meanings_wordnet()) # This print the meanings of all the words
-    print(dictionary.get_synonyms()) # Get synonyms
+    print(dictionary.get_synonyms()) # Get synonyms list
     print(dictionary.get_antonyms()) # Get antonyms
     print(dictionary.get_translations()) # This will translate all words to over 20 languages
     print(dictionary.get_translations(to='ru')) # This will translate all words to Russian (if Google API available)

@@ -2,137 +2,67 @@
 PyMultiDictionary
 https://github.com/ppizarror/PyMultiDictionary
 
-UTILS LANG
-Language utils.
+DICTIONARY
+Dictionary object.
 """
 
 __all__ = [
-    'check_repeated_words',
-    'detect_language',
-    'Dictionary',
-    'get_diff_startend_word',
-    'get_language_name',
-    'tokenize'
+    'MultiDictionary'
 ]
 
-# langdetect supports:
-# af, ar, bg, bn, ca, cs, cy, da, de, el, en, es, et, fa, fi, fr, gu, he,
-# hi, hr, hu, id, it, ja, kn, ko, lt, lv, mk, ml, mr, ne, nl, no, pa, pl,
-# pt, ro, ru, sk, sl, so, sq, sv, sw, ta, te, th, tl, tr, uk, ur, vi, zh-cn, zh-tw
-import langdetect
-
-import json
-import os
+import re
+import goslate
 import urllib.error
+import PyMultiDictionary._utils as ut
 
-from nltk.stem import SnowballStemmer
-from nltk.tokenize import RegexpTokenizer as _RegexpTokenizer
-
-# Dictionaries
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
-
-# Resources path
-__actualpath = str(os.path.abspath(os.path.dirname(__file__))).replace('\\', '/') + '/'
-
-# Load all stopwords
-with open(__actualpath + 'res/' + 'stopwords.json', encoding='UTF-8') as json_data:
-    _STOPWORDS = json.load(json_data)
-
-# Tokenizer
-TOKENIZER = _RegexpTokenizer(r'\w+')
+from typing import Dict, Tuple, Optional, List
+from warnings import warn
 
 # Dicts
 _EDUCALINGO = ('bn', 'de', 'en', 'es', 'fr', 'hi', 'it', 'ja', 'jv', 'ko', 'mr',
                'ms', 'pl', 'pt', 'ro', 'ru', 'ta', 'tr', 'uk', 'zh')
 
-# Enhanced lang names
-_LANG_NAMES = {
-    'bn': [('af', 'আফ্রিকান'), ('ar', 'আরবী'), ('bn', 'বাংলা'), ('de', 'জার্মান'), ('el', 'গ্রীক্\u200c'),
-           ('en', 'ইংরেজী'), ('es', 'স্পেনীয়'), ('fr', 'ফরাসি'), ('hi', 'হিন্দি'), ('it', 'ইতালীয়'), ('ja', 'জাপানি'),
-           ('jv', 'জাভানি'), ('ko', 'কোরিয়ান'), ('mr', 'মারাঠি'), ('ms', 'মালে'), ('no', 'নরওয়েজীয়'),
-           ('pl', 'পোলীশ'), ('pt', 'পর্তুগীজ'), ('ro', 'রোমানীয়'), ('ru', 'রুশ'), ('sv', 'সুইডিশ'), ('ta', 'তামিল'),
-           ('tr', 'তুর্কী'), ('uk', 'ইউক্রেনীয়'), ('vi', 'ভিয়েতনামিয়'), ('zh', 'চীনা')],
-    'de': [('af', 'Afrikaans'), ('ar', 'Arabisch'), ('bn', 'Bengalisch'), ('de', 'Deutsch'), ('el', 'Griechisch'),
-           ('en', 'Englisch'), ('es', 'Spanisch'), ('fr', 'Französisch'), ('hi', 'Hindi'), ('it', 'Italienisch'),
-           ('ja', 'Japanisch'), ('jv', 'Javanisch'), ('ko', 'Koreanisch'), ('mr', 'Marathi'), ('ms', 'Malaysisch'),
-           ('no', 'Norwegisch'), ('pl', 'Polnisch'), ('pt', 'Portugiesisch'), ('ro', 'Rumänisch'), ('ru', 'Russisch'),
-           ('sv', 'Schwedisch'), ('ta', 'Tamil'), ('tr', 'Türkisch'), ('uk', 'Ukrainisch'), ('vi', 'Vietnamesisch'),
-           ('zh', 'Chinesisch')],
-    'en': [('af', 'Afrikaans'), ('ar', 'Arabic'), ('bn', 'Bengali'), ('de', 'German'), ('el', 'Greek'),
-           ('en', 'English'), ('es', 'Spanish'), ('fr', 'French'), ('hi', 'Hindi'), ('it', 'Italian'),
-           ('ja', 'Japanese'), ('jv', 'Javanese'), ('ko', 'Korean'), ('mr', 'Marathi'), ('ms', 'Malay'),
-           ('no', 'Norwegian'), ('pl', 'Polish'), ('pt', 'Portuguese'), ('ro', 'Romanian'), ('ru', 'Russian'),
-           ('sv', 'Swedish'), ('ta', 'Tamil'), ('tr', 'Turkish'), ('uk', 'Ukrainian'), ('vi', 'Vietnamese'),
-           ('zh', 'Chinese')],
-    'es': [('af', 'Afrikáans'), ('ar', 'Árabe'), ('bn', 'Bengalí'), ('de', 'Alemán'), ('el', 'Griego'),
-           ('en', 'Inglés'), ('es', 'Español'), ('fr', 'Francés'), ('hi', 'Hindi'), ('it', 'Italiano'),
-           ('ja', 'Japonés'), ('jv', 'Javanés'), ('ko', 'Coreano'), ('mr', 'Maratí'), ('ms', 'Malayo'),
-           ('no', 'Noruego'), ('pl', 'Polaco'), ('pt', 'Portugués'), ('ro', 'Rumano'), ('ru', 'Ruso'), ('sv', 'Sueco'),
-           ('ta', 'Tamil'), ('tr', 'Turco'), ('uk', 'Ucraniano'), ('vi', 'Vietnamita'), ('zh', 'Chino')],
-    'fr': [('af', 'Afrikaans'), ('ar', 'Arabe'), ('bn', 'Bengali'), ('de', 'Allemand'), ('el', 'Grec'),
-           ('en', 'Anglais'), ('es', 'Espagnol'), ('fr', 'Français'), ('hi', 'Hindi'), ('it', 'Italien'),
-           ('ja', 'Japonais'), ('jv', 'Javanais'), ('ko', 'Coréen'), ('mr', 'Marathi'), ('ms', 'Malaisien'),
-           ('no', 'Norvégien'), ('pl', 'Polonais'), ('pt', 'Portugais'), ('ro', 'Roumain'), ('ru', 'Russe'),
-           ('sv', 'Suédois'), ('ta', 'Tamoul'), ('tr', 'Turc'), ('uk', 'Ukrainien'), ('vi', 'Vietnamien'),
-           ('zh', 'Chinois')],
-    'hi': [
-
-    ]
-}
+# Cache
+_CACHED_SOUPS: Dict[str, 'BeautifulSoup'] = {}  # Stores cached web
 
 
-def tokenize(s: str) -> str:
-    """
-    Tokenize a given word.
-
-    :param s: Word
-    :return: Tokenized word
-    """
-    try:
-        return TOKENIZER.tokenize(s)[0]
-    except IndexError:
-        pass
-    return s
-
-
-def detect_language(s: str) -> str:
-    """
-    Detects languages.
-
-    :param s: String
-    :return: Detected language
-    """
-    if s == '':
-        return '–'
-    try:
-        lang = langdetect.detect(s)
-        if lang == 'zh-cn' or lang == 'zh-tw':
-            lang = 'zh'
-        return lang
-    except langdetect.lang_detect_exception.LangDetectException:  # No features in text
-        return '–'
-
-
-class Dictionary(object):
+class MultiDictionary(object):
     """
     Dictionary. Support synonyms, antonyms and definitions from some languages.
     """
 
-    _cached_soups: Dict[str, 'BeautifulSoup']  # Stores cached web
-    _langs: Dict[str, Tuple[bool, bool]]  # synonyms, definition, translation
-    _test_cached_file: str = ''  # If defined, loads that file instead
+    _langs: Dict[str, Tuple[bool, bool]]  # synonyms, definition, translation, antonym
+    _test_cached_file: Dict[str, str]  # If defined, loads that file instead
 
     def __init__(self) -> None:
         """
         Constructor.
         """
         self._langs = {  # iso 639 codes
-            'en': (True, True),
-            'es': (True, True)
+            'bn': (True, True, True, False),
+            'de': (True, True, True, False),
+            'en': (True, True, True, True),
+            'es': (True, True, True, False),
+            'fr': (True, True, True, False),
+            'hi': (True, True, True, False),
+            'it': (True, True, True, False),
+            'ja': (True, True, True, False),
+            'jv': (True, True, True, False),
+            'ko': (True, True, True, False),
+            'mr': (True, True, True, False),
+            'ms': (True, True, True, False),
+            'pl': (True, True, True, False),
+            'pt': (True, True, True, False),
+            'ro': (True, True, True, False),
+            'ru': (True, True, True, False),
+            'ta': (True, True, True, False),
+            'tr': (True, True, True, False),
+            'uk': (True, True, True, False),
+            'zh': (True, True, True, False)
         }
-        self._cached_soups = {}
-        self._test_cached_file = ''
+        self._test_cached_file = {}
 
     @staticmethod
     def _process(word: str) -> str:
@@ -142,8 +72,9 @@ class Dictionary(object):
         :param word: Word
         :return: Word without invalid chars
         """
+        assert isinstance(word, str), 'word must be an string'
         s = ''.join(i for i in word if not i.isdigit())  # remove numbers
-        s = tokenize(s).lower()  # tokenize
+        s = ut.tokenize(s).lower()  # tokenize
         s = s.replace(' ', '').replace('\n', '')  # remove spaces
         return s
 
@@ -155,27 +86,72 @@ class Dictionary(object):
         :param encoding: Web encoding
         :return: Parsed web. None if error
         """
-        if self._test_cached_file != '':  # Load test file
-            f = open(self._test_cached_file)
-            data = ''.join(f.readlines())
-            f.close()
-            return BeautifulSoup(data, 'html.parser')
-        bs_keys = list(self._cached_soups.keys())
+        bs_keys = list(_CACHED_SOUPS.keys())
         if link in bs_keys:
-            return self._cached_soups[link]
-        try:
-            data = str(urlopen(link).read().decode(encoding))
-        except urllib.error.HTTPError:
-            return None
+            return _CACHED_SOUPS[link]
+        if link in self._test_cached_file.keys():
+            f = open(self._test_cached_file[link], 'r')
+            data = ''.join(f.readlines())
+        else:
+            try:
+                data = str(urlopen(link).read().decode(encoding))
+            except (urllib.error.HTTPError, ValueError):
+                return None
         bs = BeautifulSoup(data, 'html.parser')
-        self._cached_soups[link] = bs
+        _CACHED_SOUPS[link] = bs
         if len(bs_keys) >= 50:
-            del self._cached_soups[bs[0]]
+            del _CACHED_SOUPS[bs[0]]
         return bs
+
+    def _synonym_com(self, word: str, _type: str) -> List[str]:
+        """
+        Retrieves synonyms from synonym.com.
+
+        :param word: Word
+        :param _type: Type (synonym, antonym)
+        :return: Word list
+        """
+        assert _type in ('Synonyms', 'Antonyms')
+        bs = self._bsoup(f'https://www.synonym.com/synonyms/{word}')
+        results = bs.find_all('div', {'class': 'section'})
+        en_words = []
+        for section in results:  # Iterate each section
+            title = section.find_all('h3', {'class': 'section-title'})
+            if len(title) == 0:
+                continue
+            title = title[0].text
+            if '.' not in title or 'Quotes containing' in title or 'Words that' in title or 'Example sententes' in title:
+                continue
+            for subsection in section.find_all('div', {'class': 'section-list-wrapper'}):
+                section_type = subsection.find_all('h4', {'class': 'section-list-header'})
+                if len(section_type) != 1:
+                    continue
+                section_type = section_type[0].text
+                if section_type != _type:
+                    continue
+                sectionlist = subsection.find_all('ul', {'class': 'section-list'})
+                if len(sectionlist) != 1:
+                    continue
+                for w in sectionlist[0].findAll('a'):
+                    wr = w.text.strip()
+                    if '(' not in wr and wr not in en_words:  # Avoid onld english
+                        en_words.append(wr)
+        return en_words
+
+    @staticmethod
+    def get_language_name(lang: str, lang_out: str = '') -> str:
+        """
+        Returns the name of a language.
+
+        :param lang: Language tag (ISO 639)
+        :param lang_out: Target language (ISO 639). If not supported, will return the English name
+        :return: Language name from tag
+        """
+        return ut.get_language_name(lang, lang_out)
 
     def synonym(self, lang: str, word: str) -> List[str]:
         """
-        Finds a synonym for a given word.
+        Finds a synonyms for a given word.
 
         :param lang: Lang code
         :param word: Word to retrieve
@@ -183,8 +159,9 @@ class Dictionary(object):
         """
         words = []
         word = self._process(word)
-        if lang not in self._langs.keys():
-            return words
+        if lang not in self._langs.keys() or not self._langs[lang][0]:
+            raise InvalidLangCode(f'{lang} code is not supported for synonyms')
+
         if lang in _EDUCALINGO:
             bs = self._bsoup(f'https://educalingo.com/en/dic-{lang}/{word}')
             if bs is None:
@@ -196,9 +173,38 @@ class Dictionary(object):
                 return words
             for j in results.findAll('a'):
                 words.append(j.get('title').strip())
+
+        # Customs
+        if lang == 'en':
+            en_words = self._synonym_com(word, 'Synonyms')
+            for w in en_words:
+                if w not in words:
+                    words.append(w)
+            words.sort()
         return words
 
-    def meaning(self, lang: str, word: str) -> str:
+    def antonym(self, lang: str, word: str) -> List[str]:
+        """
+        Finds a aynonyms for a given word.
+
+        :param lang: Lang code
+        :param word: Word to retrieve
+        :return: Synonyms list
+        """
+        words = []
+        word = self._process(word)
+        if lang not in self._langs.keys() or not self._langs[lang][3]:
+            raise InvalidLangCode(f'{lang} code is not supported for antonyms')
+
+        if lang == 'en':
+            en_words = self._synonym_com(word, 'Antonyms')
+            for w in en_words:
+                if w not in words:
+                    words.append(w)
+            words.sort()
+        return words
+
+    def meaning(self, lang: str, word: str) -> Tuple[List[str], str, str]:
         """
         Finds the meaning for a given word.
 
@@ -206,49 +212,91 @@ class Dictionary(object):
         :param word: Word to retrieve
         :return: Meaning
         """
-        words = ''
+        types, words, wiki = [], '', ''
         word = self._process(word)
-        if lang not in self._langs.keys():
-            return words
+        if lang not in self._langs.keys() or not self._langs[lang][1]:
+            raise InvalidLangCode(f'{lang} code is not supported for meanings')
+
         if lang in _EDUCALINGO:
             bs = self._bsoup(f'https://educalingo.com/en/dic-{lang}/{word}')
-            if bs is None:
-                return words
+            if bs is not None:
+                results = [i for i in bs.find_all('div', {'id': 'cuadro_categoria_gramatical'})]
+                if len(results) == 1:
+                    results = results[0]
+                    for j in results.find_all('div', {'class': 'categoria_gramatical'}):
+                        divj = j.find_all('div', {'class': 'circulo_categoria_gramatical'})
+                        if len(divj) == 1:
+                            divcls = divj[0].get('class')
+                            if 'background_gris' not in divcls:
+                                typej = j.find_all('div', {'class': 'texto_pie_categoria_gramatical'})
+                                if len(typej) == 1:
+                                    t = typej[0].text.strip().capitalize()
+                                    if t != '':
+                                        types.append(t)
 
-            # Definition
-            results = [i for i in bs.find_all('div', {
-                'id': 'significado_de'})]
-            if len(results) > 0:
-                results = results[0]
-            else:
-                return words
-            words = results.text
+                # Definition
+                results = [i for i in bs.find_all('div', {'id': 'significado_de'})]
+                if len(results) > 0:
+                    words = results[0].text.strip().replace('\n', '')
 
-            # Wikipedia
-            results = [i for i in bs.find_all('span', {
-                'id': 'wiki_introduccion'})]
-            if len(results) > 0:
-                results = results[0]
-            else:
-                return words
-            words += '\n\n' + results.text
+                # Wikipedia
+                results = [i for i in bs.find_all('span', {'id': 'wiki_introduccion'})]
+                if len(results) > 0:
+                    wiki = results[0].text.strip().replace('\n', '')
 
-        return words.strip()
+        return types, words, wiki
 
-    def translate(self, lang: str, word: str) -> List[Tuple[str, str, str]]:
+    # noinspection HttpUrlsUsage
+    def meaning_wordnet(self, word: str) -> Dict[str, List[str]]:
+        """
+        Query the definition of an english word in WordNet.
+
+        :param word: Word to query in English
+        :return: Dict with Type, List of definitions
+        """
+        word = self._process(word)
+        html = self._bsoup(f'http://wordnetweb.princeton.edu/perl/webwn?s={word}')
+        types = html.findAll('h3')
+        lists = html.findAll('ul')
+        out = {}
+        for a in types:
+            reg = str(lists[types.index(a)])
+            meanings = []
+            for x in re.findall(r'\((.*?)\)', reg):
+                if 'often followed by' in x:
+                    pass
+                elif len(x) > 5 or ' ' in str(x):
+                    meanings.append(x.strip())
+            name = a.text.strip()
+            out[name] = meanings
+        return out
+
+    def translate(self, lang: str, word: str, to='') -> List[Tuple[str, str]]:
         """
         Translate a word.
 l
-        :param lang: Lang tag
+        :param lang: Lang tag (ISO 639)
         :param word: Word to translate
-        :return: List of (Lang name, Lang tag, translated word)
+        :param to: Target language (Google API)
+        :return: List of (Lang tag, translated word)
         """
+        assert isinstance(lang, str), 'lang code must be an string'
+        assert isinstance(to, str), 'to lang code must be an string'
         words = []
         word = self._process(word)
-        if lang not in self._langs.keys():
-            return words
+
+        if to != '':
+            gs = goslate.Goslate()
+            try:
+                return [(to, gs.translate(word, to, lang))]
+            except (urllib.error.HTTPError, IndexError):
+                warn(f'{word} cannot be translated to {to} as Google API is not available')
+
+        if lang not in self._langs.keys() or not self._langs[lang][2]:
+            raise InvalidLangCode(f'{lang} code is not supported for translation')
+
         if lang in _EDUCALINGO:
-            bs = self._bsoup(f'https://educalingo.com/fr/dic-{lang}/{word}')
+            bs = self._bsoup(f'https://educalingo.com/en/dic-{lang}/{word}')
             if bs is None:
                 return words
             results = [i for i in bs.find_all('div', {'class': 'traduccion0'})]
@@ -262,12 +310,12 @@ l
                 lang_name = lang_name[0].find_all('strong', {})
                 if len(lang_name) != 1:
                     continue
-                lang_name = lang_name[0].text.strip().capitalize()
+                # lang_name = lang_name[0].text.strip().capitalize()
 
                 # Find non-links
                 lang_nonlink = j.find_all('span', {'class': 'negro'})
                 if len(lang_nonlink) == 1:
-                    words.append((lang_name, lang_tag, lang_nonlink[0].text.strip()))
+                    words.append((lang_tag, lang_nonlink[0].text.strip()))
                     continue
 
                 # Find links
@@ -276,6 +324,15 @@ l
                     continue
                 lang_link = lang_link[1].find_all('a', {})
                 if len(lang_link) == 1:
-                    words.append((lang_name, lang_tag, lang_link[0].text.strip()))
+                    words.append((lang_tag, lang_link[0].text.strip()))
+
+            # Sort translations
+            words = sorted(words, key=lambda x: x[0])
 
         return words
+
+
+class InvalidLangCode(Exception):
+    """
+    Invalid lang.
+    """

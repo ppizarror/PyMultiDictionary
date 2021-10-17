@@ -9,7 +9,3 @@ exclude docs/_static/*
 exclude test/*.py
 
 include requirements.txt
-
-recursive-include pydetex/res/ **.gif
-recursive-include pydetex/res/ **.ico
-recursive-include pydetex/res/ **.json

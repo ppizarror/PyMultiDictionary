@@ -17,10 +17,10 @@ from iso639 import Lang
 # noinspection PyPackageRequirements
 from iso639.exceptions import InvalidLanguageValue
 
-from nltk.tokenize import RegexpTokenizer as _RegexpTokenizer
+from PyMultiDictionary._tokenizer import *
 
 # Tokenizer
-_TOKENIZER = _RegexpTokenizer(r'\w+')
+_TOKENIZER = RegexpTokenizer(r'\w+')
 
 # Enhanced lang names
 LANG_NAMES = {

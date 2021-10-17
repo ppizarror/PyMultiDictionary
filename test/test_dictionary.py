@@ -96,7 +96,6 @@ class DictionaryTest(unittest.TestCase):
                              'not left to spoil', 'generally admired'],
                'Adverb': ['(often used as a combining form', "`good' is a nonstandard dialectal variant for `well'",
                           "completely and absolutely (`good' is sometimes used informally for `thoroughly'"]}
-        print(out)
         self.assertEqual(d.meaning_wordnet('good'), out)
 
     def test_translate(self) -> None:

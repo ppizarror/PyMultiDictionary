@@ -99,7 +99,7 @@ class MultiDictionary(object):
             s = ut.tokenize(s)
         s = s.lower()  # lowercase
         s = s.replace(' ', '').replace('\n', '')  # remove spaces
-        return s
+        return s.strip()
 
     def _bsoup(self, link: str, encoding: str = 'utf-8') -> Optional['BeautifulSoup']:
         """
@@ -138,6 +138,17 @@ class MultiDictionary(object):
         html = str(bs.prettify())
         with open(filename, 'w') as out:
             out.write(html)
+
+    @staticmethod
+    def get_language_name(lang: str, lang_out: str = '') -> str:
+        """
+        Returns the name of a language.
+
+        :param lang: Language tag (ISO 639)
+        :param lang_out: Target language (ISO 639). If not supported, will return the English name
+        :return: Language name from tag
+        """
+        return ut.get_language_name(lang, lang_out)
 
     def _synonym_com(self, word: str, _type: str) -> List[str]:
         """
@@ -181,27 +192,6 @@ class MultiDictionary(object):
                             en_words.append(wr)
         return en_words
 
-    def get_synonyms(self) -> List[List[str]]:
-        """
-        Get the synonyms for all words of the dictionary.
-
-        :return: Synonyms list
-        """
-        assert self._words_lang != '', \
-            'words list have not been defined yet, call dictionary.set_words_lang(lang) first'
-        return [self.synonym(self._words_lang, w) for w in self._words]
-
-    @staticmethod
-    def get_language_name(lang: str, lang_out: str = '') -> str:
-        """
-        Returns the name of a language.
-
-        :param lang: Language tag (ISO 639)
-        :param lang_out: Target language (ISO 639). If not supported, will return the English name
-        :return: Language name from tag
-        """
-        return ut.get_language_name(lang, lang_out)
-
     def synonym(self, lang: str, word: str) -> List[str]:
         """
         Finds a synonyms for a given word.
@@ -214,6 +204,8 @@ class MultiDictionary(object):
         word = self._process(word)
         if lang not in self._langs.keys() or not self._langs[lang][0]:
             raise InvalidLangCode(f'{lang} code is not supported for synonyms')
+        if word == '':
+            return words
 
         if lang in _EDUCALINGO:
             bs = self._bsoup(f'https://educalingo.com/en/dic-{lang}/{word}')
@@ -236,6 +228,16 @@ class MultiDictionary(object):
             words.sort()
         return words
 
+    def get_synonyms(self) -> List[List[str]]:
+        """
+        Get the synonyms for all words of the dictionary.
+
+        :return: Synonyms list
+        """
+        assert self._words_lang != '', \
+            'words list have not been defined yet, call dictionary.set_words_lang(lang) first'
+        return [self.synonym(self._words_lang, w) for w in self._words]
+
     def antonym(self, lang: str, word: str) -> List[str]:
         """
         Finds a aynonyms for a given word.
@@ -248,6 +250,8 @@ class MultiDictionary(object):
         word = self._process(word)
         if lang not in self._langs.keys() or not self._langs[lang][3]:
             raise InvalidLangCode(f'{lang} code is not supported for antonyms')
+        if word == '':
+            return words
 
         if lang == 'en':
             en_words = self._synonym_com(word, 'Antonyms')
@@ -279,6 +283,8 @@ class MultiDictionary(object):
         word = self._process(word)
         if lang not in self._langs.keys() or not self._langs[lang][1]:
             raise InvalidLangCode(f'{lang} code is not supported for meanings')
+        if word == '':
+            return types, words, wiki
 
         if lang in _EDUCALINGO:
             bs = self._bsoup(f'https://educalingo.com/en/dic-{lang}/{word}')
@@ -328,6 +334,8 @@ class MultiDictionary(object):
         :return: Dict with Type, List of definitions
         """
         word = self._process(word)
+        if word == '':
+            return {}
         html = self._bsoup(f'http://wordnetweb.princeton.edu/perl/webwn?s={word}')
         types = html.findAll('h3')
         lists = html.findAll('ul')

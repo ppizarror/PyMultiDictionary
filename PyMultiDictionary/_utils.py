@@ -166,12 +166,15 @@ def tokenize(s: str) -> str:
     :param s: Word
     :return: Tokenized word
     """
+    # Pre-process
     s = str(s)
     s = s.replace('_', ' ')  # Remove underscore
     s = s.replace('–', '-')  # uniform chars
     s = ''.join([i for i in s if not i.isdigit()])  # remove digits
-    try:
+
+    # Tokenize
+    tok = _TOKENIZER.tokenize(s)
+    if len(tok) >= 1:
         return _TOKENIZER.tokenize(s)[0]
-    except IndexError:
-        pass
-    return s
+    else:
+        return ''

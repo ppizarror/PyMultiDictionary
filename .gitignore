@@ -6,3 +6,6 @@ __pycache__
 build/
 dist/
 **.egg-info
+
+# Test
+test/data/**_copy.txt

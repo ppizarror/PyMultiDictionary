@@ -12,6 +12,8 @@ from PyMultiDictionary._dictionary import InvalidLangCode
 import os
 import unittest
 
+_actualpath = str(os.path.abspath(os.path.dirname(__file__))).replace('\\', '/') + '/'
+
 
 class DictionaryTest(unittest.TestCase):
 
@@ -24,11 +26,11 @@ class DictionaryTest(unittest.TestCase):
         d = MultiDictionary(*args)
 
         # Set example pages
-        __actualpath = str(os.path.abspath(os.path.dirname(__file__))).replace('\\', '/') + '/'
         d._test_cached_file = {
-            'https://educalingo.com/en/dic-en/good': __actualpath + 'data/educalingo_en_good.txt',
-            'https://www.synonym.com/synonyms/good': __actualpath + 'data/synonyms_en_good.txt',
-            'http://wordnetweb.princeton.edu/perl/webwn?s=good': __actualpath + 'data/wordnet_en_good.txt'
+            'http://wordnetweb.princeton.edu/perl/webwn?s=good': _actualpath + 'data/wordnet_en_good.txt',
+            'https://educalingo.com/en/dic-en/good': _actualpath + 'data/educalingo_en_good.txt',
+            'https://www.synonym.com/synonyms/bad': _actualpath + 'data/synonyms_en_bad.txt',
+            'https://www.synonym.com/synonyms/good': _actualpath + 'data/synonyms_en_good.txt'
         }
 
         return d
@@ -190,12 +192,21 @@ class DictionaryTest(unittest.TestCase):
         d = self._get_dictionary()
         self.assertRaises(InvalidLangCode, lambda: d.antonym('es', 'word'))
 
+        # Test downloaded from bs
+        ant = ['advisability', 'amicable', 'asset', 'best', 'better', 'bold', 'complimentary', 'courage',
+               'desirability', 'efficient', 'fragrant', 'good', 'goodness', 'inoffensive', 'joyful', 'morality',
+               'obedient', 'qualified', 'soundness', 'supportive', 'unalarming', 'uncritical', 'virtuous', 'worthiness']
+        self.assertEqual(d.antonym('en', 'bad'), ant)
+
         ant = ['bad', 'badness', 'cold', 'cool', 'disobedience', 'domineering', 'evil', 'evilness', 'fidelity',
                'fruitfulness', 'immoral', 'immorality', 'lowercase', 'maleficence', 'malignancy', 'malignity',
                'naivete', 'nonpregnant', 'ordinary', 'passionless', 'unemotionality', 'unfavorable', 'unpropitious',
                'unrespectable', 'unrighteous', 'unsoundness', 'unworthiness', 'unworthy', 'wicked', 'worse', 'worst',
                'worthlessness', 'wrong']
         self.assertEqual(d.antonym('en', 'good'), ant)
+
+        # Save soup example
+        d._save_bsoup(f'https://www.synonym.com/synonyms/good', _actualpath + 'data/synonyms_en_good_copy.txt')
 
     def test_language_name(self) -> None:
         """

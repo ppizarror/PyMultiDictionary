@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width" name="viewport"/>
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="bAcwWUYbKsarTRubFQ9MOUfLNZwwaG7aL-CcLjTvCsE" name="google-site-verification"/>
+  <meta content="129B5DE6FF8DD0ECBDD457C93FF101E3" name="msvalidate.01"/>
+  <meta content="Synonym.com" property="og:site_name"/>
+  <meta content="" property="fb:admins"/>
+  <link href="//www.synonym.com/public/images/icons/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+  <link href="//www.synonym.com/public/images/icons/favicon.ico" rel="shortcut icon"/>
+  <link href="//www.synonym.com/public/images/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+  </script>
+  <script>
+   (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3235755782694080"
+          ,enable_page_level_ads: true
+     });
+  </script>
+  <!-- Custom Dimension dataLayer -->
+  <script title="dataLayer" type="text/javascript">
+   var dataLayer = [] || window.dataLayer;
+
+  function getPublishedDateISO() {
+    var pubDate ="" || "" || null
+
+    if (pubDate) {
+      return new Date(pubDate.replace(/ /g, 'T')).toISOString()
+    } else {
+      return
+    }
+  }
+
+  function getUpdatedDateISO() {
+    var updateDate ="" || null
+
+    if (updateDate) {
+      return new Date(updateDate.replace(/ /g, 'T')).toISOString()
+    } else {
+      return
+    }
+  }
+
+  function create_UUID() {
+     var pow = Math.pow(10, 10);
+     var uuid = Math.floor(Math.random()*pow) + '.' + Math.floor(Math.random()*pow);
+     return uuid;
+  }
+
+  function find_ppid() {
+     if(!localStorage.getItem('ppid')) {
+        ppid = create_UUID();
+        localStorage.setItem('ppid', ppid);
+        return ppid;
+     } else {
+        return localStorage.getItem('ppid');
+     }
+  }
+
+  var ppid = find_ppid() || '';
+
+  dataLayer.push({
+    "pagetype": "Term",
+    "subpagetype": "",
+    "pageview_type": "standard",
+    "studioid": "",
+    "content_id": "",
+    "content_name": "Another word for BAD &gt; Synonyms &amp; Antonyms",
+    "author": "",
+    "lg_uuid": ppid,
+    "scroll": 0,"topic1": [],
+    "topic2": [],
+    "topic3": [],
+    "tags": [],
+    "published": getPublishedDateISO() || getUpdatedDateISO() || '', 
+    "updated": getUpdatedDateISO() || getPublishedDateISO() || ''
+  })
+  </script>
+  <!-- End Custom Dimension dataLayer -->
+  <script type="text/javascript">
+   // *** helper functions for removing jquery *** //
+
+// cross-browser doc ready function
+function docReady(callback) {
+	if (document.readyState != 'loading'){
+		callback();
+	} else if (document.addEventListener) {
+		document.addEventListener('DOMContentLoaded', callback);
+	} else {
+		document.attachEvent('onreadystatechange', function() {
+			if (document.readyState != 'loading')
+				callback();
+		});
+	}
+}
+
+// cross-browser add event listener (IE8)
+function addListener(el, eventName, handler) {
+	if (el && el.addEventListener)
+		el.addEventListener(eventName, handler);
+	else if (el && el.attachEvent) {
+		el.attachEvent('on' + eventName, function(){
+			handler.call(el);
+		});
+	} else
+		return false;
+		//console.error("couldn't attach event: " + eventName + " to element: " + el);
+}
+
+function removeClass(el, className){
+	if (el && el.classList)
+		el.classList.remove(className);
+	else if (el)
+		el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+	else
+		return false;
+		//console.error("couldn't remove class: " + className + " from element: " + el);
+}
+
+function addClass(el, className){
+	if (el && el.classList)
+	  el.classList.add(className);
+	else if (el)
+	  el.className += ' ' + className;
+	else
+		return false;
+		//console.error("couldn't add class: " + className + " to element: " + el);
+}
+
+function hasClass(el, className){
+	if (el && el.classList)
+	  return el.classList.contains(className);
+	else if (el)
+	  return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+	else
+		return null;
+}
+
+function getIndex(el){
+  let i = 0;
+  while (el.previousSibling != null){
+    if (el.previousSibling.nodeType == 1){
+      // only count actual elements, not text nodes
+      i++;
+    }
+    el = el.previousSibling;
+  }
+  return i;
+}
+
+//add forEach support for IE 8
+if (typeof Array.prototype.forEach != 'function') {
+  Array.prototype.forEach = function(callback){
+    for (var i = 0; i < this.length; i++){
+      callback.apply(this, [this[i], i, this]);
+    }
+  };
+}
+  </script>
+  <!-- Permutative Global -->
+  <script>
+   !function(n,e,o,r,i){if(!e){e=e||{},window.permutive=e,e.q=[],e.config=i||{},e.config.projectId=o,e.config.apiKey=r,e.config.environment=e.config.environment||"production";for(var t=["addon","identify","track","trigger","query","segment","segments","ready","on","once","user","consent"],c=0;c<t.length;c++){var f=t[c];e[f]=function(n){return function(){var o=Array.prototype.slice.call(arguments,0);e.q.push({functionName:n,arguments:o})}}(f)}}}(document,window.permutive,"5814efa5-d41d-4a89-b176-1cc26fae87cd","e4ecf9e0-0a2f-42d6-a720-8fff2402c221",{});  
+window.googletag=window.googletag||{},window.googletag.cmd=window.googletag.cmd||[],window.googletag.cmd.push(function(){if(0===window.googletag.pubads().getTargeting("permutive").length){var g=window.localStorage.getItem("_pdfps");window.googletag.pubads().setTargeting("permutive",g?JSON.parse(g):[])}});
+window.permutive.identify([{
+	  "id": ppid,
+	  "tag": "publisherUserId"
+	}]);
+window.permutive.addon('web', {
+  "page": {
+    "pagetype": "Term",
+    "subpagetype": "",
+    "pageview_type": "standard",
+    "content_name": "Another word for BAD &gt; Synonyms &amp; Antonyms","tags": [],
+    "published": window.getPublishedDateISO() || window.getUpdatedDateISO() || '', 
+    "updated": window.getUpdatedDateISO() || window.getPublishedDateISO() || '',
+    "topic1": [],
+    "topic2": [],
+    "topic3": [],
+    "content_name": "Another word for BAD &gt; Synonyms &amp; Antonyms",
+    "scroll": 0,
+    "user": {
+      "lg_uuid": ppid
+    }
+  }
+})
+
+window.permutive.readyWithTimeout=function(e,i,t){var u=!1,n=function(){u||(e(),u=!0)};(t=t||1/0)!==1/0&&window.setTimeout(n,t),permutive.ready(n,i)};
+  </script>
+  <script async="" src="https://cdn.permutive.com/5814efa5-d41d-4a89-b176-1cc26fae87cd-web.js">
+  </script>
+  <!-- Bing Webmaster Tool Auth -->
+  <meta content="129B5DE6FF8DD0ECBDD457C93FF101E3" name="msvalidate.01"/>
+  <script type="application/ld+json">
+   {"@context": "https://schema.org/", "description": "Similar words for Bad <- synonyms + antonyms -> adjective. ['\u02c8b\u00e6d'] having undesirable or negative qualities.", "@type": "DefinedTerm", "inDefinedTermSet": "https://www.synonym.com/synonyms/bad", "name": "Bad"}
+  </script>
+  <script>
+   window.documentProfile = {
+    "url": "https://www.synonym.com/synonyms/bad","pagetype": "term"
+    ,"content_name": "Another word for BAD &gt; Synonyms &amp; Antonyms","rcp": [{"url": "www.synonym.com/synonyms/atrocious", "image_url": "#", "title": "Atrocious Synonyms, Antonyms, Definitions | Synonym.com", "_id": "www.synonym.com/synonyms/atrocious", "external_url": "www.synonym.com/synonyms/atrocious"}, {"url": "www.synonym.com/synonyms/bad-cheque", "image_url": "#", "title": "Bad-cheque Synonyms, Antonyms, Definitions | Synonym.com", "_id": "www.synonym.com/synonyms/bad-cheque", "external_url": "www.synonym.com/synonyms/bad-cheque"}, {"url": "www.synonym.com/synonyms/bad-debt", "image_url": "#", "title": "Bad-debt Synonyms, Antonyms, Definitions | Synonym.com", "_id": "www.synonym.com/synonyms/bad-debt", "external_url": "www.synonym.com/synonyms/bad-debt"}, {"url": "www.synonym.com/synonyms/bad-egg", "image_url": "#", "title": "Bad-egg Synonyms, Antonyms, Definitions | Synonym.com", "_id": "www.synonym.com/synonyms/bad-egg", "external_url": "www.synonym.com/synonyms/bad-egg"}, {"url": "www.synonym.com/synonyms/bad-fairy", "image_url": "#", "title": "Bad-fairy Synonyms, Antonyms, Definitions | Synonym.com", "_id": "www.synonym.com/synonyms/bad-fairy", "external_url": "www.synonym.com/synonyms/bad-fairy"}, {"url": "www.synonym.com/synonyms/bad-guy", "image_url": "#", "title": "Bad-guy Synonyms, Antonyms, Definitions | Synonym.com", "_id": "www.synonym.com/synonyms/bad-guy", "external_url": "www.synonym.com/synonyms/bad-guy"}, {"url": "www.synonym.com/synonyms/bad-hat", "image_url": "#", "title": "Bad-hat Synonyms, Antonyms, Definitions | Synonym.com", "_id": "www.synonym.com/synonyms/bad-hat", "external_url": "www.synonym.com/synonyms/bad-hat"}, {"url": "www.synonym.com/synonyms/bad-luck", "image_url": "#", "title": "Bad-luck Synonyms, Antonyms, Definitions | Synonym.com", "_id": "www.synonym.com/synonyms/bad-luck", "external_url": "www.synonym.com/synonyms/bad-luck"}]}
+  </script>
+  <title>
+   Another word for BAD &gt; Synonyms &amp; Antonyms
+  </title>
+  <meta content="Similar words for Bad. Definition: adjective. ['ˈbæd'] having undesirable or negative qualities." name="description"/>
+  <meta content="Term" name="pagetype"/>
+  <meta content="https://www.synonym.com/synonyms/bad" property="og:url"/>
+  <meta content="Similar words for Bad. Definition: adjective. ['ˈbæd'] having undesirable or negative qualities." property="og:description"/>
+  <meta content="website" property="og:type"/>
+  <meta content="Another word for BAD &gt; Synonyms &amp; Antonyms" property="og:title"/>
+  <meta content="//www.synonym.com/public/images/synonym-logo.jpg" property="og:image"/>
+  <link href="https://www.synonym.com/synonyms/bad" rel="canonical"/>
+  <script async="" src="//securepubads.g.doubleclick.net/tag/js/gpt.js">
+  </script>
+  <script async="" src="//c.amazon-adsystem.com/aax2/apstag.js">
+  </script>
+  <script async="" src="//js-sec.indexww.com/ht/p/183706-71950991035540.js">
+  </script>
+  <link as="font" crossorigin="anonymous" href="/public/fonts/barlow-v4-latin/barlow-v4-latin-regular.woff" rel="preload" type="font/woff"/>
+  <link as="font" crossorigin="anonymous" href="/public/fonts/barlow-v4-latin/barlow-v4-latin-700.woff" rel="preload" type="font/woff"/>
+  <link as="font" href="/public/fonts/acme-v9-latin/acme-v9-latin-regular.woff" rel="preload" type="font/woff"/>
+  <link as="font" href="/public/fonts/montserrat-v14-latin/montserrat-v14-latin-regular.woff" rel="preload" type="font/woff"/>
+  <meta charset="utf-8"/>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="#206EC8" name="theme-color"/>
+  <meta content="no" name="apple-mobile-web-app-capable"/>
+  <meta content="default" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="synonym" name="apple-mobile-web-app-title"/>
+  <meta content="//www.synonym.com/dist/images/icons/mstile-150x150.png" name="msapplication-TileImage"/>
+  <meta content="#414141" name="msapplication-TileColor"/>
+  <link href="//www.synonym.com/dist/css/bundle-ui.css" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/css/sea-scrambler-launcher.css" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/css/sea-scrambler-promo.css" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/css/search-bar.css" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/css/widget-vocabulary-swiper.css" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/css/wordtigo-launcher.css" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/css/wordtigo-promo.css" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/bundle-ui.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/bundle-ui~sea-scrambler-launcher~sea-scrambler-promo~search-bar~widget-vocabulary-swiper~wordtigo-la~09ec6024.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/chunk-2d0ab6ac.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/chunk-2d207368.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/chunk-2d208857.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/chunk-2d20921d.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/chunk-2d22d3cb.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/clickables.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/ie-fetch-polyfill.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/intersection-observer-polyfill.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/sea-scrambler-launcher.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/sea-scrambler-launcher~search-bar~widget-vocabulary-swiper.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/sea-scrambler-promo.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/search-bar.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/tabs.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/ui-bundle.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/widget-manager.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/widget-vocabulary-swiper.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/wordtigo-game-data.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/wordtigo-game-framework.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/wordtigo-game-main.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/wordtigo-launcher.js" rel="prefetch"/>
+  <link href="//www.synonym.com/dist/js/wordtigo-promo.js" rel="prefetch"/>
+  <link as="script" href="//www.synonym.com/dist/js/main.js" rel="preload"/>
+  <link href="//www.synonym.com/dist/images/icons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="//www.synonym.com/dist/images/icons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="//www.synonym.com/dist/manifest.json" rel="manifest"/>
+  <link href="//www.synonym.com/dist/images/icons/apple-touch-icon.png" rel="apple-touch-icon"/>
+  <link color="#206EC8" href="//www.synonym.com/dist/img/icons/safari-pinned-tab.svg" rel="mask-icon"/>
+  <script type="application/ld+json">
+   {'@context': 'https://schema.org', 'itemListElement': [{'item': 'https://www.synonym.com/', 'position': 1, '@type': 'ListItem', 'name': 'Synonyms'}, {'item': 'https://www.synonym.com/synonyms/bad', 'position': 2, '@type': 'ListItem', 'name': 'Bad'}], '@type': 'BreadcrumbList'}
+  </script>
+  <script type="application/ld+json">
+   {'@context': 'https://schema.org/', 'description': "Similar words for Bad <- synonyms + antonyms -> adjective. ['ˈbæd'] having undesirable or negative qualities.", '@type': 'DefinedTerm', 'inDefinedTermSet': 'https://www.synonym.com/synonyms/bad', 'name': 'Bad'}
+  </script>
+  <style type="text/css">
+   /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100% }body{margin:0}main{display:block}h1{margin:.67em 0}hr{-webkit-box-sizing:content-box;box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80% }sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{-webkit-box-sizing:border-box;box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{-webkit-box-sizing:border-box;box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}@font-face{font-family:Barlow;font-style:normal;font-weight:400;src:url(/public/fonts/barlow-v4-latin/barlow-v4-latin-regular.eot);src:local("Barlow Regular"),local("Barlow-Regular"),url(/public/fonts/barlow-v4-latin/barlow-v4-latin-regular.eot?#iefix) format("embedded-opentype"),url(/public/fonts/barlow-v4-latin/barlow-v4-latin-regular.woff) format("woff"),url(/public/fonts/barlow-v4-latin/barlow-v4-latin-regular.ttf) format("truetype"),url(/public/fonts/barlow-v4-latin/barlow-v4-latin-regular.svg#Barlow) format("svg")}@font-face{font-family:Barlow;font-style:normal;font-weight:700;src:url(/public/fonts/barlow-v4-latin/barlow-v4-latin-700.eot);src:local("Barlow Bold"),local("Barlow-Bold"),url(/public/fonts/barlow-v4-latin/barlow-v4-latin-700.eot?#iefix) format("embedded-opentype"),url(/public/fonts/barlow-v4-latin/barlow-v4-latin-700.woff) format("woff"),url(/public/fonts/barlow-v4-latin/barlow-v4-latin-700.ttf) format("truetype"),url(/public/fonts/barlow-v4-latin/barlow-v4-latin-700.svg#Barlow) format("svg")}@font-face{font-family:Acme;font-style:normal;font-weight:400;font-display:swap;src:url(/public/fonts/acme-v9-latin/acme-v9-latin-regular.eot);src:local("Acme Regular"),local("Acme-Regular"),url(/public/fonts/acme-v9-latin/acme-v9-latin-regular.eot?#iefix) format("embedded-opentype"),url(/public/fonts/acme-v9-latin/acme-v9-latin-regular.woff) format("woff"),url(/public/fonts/acme-v9-latin/acme-v9-latin-regular.ttf) format("truetype"),url(/public/fonts/acme-v9-latin/acme-v9-latin-regular.svg#Acme) format("svg")}@font-face{font-family:Montserrat;font-style:normal;font-weight:400;font-display:swap;src:url(/public/fonts/montserrat-v14-latin/montserrat-v14-latin-regular.eot);src:local("Montserrat Regular"),local("Montserrat-Regular"),url(/public/fonts/montserrat-v14-latin/montserrat-v14-latin-regular.eot?#iefix) format("embedded-opentype"),url(/public/fonts/montserrat-v14-latin/montserrat-v14-latin-regular.woff) format("woff"),url(/public/fonts/montserrat-v14-latin/montserrat-v14-latin-regular.ttf) format("truetype"),url(/public/fonts/montserrat-v14-latin/montserrat-v14-latin-regular.svg#Montserrat) format("svg")}*{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;line-height:normal;font-family:sans-serif;font-size:1rem}a,div,h1,h2,h3,h4,h5,li,ol,p,span,ul{color:#212121;font-family:Barlow,sans-serif}a,a:visited{text-decoration:none}.article-page .article-page-container .article-body-container .main-column .video-player-container-wrapper .attribution,a,a:visited{color:#212121}.article-page .article-page-container .article-body-container .main-column .video-player-container-wrapper .info-wrapper a,.article-page .article-page-container .article-body-container .main-column .video-player-container-wrapper .info-wrapper span{font-size:1rem;line-height:1.25rem;border-bottom:none}@media (max-width:992px){.horizontal-ad{display:none}}.adsense-inline{display:block}.adsense-inline,.mobile-display-ad{margin:0 auto;text-align:center}.main-ad{margin-bottom:1rem}@media (max-width:640px){.main-ad{margin-bottom:0}}.rightrail-display-ad{min-height:250px}.article-page .article-page-container .article-body-container .main-column .taboola-ads a{border-bottom:none}.article-page .article-page-container .article-body-container .main-column .taboola-ads a span{font-size:.75rem;line-height:1rem}body .fixed-bottom-ad{display:block;position:fixed;bottom:0;left:calc(50vw - 530px);display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;max-height:100px;width:100%;max-width:728px;text-align:center;z-index:9999}@media (max-width:1100px){body .fixed-bottom-ad{left:0;max-width:unset}}body.fixed-bottom-ad-closed .fixed-bottom-ad{display:none}body.adblock-detected .right-column .sticky-container{position:relative;height:100vh}body.adblock-detected .right-column .sticky-container .adblock-medianet-rightrail{position:absolute;bottom:250px}.site-footer{border-top:1px solid rgba(0,0,0,.1);background:#98c1ff}.site-footer .section-wrapper{max-width:1060px;margin:0 auto;padding:1rem 0}@media (max-width:1200px){.site-footer .section-wrapper{padding:2rem 1rem}}@media (max-width:992px){.site-footer .section-wrapper{-ms-flex-wrap:wrap;flex-wrap:wrap}}.site-footer .section-wrapper .navigation{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;list-style:none}@media (max-width:992px){.site-footer .section-wrapper .navigation{display:block;text-align:center}}.site-footer .section-wrapper .navigation .category{margin:1rem}@media (max-width:992px){.site-footer .section-wrapper .navigation .category{display:block;text-align:center;margin-top:0}}.site-header{width:100%;display:block;position:fixed;top:0;left:0;height:80px;z-index:9999;background:#98c1ff}@media (max-width:992px){.site-header{height:60px;-webkit-box-shadow:none;box-shadow:none}}@media (max-width:640px){.site-header{height:unset}}.site-header .header-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;max-width:1060px;margin:0 auto;max-height:100%;height:100% }@media (max-width:1200px){.site-header .header-wrapper{padding:0 1rem}}@media (max-width:640px){.site-header .header-wrapper{-ms-flex-wrap:wrap;flex-wrap:wrap}}.site-header .header-wrapper .logo{font-size:2rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#212121;margin-right:2rem}@media (max-width:992px){.site-header .header-wrapper .logo{font-size:1.5rem}}@media (max-width:640px){.site-header .header-wrapper .logo{letter-spacing:1px;display:block;width:100%;text-align:center;margin:1rem 0 .5rem}}div[class="404-header"]{display:block;max-width:600px;width:90%;margin:0 auto;text-align:center;padding-top:100px}div[class="404-articles"]{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}div[class="404-articles"] a{display:block;width:300px;border:1px solid rgba(0,0,0,.1);text-decoration:none;color:#000;margin:20px;background:#fff}div[class="404-articles"] a img{width:300px;height:200px;display:block}div[class="404-articles"] a h3{text-align:center;padding:0 5px}.about-us{padding:100px 10px 100px;max-width:1200px;margin:0 auto}.about-us .top-section{max-width:600px;margin:0 auto 20px;text-align:center}.about-us .top-section h1{text-align:center}.about-us .bottom-section{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.about-us .bottom-section>div{width:300px;padding:20px;background:#fff;-webkit-box-shadow:0 11px 17px -3px rgba(0,0,0,.1);box-shadow:0 11px 17px -3px rgba(0,0,0,.1);margin:20px}.about-us .bottom-section>div h3{text-align:center;font-weight:700}body{background:#f5f5f5}.page-container{padding-top:10rem;max-width:1060px;margin:0 auto;padding-bottom:2rem}@media (max-width:992px){.page-container{padding-top:8rem}}@media (max-width:640px){.page-container{padding-top:10.5rem}}.page-container .content-container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}@media (max-width:1100px){.page-container .content-container{padding:0 1rem}}.page-container .content-container .main-column{width:728px}@media (max-width:1100px){.page-container .content-container .main-column{width:calc(100% - 332px)}}@media (max-width:992px){.page-container .content-container .main-column{width:100%;margin:0}}.page-container .content-container .main-column .no-results-header{font-size:2rem;margin-bottom:2rem;margin-top:0;text-align:center}.page-container .content-container .main-column .no-results,.page-container .content-container .main-column .wotd{font-size:2rem;margin-bottom:2rem;margin-top:0;padding:1rem;border-left:8px solid #98c1ff;background:#fff}.page-container .content-container .main-column .no-results a,.page-container .content-container .main-column .wotd a{text-decoration:underline;font-size:inherit}.page-container .content-container .main-column .no-results{font-size:1.5rem}.page-container .content-container .main-column .tabbed-header{background:#f5f5f5;display:-webkit-box;display:-ms-flexbox;display:flex}.page-container .content-container .main-column .tabbed-header .tab{margin-right:1rem;border-radius:4px 4px 0 0;background:#fff;padding:.5rem 1rem;-webkit-box-shadow:0 -14px 13px -11px rgba(0,0,0,.1);box-shadow:0 -14px 13px -11px rgba(0,0,0,.1);cursor:pointer}.page-container .content-container .main-column .tabbed-header .tab.selected{-webkit-box-shadow:none;box-shadow:none}.page-container .content-container .main-column .tabbed-header .tab.selected[data-id=synonyms]{background:#98c1ff}.page-container .content-container .main-column .tabbed-header .tab.selected[data-id=antonyms]{background:#ffc08a}.page-container .content-container .main-column .tabbed-header .tab.selected[data-id=etymology]{background:#98c1ff}.page-container .content-container .main-column .sections-wrapper .section{padding:1rem 1rem 0 1rem;background:#fff;margin-bottom:1rem}.page-container .content-container .main-column .sections-wrapper .section .section-list-wrapper[data-section=antonyms],.page-container .content-container .main-column .sections-wrapper .section .section-list-wrapper[data-section=etymology],.page-container .content-container .main-column .sections-wrapper .section .section-list-wrapper[data-section=synonyms]{display:none}.page-container .content-container .main-column .sections-wrapper .section .section-list-wrapper[data-section=antonyms].show,.page-container .content-container .main-column .sections-wrapper .section .section-list-wrapper[data-section=etymology].show,.page-container .content-container .main-column .sections-wrapper .section .section-list-wrapper[data-section=synonyms].show{display:block}.page-container .content-container .main-column .sections-wrapper .section .section-list-wrapper[data-section=antonyms] .section-title,.page-container .content-container .main-column .sections-wrapper .section .section-list-wrapper[data-section=etymology] .section-title,.page-container .content-container .main-column .sections-wrapper .section .section-list-wrapper[data-section=synonyms] .section-title{font-size:1rem;border-bottom:1px solid rgba(0,0,0,.1);padding-bottom:.5rem}.page-container .content-container .main-column .sections-wrapper .section .section-list-wrapper[data-section=synonyms] ul li{background:#98c1ff;cursor:pointer;-webkit-transition:all .2s ease-in-out;transition:all .2s ease-in-out}.page-container .content-container .main-column .sections-wrapper .section .section-list-wrapper[data-section=synonyms] ul li:hover{background:#7fb2ff}.page-container .content-container .main-column .sections-wrapper .section .section-list-wrapper[data-section=antonyms] ul li{background:#ffc08a;cursor:pointer;-webkit-transition:all .2s ease-in-out;transition:all .2s ease-in-out}.page-container .content-container .main-column .sections-wrapper .section .section-list-wrapper[data-section=antonyms] ul li:hover{background:#ffb271}.page-container .content-container .main-column .sections-wrapper .section .section-list-wrapper[data-section=etymology] ul{list-style:unset;list-style-position:inside;display:unset}.page-container .content-container .main-column .sections-wrapper .section .section-list-wrapper[data-section=etymology] ul li{background:none}.page-container .content-container .main-column .sections-wrapper .section .inline-ad-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding-top:1rem;background:#f5f5f5;width:calc(100% + 2rem);-webkit-transform:translateX(-1rem);transform:translateX(-1rem);min-height:106px}@media (max-width:640px){.page-container .content-container .main-column .sections-wrapper .section .inline-ad-wrapper{min-height:145px}}.page-container .content-container .main-column .sections-wrapper .section .games{padding:1rem;background:#f5f5f5;width:calc(100% + 2rem);min-height:207px;-webkit-transform:translateX(-1rem);transform:translateX(-1rem)}@media (max-width:640px){.page-container .content-container .main-column .sections-wrapper .section .games{min-height:353px}}.page-container .content-container .main-column .sections-wrapper .section .games .games-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}@media (max-width:640px){.page-container .content-container .main-column .sections-wrapper .section .games .games-wrapper{-ms-flex-wrap:wrap;flex-wrap:wrap}}.page-container .content-container .main-column .sections-wrapper .section .games .games-wrapper .promo-wrapper{width:calc(50% - .5rem);cursor:pointer}@media (max-width:640px){.page-container .content-container .main-column .sections-wrapper .section .games .games-wrapper .promo-wrapper{width:100% }.page-container .content-container .main-column .sections-wrapper .section .games .games-wrapper .promo-wrapper:first-child{margin-bottom:1rem}}.page-container .content-container .main-column .sections-wrapper .section .games .games-wrapper .promo-wrapper p{margin-bottom:0;padding-bottom:0;line-height:unset}.page-container .content-container .main-column .sections-wrapper .section .section-title{font-size:1.5rem;margin:0 0 1rem 0}.page-container .content-container .main-column .sections-wrapper .section .section-list-header{font-size:1.25rem;margin:1rem 0}.page-container .content-container .main-column .sections-wrapper .section p{padding-bottom:1rem;line-height:1.5rem}.page-container .content-container .main-column .sections-wrapper .section ol,.page-container .content-container .main-column .sections-wrapper .section ul{list-style-position:inside;padding-bottom:1rem;list-style:none;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}.page-container .content-container .main-column .sections-wrapper .section ol li,.page-container .content-container .main-column .sections-wrapper .section ul li{padding:.25rem .5rem;border-radius:4px;margin-right:.75rem;margin-bottom:.75rem;background:#98c1ff;cursor:pointer;-webkit-transition:all .2s ease-in-out;transition:all .2s ease-in-out}.page-container .content-container .rightrail-container{width:300px;position:relative}@media (max-width:992px){.page-container .content-container .rightrail-container{display:none}}.page-container .content-container .rightrail-container .sticky-container{height:730px;position:sticky;top:130px;overflow:auto}.page-container .content-container .rightrail-container .sticky-container .ad-divider{text-align:center;font-size:2rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#212121;padding:2rem 0;background:#98c1ff;margin:1rem 0}.home-container{padding-top:80px}@media (max-width:992px){.home-container{padding-top:60px}}.home-container .section-wrapper .section-container{max-width:1060px;width:100%;padding:2rem 0;margin:0 auto}.home-container .section-wrapper .section-container .section-header{text-align:center;font-size:2rem}@media (max-width:1200px){.home-container .section-wrapper{padding:0 1rem}}.home-container .section-wrapper.search-section{background:#98c1ff}.home-container .section-wrapper.search-section .section-container .section-header{color:#fff}.home-container .section-wrapper.search-section .section-container .search{position:relative;width:50%;height:3rem;border-bottom:3px solid #fff;background:hsla(0,0%,100%,.5);margin:2rem auto}@media (max-width:992px){.home-container .section-wrapper.search-section .section-container .search{width:100%;max-width:600px}}.home-container .section-wrapper.search-section .section-container .search input{width:100%;height:100%;padding:0 3rem 0 1rem;border:none;outline:none;background:transparent;color:#fff}.home-container .section-wrapper.search-section .section-container .search input::-webkit-input-placeholder{opacity:0}.home-container .section-wrapper.search-section .section-container .search input::-moz-placeholder{opacity:0}.home-container .section-wrapper.search-section .section-container .search input:-ms-input-placeholder{opacity:0}.home-container .section-wrapper.search-section .section-container .search input::-ms-input-placeholder{opacity:0}.home-container .section-wrapper.search-section .section-container .search input::placeholder{opacity:0}.home-container .section-wrapper.search-section .section-container .search button{background:transparent;border:none;outline:none;position:absolute;right:0;top:0;height:100%;width:3rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.home-container .section-wrapper.search-section .section-container .search button svg{width:1.5rem;height:1.5rem}.home-container .section-wrapper.hero{padding:2rem 0;background:#98c1ff}@media (max-width:1200px){.home-container .section-wrapper.hero{padding:2rem}}@media (max-width:640px){.home-container .section-wrapper.hero{padding:1rem}}.home-container .section-wrapper.hero.category .section-container{height:200px}.home-container .section-wrapper.hero.category .section-container .text-wrapper{height:8rem}.home-container .section-wrapper.hero.category .section-container .text-wrapper .hero-text{font-size:2rem;font-weight:700}.home-container .section-wrapper.hero.category .section-container .text-wrapper .border-bottom,.home-container .section-wrapper.hero.category .section-container .text-wrapper .border-top{display:none}.home-container .section-wrapper.hero .section-container{position:relative;height:300px;max-width:1060px;width:100%;padding:2rem 0;margin:0 auto}.home-container .section-wrapper.hero .section-container .text-wrapper{position:relative;height:13rem;width:35rem;margin:0 auto}@media (max-width:992px){.home-container .section-wrapper.hero .section-container .text-wrapper{width:100% }}.home-container .section-wrapper.hero .section-container .text-wrapper .hero-text{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);width:500px;color:#fff;text-align:center;font-size:1.55rem}@media (max-width:992px){.home-container .section-wrapper.hero .section-container .text-wrapper .hero-text{width:90% }}.home-container .section-wrapper.hero .section-container .text-wrapper .border-top{position:absolute;top:0;left:0;width:25%;height:25%;border-top:1px solid #fff;border-left:1px solid #fff}@media (max-width:640px){.home-container .section-wrapper.hero .section-container .text-wrapper .border-top{display:none}}.home-container .section-wrapper.hero .section-container .text-wrapper .border-bottom{position:absolute;bottom:0;right:0;width:25%;height:25%;border-bottom:1px solid #fff;border-right:1px solid #fff}@media (max-width:640px){.home-container .section-wrapper.hero .section-container .text-wrapper .border-bottom{display:none}}.home-container .section-wrapper.hero .section-container svg{position:absolute;bottom:0;right:0}@media (max-width:992px){.home-container .section-wrapper.hero .section-container svg{display:none}}.home-container .section-wrapper.trending .section-header{color:#000;font-family:Barlow;font-weight:700}.home-container .section-wrapper.trending .articles-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}@media (max-width:992px){.home-container .section-wrapper.trending .articles-wrapper{-ms-flex-wrap:wrap;flex-wrap:wrap}}.home-container .section-wrapper.trending .articles-wrapper .left-side{width:calc(50% - 1rem)}@media (max-width:992px){.home-container .section-wrapper.trending .articles-wrapper .left-side{width:100% }}.home-container .section-wrapper.trending .articles-wrapper .left-side .article-tile{display:block}@media (max-width:992px){.home-container .section-wrapper.trending .articles-wrapper .left-side .article-tile{margin-bottom:2rem}}.home-container .section-wrapper.trending .articles-wrapper .left-side .article-tile .article-image{width:100%;height:400px;margin-bottom:1rem;background-size:cover;background-position:50% }@media (max-width:992px){.home-container .section-wrapper.trending .articles-wrapper .left-side .article-tile .article-image{height:300px}}.home-container .section-wrapper.trending .articles-wrapper .left-side .article-tile .title-container .category{color:#98c1ff;margin-bottom:.25rem;font-weight:700;padding:4px;position:relative}.home-container .section-wrapper.trending .articles-wrapper .left-side .article-tile .title-container .category:after{content:"";width:10px;height:10px;border-left:1px solid #98c1ff;border-top:1px solid #98c1ff;position:absolute;top:0;left:-5px}.home-container .section-wrapper.trending .articles-wrapper .left-side .article-tile .title-container .title{font-size:1.5rem}.home-container .section-wrapper.trending .articles-wrapper .right-side{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;width:calc(50% - 1rem)}@media (max-width:992px){.home-container .section-wrapper.trending .articles-wrapper .right-side{width:100% }}.home-container .section-wrapper.trending .articles-wrapper .right-side .article-tile{display:-webkit-box;display:-ms-flexbox;display:flex}@media (max-width:992px){.home-container .section-wrapper.trending .articles-wrapper .right-side .article-tile{margin-bottom:2rem}}.home-container .section-wrapper.trending .articles-wrapper .right-side .article-tile .article-image{margin-right:1rem;width:170px;height:120px;background-size:cover;background-position:50%;-ms-flex-negative:0;flex-shrink:0}.home-container .section-wrapper.trending .articles-wrapper .right-side .article-tile .title-container .category{padding:4px;margin-bottom:.25rem;display:inline-block;position:relative;color:#98c1ff;font-weight:700}.home-container .section-wrapper.trending .articles-wrapper .right-side .article-tile .title-container .category:after{content:"";width:10px;height:10px;border-left:1px solid #98c1ff;border-top:1px solid #98c1ff;position:absolute;top:0;left:-5px}.home-container .section-wrapper.trending .articles-wrapper .right-side .article-tile .title-container .title{font-size:1.5rem}.home-container .section-wrapper.more-articles{background:#f5f5f5}.home-container .section-wrapper.more-articles .articles-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.home-container .section-wrapper.more-articles .articles-wrapper .article-tile{width:calc(33.33333% - 1rem);background:#fff;margin-bottom:1.5rem}@media (max-width:992px){.home-container .section-wrapper.more-articles .articles-wrapper .article-tile{width:calc(50% - .5rem)}}.home-container .section-wrapper.more-articles .articles-wrapper .article-tile .image{width:100%;height:200px;background-size:cover;background-position:50% }@media (max-width:640px){.home-container .section-wrapper.more-articles .articles-wrapper .article-tile .image{height:130px}}.home-container .section-wrapper.more-articles .articles-wrapper .article-tile .title-container{padding:1rem}.home-container .section-wrapper.more-articles .articles-wrapper .article-tile .title-container .category{font-weight:700;color:#98c1ff;margin-bottom:.25rem}.home-container .section-wrapper.more-articles .articles-wrapper .article-tile .title-container .title{font-size:1.5rem}.search-results{padding-top:calc(80px + 2rem);padding-bottom:2rem;width:800px;margin:0 auto}@media (max-width:992px){.search-results{width:100%;padding:0 2rem;padding-top:calc(60px + 2rem)}}.search-results .search-results-title{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-bottom:1rem}@media (max-width:640px){.search-results .search-results-title{-ms-flex-wrap:wrap;flex-wrap:wrap}}.search-results .search-results-title .inline-result{margin-right:1rem;font-size:1.5rem}@media (max-width:640px){.search-results .search-results-title .inline-result{margin-bottom:.5rem}}.search-results .search-results-title form{display:-webkit-box;display:-ms-flexbox;display:flex;width:300px;height:2rem;position:relative}@media (max-width:640px){.search-results .search-results-title form{width:100% }}.search-results .search-results-title form input{width:100%;padding:0 2rem 0 1rem;height:100%;border:none;outline:none;border-bottom:2px solid #000;background:#f5f5f5;font-family:Barlow,sans-serif}.search-results .search-results-title form button{position:absolute;top:0;right:0;width:2rem;height:100%;border:none;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background:#000}.search-results .search-results-title form button svg{width:1rem;height:1rem}.search-results .search-result-card{margin-bottom:1rem}.search-results .search-result-card .title-field a{-webkit-transition:color .2s ease-in-out;transition:color .2s ease-in-out}.search-results .search-result-card .title-field a:hover{color:#98c1ff}.search-results .search-result-card .relevance-field{font-size:.85rem;margin:.25rem 0;display:block}.search-results .search-result-card .relevance-field span{color:#98c1ff;font-size:.85rem}.search-results .search-result-card .summary-field{margin:0 0 .5rem 0}.legal{padding:150px 2rem 2rem 2rem}
+  </style>
+ </head>
+ <body class="term-page">
+  <!-- body-top -->
+  <!-- google tag manager -->
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WGZCHF" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WGZCHF');
+  </script>
+  <!-- end google tag manager -->
+  <!-- partner google analytics tracking -->
+  <script>
+   var _gaq=[['partner._setAccount', ''],['partner._trackPageview'],['partner._trackPageLoadTime']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))
+  </script>
+  <!-- end partner google analytics tracking -->
+  <!-- end body-top -->
+  <header class="site-header">
+   <div class="header-wrapper">
+    <a aria-label="home button" class="logo" href="//www.synonym.com">
+     Synonym.com
+    </a>
+    <div data-app="search-bar">
+    </div>
+   </div>
+   <div class="vocabulary-swiper-banner" data-app="vocabulary-swiper-banner">
+   </div>
+  </header>
+  <div class="widget-game-container">
+   <div data-app="widget-game">
+   </div>
+  </div>
+  <div class="page-container">
+   <div class="content-container">
+    <div class="main-column" data-title="Another word for BAD &gt; Synonyms &amp; Antonyms" data-url="https://www.synonym.com/synonyms/bad">
+     <div class="tabbed-header">
+      <div class="tab selected" data-id="synonyms">
+       Synonyms
+      </div>
+      <div class="tab" data-id="antonyms">
+       Antonyms
+      </div>
+      <div class="tab" data-id="etymology">
+       Etymology
+      </div>
+     </div>
+     <div class="sections-wrapper">
+      <div class="section">
+       <h3 class="section-title">
+        1. bad
+        <svg class="speech" data-term="bad" fill="black" viewbox="0 0 25 25" width="16px" xmlns="http://www.w3.org/2000/svg">
+         <g stroke-linecap="round" stroke-linejoin="round">
+          <path d="m11.9794 5.26614-5.00003 4h-4v5.99996h4l5.00003 4z">
+          </path>
+          <path d="m20.0493 5.19614c1.8748 1.87527 2.9279 4.41836 2.9279 7.06996 0 2.6517-1.0531 5.1948-2.9279 7.07m-3.53-10.60996c.9374.93764 1.464 2.20916 1.464 3.53496 0 1.3259-.5266 2.5974-1.464 3.535">
+          </path>
+         </g>
+        </svg>
+       </h3>
+       <p>
+        <strong>
+         adjective.
+        </strong>
+        ['ˈbæd'] having undesirable or negative qualities.
+       </p>
+       <div class="section-list-wrapper show" data-section="synonyms">
+        <h4 class="section-list-header">
+         Synonyms
+        </h4>
+        <ul class="section-list">
+         <li>
+          atrocious
+         </li>
+         <li>
+          unfavourable
+         </li>
+         <li>
+          corked
+         </li>
+         <li>
+          sad
+         </li>
+         <li>
+          horrid
+         </li>
+         <li>
+          incompetent
+         </li>
+         <li>
+          evil
+         </li>
+         <li>
+          icky
+         </li>
+         <li>
+          fearful
+         </li>
+         <li>
+          negative
+         </li>
+         <li>
+          painful
+         </li>
+         <li>
+          distressing
+         </li>
+         <li>
+          awful
+         </li>
+         <li>
+          hopeless
+         </li>
+         <li>
+          dreadful
+         </li>
+         <li>
+          terrible
+         </li>
+         <li>
+          rotten
+         </li>
+         <li>
+          rubber
+         </li>
+         <li>
+          lousy
+         </li>
+         <li>
+          severe
+         </li>
+         <li>
+          worse
+         </li>
+         <li>
+          frightful
+         </li>
+         <li>
+          hard
+         </li>
+         <li>
+          unspeakable
+         </li>
+         <li>
+          corky
+         </li>
+         <li>
+          no-good
+         </li>
+         <li>
+          unfavorable
+         </li>
+         <li>
+          crappy
+         </li>
+         <li>
+          mediocre
+         </li>
+         <li>
+          swingeing
+         </li>
+         <li>
+          tough
+         </li>
+         <li>
+          quality
+         </li>
+         <li>
+          pitiful
+         </li>
+         <li>
+          naughty
+         </li>
+         <li>
+          lamentable
+         </li>
+         <li>
+          unskilled
+         </li>
+         <li>
+          deplorable
+         </li>
+         <li>
+          worst
+         </li>
+         <li>
+          stinking
+         </li>
+         <li>
+          disobedient
+         </li>
+         <li>
+          ill
+         </li>
+         <li>
+          shitty
+         </li>
+         <li>
+          uncool
+         </li>
+         <li>
+          pretty
+         </li>
+         <li>
+          abominable
+         </li>
+         <li>
+          unsuitable
+         </li>
+         <li>
+          sorry
+         </li>
+         <li>
+          poor
+         </li>
+        </ul>
+       </div>
+       <div class="section-list-wrapper" data-section="antonyms">
+        <h4 class="section-list-header">
+         Antonyms
+        </h4>
+        <ul class="section-list">
+         <li>
+          obedient
+         </li>
+         <li>
+          good
+         </li>
+         <li>
+          best
+         </li>
+         <li>
+          better
+         </li>
+        </ul>
+       </div>
+       <div class="section-list-wrapper" data-section="etymology">
+        <h4 class="section-list-header">
+         Etymology
+        </h4>
+        <ul class="section-list">
+         <li>
+          bad (Middle English (1100-1500))
+         </li>
+         <li>
+          bæd (Old English (ca. 450-1100))
+         </li>
+        </ul>
+       </div>
+       <div class="inline-ad-wrapper">
+        <div class="inline-display-ad-desktop" data-ad-unit-index="1" data-ad-unit-name="inline">
+        </div>
+        <div class="inline-display-ad-mobile" data-ad-unit-index="1" data-ad-unit-name="slot">
+        </div>
+       </div>
+       <div class="games">
+        <h3 class="section-title">
+         Featured Games
+        </h3>
+        <div class="games-wrapper">
+         <div class="promo-wrapper sea-scrambler">
+          <div data-app="sea-scrambler-promo">
+          </div>
+         </div>
+         <div class="promo-wrapper wordtigo">
+          <div data-app="wordtigo-promo">
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="section">
+       <h3 class="section-title">
+        Words that Rhyme with Bad
+       </h3>
+       <ul>
+        <li>
+         sociedad
+        </li>
+        <li>
+         shahrzad
+        </li>
+        <li>
+         ciudad
+        </li>
+        <li>
+         mossad
+        </li>
+        <li>
+         mirad
+        </li>
+        <li>
+         hlad
+        </li>
+        <li>
+         arvad
+        </li>
+        <li>
+         vlad
+        </li>
+        <li>
+         scad
+        </li>
+        <li>
+         riyadh
+        </li>
+        <li>
+         riyad
+        </li>
+        <li>
+         plaid
+        </li>
+        <li>
+         grad
+        </li>
+        <li>
+         gladd
+        </li>
+        <li>
+         glad
+        </li>
+        <li>
+         flad
+        </li>
+        <li>
+         clad
+        </li>
+        <li>
+         brad
+        </li>
+        <li>
+         thad
+        </li>
+        <li>
+         tadd
+        </li>
+        <li>
+         tad
+        </li>
+        <li>
+         shadd
+        </li>
+        <li>
+         shad
+        </li>
+        <li>
+         schad
+        </li>
+        <li>
+         sad
+        </li>
+        <li>
+         radde
+        </li>
+        <li>
+         rad
+        </li>
+        <li>
+         pad
+        </li>
+        <li>
+         nad
+        </li>
+        <li>
+         madd
+        </li>
+       </ul>
+      </div>
+      <div class="section">
+       <h3 class="section-title">
+        Example sentences of the word bad
+       </h3>
+       <p>
+        <br/>
+        1.
+        <strong>
+         Adjective
+        </strong>
+        <br/>
+        It's no secret that eating too much steak and bacon is
+        <strong>
+         bad
+        </strong>
+        for your health.
+        <br/>
+        <br/>
+       </p>
+       <div class="inline-ad-wrapper">
+        <div class="inline-display-ad-desktop" data-ad-unit-index="2" data-ad-unit-name="inline">
+        </div>
+        <div class="inline-display-ad-mobile" data-ad-unit-index="2" data-ad-unit-name="slot">
+        </div>
+       </div>
+      </div>
+      <div class="section">
+       <h3 class="section-title">
+        Quotes containing the word bad
+       </h3>
+       <p>
+        <br/>
+        1. The story so far:In the beginning the Universe was created.This has made a lot of people very angry and been widely regarded as a
+        <strong>
+         bad
+        </strong>
+        move.
+        <br/>
+        <strong>
+         - Douglas Adams, The Restaurant at the End of the Universe
+        </strong>
+        <br/>
+        <br/>
+        2. The world is
+        <strong>
+         bad
+        </strong>
+        but not without hope. It is only hopeless when you look at it from an ideal viewpoint.
+        <br/>
+        <strong>
+         - Friedrich Durrenmatt
+        </strong>
+        <br/>
+        <br/>
+        3. A humorist is a person who feels
+        <strong>
+         bad
+        </strong>
+        , but who feels good about it.
+        <br/>
+        <strong>
+         - Don Herold
+        </strong>
+        <br/>
+        <br/>
+       </p>
+      </div>
+      <div class="section">
+       <h3 class="section-title">
+        2. bad
+       </h3>
+       <p>
+        <strong>
+         adjective.
+        </strong>
+        ['ˈbæd'] very intense.
+       </p>
+       <div class="section-list-wrapper show" data-section="synonyms">
+        <h4 class="section-list-header">
+         Synonyms
+        </h4>
+        <ul class="section-list">
+         <li>
+          big
+         </li>
+        </ul>
+       </div>
+       <div class="section-list-wrapper" data-section="antonyms">
+        <h4 class="section-list-header">
+         Antonyms
+        </h4>
+        <ul class="section-list">
+         <li>
+          virtuous
+         </li>
+         <li>
+          morality
+         </li>
+        </ul>
+       </div>
+       <div class="section-list-wrapper" data-section="etymology">
+        <h4 class="section-list-header">
+         Etymology
+        </h4>
+        <ul class="section-list">
+         <li>
+          bad (Middle English (1100-1500))
+         </li>
+         <li>
+          bæd (Old English (ca. 450-1100))
+         </li>
+        </ul>
+       </div>
+       <div class="inline-ad-wrapper">
+        <div class="inline-display-ad-desktop" data-ad-unit-index="3" data-ad-unit-name="inline">
+        </div>
+        <div class="inline-display-ad-mobile" data-ad-unit-index="3" data-ad-unit-name="slot">
+        </div>
+       </div>
+      </div>
+      <div class="section">
+       <h3 class="section-title">
+        3. bad
+       </h3>
+       <p>
+        <strong>
+         adjective.
+        </strong>
+        ['ˈbæd'] feeling physical discomfort or pain (
+        <code>
+         tough' is occasionally used colloquially for
+        </code>
+        bad').
+       </p>
+       <div class="section-list-wrapper show" data-section="synonyms">
+        <h4 class="section-list-header">
+         Synonyms
+        </h4>
+        <ul class="section-list">
+         <li>
+          uncomfortable
+         </li>
+        </ul>
+       </div>
+       <div class="section-list-wrapper" data-section="antonyms">
+        <h4 class="section-list-header">
+         Antonyms
+        </h4>
+        <ul class="section-list">
+         <li>
+          fragrant
+         </li>
+         <li>
+          unalarming
+         </li>
+        </ul>
+       </div>
+       <div class="section-list-wrapper" data-section="etymology">
+        <h4 class="section-list-header">
+         Etymology
+        </h4>
+        <ul class="section-list">
+         <li>
+          bad (Middle English (1100-1500))
+         </li>
+         <li>
+          bæd (Old English (ca. 450-1100))
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="section">
+       <h3 class="section-title">
+        4. bad
+       </h3>
+       <p>
+        <strong>
+         noun.
+        </strong>
+        ['ˈbæd'] that which is below standard or expectations as of ethics or decency.
+       </p>
+       <div class="section-list-wrapper show" data-section="synonyms">
+        <h4 class="section-list-header">
+         Synonyms
+        </h4>
+        <ul class="section-list">
+         <li>
+          undesirability
+         </li>
+         <li>
+          quality
+         </li>
+         <li>
+          unworthiness
+         </li>
+         <li>
+          worse
+         </li>
+         <li>
+          inadvisability
+         </li>
+         <li>
+          evil
+         </li>
+         <li>
+          badness
+         </li>
+         <li>
+          unsoundness
+         </li>
+        </ul>
+       </div>
+       <div class="section-list-wrapper" data-section="antonyms">
+        <h4 class="section-list-header">
+         Antonyms
+        </h4>
+        <ul class="section-list">
+         <li>
+          worthiness
+         </li>
+         <li>
+          desirability
+         </li>
+         <li>
+          advisability
+         </li>
+         <li>
+          goodness
+         </li>
+         <li>
+          asset
+         </li>
+         <li>
+          soundness
+         </li>
+        </ul>
+       </div>
+       <div class="section-list-wrapper" data-section="etymology">
+        <h4 class="section-list-header">
+         Etymology
+        </h4>
+        <ul class="section-list">
+         <li>
+          bad (Middle English (1100-1500))
+         </li>
+         <li>
+          bæd (Old English (ca. 450-1100))
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="section">
+       <h3 class="section-title">
+        5. bad
+       </h3>
+       <p>
+        <strong>
+         adjective.
+        </strong>
+        ['ˈbæd'] (of foodstuffs) not in an edible or usable condition.
+       </p>
+       <div class="section-list-wrapper show" data-section="synonyms">
+        <h4 class="section-list-header">
+         Synonyms
+        </h4>
+        <ul class="section-list">
+         <li>
+          spoilt
+         </li>
+         <li>
+          stale
+         </li>
+        </ul>
+       </div>
+       <div class="section-list-wrapper" data-section="antonyms">
+        <h4 class="section-list-header">
+         Antonyms
+        </h4>
+        <ul class="section-list">
+         <li>
+          uncritical
+         </li>
+         <li>
+          amicable
+         </li>
+         <li>
+          complimentary
+         </li>
+        </ul>
+       </div>
+       <div class="section-list-wrapper" data-section="etymology">
+        <h4 class="section-list-header">
+         Etymology
+        </h4>
+        <ul class="section-list">
+         <li>
+          bad (Middle English (1100-1500))
+         </li>
+         <li>
+          bæd (Old English (ca. 450-1100))
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="section">
+       <h3 class="section-title">
+        6. bad
+       </h3>
+       <p>
+        <strong>
+         adverb.
+        </strong>
+        ['ˈbæd'] very much; strongly.
+       </p>
+       <div class="section-list-wrapper" data-section="antonyms">
+        <h4 class="section-list-header">
+         Antonyms
+        </h4>
+        <ul class="section-list">
+         <li>
+          bold
+         </li>
+        </ul>
+       </div>
+       <div class="section-list-wrapper" data-section="etymology">
+        <h4 class="section-list-header">
+         Etymology
+        </h4>
+        <ul class="section-list">
+         <li>
+          bad (Middle English (1100-1500))
+         </li>
+         <li>
+          bæd (Old English (ca. 450-1100))
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="section">
+       <h3 class="section-title">
+        7. bad
+       </h3>
+       <p>
+        <strong>
+         adverb.
+        </strong>
+        ['ˈbæd'] with great intensity (
+        <code>
+         bad' is a nonstandard variant for
+        </code>
+        badly').
+       </p>
+       <div class="section-list-wrapper" data-section="antonyms">
+        <h4 class="section-list-header">
+         Antonyms
+        </h4>
+        <ul class="section-list">
+         <li>
+          supportive
+         </li>
+        </ul>
+       </div>
+       <div class="section-list-wrapper" data-section="etymology">
+        <h4 class="section-list-header">
+         Etymology
+        </h4>
+        <ul class="section-list">
+         <li>
+          bad (Middle English (1100-1500))
+         </li>
+         <li>
+          bæd (Old English (ca. 450-1100))
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="section">
+       <h3 class="section-title">
+        8. bad
+       </h3>
+       <p>
+        <strong>
+         adjective.
+        </strong>
+        ['ˈbæd'] characterized by wickedness or immorality.
+       </p>
+       <div class="section-list-wrapper" data-section="antonyms">
+        <h4 class="section-list-header">
+         Antonyms
+        </h4>
+        <ul class="section-list">
+         <li>
+          efficient
+         </li>
+        </ul>
+       </div>
+       <div class="section-list-wrapper" data-section="etymology">
+        <h4 class="section-list-header">
+         Etymology
+        </h4>
+        <ul class="section-list">
+         <li>
+          bad (Middle English (1100-1500))
+         </li>
+         <li>
+          bæd (Old English (ca. 450-1100))
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="section">
+       <h3 class="section-title">
+        9. bad
+       </h3>
+       <p>
+        <strong>
+         adjective.
+        </strong>
+        ['ˈbæd'] below average in quality or performance.
+       </p>
+       <div class="section-list-wrapper" data-section="antonyms">
+        <h4 class="section-list-header">
+         Antonyms
+        </h4>
+        <ul class="section-list">
+         <li>
+          courage
+         </li>
+        </ul>
+       </div>
+       <div class="section-list-wrapper" data-section="etymology">
+        <h4 class="section-list-header">
+         Etymology
+        </h4>
+        <ul class="section-list">
+         <li>
+          bad (Middle English (1100-1500))
+         </li>
+         <li>
+          bæd (Old English (ca. 450-1100))
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="section">
+       <h3 class="section-title">
+        10. bad
+       </h3>
+       <p>
+        <strong>
+         adjective.
+        </strong>
+        ['ˈbæd'] reproduced fraudulently.
+       </p>
+       <div class="section-list-wrapper show" data-section="synonyms">
+        <h4 class="section-list-header">
+         Synonyms
+        </h4>
+        <ul class="section-list">
+         <li>
+          forged
+         </li>
+         <li>
+          counterfeit
+         </li>
+        </ul>
+       </div>
+       <div class="section-list-wrapper" data-section="antonyms">
+        <h4 class="section-list-header">
+         Antonyms
+        </h4>
+        <ul class="section-list">
+         <li>
+          joyful
+         </li>
+         <li>
+          inoffensive
+         </li>
+         <li>
+          qualified
+         </li>
+        </ul>
+       </div>
+       <div class="section-list-wrapper" data-section="etymology">
+        <h4 class="section-list-header">
+         Etymology
+        </h4>
+        <ul class="section-list">
+         <li>
+          bad (Middle English (1100-1500))
+         </li>
+         <li>
+          bæd (Old English (ca. 450-1100))
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="rightrail-container">
+     <div class="sticky-container">
+      <div class="rightrail-display-ad" data-ad-unit-index="1" data-ad-unit-name="rightrail">
+      </div>
+      <div class="ad-divider">
+       Synonym.com
+      </div>
+      <div class="rightrail-display-ad" data-ad-unit-index="2" data-ad-unit-name="rightrail">
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="fixed-bottom-ad">
+    <div class="adhesion" data-ad-unit-index="1" data-ad-unit-name="adhesion">
+    </div>
+   </div>
+  </div>
+  <footer class="site-footer">
+   <div class="section-wrapper">
+    <ul class="navigation">
+     <li class="category">
+      <a aria-label="Terms of Use" href="/terms-of-use">
+       Terms of Use
+      </a>
+     </li>
+     <li class="category">
+      <a aria-label="Privacy Policy" href="/privacy-policy">
+       Privacy Policy
+      </a>
+     </li>
+     <li class="category">
+      <a aria-label="Copyright Policy" href="/copyright-policy">
+       Copyright Policy
+      </a>
+     </li>
+     <li class="category">
+      <a aria-label="Disclaimer" href="/disclaimer">
+       Disclaimer
+      </a>
+     </li>
+     <li class="category">
+      <a aria-label="CA Do Not Sell My Personal Information" href="/privacy-policy#ccpa">
+       CA Do Not Sell My Personal Information
+      </a>
+     </li>
+    </ul>
+   </div>
+  </footer>
+  <script src="//www.synonym.com/dist/js/main.js">
+  </script>
+  <div id="out-of-page">
+  </div>
+ </body>
+</html>

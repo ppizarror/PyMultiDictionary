@@ -123,6 +123,19 @@ class MultiDictionary(object):
             del _CACHED_SOUPS[bs[0]]
         return bs
 
+    def _save_bsoup(self, link: str, filename: str, encoding: str = 'utf-8') -> None:
+        """
+        Save bsoup to file.
+
+        :param link: Load soup link
+        :param filename: Output file
+        :param encoding: Website encoding
+        """
+        bs = self._bsoup(link, encoding)
+        html = str(bs.prettify())
+        with open(filename, 'w') as out:
+            out.write(html)
+
     def _synonym_com(self, word: str, _type: str) -> List[str]:
         """
         Retrieves synonyms from synonym.com.
@@ -146,16 +159,23 @@ class MultiDictionary(object):
                 section_type = subsection.find_all('h4', {'class': 'section-list-header'})
                 if len(section_type) != 1:
                     continue
-                section_type = section_type[0].text
+                section_type = section_type[0].text.strip()
                 if section_type != _type:
                     continue
                 sectionlist = subsection.find_all('ul', {'class': 'section-list'})
                 if len(sectionlist) != 1:
                     continue
-                for w in sectionlist[0].findAll('a'):
-                    wr = w.text.strip()
-                    if '(' not in wr and wr not in en_words:  # Avoid onld english
-                        en_words.append(wr)
+                sectionlist = sectionlist[0]
+                if 'href' not in sectionlist:  # Not links, but words
+                    for w in sectionlist.findAll('li'):
+                        wr = w.text.strip()
+                        if '(' not in wr and wr not in en_words:  # Avoid onld english
+                            en_words.append(wr)
+                else:
+                    for w in sectionlist.findAll('a'):
+                        wr = w.text.strip()
+                        if '(' not in wr and wr not in en_words:  # Avoid onld english
+                            en_words.append(wr)
         return en_words
 
     def get_synonyms(self) -> List[List[str]]:

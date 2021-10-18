@@ -160,6 +160,8 @@ class MultiDictionary(object):
         """
         assert _type in ('Synonyms', 'Antonyms')
         bs = self._bsoup(f'https://www.synonym.com/synonyms/{word}')
+        if bs is None:
+            return []
         results = bs.find_all('div', {'class': 'section'})
         en_words = []
         for section in results:  # Iterate each section

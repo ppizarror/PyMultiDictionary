@@ -42,7 +42,7 @@ class UtilsTest(unittest.TestCase):
             if tw == '' or '\n' in tw:
                 continue
             t.append(tw)
-        self.assertEqual(t, ['#', '#', 'Settings', 'button', '#'])
+        self.assertEqual(t, ['Settings', 'button'])
         self.assertEqual(tokenize('hello!!___..'), 'hello')
         self.assertEqual(tokenize('hypen-word!!1111'), 'hypen-word')
         self.assertEqual(tokenize('8934205@@hypen-word!!1111'), 'hypen-word')
@@ -53,6 +53,7 @@ class UtilsTest(unittest.TestCase):
         self.assertEqual(tokenize('__________________hyphen___word'), 'hyphen')
         self.assertEqual(tokenize('__________________hyphen-word'), 'hyphen-word')
         self.assertEqual(tokenize('12345aaa31123'), 'aaa')
+        self.assertEqual(tokenize('!!!'), '')
 
     def test_version(self) -> None:
         """

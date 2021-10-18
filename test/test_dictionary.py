@@ -83,6 +83,9 @@ class DictionaryTest(unittest.TestCase):
         self.assertIsNone(d._bsoup('abc'))
         self.assertIsNone(d._bsoup('abc1234aaaaaa.com'))
 
+        # Empty
+        self.assertEqual(d.meaning('en', ''), ([], '', ''))
+
     def test_meaning_wordnet(self) -> None:
         """
         Test word meaning in wordnet.
@@ -104,6 +107,7 @@ class DictionaryTest(unittest.TestCase):
                'Adverb': ['(often used as a combining form', "`good' is a nonstandard dialectal variant for `well'",
                           "completely and absolutely (`good' is sometimes used informally for `thoroughly'"]}
         self.assertEqual(d.meaning_wordnet('good'), out)
+        self.assertEqual(d.meaning_wordnet('!!!!'), {})
 
     def test_translate(self) -> None:
         """
@@ -144,6 +148,10 @@ class DictionaryTest(unittest.TestCase):
 
         # Translate another language
         d.translate('en', 'Good', to='ru')
+
+        # Empty
+        self.assertEqual(d.translate('en', '!!!'), [])
+        self.assertEqual(d.translate('en', '     !!!    '), [])
 
     def test_synonym(self) -> None:
         """
@@ -190,6 +198,9 @@ class DictionaryTest(unittest.TestCase):
         # Invalid codes
         self.assertRaises(InvalidLangCode, lambda: d.synonym('unknown', 'word'))
 
+        # Empty
+        self.assertEqual(d.synonym('en', '!!!'), [])
+
     def test_antonym(self) -> None:
         """
         Test antonyms.
@@ -212,6 +223,9 @@ class DictionaryTest(unittest.TestCase):
 
         # Save soup example
         d._save_bsoup(f'https://www.synonym.com/synonyms/good', _actualpath + 'data/synonyms_en_good_copy.txt')
+
+        # Empty
+        self.assertEqual(d.antonym('en', '!!!'), [])
 
     def test_language_name(self) -> None:
         """

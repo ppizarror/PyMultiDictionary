@@ -30,10 +30,10 @@ _CACHED_SOUPS: Dict[str, 'BeautifulSoup'] = {}  # Stores cached web
 
 class MultiDictionary(object):
     """
-    Dictionary. Support synonyms, antonyms and definitions from some languages.
+    Dictionary. Support synonyms, antonyms, meanings, and translations from some languages.
     """
 
-    _langs: Dict[str, Tuple[bool, bool]]  # synonyms, definition, translation, antonym
+    _langs: Dict[str, Tuple[bool, bool, bool, bool]]  # synonyms, meaning, translation, antonym
     _test_cached_file: Dict[str, str]  # If defined, loads that file instead
     _tokenize: bool  # Enables word tokenizer
     _words: List[str]
@@ -328,10 +328,10 @@ class MultiDictionary(object):
     # noinspection HttpUrlsUsage
     def meaning_wordnet(self, word: str) -> Dict[str, List[str]]:
         """
-        Query the definition of an english word in WordNet.
+        Query the meaning of an english word in WordNet.
 
         :param word: Word to query in English
-        :return: Dict with Type, List of definitions
+        :return: Dict with Type, List of meanings
         """
         word = self._process(word)
         if word == '':

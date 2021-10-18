@@ -166,7 +166,7 @@ class MultiDictionary(object):
                 if len(sectionlist) != 1:
                     continue
                 sectionlist = sectionlist[0]
-                if 'href' not in sectionlist:  # Not links, but words
+                if 'href' not in str(sectionlist):  # Not links, but words
                     for w in sectionlist.findAll('li'):
                         wr = w.text.strip()
                         if '(' not in wr and wr not in en_words:  # Avoid onld english

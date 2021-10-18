@@ -35,6 +35,7 @@ class MultiDictionary(object):
 
     _langs: Dict[str, Tuple[bool, bool]]  # synonyms, definition, translation, antonym
     _test_cached_file: Dict[str, str]  # If defined, loads that file instead
+    _tokenize: bool  # Enables word tokenizer
     _words: List[str]
     _words_lang: str
 
@@ -67,6 +68,7 @@ class MultiDictionary(object):
             'zh': (True, True, True, False)
         }
         self._test_cached_file = {}
+        self._tokenize = True
         self._words = []
         self._words_lang = ''
         for w in words:
@@ -84,8 +86,7 @@ class MultiDictionary(object):
         assert lang in self._langs.keys(), f'{lang} is not supported'
         self._words_lang = lang
 
-    @staticmethod
-    def _process(word: str) -> str:
+    def _process(self, word: str) -> str:
         """
         Process a given word.
 
@@ -94,7 +95,9 @@ class MultiDictionary(object):
         """
         assert isinstance(word, str), 'word must be an string'
         s = ''.join(i for i in word if not i.isdigit())  # remove numbers
-        s = ut.tokenize(s).lower()  # tokenize
+        if self._tokenize:  # tokenize
+            s = ut.tokenize(s)
+        s = s.lower()  # lowercase
         s = s.replace(' ', '').replace('\n', '')  # remove spaces
         return s
 
@@ -123,6 +126,19 @@ class MultiDictionary(object):
             del _CACHED_SOUPS[bs[0]]
         return bs
 
+    def _save_bsoup(self, link: str, filename: str, encoding: str = 'utf-8') -> None:
+        """
+        Save bsoup to file.
+
+        :param link: Load soup link
+        :param filename: Output file
+        :param encoding: Website encoding
+        """
+        bs = self._bsoup(link, encoding)
+        html = str(bs.prettify())
+        with open(filename, 'w') as out:
+            out.write(html)
+
     def _synonym_com(self, word: str, _type: str) -> List[str]:
         """
         Retrieves synonyms from synonym.com.
@@ -146,16 +162,23 @@ class MultiDictionary(object):
                 section_type = subsection.find_all('h4', {'class': 'section-list-header'})
                 if len(section_type) != 1:
                     continue
-                section_type = section_type[0].text
+                section_type = section_type[0].text.strip()
                 if section_type != _type:
                     continue
                 sectionlist = subsection.find_all('ul', {'class': 'section-list'})
                 if len(sectionlist) != 1:
                     continue
-                for w in sectionlist[0].findAll('a'):
-                    wr = w.text.strip()
-                    if '(' not in wr and wr not in en_words:  # Avoid onld english
-                        en_words.append(wr)
+                sectionlist = sectionlist[0]
+                if 'href' not in str(sectionlist):  # Not links, but words
+                    for w in sectionlist.findAll('li'):
+                        wr = w.text.strip()
+                        if '(' not in wr and wr not in en_words:  # Avoid onld english
+                            en_words.append(wr)
+                else:
+                    for w in sectionlist.findAll('a'):
+                        wr = w.text.strip()
+                        if '(' not in wr and wr not in en_words:  # Avoid onld english
+                            en_words.append(wr)
         return en_words
 
     def get_synonyms(self) -> List[List[str]]:

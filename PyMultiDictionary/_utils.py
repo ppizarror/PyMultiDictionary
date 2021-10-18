@@ -20,7 +20,7 @@ from iso639.exceptions import InvalidLanguageValue
 from PyMultiDictionary._tokenizer import *
 
 # Tokenizer
-_TOKENIZER = RegexpTokenizer(r'\w+')
+_TOKENIZER = RegexpTokenizer(r'\w+(?:-\w+)*')
 
 # Enhanced lang names
 LANG_NAMES = {
@@ -167,6 +167,9 @@ def tokenize(s: str) -> str:
     :return: Tokenized word
     """
     s = str(s)
+    s = s.replace('_', ' ')  # Remove underscore
+    s = s.replace('–', '-')  # uniform chars
+    s = ''.join([i for i in s if not i.isdigit()])  # remove digits
     try:
         return _TOKENIZER.tokenize(s)[0]
     except IndexError:

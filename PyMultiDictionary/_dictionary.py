@@ -35,6 +35,7 @@ class MultiDictionary(object):
 
     _langs: Dict[str, Tuple[bool, bool]]  # synonyms, definition, translation, antonym
     _test_cached_file: Dict[str, str]  # If defined, loads that file instead
+    _tokenize: bool  # Enables word tokenizer
     _words: List[str]
     _words_lang: str
 
@@ -67,6 +68,7 @@ class MultiDictionary(object):
             'zh': (True, True, True, False)
         }
         self._test_cached_file = {}
+        self._tokenize = True
         self._words = []
         self._words_lang = ''
         for w in words:
@@ -84,8 +86,7 @@ class MultiDictionary(object):
         assert lang in self._langs.keys(), f'{lang} is not supported'
         self._words_lang = lang
 
-    @staticmethod
-    def _process(word: str) -> str:
+    def _process(self, word: str) -> str:
         """
         Process a given word.
 
@@ -94,7 +95,9 @@ class MultiDictionary(object):
         """
         assert isinstance(word, str), 'word must be an string'
         s = ''.join(i for i in word if not i.isdigit())  # remove numbers
-        s = ut.tokenize(s).lower()  # tokenize
+        if self._tokenize:  # tokenize
+            s = ut.tokenize(s)
+        s = s.lower()  # lowercase
         s = s.replace(' ', '').replace('\n', '')  # remove spaces
         return s
 

@@ -54,6 +54,11 @@ class DictionaryTest(unittest.TestCase):
         self.assertEqual(d._process('  '), '')
         self.assertEqual(d._process('\n\n!\nthis word'), 'this')
         self.assertEqual(d._process('<hack>'), 'hack')
+        self.assertEqual(d._process('hyphen-word1111    '), 'hyphen-word')
+
+        # Disable tokenize
+        d._tokenize = False
+        self.assertEqual(d._process('<hack>'), '<hack>')
 
     def test_meaning(self) -> None:
         """

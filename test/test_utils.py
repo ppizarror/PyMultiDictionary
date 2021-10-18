@@ -44,6 +44,15 @@ class UtilsTest(unittest.TestCase):
             t.append(tw)
         self.assertEqual(t, ['#', '#', 'Settings', 'button', '#'])
         self.assertEqual(tokenize('hello!!___..'), 'hello')
+        self.assertEqual(tokenize('hypen-word!!1111'), 'hypen-word')
+        self.assertEqual(tokenize('8934205@@hypen-word!!1111'), 'hypen-word')
+        self.assertEqual(tokenize('@@hypen-word!!1111'), 'hypen-word')
+        self.assertEqual(tokenize('893420  5@@  hypen-word!!1111'), 'hypen-word')
+        self.assertEqual(tokenize('893420  5@@  hypen–word!!1111'), 'hypen-word')
+        self.assertEqual(tokenize('hyphen_word'), 'hyphen')
+        self.assertEqual(tokenize('__________________hyphen___word'), 'hyphen')
+        self.assertEqual(tokenize('__________________hyphen-word'), 'hyphen-word')
+        self.assertEqual(tokenize('12345aaa31123'), 'aaa')
 
     def test_version(self) -> None:
         """

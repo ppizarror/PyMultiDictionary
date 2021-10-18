@@ -10,11 +10,11 @@ from setuptools import setup, find_packages
 import PyMultiDictionary
 
 # Load readme
-with open('README.rst') as f:
+with open('README.rst', encoding='utf-8') as f:
     long_description = f.read()
 
 # Load requirements
-with open('requirements.txt') as f:
+with open('requirements.txt', encoding='utf-8') as f:
     requirements = []
     for line in f:
         requirements.append(line.strip())

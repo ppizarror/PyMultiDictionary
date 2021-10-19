@@ -48,11 +48,12 @@ class MultiDictionary(object):
     Dictionary. Support synonyms, antonyms, meanings, and translations from some languages.
     """
 
+    _max_cached_websites: int  # Maximum stored websites
     _langs: Dict[str, Tuple[bool, bool, bool, bool]]  # synonyms, meaning, translation, antonym
     _test_cached_file: Dict[str, str]  # If defined, loads that file instead
     _tokenize: bool  # Enables word tokenizer
-    _words: List[str]
-    _words_lang: str
+    _words: List[str]  # List of words passed to the constructor
+    _words_lang: str  # Language of the words passed to the constructor
 
     def __init__(self, *words: Tuple[str, ...]) -> None:
         """
@@ -82,6 +83,7 @@ class MultiDictionary(object):
             'uk': (True, True, True, False),
             'zh': (True, True, True, False)
         }
+        self._max_cached_websites = 15
         self._test_cached_file = {}
         self._tokenize = True
         self._words = []
@@ -138,7 +140,7 @@ class MultiDictionary(object):
                 return None
         bs = BeautifulSoup(data, 'html.parser')
         _CACHED_SOUPS[link] = bs
-        if len(bs_keys) >= 50:
+        if len(bs_keys) >= self._max_cached_websites:
             del _CACHED_SOUPS[bs[0]]
         return bs
 
@@ -298,8 +300,8 @@ class MultiDictionary(object):
                     words.append(w)
             words.sort()
 
-        else:
-            raise InvalidDictionary(f'Dictionary {dictionary} cannot handle language {lang}')
+        # else:
+        #     raise InvalidDictionary(f'Dictionary {dictionary} cannot handle language {lang}')
 
         return words
 
@@ -456,8 +458,8 @@ class MultiDictionary(object):
             # Sort translations
             words = sorted(words, key=lambda x: x[0])
 
-        else:
-            raise InvalidDictionary(f'Dictionary {dictionary} cannot handle language {lang}')
+        # else:
+        #     raise InvalidDictionary(f'Dictionary {dictionary} cannot handle language {lang}')
 
         return words
 

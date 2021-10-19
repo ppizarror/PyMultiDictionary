@@ -88,11 +88,7 @@ class DictionaryTest(unittest.TestCase):
         # Empty
         self.assertEqual(d.meaning('en', ''), ([], '', ''))
 
-    def test_meaning_wordnet(self) -> None:
-        """
-        Test word meaning in wordnet.
-        """
-        d = self._get_dictionary()
+        # Test wordnet
         out = {'Noun': ['benefit', 'moral excellence or admirableness', 'that which is pleasing or valuable or useful',
                         'articles of commerce'],
                'Adjective': ['having desirable or positive qualities especially those suitable for a thing specified',
@@ -109,6 +105,9 @@ class DictionaryTest(unittest.TestCase):
                'Adverb': ['(often used as a combining form', "`good' is a nonstandard dialectal variant for `well'",
                           "completely and absolutely (`good' is sometimes used informally for `thoroughly'"]}
         self.assertEqual(d.meaning('en', 'good', DICT_WORDNET), out)
+
+        # Test invalid dictionary
+        self.assertRaises(InvalidDictionary, lambda: d.meaning('es', 'word', DICT_WORDNET))
 
     def test_translate(self) -> None:
         """
@@ -153,6 +152,9 @@ class DictionaryTest(unittest.TestCase):
         # Empty
         self.assertEqual(d.translate('en', '!!!'), [])
         self.assertEqual(d.translate('en', '     !!!    '), [])
+
+        # Test invalid dictionary
+        self.assertRaises(AssertionError, lambda: d.translate('es', 'word', dictionary=DICT_SYNONYMCOM))
 
     def test_synonym(self) -> None:
         """
@@ -258,6 +260,9 @@ class DictionaryTest(unittest.TestCase):
 
         # Empty
         self.assertEqual(d.antonym('en', '!!!'), [])
+
+        # Test invalid dictionary
+        # self.assertRaises(InvalidDictionary, lambda: d.antonym('es', 'word', dictionary=DICT_SYNONYMCOM))
 
     def test_language_name(self) -> None:
         """

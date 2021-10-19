@@ -247,6 +247,17 @@ class MultiDictionary(object):
                     words.append(w)
             # words.sort()
 
+        elif dictionary == DICT_THESAURUS and lang == 'en':
+            word = word.replace(' ', '%20')
+            bs = self._bsoup(f'https://www.thesaurus.com/browse/{word}')
+            if bs is None:
+                return words
+            results = [i for i in bs.find_all('div', {'id': 'meanings'})]
+            if len(results) == 1:
+                results = results[0]
+                for li in results.find_all('li'):
+                    words.append(li.text.strip())
+
         else:
             raise InvalidDictionary(f'Dictionary {dictionary} cannot handle language {lang}')
 
@@ -321,6 +332,7 @@ class MultiDictionary(object):
             return types, words, wiki
 
         if dictionary == DICT_EDUCALINGO and lang in _EDUCALINGO_LANGS:
+            word = word.replace(' ', '-')
             bs = self._bsoup(f'https://educalingo.com/en/dic-{lang}/{word}')
             if bs is not None:
                 results = [i for i in bs.find_all('div', {'id': 'cuadro_categoria_gramatical'})]
@@ -410,6 +422,7 @@ class MultiDictionary(object):
             raise InvalidLangCode(f'{lang} code is not supported for translation')
 
         if lang in _EDUCALINGO_LANGS:
+            word = word.replace(' ', '-')
             bs = self._bsoup(f'https://educalingo.com/en/dic-{lang}/{word}')
             if bs is None:
                 return words

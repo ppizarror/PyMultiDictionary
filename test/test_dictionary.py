@@ -31,7 +31,8 @@ class DictionaryTest(unittest.TestCase):
             'https://educalingo.com/en/dic-en/good': _actualpath + 'data/educalingo_en_good.txt',
             'https://www.synonym.com/synonyms/bad': _actualpath + 'data/synonyms_en_bad.txt',
             'https://www.synonym.com/synonyms/good': _actualpath + 'data/synonyms_en_good.txt',
-            'https://www.synonym.com/synonyms/not-bad': _actualpath + 'data/synonyms_en_not-bad.txt'
+            'https://www.synonym.com/synonyms/not-bad': _actualpath + 'data/synonyms_en_not-bad.txt',
+            'https://www.thesaurus.com/browse/for%20this%20reason': _actualpath + 'data/thesaurus-for-this-reason.txt'
         }
 
         return d
@@ -158,6 +159,12 @@ class DictionaryTest(unittest.TestCase):
         Test word synonym.
         """
         d = self._get_dictionary()
+
+        # Test thesaurus
+        self.assertEqual(d.synonym('en', 'for this reason', DICT_THESAURUS),
+                         ['accordingly', 'so', 'then', 'thus', 'consequently', 'hence', 'thence', 'and so', 'ergo',
+                          'for', 'forasmuch as', 'in consequence', 'in that event', 'inasmuch as', 'on account of',
+                          'on the grounds', 'since', 'therefrom', 'thereupon', 'to that end', 'whence', 'wherefore'])
 
         # Synonyms
         syn = ['able', 'acceptable', 'accomplished', 'accurate', 'adept', 'adequate', 'admirable', 'adroit',

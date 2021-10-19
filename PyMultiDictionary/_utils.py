@@ -175,6 +175,6 @@ def tokenize(s: str) -> str:
     # Tokenize
     tok = _TOKENIZER.tokenize(s)
     if len(tok) >= 1:
-        return _TOKENIZER.tokenize(s)[0]
+        return ' '.join(_TOKENIZER.tokenize(s))
     else:
         return ''

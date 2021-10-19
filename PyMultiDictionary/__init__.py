@@ -6,7 +6,7 @@ PyMultiDictionary is a Dictionary Module for Python 2 to get meanings, translati
 """
 
 try:
-    from PyMultiDictionary._dictionary import MultiDictionary
+    from PyMultiDictionary._dictionary import *
 except ModuleNotFoundError:
     pass
 import PyMultiDictionary.version

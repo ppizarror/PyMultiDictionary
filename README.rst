@@ -121,12 +121,14 @@ This will return a tuple containing the meanings of the word, in the format
      'The first definition of good in the dictionary is having admirable ...',
      'Good may refer to: ▪ Good and evil, the distinction between positiv...')
 
-Words in English can be also obtained from
-WordNet:
+All methods support other dictionaries, for example, 'wordnet' can be used
+for english words.
 
 .. code-block:: python
 
-    print(dictionary.meaning_wordnet('good'))
+    from PyMultiDictionary import DICT_WORDNET
+    dictionary = MultiDictionary()
+    print(dictionary.meaning('en', 'good', dictionary=DICT_WORDNET))
 
 Will return:
 
@@ -175,17 +177,26 @@ Example:
 
 .. code-block:: python
 
-    from PyMultiDictionary import MultiDictionary
+    from PyMultiDictionary import MultiDictionary, DICT_EDUCALINGO
 
     dictionary=MultiDictionary('hotel', 'ambush', 'nonchalant', 'perceptive')
     dictionary.set_words_lang('en') # All words are english
     
-    print(dictionary.get_meanings()) # This print the meanings of all the words
-    print(dictionary.get_meanings_wordnet()) # This print the meanings of all the words
+    print(dictionary.get_meanings(dictionary=DICT_EDUCALINGO)) # This print the meanings of all the words
     print(dictionary.get_synonyms()) # Get synonyms list
     print(dictionary.get_antonyms()) # Get antonyms
     print(dictionary.get_translations()) # This will translate all words to over 20 languages
     print(dictionary.get_translations(to='ru')) # This will translate all words to Russian (if Google API available)
+
+Supported dictionaries
+----------------------
+
+- **DICT_EDUCALINGO**: Meaning, synonym, translation for all languages
+- **DICT_SYNONYMCOM**: Synonyms and Antonyms (English)
+- **DICT_THESAURUS**: Synonyms (English)
+- **DICT_WORDNET**: Meanings (English)
+
+There are much more dictionaries to come. Just contribute to this repo!
 
 Author
 ------

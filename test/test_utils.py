@@ -49,11 +49,13 @@ class UtilsTest(unittest.TestCase):
         self.assertEqual(tokenize('@@hypen-word!!1111'), 'hypen-word')
         self.assertEqual(tokenize('893420  5@@  hypen-word!!1111'), 'hypen-word')
         self.assertEqual(tokenize('893420  5@@  hypen–word!!1111'), 'hypen-word')
-        self.assertEqual(tokenize('hyphen_word'), 'hyphen')
-        self.assertEqual(tokenize('__________________hyphen___word'), 'hyphen')
+        self.assertEqual(tokenize('hyphen_word'), 'hyphen word')
+        self.assertEqual(tokenize('__________________hyphen___word'), 'hyphen word')
         self.assertEqual(tokenize('__________________hyphen-word'), 'hyphen-word')
         self.assertEqual(tokenize('12345aaa31123'), 'aaa')
         self.assertEqual(tokenize('!!!'), '')
+        self.assertEqual(tokenize('for these reasons'), 'for these reasons')
+        self.assertEqual(tokenize('for                       these reasons'), 'for these reasons')
 
     def test_version(self) -> None:
         """

@@ -6,9 +6,9 @@ TEST DICTIONARY
 Test dictionary object.
 """
 
-from PyMultiDictionary import MultiDictionary
+from PyMultiDictionary import *
 # noinspection PyProtectedMember
-from PyMultiDictionary._dictionary import InvalidLangCode
+from PyMultiDictionary._dictionary import InvalidLangCode, InvalidDictionary
 import os
 import unittest
 
@@ -30,7 +30,8 @@ class DictionaryTest(unittest.TestCase):
             'http://wordnetweb.princeton.edu/perl/webwn?s=good': _actualpath + 'data/wordnet_en_good.txt',
             'https://educalingo.com/en/dic-en/good': _actualpath + 'data/educalingo_en_good.txt',
             'https://www.synonym.com/synonyms/bad': _actualpath + 'data/synonyms_en_bad.txt',
-            'https://www.synonym.com/synonyms/good': _actualpath + 'data/synonyms_en_good.txt'
+            'https://www.synonym.com/synonyms/good': _actualpath + 'data/synonyms_en_good.txt',
+            'https://www.synonym.com/synonyms/not-bad': _actualpath + 'data/synonyms_en_not-bad.txt'
         }
 
         return d
@@ -44,15 +45,15 @@ class DictionaryTest(unittest.TestCase):
         # Test word parse
         self.assertEqual(d._process('word!!!  '), 'word')
         self.assertEqual(d._process('invalid1'), 'invalid')
-        self.assertEqual(d._process('multiple words'), 'multiple')
-        self.assertEqual(d._process('multiple!!!! words'), 'multiple')
+        self.assertEqual(d._process('multiple words'), 'multiple words')
+        self.assertEqual(d._process('multiple!!!! words'), 'multiple words')
         self.assertEqual(d._process('Abstract'), 'abstract')
         self.assertEqual(d._process('1234Abstract'), 'abstract')
         self.assertEqual(d._process('1234          Abstract'), 'abstract')
         self.assertEqual(d._process('1234 !!! .....        Abstract'), 'abstract')
-        self.assertEqual(d._process('word.epic'), 'word')
+        self.assertEqual(d._process('word.epic'), 'word epic')
         self.assertEqual(d._process('  '), '')
-        self.assertEqual(d._process('\n\n!\nthis word'), 'this')
+        self.assertEqual(d._process('\n\n!\nthis word'), 'this word')
         self.assertEqual(d._process('<hack>'), 'hack')
         self.assertEqual(d._process('hyphen-word1111    '), 'hyphen-word')
 
@@ -106,8 +107,7 @@ class DictionaryTest(unittest.TestCase):
                              'not left to spoil', 'generally admired'],
                'Adverb': ['(often used as a combining form', "`good' is a nonstandard dialectal variant for `well'",
                           "completely and absolutely (`good' is sometimes used informally for `thoroughly'"]}
-        self.assertEqual(d.meaning_wordnet('good'), out)
-        self.assertEqual(d.meaning_wordnet('!!!!'), {})
+        self.assertEqual(d.meaning('en', 'good', DICT_WORDNET), out)
 
     def test_translate(self) -> None:
         """
@@ -161,42 +161,67 @@ class DictionaryTest(unittest.TestCase):
 
         # Synonyms
         syn = ['able', 'acceptable', 'accomplished', 'accurate', 'adept', 'adequate', 'admirable', 'adroit',
-               'advantage', 'advantageous', 'agreeable', 'altruistic', 'ample', 'angelic', 'angelical', 'appropriate',
-               'auspicious', 'authentic', 'avail', 'awesome', 'bad', 'balmy', 'bang-up', 'barrie', 'beatific', 'beaut',
-               'behalf', 'belting', 'beneficence', 'beneficent', 'beneficial', 'benefit', 'benevolent', 'benignancy',
-               'benignity', 'best', 'better', 'bitchin´', 'bona fide', 'booshit', 'bright', 'bully', 'calm', 'capable',
-               'capital', 'charitable', 'cheerful', 'choice', 'clean', 'clear', 'clement', 'clever', 'cloudless',
-               'commendable', 'common good', 'compelling', 'competent', 'complete', 'congenial', 'considerable',
-               'constructive', 'convenient', 'convincing', 'convivial', 'corking', 'correct', 'cracking', 'crucial',
-               'dandy', 'decorous', 'definite', 'dependable', 'desirability', 'desirable', 'dexterous', 'dinkum',
-               'divine', 'dope', 'dutiful', 'eatable', 'edible', 'efficient', 'enjoyable', 'enjoyment', 'entire',
-               'estimable', 'ethical', 'exact', 'excellence', 'excellent', 'exemplary', 'exo', 'expert', 'extensive',
-               'fair', 'fancy', 'favorable', 'favourable', 'fine', 'finest', 'first-class', 'first-rate', 'fit',
-               'fitting', 'friendly', 'full', 'gain', 'genuine', 'good enough', 'goodish', 'goodness', 'goody-goody',
-               'gracious', 'graciousness', 'gratifying', 'great', 'groovy', 'halcyon', 'happy', 'healthy', 'helpful',
-               'honest', 'honorable', 'honourable', 'humane', 'in order', 'interest', 'judicious', 'keen', 'kind',
-               'kind-hearted', 'kindly', 'kindness', 'large', 'legitimate', 'long', 'lucrative', 'mannerly', 'merciful',
-               'merit', 'mild', 'moral', 'moral excellence', 'morality', 'neat', 'nice', 'nifty', 'not bad', 'obedient',
-               'obliging', 'of a high standard', 'of high quality', 'opportune', 'optimum', 'orderly', 'peachy',
-               'pearler', 'persuasive', 'phat', 'pleasant', 'pleasing', 'pleasurable', 'polite', 'positive',
-               'praiseworthy', 'precise', 'principled', 'probity', 'productive', 'proficient', 'profit', 'profitable',
-               'proper', 'propitious', 'prudent', 'quality', 'rad', 'real', 'reasonable', 'rectitude', 'redeeming',
-               'redemptive', 'reliable', 'respectable', 'right', 'righteous', 'righteousness', 'sainted', 'saintlike',
-               'saintly', 'salubrious', 'salutary', 'satisfactory', 'satisfying', 'saving', 'schmick', 'seemly',
-               'sensible', 'service', 'shrewd', 'sik', 'skilled', 'slap-up', 'smashing', 'solid', 'sound', 'soundness',
-               'special', 'splendid', 'substantial', 'sufficient', 'suitable', 'summum bonum', 'sunny', 'sunshiny',
-               'super', 'superb', 'superior', 'swell', 'talented', 'tasty', 'thorough', 'timely', 'tiptop', 'true',
-               'trustworthy', 'uncorrupted', 'untainted', 'up to scratch', 'up to the mark', 'upright', 'uprightness',
-               'upstanding', 'use', 'useful', 'usefulness', 'valid', 'valuable', 'vantage', 'virtue', 'virtuous',
-               'virtuousness', 'welfare', 'well', 'well behaved', 'well-behaved', 'well-being', 'well-disposed',
-               'well-mannered', 'well-reasoned', 'well-thought-out', 'well-timed', 'wellbeing', 'white', 'whole',
-               'wholesome', 'wicked', 'wisdom', 'wise', 'wiseness', 'world-class', 'worth', 'worthiness', 'worthwhile',
-               'worthy']
+               'advantage', 'advantageous', 'agreeable', 'altruistic', 'ample', 'appropriate', 'auspicious',
+               'authentic', 'avail', 'awesome', 'bad', 'balmy', 'barrie', 'beaut', 'behalf', 'belting', 'beneficent',
+               'beneficial', 'benefit', 'benevolent', 'best', 'bitchin´', 'bona fide', 'booshit', 'bright', 'calm',
+               'capable', 'capital', 'charitable', 'cheerful', 'choice', 'clear', 'clement', 'clever', 'cloudless',
+               'commendable', 'compelling', 'competent', 'complete', 'congenial', 'considerable', 'constructive',
+               'convenient', 'convincing', 'convivial', 'correct', 'crucial', 'decorous', 'definite', 'dependable',
+               'desirable', 'dexterous', 'dinkum', 'divine', 'dope', 'dutiful', 'eatable', 'edible', 'efficient',
+               'enjoyable', 'entire', 'estimable', 'ethical', 'exact', 'excellence', 'excellent', 'exemplary', 'exo',
+               'expert', 'extensive', 'fair', 'fancy', 'favourable', 'fine', 'finest', 'first-class', 'first-rate',
+               'fit', 'fitting', 'friendly', 'full', 'gain', 'genuine', 'goodness', 'gracious', 'gratifying', 'great',
+               'halcyon', 'happy', 'healthy', 'helpful', 'honest', 'honourable', 'humane', 'interest', 'judicious',
+               'kind', 'kind-hearted', 'kindly', 'large', 'legitimate', 'long', 'lucrative', 'mannerly', 'merciful',
+               'merit', 'mild', 'moral', 'morality', 'obedient', 'obliging', 'opportune', 'orderly', 'pearler',
+               'persuasive', 'phat', 'pleasant', 'pleasing', 'pleasurable', 'polite', 'positive', 'praiseworthy',
+               'precise', 'probity', 'productive', 'proficient', 'profit', 'profitable', 'proper', 'propitious',
+               'prudent', 'rad', 'real', 'reasonable', 'rectitude', 'reliable', 'right', 'righteous', 'righteousness',
+               'salubrious', 'salutary', 'satisfactory', 'satisfying', 'schmick', 'seemly', 'sensible', 'service',
+               'shrewd', 'sik', 'skilled', 'solid', 'sound', 'special', 'splendid', 'substantial', 'sufficient',
+               'suitable', 'sunny', 'sunshiny', 'super', 'superb', 'superior', 'talented', 'tasty', 'thorough',
+               'timely', 'tiptop', 'true', 'trustworthy', 'uncorrupted', 'untainted', 'upright', 'uprightness', 'use',
+               'useful', 'usefulness', 'valid', 'valuable', 'virtue', 'virtuous', 'welfare', 'well-behaved',
+               'well-disposed', 'well-mannered', 'well-reasoned', 'well-thought-out', 'well-timed', 'wellbeing',
+               'whole', 'wholesome', 'wicked', 'wise', 'world-class', 'worth', 'worthwhile', 'worthy']
         self.assertEqual(d.synonym('en', 'good'), syn)
         self.assertIsInstance(d.synonym('en', 'epic'), list)
 
+        # Define the dictionary combination
+        self.assertEqual(
+            d.synonym('en', 'good', DICT_SYNONYMCOM),
+            ['great', 'nice', 'excellent', 'fine', 'well', 'quality', 'of high quality',
+             'of a high standard', 'superior', 'superb', 'acceptable', 'up to the mark', 'up to scratch',
+             'in order', 'slap-up', 'bang-up', 'cracking', 'nifty', 'neat', 'goodish', 'smashing',
+             'obedient', 'well-behaved', 'best', 'corking', 'respectable', 'favourable', 'not bad',
+             'redeeming', 'favorable', 'good enough', 'satisfactory', 'dandy', 'solid', 'keen', 'swell',
+             'bully', 'better', 'groovy', 'peachy', 'well behaved', 'ample', 'virtuous', 'righteous',
+             'moral', 'ethical', 'upright', 'upstanding', 'principled', 'exemplary', 'clean',
+             'goody-goody', 'saintlike', 'right', 'saintly', 'angelical', 'worthy', 'angelic',
+             'redemptive', 'saving', 'white', 'goodness', 'sainted', 'beatific', 'advantage',
+             'common good', 'vantage', 'virtue', 'righteousness', 'morality', 'uprightness',
+             'summum bonum', 'moral excellence', 'kindness', 'virtuousness', 'benignancy', 'graciousness',
+             'beneficence', 'benignity', 'honorable', 'estimable', 'beneficial', 'benefit', 'profit',
+             'gain', 'interest', 'welfare', 'well-being', 'enjoyment', 'wiseness', 'wisdom',
+             'desirability', 'worthiness', 'optimum', 'soundness'])
+
+        # Test with spaces
+        self.assertEqual(
+            d.synonym('en', 'not bad', DICT_SYNONYMCOM),
+            ['atrocious', 'unfavourable', 'corked', 'sad', 'horrid', 'incompetent', 'evil', 'icky', 'fearful',
+             'negative', 'painful', 'distressing', 'awful', 'hopeless', 'dreadful', 'terrible', 'rotten', 'rubber',
+             'lousy', 'severe', 'worse', 'frightful', 'hard', 'unspeakable', 'corky', 'no-good', 'unfavorable',
+             'crappy', 'mediocre', 'swingeing', 'tough', 'quality', 'pitiful', 'naughty', 'lamentable', 'unskilled',
+             'deplorable', 'worst', 'stinking', 'disobedient', 'ill', 'shitty', 'uncool', 'pretty', 'abominable',
+             'unsuitable', 'sorry', 'poor', 'big', 'uncomfortable', 'undesirability', 'unworthiness', 'inadvisability',
+             'badness', 'unsoundness', 'spoilt', 'stale', 'bad', 'horrifying', 'horrible', 'alarming', 'ugly',
+             'monstrous', 'grievous'])
+
         # Invalid codes
         self.assertRaises(InvalidLangCode, lambda: d.synonym('unknown', 'word'))
+
+        # Test invalid dictionary
+        self.assertRaises(InvalidDictionary, lambda: d.synonym('es', 'word', DICT_SYNONYMCOM))
 
         # Empty
         self.assertEqual(d.synonym('en', '!!!'), [])
@@ -251,5 +276,4 @@ class DictionaryTest(unittest.TestCase):
         self.assertEqual(len(d.get_synonyms()), 2)
         self.assertEqual(len(d.get_antonyms()), 2)
         self.assertEqual(len(d.get_meanings()), 2)
-        self.assertEqual(len(d.get_meanings_wordnet()), 2)
         self.assertEqual(len(d.get_translations()), 2)

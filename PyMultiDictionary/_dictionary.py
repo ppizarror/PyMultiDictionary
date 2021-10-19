@@ -7,6 +7,10 @@ Dictionary object.
 """
 
 __all__ = [
+    'DICT_EDUCALINGO',
+    'DICT_SYNONYMCOM',
+    'DICT_THESAURUS',
+    'DICT_WORDNET',
     'MultiDictionary'
 ]
 
@@ -17,15 +21,26 @@ import PyMultiDictionary._utils as ut
 
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
-from typing import Dict, Tuple, Optional, List
+from typing import Dict, Tuple, Optional, List, Union
 from warnings import warn
 
 # Dicts
-_EDUCALINGO = ('bn', 'de', 'en', 'es', 'fr', 'hi', 'it', 'ja', 'jv', 'ko', 'mr',
-               'ms', 'pl', 'pt', 'ro', 'ru', 'ta', 'tr', 'uk', 'zh')
+_EDUCALINGO_LANGS = ('bn', 'de', 'en', 'es', 'fr', 'hi', 'it', 'ja', 'jv', 'ko', 'mr',
+                     'ms', 'pl', 'pt', 'ro', 'ru', 'ta', 'tr', 'uk', 'zh')
+
+DICT_EDUCALINGO = 'educalingo'
+DICT_SYNONYMCOM = 'synonym'
+DICT_THESAURUS = 'thesaurus'
+DICT_WORDNET = 'wordnet'
 
 # Cache
 _CACHED_SOUPS: Dict[str, 'BeautifulSoup'] = {}  # Stores cached web
+
+# Types
+AntonymType = List[str]
+SynonymType = List[str]
+TranslationType = Union[List[Tuple[str, str]], List[str]]
+MeaningType = Union[Dict[str, List[str]], Tuple[List[str], str, str]]
 
 
 class MultiDictionary(object):
@@ -98,7 +113,7 @@ class MultiDictionary(object):
         if self._tokenize:  # tokenize
             s = ut.tokenize(s)
         s = s.lower()  # lowercase
-        s = s.replace(' ', '').replace('\n', '')  # remove spaces
+        s = s.replace('\n', '')  # remove spaces
         return s.strip()
 
     def _bsoup(self, link: str, encoding: str = 'utf-8') -> Optional['BeautifulSoup']:
@@ -115,6 +130,7 @@ class MultiDictionary(object):
         if link in self._test_cached_file.keys():
             f = open(self._test_cached_file[link], 'r')
             data = ''.join(f.readlines())
+            f.close()
         else:
             try:
                 data = str(urlopen(link).read().decode(encoding))
@@ -139,18 +155,15 @@ class MultiDictionary(object):
         with open(filename, 'w') as out:
             out.write(html)
 
-    @staticmethod
-    def get_language_name(lang: str, lang_out: str = '') -> str:
+    def _check_defined_lang(self) -> None:
         """
-        Returns the name of a language.
-
-        :param lang: Language tag (ISO 639)
-        :param lang_out: Target language (ISO 639). If not supported, will return the English name
-        :return: Language name from tag
+        Checks the lang has been defined.
         """
-        return ut.get_language_name(lang, lang_out)
+        if self._words_lang == '':
+            raise DictionaryLangNotDefined(
+                'dictionary lang have not been defined yet, call dictionary.set_words_lang(lang) first')
 
-    def _synonym_com(self, word: str, _type: str) -> List[str]:
+    def _synonym_com(self, word: str, _type: str) -> SynonymType:
         """
         Retrieves synonyms from synonym.com.
 
@@ -159,6 +172,7 @@ class MultiDictionary(object):
         :return: Word list
         """
         assert _type in ('Synonyms', 'Antonyms')
+        word = word.replace(' ', '-')
         bs = self._bsoup(f'https://www.synonym.com/synonyms/{word}')
         if bs is None:
             return []
@@ -194,22 +208,27 @@ class MultiDictionary(object):
                             en_words.append(wr)
         return en_words
 
-    def synonym(self, lang: str, word: str) -> List[str]:
+    def synonym(self, lang: str, word: str, dictionary: str = DICT_EDUCALINGO) -> SynonymType:
         """
-        Finds a synonyms for a given word.
+        Find the synonyms for a given word.
 
         :param lang: Lang code
         :param word: Word to retrieve
+        :param dictionary: Dictionary to retrieve the synonyms
         :return: Synonyms list
         """
         words = []
         word = self._process(word)
+        lang = lang.lower()
+
+        assert dictionary in (DICT_EDUCALINGO, DICT_SYNONYMCOM, DICT_THESAURUS), 'Unsupported dictionary'
         if lang not in self._langs.keys() or not self._langs[lang][0]:
             raise InvalidLangCode(f'{lang} code is not supported for synonyms')
         if word == '':
             return words
 
-        if lang in _EDUCALINGO:
+        if dictionary == DICT_EDUCALINGO and lang in _EDUCALINGO_LANGS:
+            word = word.replace(' ', '-')
             bs = self._bsoup(f'https://educalingo.com/en/dic-{lang}/{word}')
             if bs is None:
                 return words
@@ -221,74 +240,87 @@ class MultiDictionary(object):
             for j in results.findAll('a'):
                 words.append(j.get('title').strip())
 
-        # Customs
-        if lang == 'en':
+        elif dictionary == DICT_SYNONYMCOM and lang == 'en':
             en_words = self._synonym_com(word, 'Synonyms')
             for w in en_words:
                 if w not in words:
                     words.append(w)
-            words.sort()
+            # words.sort()
+
+        else:
+            raise InvalidDictionary(f'Dictionary {dictionary} cannot handle language {lang}')
+
         return words
 
-    def get_synonyms(self) -> List[List[str]]:
+    def get_synonyms(self, dictionary: str = DICT_EDUCALINGO) -> List[SynonymType]:
         """
         Get the synonyms for all words of the dictionary.
 
+        :param dictionary: Dictionary to retrieve the synonyms
         :return: Synonyms list
         """
-        assert self._words_lang != '', \
-            'words list have not been defined yet, call dictionary.set_words_lang(lang) first'
-        return [self.synonym(self._words_lang, w) for w in self._words]
+        self._check_defined_lang()
+        return [self.synonym(self._words_lang, w, dictionary) for w in self._words]
 
-    def antonym(self, lang: str, word: str) -> List[str]:
+    def antonym(self, lang: str, word: str, dictionary: str = DICT_SYNONYMCOM) -> AntonymType:
         """
         Finds a aynonyms for a given word.
 
         :param lang: Lang code
         :param word: Word to retrieve
+        :param dictionary: Dictionary to retrieve the antonyms
         :return: Synonyms list
         """
         words = []
         word = self._process(word)
+
+        assert dictionary in DICT_SYNONYMCOM, 'Unsupported dictionary'
         if lang not in self._langs.keys() or not self._langs[lang][3]:
             raise InvalidLangCode(f'{lang} code is not supported for antonyms')
         if word == '':
             return words
 
-        if lang == 'en':
+        if dictionary == DICT_SYNONYMCOM and lang == 'en':
             en_words = self._synonym_com(word, 'Antonyms')
             for w in en_words:
                 if w not in words:
                     words.append(w)
             words.sort()
+
+        else:
+            raise InvalidDictionary(f'Dictionary {dictionary} cannot handle language {lang}')
+
         return words
 
-    def get_antonyms(self) -> List[List[str]]:
+    def get_antonyms(self, dictionary: str = DICT_SYNONYMCOM) -> List[AntonymType]:
         """
         Get the antonyms for all words of the dictionary.
 
+        :param dictionary: Dictionary to retrieve the antonyms
         :return: Antonyms list
         """
-        assert self._words_lang != '', \
-            'words list have not been defined yet, call dictionary.set_words_lang(lang) first'
-        return [self.antonym(self._words_lang, w) for w in self._words]
+        self._check_defined_lang()
+        return [self.antonym(self._words_lang, w, dictionary) for w in self._words]
 
-    def meaning(self, lang: str, word: str) -> Tuple[List[str], str, str]:
+    def meaning(self, lang: str, word: str, dictionary: str = DICT_EDUCALINGO) -> MeaningType:
         """
         Finds the meaning for a given word.
 
         :param lang: Lang code
         :param word: Word to retrieve
+        :param dictionary: Dictionary to retrieve the meanings
         :return: Meaning
         """
         types, words, wiki = [], '', ''
         word = self._process(word)
+
+        assert dictionary in (DICT_EDUCALINGO, DICT_WORDNET), 'Unsupported dictionary'
         if lang not in self._langs.keys() or not self._langs[lang][1]:
             raise InvalidLangCode(f'{lang} code is not supported for meanings')
         if word == '':
             return types, words, wiki
 
-        if lang in _EDUCALINGO:
+        if dictionary == DICT_EDUCALINGO and lang in _EDUCALINGO_LANGS:
             bs = self._bsoup(f'https://educalingo.com/en/dic-{lang}/{word}')
             if bs is not None:
                 results = [i for i in bs.find_all('div', {'id': 'cuadro_categoria_gramatical'})]
@@ -315,60 +347,50 @@ class MultiDictionary(object):
                 if len(results) > 0:
                     wiki = results[0].text.strip().replace('\n', '')
 
-        return types, words, wiki
+            return types, words, wiki
 
-    def get_meanings(self) -> List[Tuple[List[str], str, str]]:
+        elif dictionary == DICT_WORDNET and lang == 'en':
+            if word == '':
+                return {}
+            word = word.replace(' ', '+')
+            # noinspection HttpUrlsUsage
+            html = self._bsoup(f'http://wordnetweb.princeton.edu/perl/webwn?s={word}')
+            types = html.findAll('h3')
+            lists = html.findAll('ul')
+            out = {}
+            for a in types:
+                reg = str(lists[types.index(a)])
+                meanings = []
+                for x in re.findall(r'\((.*?)\)', reg):
+                    if 'often followed by' in x:
+                        pass
+                    elif len(x) > 5 or ' ' in str(x):
+                        meanings.append(x.strip())
+                name = a.text.strip()
+                out[name] = meanings
+            return out
+
+        else:
+            raise InvalidDictionary(f'Dictionary {dictionary} cannot handle language {lang}')
+
+    def get_meanings(self, dictionary: str = DICT_EDUCALINGO) -> List[MeaningType]:
         """
         Get the ameanings for all words of the dictionary.
 
+        :param dictionary: Dictionary to retrieve the meanings
         :return: Meanings list
         """
-        assert self._words_lang != '', \
-            'words list have not been defined yet, call dictionary.set_words_lang(lang) first'
-        return [self.meaning(self._words_lang, w) for w in self._words]
+        self._check_defined_lang()
+        return [self.meaning(self._words_lang, w, dictionary) for w in self._words]
 
-    # noinspection HttpUrlsUsage
-    def meaning_wordnet(self, word: str) -> Dict[str, List[str]]:
-        """
-        Query the meaning of an english word in WordNet.
-
-        :param word: Word to query in English
-        :return: Dict with Type, List of meanings
-        """
-        word = self._process(word)
-        if word == '':
-            return {}
-        html = self._bsoup(f'http://wordnetweb.princeton.edu/perl/webwn?s={word}')
-        types = html.findAll('h3')
-        lists = html.findAll('ul')
-        out = {}
-        for a in types:
-            reg = str(lists[types.index(a)])
-            meanings = []
-            for x in re.findall(r'\((.*?)\)', reg):
-                if 'often followed by' in x:
-                    pass
-                elif len(x) > 5 or ' ' in str(x):
-                    meanings.append(x.strip())
-            name = a.text.strip()
-            out[name] = meanings
-        return out
-
-    def get_meanings_wordnet(self) -> List[Dict[str, List[str]]]:
-        """
-        Get the wordnet meanings for all words of the dictionary.
-
-        :return: Wordnet's meanings list
-        """
-        return [self.meaning_wordnet(w) for w in self._words]
-
-    def translate(self, lang: str, word: str, to='') -> List[Tuple[str, str]]:
+    def translate(self, lang: str, word: str, to: str = '', dictionary: str = DICT_EDUCALINGO) -> TranslationType:
         """
         Translate a word.
 
         :param lang: Lang tag (ISO 639)
         :param word: Word to translate
         :param to: Target language (Google API)
+        :param dictionary: Dictionary to retrieve the translations if ``to`` is empty
         :return: List of (Lang tag, translated word)
         """
         assert isinstance(lang, str), 'lang code must be an string'
@@ -376,6 +398,7 @@ class MultiDictionary(object):
         words = []
         word = self._process(word)
 
+        assert dictionary in DICT_EDUCALINGO, 'Unsupported dictionary'
         if to != '':
             gs = goslate.Goslate()
             try:
@@ -386,7 +409,7 @@ class MultiDictionary(object):
         if lang not in self._langs.keys() or not self._langs[lang][2]:
             raise InvalidLangCode(f'{lang} code is not supported for translation')
 
-        if lang in _EDUCALINGO:
+        if lang in _EDUCALINGO_LANGS:
             bs = self._bsoup(f'https://educalingo.com/en/dic-{lang}/{word}')
             if bs is None:
                 return words
@@ -420,19 +443,47 @@ class MultiDictionary(object):
             # Sort translations
             words = sorted(words, key=lambda x: x[0])
 
+        else:
+            raise InvalidDictionary(f'Dictionary {dictionary} cannot handle language {lang}')
+
         return words
 
-    def get_translations(self, to: str = '') -> List[List[Tuple[str, str]]]:
+    def get_translations(self, to: str = '', dictionary: str = DICT_EDUCALINGO) -> List[TranslationType]:
         """
         Get the wordnet meanings for all words of the dictionary.
 
         :param to: Target language (Google API)
+        :param dictionary: Dictionary to retrieve the translations if ``to`` is empty
         :return: Translations list
         """
-        return [self.translate(self._words_lang, w, to) for w in self._words]
+        self._check_defined_lang()
+        return [self.translate(self._words_lang, w, to, dictionary) for w in self._words]
+
+    @staticmethod
+    def get_language_name(lang: str, lang_out: str = '') -> str:
+        """
+        Returns the name of a language.
+
+        :param lang: Language tag (ISO 639)
+        :param lang_out: Target language (ISO 639). If not supported, will return the English name
+        :return: Language name from tag
+        """
+        return ut.get_language_name(lang, lang_out)
+
+
+class DictionaryLangNotDefined(Exception):
+    """
+    Dictionary lang not defined.
+    """
 
 
 class InvalidLangCode(Exception):
     """
     Invalid lang.
+    """
+
+
+class InvalidDictionary(Exception):
+    """
+    Invalid dictionary.
     """

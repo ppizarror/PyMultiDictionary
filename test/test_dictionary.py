@@ -8,7 +8,7 @@ Test dictionary object.
 
 from PyMultiDictionary import *
 # noinspection PyProtectedMember
-from PyMultiDictionary._dictionary import InvalidLangCode, InvalidDictionary
+from PyMultiDictionary._dictionary import InvalidLangCode, InvalidDictionary, DictionaryLangNotDefined
 import os
 import unittest
 
@@ -278,7 +278,7 @@ class DictionaryTest(unittest.TestCase):
         self.assertEqual(d._words, ['words', 'epic'])
 
         # Lang not defined yet
-        self.assertRaises(AssertionError, lambda: d.get_synonyms())
+        self.assertRaises(DictionaryLangNotDefined, lambda: d.get_synonyms())
         d.set_words_lang('en')
         self.assertEqual(len(d.get_synonyms()), 2)
         self.assertEqual(len(d.get_antonyms()), 2)

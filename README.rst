@@ -45,6 +45,10 @@ PyMultiDictionary
 .. image:: https://static.pepy.tech/personalized-badge/PyMultiDictionary?period=total&units=international_system&left_color=grey&right_color=lightgrey&left_text=total%20downloads
     :target: https://pepy.tech/project/PyMultiDictionary
     :alt: Total downloads
+    
+.. image:: https://img.shields.io/badge/Buy%20me%20a-Ko--fi-02b9fe
+    :target: https://ko-fi.com/ppizarror
+    :alt: Buy me a Ko-fi
 
 PyMultiDictionary is a Dictionary Module for Python 3+ to get meanings, translations,
 synonyms and antonyms of words in 20 different languages. It uses educalingo.com,

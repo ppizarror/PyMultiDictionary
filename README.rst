@@ -46,7 +46,7 @@ PyMultiDictionary
     :target: https://pepy.tech/project/PyMultiDictionary
     :alt: Total downloads
     
-.. image:: https://img.shields.io/badge/Buy%20me%20a-Ko--fi-02b9fe
+.. image:: https://img.shields.io/badge/buy%20me%20a-Ko--fi-02b9fe
     :target: https://ko-fi.com/ppizarror
     :alt: Buy me a Ko-fi
 

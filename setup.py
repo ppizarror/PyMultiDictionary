@@ -28,7 +28,8 @@ requirements_docs.extend([
 
 requirements_tests = requirements.copy()
 requirements_tests.extend([
-    'codecov'
+    'codecov',
+    'nose'
 ])
 
 # Setup library

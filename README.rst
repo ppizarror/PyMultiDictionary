@@ -3,7 +3,7 @@ PyMultiDictionary
 =================
 
 .. image:: https://img.shields.io/badge/author-Pablo%20Pizarro%20R.-lightgray.svg
-    :target: https://ppizarror.com
+    :target: https://ppizarror.com?lang=en
     :alt: @ppizarror
 
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
@@ -18,7 +18,7 @@ PyMultiDictionary
     :target: https://pypi.org/project/PyMultiDictionary
     :alt: PyPi package
 
-.. image:: https://github.com/ppizarror/PyMultiDictionary/actions/workflows/tests.yml/badge.svg
+.. image:: https://img.shields.io/github/workflow/status/ppizarror/PyMultiDictionary/Run%20Tests
     :target: https://github.com/ppizarror/PyMultiDictionary/actions/workflows/tests.yml
     :alt: Build status
 

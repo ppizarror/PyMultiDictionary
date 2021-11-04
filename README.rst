@@ -18,9 +18,9 @@ PyMultiDictionary
     :target: https://pypi.org/project/PyMultiDictionary
     :alt: PyPi package
 
-.. image:: https://travis-ci.com/ppizarror/PyMultiDictionary.svg?branch=master
-    :target: https://app.travis-ci.com/github/ppizarror/PyMultiDictionary
-    :alt: Travis
+.. image:: https://github.com/ppizarror/PyMultiDictionary/actions/workflows/tests.yml/badge.svg
+    :target: https://github.com/ppizarror/PyMultiDictionary/actions/workflows/tests.yml
+    :alt: Build status
 
 .. image:: https://img.shields.io/lgtm/alerts/g/ppizarror/PyMultiDictionary.svg?logo=lgtm&logoWidth=18
     :target: https://lgtm.com/projects/g/ppizarror/PyMultiDictionary/alerts

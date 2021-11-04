@@ -3,7 +3,7 @@ PyMultiDictionary
 =================
 
 .. image:: https://img.shields.io/badge/author-Pablo%20Pizarro%20R.-lightgray.svg
-    :target: https://ppizarror.com?lang=en
+    :target: https://ppizarror.com
     :alt: @ppizarror
 
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg

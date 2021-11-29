@@ -298,7 +298,7 @@ class MultiDictionary(object):
             for w in en_words:
                 if w not in words:
                     words.append(w)
-            words.sort()
+            # words.sort()
 
         # else:
         #     raise InvalidDictionary(f'Dictionary {dictionary} cannot handle language {lang}')

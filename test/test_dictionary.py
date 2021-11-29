@@ -243,16 +243,20 @@ class DictionaryTest(unittest.TestCase):
         self.assertRaises(InvalidLangCode, lambda: d.antonym('es', 'word'))
 
         # Test downloaded from bs
-        ant = ['advisability', 'amicable', 'asset', 'best', 'better', 'bold', 'complimentary', 'courage',
-               'desirability', 'efficient', 'fragrant', 'good', 'goodness', 'inoffensive', 'joyful', 'morality',
-               'obedient', 'qualified', 'soundness', 'supportive', 'unalarming', 'uncritical', 'virtuous', 'worthiness']
+        ant = ['obedient', 'good', 'best', 'better', 'virtuous', 'morality',
+               'fragrant', 'unalarming', 'worthiness', 'desirability', 'advisability',
+               'goodness', 'asset', 'soundness', 'uncritical', 'amicable',
+               'complimentary', 'bold', 'supportive', 'efficient', 'courage',
+               'joyful', 'inoffensive', 'qualified']
         self.assertEqual(d.antonym('en', 'bad'), ant)
 
-        ant = ['bad', 'badness', 'cold', 'cool', 'disobedience', 'domineering', 'evil', 'evilness', 'fidelity',
-               'fruitfulness', 'immoral', 'immorality', 'lowercase', 'maleficence', 'malignancy', 'malignity',
-               'naivete', 'nonpregnant', 'ordinary', 'passionless', 'unemotionality', 'unfavorable', 'unpropitious',
-               'unrespectable', 'unrighteous', 'unsoundness', 'unworthiness', 'unworthy', 'wicked', 'worse', 'worst',
-               'worthlessness', 'wrong']
+        ant = ['bad', 'worse', 'unfavorable', 'unrespectable', 'worst',
+               'unemotionality', 'passionless', 'immoral', 'evilness', 'wicked',
+               'unrighteous', 'unworthy', 'wrong', 'fruitfulness', 'naivete',
+               'fidelity', 'worthlessness', 'malignancy', 'evil', 'maleficence',
+               'immorality', 'malignity', 'lowercase', 'ordinary', 'disobedience',
+               'domineering', 'unpropitious', 'cold', 'cool', 'unworthiness',
+               'badness', 'unsoundness', 'nonpregnant']
         self.assertEqual(d.antonym('en', 'good'), ant)
 
         # Save soup example

@@ -33,6 +33,10 @@ PyMultiDictionary
 .. image:: https://codecov.io/gh/ppizarror/PyMultiDictionary/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/ppizarror/PyMultiDictionary
     :alt: Codecov
+    
+.. image:: https://app.fossa.com/api/projects/git%2Bgithub.com%2Fppizarror%2FPyMultiDictionary.svg?type=shield
+    :target: https://app.fossa.com/projects/git%2Bgithub.com%2Fppizarror%2FPyMultiDictionary?ref=badge_shield
+    :alt: FOSSA Status
 
 .. image:: https://img.shields.io/github/issues/ppizarror/PyMultiDictionary
     :target: https://github.com/ppizarror/PyMultiDictionary/issues

@@ -205,4 +205,4 @@ There are much more dictionaries to come. Just contribute to this repo!
 Author
 ------
 
-`Pablo Pizarro R. <https://ppizarror.com>`_ | 2021
+`Pablo Pizarro R. <https://ppizarror.com>`_ | 2021 - 2022

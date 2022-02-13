@@ -15,8 +15,9 @@ __all__ = [
 ]
 
 import re
-import goslate
+import ssl
 import urllib.error
+import PyMultiDictionary._goslate as goslate
 import PyMultiDictionary._utils as ut
 
 from bs4 import BeautifulSoup
@@ -130,17 +131,18 @@ class MultiDictionary(object):
         if link in bs_keys:
             return _CACHED_SOUPS[link]
         if link in self._test_cached_file.keys():
-            f = open(self._test_cached_file[link], 'r')
+            f = open(self._test_cached_file[link], 'r', encoding='utf8')
             data = ''.join(f.readlines())
             f.close()
         else:
             try:
-                data = str(urlopen(link).read().decode(encoding))
+                data = str(urlopen(link, context=ssl.SSLContext()).read().decode(encoding))
             except (urllib.error.HTTPError, ValueError):
                 return None
         bs = BeautifulSoup(data, 'html.parser')
         _CACHED_SOUPS[link] = bs
         if len(bs_keys) >= self._max_cached_websites:
+            # noinspection PyTypeChecker
             del _CACHED_SOUPS[bs[0]]
         return bs
 
@@ -154,7 +156,7 @@ class MultiDictionary(object):
         """
         bs = self._bsoup(link, encoding)
         html = str(bs.prettify())
-        with open(filename, 'w') as out:
+        with open(filename, 'w', encoding='utf8') as out:
             out.write(html)
 
     def _check_defined_lang(self) -> None:
@@ -417,8 +419,8 @@ class MultiDictionary(object):
             gs = goslate.Goslate()
             try:
                 return [(to, gs.translate(word, to, lang))]
-            except (urllib.error.HTTPError, IndexError):
-                warn(f'{word} cannot be translated to {to} as Google API is not available')
+            except (urllib.error.HTTPError, IndexError) as e:
+                warn(f'{word} cannot be translated to {to}-language as Google API is not available. Error: {e}')
 
         if lang not in self._langs.keys() or not self._langs[lang][2]:
             raise InvalidLangCode(f'{lang} code is not supported for translation')

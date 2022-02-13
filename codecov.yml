@@ -1,3 +1,4 @@
 ignore:
   - "test/*.py"
+  - "PyMultiDictionary/_goslate.py"
   - "PyMultiDictionary/_tokenizer.py"

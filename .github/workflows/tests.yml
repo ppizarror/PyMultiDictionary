@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.6, 3.7, 3.8, 3.9]
+        python-version: [3.7, 3.8, 3.9, '3.10']
 
     steps:
       - uses: actions/checkout@v2
@@ -23,11 +23,12 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install dependencies
+        run: pip install -e .[test]
+
+      - name: Test
         run: |
-          pip install -e .[test]
-      
-      - name: Run nosetests
-        run: nosetests test/ -v --with-coverage
+          export PYTHONPATH=$PWD
+          nose2 --verbose --with-coverage
 
       - name: Coverage report
         run: bash <(curl -s https://codecov.io/bash)

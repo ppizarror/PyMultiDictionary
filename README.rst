@@ -18,7 +18,7 @@ PyMultiDictionary
     :target: https://pypi.org/project/PyMultiDictionary
     :alt: PyPi package
 
-.. image:: https://img.shields.io/github/workflow/status/ppizarror/PyMultiDictionary/Run%20Tests
+.. image:: https://img.shields.io/github/actions/workflow/status/ppizarror/PyMultiDictionary/tests.yml?branch=master
     :target: https://github.com/ppizarror/PyMultiDictionary/actions/workflows/tests.yml
     :alt: Build status
     

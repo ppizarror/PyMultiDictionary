@@ -26,14 +26,6 @@ PyMultiDictionary
     :target: https://app.fossa.com/projects/git%2Bgithub.com%2Fppizarror%2FPyMultiDictionary?ref=badge_shield
     :alt: FOSSA Status
 
-.. image:: https://img.shields.io/lgtm/alerts/g/ppizarror/PyMultiDictionary.svg?logo=lgtm&logoWidth=18
-    :target: https://lgtm.com/projects/g/ppizarror/PyMultiDictionary/alerts
-    :alt: Total alerts
-
-.. image:: https://img.shields.io/lgtm/grade/python/g/ppizarror/PyMultiDictionary.svg?logo=lgtm&logoWidth=18
-    :target: https://lgtm.com/projects/g/ppizarror/PyMultiDictionary/context:python
-    :alt: Language grade: Python
-
 .. image:: https://codecov.io/gh/ppizarror/PyMultiDictionary/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/ppizarror/PyMultiDictionary
     :alt: Codecov

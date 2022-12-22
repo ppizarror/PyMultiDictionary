@@ -184,7 +184,7 @@ class Goslate(object):
                     raise e
                 exception = e
                 time.sleep(0.0001)
-        raise exception  # lgtm [py/illegal-raise]
+        raise exception
 
     def _execute(self, tasks):
         first_tasks = [next(tasks, None) for _ in range(self._MIN_TASKS_FOR_CONCURRENT)]
@@ -407,7 +407,7 @@ class Goslate(object):
                     yield i.strip()
 
             texts = convert_to_utf8(texts)
-            text = next(texts)  # lgtm [py/unguarded-next-in-generator]
+            text = next(texts)
             for i in texts:
                 new_text = UTF8_JOINT.join((text, i))
                 if len(quote_plus(new_text)) < self._MAX_LENGTH_PER_QUERY:

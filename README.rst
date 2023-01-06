@@ -18,8 +18,8 @@ PyMultiDictionary
     :target: https://pypi.org/project/PyMultiDictionary
     :alt: PyPi package
 
-.. image:: https://img.shields.io/github/actions/workflow/status/ppizarror/PyMultiDictionary/tests.yml?branch=master
-    :target: https://github.com/ppizarror/PyMultiDictionary/actions/workflows/tests.yml
+.. image:: https://img.shields.io/github/actions/workflow/status/ppizarror/PyMultiDictionary/ci.yml?branch=master
+    :target: https://github.com/ppizarror/PyMultiDictionary/actions/workflows/ci.yml
     :alt: Build status
     
 .. image:: https://app.fossa.com/api/projects/git%2Bgithub.com%2Fppizarror%2FPyMultiDictionary.svg?type=shield

@@ -21,3 +21,8 @@ jobs:
     with:
       os: ubuntu-latest
       python-version: ${{ matrix.python}}
+
+  codeql:
+    uses: ppizarror/workflow-actions/.github/workflows/codeql.yml@master
+    with:
+      language: python

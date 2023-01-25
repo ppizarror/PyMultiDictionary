@@ -19,19 +19,6 @@ with open('requirements.txt', encoding='utf-8') as f:
     for line in f:
         requirements.append(line.strip())
 
-requirements_docs = requirements.copy()
-requirements_docs.extend([
-    'sphinx',
-    'sphinx-autodoc-typehints>=1.2.0',
-    'sphinx-rtd-theme'
-])
-
-requirements_tests = requirements.copy()
-requirements_tests.extend([
-    'codecov',
-    'nose2'
-])
-
 # Setup library
 setup(
     name=PyMultiDictionary.__module_name__,
@@ -66,8 +53,8 @@ setup(
     python_requires='>=3.6, <4',
     install_requires=requirements,
     extras_require={
-        'docs': requirements_docs,
-        'test': requirements_tests
+        'docs': ['sphinx', 'sphinx-autodoc-typehints>=1.2.0', 'sphinx-rtd-theme'],
+        'test': ['codecov', 'nose2']
     },
     setup_requires=[
         'setuptools',

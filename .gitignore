@@ -1,6 +1,6 @@
-.idea/
-__pycache__
+__pycache__/
 ._*
+.idea/
 
 # Build
 build/

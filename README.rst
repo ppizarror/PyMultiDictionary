@@ -10,9 +10,9 @@ PyMultiDictionary
     :target: https://opensource.org/licenses/MIT
     :alt: License MIT
 
-.. image:: https://img.shields.io/badge/python-3.6+-red.svg
+.. image:: https://img.shields.io/badge/python-3.7+-red.svg
     :target: https://www.python.org/downloads
-    :alt: Python 3.6+
+    :alt: Python 3.7+
 
 .. image:: https://badge.fury.io/py/PyMultiDictionary.svg
     :target: https://pypi.org/project/PyMultiDictionary

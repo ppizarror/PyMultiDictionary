@@ -85,58 +85,58 @@
 
 // cross-browser doc ready function
 function docReady(callback) {
-	if (document.readyState != 'loading'){
-		callback();
-	} else if (document.addEventListener) {
-		document.addEventListener('DOMContentLoaded', callback);
-	} else {
-		document.attachEvent('onreadystatechange', function() {
-			if (document.readyState != 'loading')
-				callback();
-		});
-	}
+    if (document.readyState != 'loading'){
+        callback();
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', callback);
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+            if (document.readyState != 'loading')
+                callback();
+        });
+    }
 }
 
 // cross-browser add event listener (IE8)
 function addListener(el, eventName, handler) {
-	if (el && el.addEventListener)
-		el.addEventListener(eventName, handler);
-	else if (el && el.attachEvent) {
-		el.attachEvent('on' + eventName, function(){
-			handler.call(el);
-		});
-	} else
-		return false;
-		//console.error("couldn't attach event: " + eventName + " to element: " + el);
+    if (el && el.addEventListener)
+        el.addEventListener(eventName, handler);
+    else if (el && el.attachEvent) {
+        el.attachEvent('on' + eventName, function(){
+            handler.call(el);
+        });
+    } else
+        return false;
+        //console.error("couldn't attach event: " + eventName + " to element: " + el);
 }
 
 function removeClass(el, className){
-	if (el && el.classList)
-		el.classList.remove(className);
-	else if (el)
-		el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-	else
-		return false;
-		//console.error("couldn't remove class: " + className + " from element: " + el);
+    if (el && el.classList)
+        el.classList.remove(className);
+    else if (el)
+        el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+    else
+        return false;
+        //console.error("couldn't remove class: " + className + " from element: " + el);
 }
 
 function addClass(el, className){
-	if (el && el.classList)
-	  el.classList.add(className);
-	else if (el)
-	  el.className += ' ' + className;
-	else
-		return false;
-		//console.error("couldn't add class: " + className + " to element: " + el);
+    if (el && el.classList)
+      el.classList.add(className);
+    else if (el)
+      el.className += ' ' + className;
+    else
+        return false;
+        //console.error("couldn't add class: " + className + " to element: " + el);
 }
 
 function hasClass(el, className){
-	if (el && el.classList)
-	  return el.classList.contains(className);
-	else if (el)
-	  return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
-	else
-		return null;
+    if (el && el.classList)
+      return el.classList.contains(className);
+    else if (el)
+      return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+    else
+        return null;
 }
 
 function getIndex(el){
@@ -165,9 +165,9 @@ if (typeof Array.prototype.forEach != 'function') {
    !function(n,e,o,r,i){if(!e){e=e||{},window.permutive=e,e.q=[],e.config=i||{},e.config.projectId=o,e.config.apiKey=r,e.config.environment=e.config.environment||"production";for(var t=["addon","identify","track","trigger","query","segment","segments","ready","on","once","user","consent"],c=0;c<t.length;c++){var f=t[c];e[f]=function(n){return function(){var o=Array.prototype.slice.call(arguments,0);e.q.push({functionName:n,arguments:o})}}(f)}}}(document,window.permutive,"5814efa5-d41d-4a89-b176-1cc26fae87cd","e4ecf9e0-0a2f-42d6-a720-8fff2402c221",{});  
 window.googletag=window.googletag||{},window.googletag.cmd=window.googletag.cmd||[],window.googletag.cmd.push(function(){if(0===window.googletag.pubads().getTargeting("permutive").length){var g=window.localStorage.getItem("_pdfps");window.googletag.pubads().setTargeting("permutive",g?JSON.parse(g):[])}});
 window.permutive.identify([{
-	  "id": ppid,
-	  "tag": "publisherUserId"
-	}]);
+      "id": ppid,
+      "tag": "publisherUserId"
+    }]);
 window.permutive.addon('web', {
   "page": {
     "pagetype": "Term",
@@ -295,7 +295,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <!-- partner google analytics tracking -->
   <script>
    var _gaq=[['partner._setAccount', ''],['partner._trackPageview'],['partner._trackPageLoadTime']];
-	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)}(document,'script'))
   </script>
   <!-- end partner google analytics tracking -->
   <!-- end body-top -->

@@ -125,11 +125,11 @@ class RegexpTokenizer(TokenizerI):
     """
 
     def __init__(
-            self,
-            pattern,
-            gaps=False,
-            discard_empty=True,
-            flags=re.UNICODE | re.MULTILINE | re.DOTALL,
+        self,
+        pattern,
+        gaps=False,
+        discard_empty=True,
+        flags=re.UNICODE | re.MULTILINE | re.DOTALL,
     ):
         # If they gave us a regexp object, extract the pattern.
         pattern = getattr(pattern, "pattern", pattern)

@@ -16,7 +16,7 @@ a.showAll {
 
 body {
 background: #E7E7E7;
-font-family: Lucida Grande,"Lucida Grande Unicode",Helvetica,Arial,sans-serif; 	
+font-family: Lucida Grande,"Lucida Grande Unicode",Helvetica,Arial,sans-serif;
 }
 .header { 
 background-color: #BE6E28;

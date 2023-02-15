@@ -4,24 +4,24 @@
 <body data-new-gr-c-s-check-loaded="14.1033.0" data-gr-ext-installed="">
 <!-- 7.22 -->
 <script>
-		var JS_RUTA_ASSETS = '/assets/';
-		var JS_IDIOMA = "en";
-		var JS_IDIOMA_DICCIONARIO = "en";
-		var JS_STATIC = "https://static.educalingo.com/img/en";
-		var JS_MODO_LOCAL = "0";
-		var JS_DOMINIO_HTTP = "https://educalingo.com";
-		var JS_LINK_ROOT = "https://educalingo.com";
-		var JS_IDIOMA_INTERFAZ = "en";
-		var JS_SEARCH_URL = "https://search.educalingo.com";
-		var JS_DICCIONARIO_ACTUAL = "English dictionary";
-					var OFFSET_TOP1 = 240;
-			var OFFSET_TOP2 = 240;
-			</script> 
+        var JS_RUTA_ASSETS = '/assets/';
+        var JS_IDIOMA = "en";
+        var JS_IDIOMA_DICCIONARIO = "en";
+        var JS_STATIC = "https://static.educalingo.com/img/en";
+        var JS_MODO_LOCAL = "0";
+        var JS_DOMINIO_HTTP = "https://educalingo.com";
+        var JS_LINK_ROOT = "https://educalingo.com";
+        var JS_IDIOMA_INTERFAZ = "en";
+        var JS_SEARCH_URL = "https://search.educalingo.com";
+        var JS_DICCIONARIO_ACTUAL = "English dictionary";
+                    var OFFSET_TOP1 = 240;
+            var OFFSET_TOP2 = 240;
+            </script>
 <script>
-		eval((function(x){var d="";var p=0;while(p<x.length){if(x.charAt(p)!="`")d+=x.charAt(p++);else{var l=x.charCodeAt(p+3)-28;if(l>4)d+=d.substr(d.length-x.charCodeAt(p+1)*96-x.charCodeAt(p+2)+3104-l,l);else d+="`";p+=4}}return d})("if (window != ` $\".top) {top.location.href = ` #);}if (` ;( !` 9&` S+ = self` '%;}func` 5!CerrarCookies() {document.getElementById(\"c` >\"\").style.display = \"none\";var xhttp = new XMLHttpRequest;` 6!.onreadystatechange = `!E%() {if (` F\"` E!State == 4 &&` z\".status == 200`!7Y}}`!P$pen(\"GET\", JS_LINK_ROOT + \"/a`!Y!s/ok_` k#.php\", true)` [#send()`#P'Submit(id`!G7id).s` B\"` O(Buscar`#r9buscador_input`\"9%visibilit`\"@!` )!le\";` I:r_menu`\"l6` E5palabra_`!E$` 0Oatras` [\"`!-6block` J7cruz` O1`\":Q`#J(value = \"` )Hfocus`$d)Atras`$.dhidden`\"-^` G=`#W[`%:@` D<`%:A`*%#`(U&orrar`#j!do`#BK`$SZ"))	</script> 
+        eval((function(x){var d="";var p=0;while(p<x.length){if(x.charAt(p)!="`")d+=x.charAt(p++);else{var l=x.charCodeAt(p+3)-28;if(l>4)d+=d.substr(d.length-x.charCodeAt(p+1)*96-x.charCodeAt(p+2)+3104-l,l);else d+="`";p+=4}}return d})("if (window != ` $\".top) {top.location.href = ` #);}if (` ;( !` 9&` S+ = self` '%;}func` 5!CerrarCookies() {document.getElementById(\"c` >\"\").style.display = \"none\";var xhttp = new XMLHttpRequest;` 6!.onreadystatechange = `!E%() {if (` F\"` E!State == 4 &&` z\".status == 200`!7Y}}`!P$pen(\"GET\", JS_LINK_ROOT + \"/a`!Y!s/ok_` k#.php\", true)` [#send()`#P'Submit(id`!G7id).s` B\"` O(Buscar`#r9buscador_input`\"9%visibilit`\"@!` )!le\";` I:r_menu`\"l6` E5palabra_`!E$` 0Oatras` [\"`!-6block` J7cruz` O1`\":Q`#J(value = \"` )Hfocus`$d)Atras`$.dhidden`\"-^` G=`#W[`%:@` D<`%:A`*%#`(U&orrar`#j!do`#BK`$SZ"))	</script>
 <script>
-		window.google_analytics_uacct = "UA-112439377-1";
-	</script>
+        window.google_analytics_uacct = "UA-112439377-1";
+    </script>
 <div id="to_top"></div>
 <div class="logo_header"> <a href="https://educalingo.com/en/dic-en"> <img class="logo_header_img" src="./good_word_files/logo_educalingo.svg"> </a> </div>
 
@@ -49,23 +49,23 @@
 <div id="header" class="header_top_anuncio" style="position: fixed; top: 0px; transition: all 0.5s ease-in-out 0s;">
     
 <div id="menu_buscador2">
-	<div id="menu_buscador">
-		<!--<img onClick="Buscar()" id="buscar_menu" src="/assets/svg/ico_lupa_blanco.svg" alt="Search" title="Search">-->
-		<!--<img onClick="AtrasBuscar();" id="atras_buscar_menu" src="/assets/svg/ico_atras.svg" alt="back">-->
-	</div>
-	<div class="menu_palabra">
-		<a href="https://educalingo.com/en/dic-en" title="English dictionary">
-			<img class="logo_header_img2" src="./good_word_files/logo_educalingo.svg" alt="educalingo">
-		</a>
-							<a href="https://educalingo.com/en/dic-en" title="English dictionary">
-						<div class="menu_circulo_idioma_diccionario">
-							en						</div>
-					</a>
-									 <img class="ico_flecha_palabra" src="./good_word_files/ico_flecha_palabra.svg" alt="good">
-					 <span class="palabra_cabecera">good</span>
-						<img alt="Search" title="Search" class="ico_lupa_blanco2_palabra" src="./good_word_files/ico_lupa_blanco2.svg" onclick="AbrirBuscador(0)">
-		
-			</div>
+    <div id="menu_buscador">
+        <!--<img onClick="Buscar()" id="buscar_menu" src="/assets/svg/ico_lupa_blanco.svg" alt="Search" title="Search">-->
+        <!--<img onClick="AtrasBuscar();" id="atras_buscar_menu" src="/assets/svg/ico_atras.svg" alt="back">-->
+    </div>
+    <div class="menu_palabra">
+        <a href="https://educalingo.com/en/dic-en" title="English dictionary">
+            <img class="logo_header_img2" src="./good_word_files/logo_educalingo.svg" alt="educalingo">
+        </a>
+                            <a href="https://educalingo.com/en/dic-en" title="English dictionary">
+                        <div class="menu_circulo_idioma_diccionario">
+                            en                        </div>
+                    </a>
+                                     <img class="ico_flecha_palabra" src="./good_word_files/ico_flecha_palabra.svg" alt="good">
+                     <span class="palabra_cabecera">good</span>
+                        <img alt="Search" title="Search" class="ico_lupa_blanco2_palabra" src="./good_word_files/ico_lupa_blanco2.svg" onclick="AbrirBuscador(0)">
+
+            </div>
 </div>    <div id="menu_enlaces2">
         <div id="menu_enlaces">
             <div id="buscador">
@@ -102,7 +102,7 @@
 <div id="dictionary" class="cabecera_seccion background_rosa_menu"> <img alt="Dictionary" class="icono_cabecera_seccion" src="./good_word_files/ico_seccion_diccionario_i.svg" width="32"> </div>
 <div style="margin-top: -30px">
     <div id="c_anuncio_top" class="anuncios" style="margin-top:30px"><style type="text/css" scoped="">.adslot_1 {display:inline-block; max-width:1200px; max-height:1200px; width: 100%; height: 250px; } @media (min-width: 336px) { .adslot_1 { width: 100%; height: 280px; } } @media (min-width: 760px) { .adslot_1 { width: 728px; height: 90px; } } @media (min-width: 950px) { .adslot_1 { width: 900px; height: 90px; } } </style><script async="" src="./good_word_files/f.txt"></script><ins class="adsbygoogle adslot_1" data-full-width-responsive="true" data-ad-client="ca-pub-2382370813209061" data-ad-slot="5505668980"></ins>
-				 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div>
+                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div>
 <div style="height:10px;"></div>
 <div class="titulo_cabecera_seccion" id="titulo_cabecera_seccion_diccionario"> <span class="palabra_titulo_cabecera_seccion"> DICTIONARY </span>
     <div class="raya_titulo_cabecera_seccion"></div>
@@ -157,11 +157,11 @@
 <script src="./good_word_files/lan.min.js"></script> 
 <script src="./good_word_files/buscar.min.js"></script> 
 <script>
-	var JS_ANCLA_M1 = 'dictionary';
-	var JS_ANCLA_M2 = 'synonyms';
-	var JS_ANCLA_M3 = 'translator';
-	var JS_ANCLA_M4 = 'trends';
-	var JS_ANCLA_M5 = 'examples';
+    var JS_ANCLA_M1 = 'dictionary';
+    var JS_ANCLA_M2 = 'synonyms';
+    var JS_ANCLA_M3 = 'translator';
+    var JS_ANCLA_M4 = 'trends';
+    var JS_ANCLA_M5 = 'examples';
 </script>
 <div id="grammar" class="subseccion">
     <div class="cuadro_subseccion"> <span class="icon-ico_flecha_diccionario"></span>
@@ -243,7 +243,7 @@
         <div class="redes"> <a class="enlace_redes_citas enlace_redes_citas_whatsapp" rel="nofollow" target="_blank" title="Share on Whatsapp «GRAMMATICAL CATEGORY OF GOOD»" href="whatsapp://send?text=GRAMMATICAL+CATEGORY+OF+GOOD+-+educalingo.com%2Fen%2Fdic-en%2Fgood%23grammar" data-action="share/whatsapp/share"><span class="icon-ico_redes_circulo_whatsapp_1 icon-ico_redes_ajuste"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span></a><a class="enlace_redes_citas" rel="nofollow" target="_blank" title="Share on Pinterest «GRAMMATICAL CATEGORY OF GOOD»" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Feducalingo.com%2Fen%2Fdic-en%2Fgood%23grammar&amp;media=https%3A%2F%2Fstatic.educalingo.com%2Fimg%2Fcommon%2Fdefault.jpg&amp;description=EDUCALINGO+-+GRAMMATICAL+CATEGORY+OF+GOOD"><span class="icon-ico_redes_circulo_pinterest_1 icon-ico_redes_ajuste"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span></a><a class="enlace_redes_citas" rel="nofollow" target="_blank" title="Share on Twitter «GRAMMATICAL CATEGORY OF GOOD»" href="https://twitter.com/intent/tweet?text=GRAMMATICAL+CATEGORY+OF+GOOD&amp;url=https%3A%2F%2Feducalingo.com%2Fen%2Fdic-en%2Fgood%23grammar&amp;via=educalingo"><span class="icon-ico_redes_circulo_twitter_1 icon-ico_redes_ajuste"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span></a><a class="enlace_redes_citas" rel="nofollow" target="_blank" title="Share on Facebook «GRAMMATICAL CATEGORY OF GOOD»" href="https://www.facebook.com/dialog/share?app_id=1417524188376058&amp;display=popup&amp;href=https%3A%2F%2Feducalingo.com%2Fen%2Fdic-en%2Fgood%23grammar&amp;redirect_uri=https%3A%2F%2Feducalingo.com%2Fen%2Fdic-en%2Fgood%23grammar&amp;quote=GRAMMATICAL+CATEGORY+OF+GOOD"><span class="icon-ico_redes_circulo_facebook_1 icon-ico_redes_ajuste"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span></a> </div>
         <div id="c_anuncio_gramatica">
         <style type="text/css" scoped="">.adslot_2 {display:inline-block; max-width:1200px; max-height:1200px; width: 100%; height: 250px; } @media (min-width: 336px) { .adslot_2 { width: 100%; height: 280px; } } @media (min-width: 700px) { .adslot_2 { width: 336px; height: 280px; } } </style><script async="" src="./good_word_files/f.txt"></script><ins class="adsbygoogle adslot_2" data-full-width-responsive="true" data-ad-client="ca-pub-2382370813209061" data-ad-slot="6982402186"></ins>
-				 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>    </div>
+                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>    </div>
     </div>
 <div class="separador_subseccion">
     <div class="separador_subseccion2">
@@ -272,7 +272,7 @@
 <div id="dictionary" class="subseccion">
             <div id="c_anuncio_definicion" class="anuncios">
         <div id="c_anuncio_definicion" class="anuncios"><style type="text/css" scoped="">.adslot_3 {display:inline-block; max-width:1200px; max-height:1200px; width: 100%; height: 250px; } @media (min-width: 336px) { .adslot_3 { width: 100%; height: 280px; } } @media (min-width: 760px) { .adslot_3 { width: 728px; height: 90px; } } @media (min-width: 950px) { .adslot_3 { width: 900px; height: 90px; } } @media (min-width: 1024px) { .adslot_3 { width: 970px; height: 250px; } } </style><script async="" src="./good_word_files/f.txt"></script><ins class="adsbygoogle adslot_3" data-full-width-responsive="true" data-ad-client="ca-pub-2382370813209061" data-ad-slot="8459135385"></ins>
-				 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>    </div>
+                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>    </div>
         <h4 id="titulo_significado_de"> <span class="icon-ico_definicion"></span>
                 Definition of <span id="significado_de_destacado" class="destacado_rosa">good</span> in the English dictionary </h4>
     <div id="significado_de">
@@ -320,7 +320,7 @@
 </div>
 <div id="c_anuncio_sinonimos" class="anuncios">
     <style type="text/css" scoped="">.adslot_4 {display:inline-block; max-width:1200px; max-height:1200px; width: 100%; height: 250px; } @media (min-width: 336px) { .adslot_4 { width: 100%; height: 280px; } } @media (min-width: 760px) { .adslot_4 { width: 728px; height: 90px; } } </style><script async="" src="./good_word_files/f.txt"></script><ins class="adsbygoogle adslot_4" data-full-width-responsive="true" data-ad-client="ca-pub-2382370813209061" data-ad-slot="9935868581"></ins>
-				 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
 <div style="height:5px"></div>
 <div id="synonyms" class="subseccion">
     <div class="cuadro_subseccion"> <span class="icon-ico_flecha_sinonimos"></span>
@@ -478,7 +478,7 @@
     </div>
     Find out the translation of <span class="destacado_azul"><strong>good</strong></span> to <strong>25 languages</strong> with our <a href="https://educalingo.com/en/dic-en" class="enlace_azul">English multilingual translator</a>.        <div id="c_anuncio_sinonimos" class="anuncios" style="margin-top:20px">
         <style type="text/css" scoped="">.adslot_5 {display:inline-block; max-width:1200px; max-height:1200px; width: 100%; height: 250px; } @media (min-width: 336px) { .adslot_5 { width: 100%; height: 280px; } } @media (min-width: 760px) { .adslot_5 { width: 728px; height: 90px; } } @media (min-width: 950px) { .adslot_5 { width: 900px; height: 90px; } } @media (min-width: 1024px) { .adslot_5 { width: 970px; height: 250px; } } </style><script async="" src="./good_word_files/f.txt"></script><ins class="adsbygoogle adslot_5" data-full-width-responsive="true" data-ad-client="ca-pub-2382370813209061" data-ad-slot="5128939577"></ins>
-				 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>    </div>
+                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>    </div>
         <div id="cuadro_info_traduccion2">
         <div id="cuadro_info_traduccion" class="cuadro_info2">
             <div class="cuadro_info">
@@ -1262,7 +1262,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=&#39;#ff3236&#
         </div>
 <!-- <div class="separador_subseccion">
 <div class="separador_subseccion2">
-	<div class="circulo_separador_subseccion background_marron"></div>
+    <div class="circulo_separador_subseccion background_marron"></div>
 </div>
 </div> -->
 
@@ -1359,7 +1359,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=&#39;#ff3236&#
 <div id="c_anuncio_libros" class="anuncios">
     <div style="height:10px;"></div>
     <style type="text/css" scoped="">.adslot_6 {display:inline-block; max-width:1200px; max-height:1200px; width: 100%; height: 250px; } @media (min-width: 336px) { .adslot_6 { width: 100%; height: 280px; } } @media (min-width: 760px) { .adslot_6 { width: 728px; height: 90px; } } @media (min-width: 950px) { .adslot_6 { width: 900px; height: 90px; } } @media (min-width: 1024px) { .adslot_6 { width: 970px; height: 250px; } } </style><script async="" src="./good_word_files/f.txt"></script><ins class="adsbygoogle adslot_6" data-full-width-responsive="true" data-ad-client="ca-pub-2382370813209061" data-ad-slot="4488729602"></ins>
-				 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
 <div style="height:40px;"></div>
 <div id="referencia">
     <div class="subseccion"> <span id="referencia_icono" class="icon-ico_referencia"><span class="path1"></span><span class="path2"></span></span>
@@ -1440,100 +1440,100 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=&#39;#ff3236&#
 <script src="./good_word_files/tags.min.js"></script> 
 <script src="./good_word_files/palabra.min.js"></script> 
 <script>
-	if ( window.innerWidth > 800 ) {
+    if ( window.innerWidth > 800 ) {
 
-		var offser_smooth = 115;
-	} else {
-		var offser_smooth = 130;
-	}
+        var offser_smooth = 115;
+    } else {
+        var offser_smooth = 130;
+    }
 
-	var cancelar_cabecera = 0;
-	var scroll = new SmoothScroll( 'a[href*="#"]', {
-		// Selectors
-		ignore: '#volver_arriba', // Selector for links to ignore (must be a valid CSS selector)
-		header: null, // Selector for fixed headers (must be a valid CSS selector)
+    var cancelar_cabecera = 0;
+    var scroll = new SmoothScroll( 'a[href*="#"]', {
+        // Selectors
+        ignore: '#volver_arriba', // Selector for links to ignore (must be a valid CSS selector)
+        header: null, // Selector for fixed headers (must be a valid CSS selector)
 
-		// Speed & Easing
-		speed: 500, // Integer. How fast to complete the scroll in milliseconds
-		offset: offser_smooth, // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
-		easing: 'easeInOutCubic', // Easing pattern to use
-		// Function. Custom easing pattern
+        // Speed & Easing
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        offset: offser_smooth, // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
+        easing: 'easeInOutCubic', // Easing pattern to use
+        // Function. Custom easing pattern
 
-		// Callback API
-		before: function () {
-			cancelar_cabecera = 1;
-			document.getElementById( 'header' ).style.position = 'fixed';
-			document.getElementById( 'header' ).style.top = '0px';
-			document.getElementById( 'header' ).style.transition = 'all 0.05s ease-in-out';
-		}, // Callback to run before scroll
-		after: function () {
+        // Callback API
+        before: function () {
+            cancelar_cabecera = 1;
+            document.getElementById( 'header' ).style.position = 'fixed';
+            document.getElementById( 'header' ).style.top = '0px';
+            document.getElementById( 'header' ).style.transition = 'all 0.05s ease-in-out';
+        }, // Callback to run before scroll
+        after: function () {
 
-				document.getElementById( 'header' ).style.position = 'fixed';
-				document.getElementById( 'header' ).style.top = '0px';
-				document.getElementById( 'header' ).style.transition = 'all 0.5s ease-in-out';
-				setTimeout( function () {
-					cancelar_cabecera = 0;
-				}, 100, "JavaScript" );
+                document.getElementById( 'header' ).style.position = 'fixed';
+                document.getElementById( 'header' ).style.top = '0px';
+                document.getElementById( 'header' ).style.transition = 'all 0.5s ease-in-out';
+                setTimeout( function () {
+                    cancelar_cabecera = 0;
+                }, 100, "JavaScript" );
 
-			} // Callback to run after scroll
+            } // Callback to run after scroll
 
-	} );
+    } );
 
-	var scroll2 = new SmoothScroll( '#volver_arriba', {
-		// Selectors
-		ignore: '[data-scroll-ignore]', // Selector for links to ignore (must be a valid CSS selector)
-		header: null, // Selector for fixed headers (must be a valid CSS selector)
+    var scroll2 = new SmoothScroll( '#volver_arriba', {
+        // Selectors
+        ignore: '[data-scroll-ignore]', // Selector for links to ignore (must be a valid CSS selector)
+        header: null, // Selector for fixed headers (must be a valid CSS selector)
 
-		// Speed & Easing
-		speed: 500, // Integer. How fast to complete the scroll in milliseconds
-		offset: offser_smooth, // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
-		easing: 'easeInOutCubic', // Easing pattern to use
-		// Function. Custom easing pattern
+        // Speed & Easing
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        offset: offser_smooth, // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
+        easing: 'easeInOutCubic', // Easing pattern to use
+        // Function. Custom easing pattern
 
-		// Callback API
-		before: function () {
-			//cancelar_cabecera = 1;
-			document.getElementById( 'header' ).style.position = 'fixed';
-			document.getElementById( 'header' ).style.top = '0px';
-			document.getElementById( 'header' ).style.transition = 'all 0.05s ease-in-out';
-		}, // Callback to run before scroll
-		after: function () {
+        // Callback API
+        before: function () {
+            //cancelar_cabecera = 1;
+            document.getElementById( 'header' ).style.position = 'fixed';
+            document.getElementById( 'header' ).style.top = '0px';
+            document.getElementById( 'header' ).style.transition = 'all 0.05s ease-in-out';
+        }, // Callback to run before scroll
+        after: function () {
 
-				document.getElementById( 'header' ).style.position = 'fixed';
-				document.getElementById( 'header' ).style.top = '0px';
-				document.getElementById( 'header' ).style.transition = 'all 0.5s ease-in-out';
-				setTimeout( function () {
-					cancelar_cabecera = 0;
-				}, 100, "JavaScript" );
+                document.getElementById( 'header' ).style.position = 'fixed';
+                document.getElementById( 'header' ).style.top = '0px';
+                document.getElementById( 'header' ).style.transition = 'all 0.5s ease-in-out';
+                setTimeout( function () {
+                    cancelar_cabecera = 0;
+                }, 100, "JavaScript" );
 
-			} // Callback to run after scroll
+            } // Callback to run after scroll
 
-	} );
+    } );
 </script> 
 <script src="./good_word_files/jsapi"></script>
 <script>
-	google.load( "visualization", "1", {
-		packages: [ "geochart" ]
-	} );
-	google.setOnLoadCallback( drawRegionsMap );
-	
-	function drawRegionsMap() {
-		var array_paises=new Array();
-		array_paises=[["AU","Australia",100],["US","United States",97],["SZ","Swaziland",95],["MP","Northern Mariana Islands",91],["BT","Bhutan",90],["LS","Lesotho",90],["AI","Anguilla",89],["SX","Sint Maarten",86],["TO","Tonga",85],["SG","Singapore",85],["KN","St. Kitts \u0026 Nevis",84],["TC","Turks \u0026 Caicos Islands",81],["GU","Guam",80],["VG","British Virgin Islands",79],["GH","Ghana",79],["WS","Samoa",77],["GD","Grenada",76],["VI","U.S. Virgin Islands",75],["NG","Nigeria",74],["CA","Canada",73],["GY","Guyana",73],["SC","Seychelles",73],["BW","Botswana",72],["BS","Bahamas",71],["JE","Jersey",71],["TT","Trinidad \u0026 Tobago",70],["VC","St. Vincent \u0026 Grenadines",70],["PH","Philippines",70],["LC","St. Lucia",70],["BZ","Belize",69],["GB","United Kingdom",69],["DM","Dominica",69],["ZM","Zambia",69],["UG","Uganda",69],["GG","Guernsey",69],["KE","Kenya",68],["KY","Cayman Islands",68],["IM","Isle of Man",67],["MW","Malawi",67],["JM","Jamaica",67],["BB","Barbados",67],["IN","India",66],["NZ","New Zealand",66],["AG","Antigua \u0026 Barbuda",66],["VU","Vanuatu",64],["ZA","South Africa",63],["MV","Maldives",62],["NA","Namibia",62],["FJ","Fiji",61],["BM","Bermuda",61],["ZW","Zimbabwe",59],["IE","Ireland",59],["GI","Gibraltar",57],["SB","Solomon Islands",57],["BN","Brunei",52],["NP","Nepal",52],["GM","Gambia",51],["AE","United Arab Emirates",50],["ER","Eritrea",49],["MT","Malta",49],["CW","Curaçao",48],["AW","Aruba",46],["RW","Rwanda",45],["LK","Sri Lanka",44],["MU","Mauritius",44],["LR","Liberia",44],["PK","Pakistan",43],["MY","Malaysia",43],["KH","Cambodia",42],["PG","Papua New Guinea",41],["TZ","Tanzania",41],["ET","Ethiopia",41],["AF","Afghanistan",41],["SL","Sierra Leone",40],["FO","Faroe Islands",40],["SS","South Sudan",39],["SH","St. Helena",39],["LB","Lebanon",38],["QA","Qatar",38],["IS","Iceland",36],["HK","Hong Kong",35],["SO","Somalia",35],["BH","Bahrain",33],["BD","Bangladesh",32],["BO","Bolivia",32],["SR","Suriname",32],["OM","Oman",27],["KW","Kuwait",26],["PR","Puerto Rico",26],["AX","Åland Islands",25],["BI","Burundi",24],["CY","Cyprus",23],["MM","Myanmar (Burma)",23],["NO","Norway",23],["MN","Mongolia",22],["EE","Estonia",22],["TL","Timor-Leste",20],["ID","Indonesia",19],["SE","Sweden",19],["CM","Cameroon",19],["DJ","Djibouti",19],["MO","Macau",19],["LA","Laos",19],["MK","Macedonia (FYROM)",18],["MZ","Mozambique",17],["GL","Greenland",17],["HT","Haiti",17],["DK","Denmark",16],["NL","Netherlands",15],["MC","Monaco",15],["KR","South Korea",15],["GE","Georgia",15],["FI","Finland",14],["RO","Romania",14],["LU","Luxembourg",14],["SI","Slovenia",13],["JO","Jordan",13],["TH","Thailand",13],["GR","Greece",13],["IL","Israel",13],["LV","Latvia",13],["AL","Albania",13],["HN","Honduras",13],["BJ","Benin",13],["BE","Belgium",12],["HR","Croatia",12],["TG","Togo",12],["CH","Switzerland",12],["SA","Saudi Arabia",12],["XK","Kosovo",12],["LT","Lithuania",12],["PT","Portugal",12],["CR","Costa Rica",12],["RS","Serbia",11],["MA","Morocco",11],["ME","Montenegro",11],["BG","Bulgaria",11],["PA","Panama",11],["HU","Hungary",11],["CV","Cape Verde",11],["CD","Congo (DRC)",11],["AM","Armenia",11],["TW","Taiwan",11],["FR","France",11],["TN","Tunisia",11],["MG","Madagascar",10],["SV","El Salvador",10],["EG","Egypt",10],["AO","Angola",10],["CZ","Czech Republic",10],["SN","Senegal",10],["PF","French Polynesia",10],["LI","Liechtenstein",10],["DE","Germany",10],["BA","Bosnia \u0026 Herzegovina",10],["NI","Nicaragua",10],["GT","Guatemala",9],["DO","Dominican Republic",9],["AT","Austria",9],["MX","Mexico",9],["SK","Slovakia",9],["SD","Sudan",9],["PL","Poland",9],["MQ","Martinique",8],["BR","Brazil",8],["GF","French Guiana",8],["CL","Chile",8],["GP","Guadeloupe",8],["VN","Vietnam",8],["MD","Moldova",8],["LY","Libya",8],["SY","Syria",8],["IT","Italy",8],["AR","Argentina",8],["UZ","Uzbekistan",8],["GA","Gabon",8],["KG","Kyrgyzstan",8],["PY","Paraguay",8],["ES","Spain",7],["DZ","Algeria",7],["NC","New Caledonia",7],["PE","Peru",7],["AZ","Azerbaijan",7],["YE","Yemen",7],["IR","Iran",7],["IQ","Iraq",7],["CI","Côte d\u2019Ivoire",7],["UY","Uruguay",7],["ML","Mali",7],["EC","Ecuador",6],["KZ","Kazakhstan",6],["AD","Andorra",6],["RE","Réunion",6],["TJ","Tajikistan",6],["CU","Cuba",6],["TM","Turkmenistan",6],["CN","China",6],["PS","Palestine",6],["MR","Mauritania",6],["CO","Colombia",5],["RU","Russia",5],["BF","Burkina Faso",5],["UA","Ukraine",5],["JP","Japan",5],["VE","Venezuela",5],["TR","Turkey",5],["BY","Belarus",5],["AQ","Antarctica",0],["AS","American Samoa",0],["BL","St. Barthélemy",0],["BQ","Caribbean Netherlands",0],["BV","Bouvet Island",0],["CC","Cocos (Keeling) Islands",0],["CF","Central African Republic",0],["CG","Congo (Republic)",0],["CK","Cook Islands",0],["CX","Christmas Island",0],["EH","Western Sahara",0],["FK","Falkland Islands (Islas Malvinas)",0],["FM","Micronesia",0],["GN","Guinea",0],["GQ","Equatorial Guinea",0],["GS","South Georgia \u0026 South Sandwich Islands",0],["GW","Guinea-Bissau",0],["HM","Heard \u0026 McDonald Islands",0],["IO","British Indian Ocean Territory",0],["KI","Kiribati",0],["KM","Comoros",0],["KP","North Korea",0],["MF","St. Martin",0],["MH","Marshall Islands",0],["MS","Montserrat",0],["NE","Niger",0],["NF","Norfolk Island",0],["NR","Nauru",0],["NU","Niue",0],["PM","St. Pierre \u0026 Miquelon",0],["PN","Pitcairn Islands",0],["PW","Palau",0],["SJ","Svalbard \u0026 Jan Mayen",0],["SM","San Marino",0],["ST","São Tomé \u0026 Príncipe",0],["TD","Chad",0],["TF","French Southern Territories",0],["TK","Tokelau",0],["TV","Tuvalu",0],["UM","U.S. Outlying Islands",0],["VA","Vatican City",0],["WF","Wallis \u0026 Futuna",0],["YT","Mayotte",0]];
-		var data = new google.visualization.DataTable();
-		data.addColumn('string', 'regionCode');
-		data.addColumn('string', 'name');
-		data.addColumn('number', 'FREQUENCY (0-100)');
-		data.addRows(array_paises);
-		var options = {
-			colorAxis: {
-				colors: ['#f9fcf5', '#FDDE06']
-			},
-			backgroundColor: "#fff",
-			legend: "none"
-		};
-		var chart = new google.visualization.GeoChart(document.getElementById('div_trends_map'));
-		chart.draw(data, options);
-	}
+    google.load( "visualization", "1", {
+        packages: [ "geochart" ]
+    } );
+    google.setOnLoadCallback( drawRegionsMap );
+
+    function drawRegionsMap() {
+        var array_paises=new Array();
+        array_paises=[["AU","Australia",100],["US","United States",97],["SZ","Swaziland",95],["MP","Northern Mariana Islands",91],["BT","Bhutan",90],["LS","Lesotho",90],["AI","Anguilla",89],["SX","Sint Maarten",86],["TO","Tonga",85],["SG","Singapore",85],["KN","St. Kitts \u0026 Nevis",84],["TC","Turks \u0026 Caicos Islands",81],["GU","Guam",80],["VG","British Virgin Islands",79],["GH","Ghana",79],["WS","Samoa",77],["GD","Grenada",76],["VI","U.S. Virgin Islands",75],["NG","Nigeria",74],["CA","Canada",73],["GY","Guyana",73],["SC","Seychelles",73],["BW","Botswana",72],["BS","Bahamas",71],["JE","Jersey",71],["TT","Trinidad \u0026 Tobago",70],["VC","St. Vincent \u0026 Grenadines",70],["PH","Philippines",70],["LC","St. Lucia",70],["BZ","Belize",69],["GB","United Kingdom",69],["DM","Dominica",69],["ZM","Zambia",69],["UG","Uganda",69],["GG","Guernsey",69],["KE","Kenya",68],["KY","Cayman Islands",68],["IM","Isle of Man",67],["MW","Malawi",67],["JM","Jamaica",67],["BB","Barbados",67],["IN","India",66],["NZ","New Zealand",66],["AG","Antigua \u0026 Barbuda",66],["VU","Vanuatu",64],["ZA","South Africa",63],["MV","Maldives",62],["NA","Namibia",62],["FJ","Fiji",61],["BM","Bermuda",61],["ZW","Zimbabwe",59],["IE","Ireland",59],["GI","Gibraltar",57],["SB","Solomon Islands",57],["BN","Brunei",52],["NP","Nepal",52],["GM","Gambia",51],["AE","United Arab Emirates",50],["ER","Eritrea",49],["MT","Malta",49],["CW","Curaçao",48],["AW","Aruba",46],["RW","Rwanda",45],["LK","Sri Lanka",44],["MU","Mauritius",44],["LR","Liberia",44],["PK","Pakistan",43],["MY","Malaysia",43],["KH","Cambodia",42],["PG","Papua New Guinea",41],["TZ","Tanzania",41],["ET","Ethiopia",41],["AF","Afghanistan",41],["SL","Sierra Leone",40],["FO","Faroe Islands",40],["SS","South Sudan",39],["SH","St. Helena",39],["LB","Lebanon",38],["QA","Qatar",38],["IS","Iceland",36],["HK","Hong Kong",35],["SO","Somalia",35],["BH","Bahrain",33],["BD","Bangladesh",32],["BO","Bolivia",32],["SR","Suriname",32],["OM","Oman",27],["KW","Kuwait",26],["PR","Puerto Rico",26],["AX","Åland Islands",25],["BI","Burundi",24],["CY","Cyprus",23],["MM","Myanmar (Burma)",23],["NO","Norway",23],["MN","Mongolia",22],["EE","Estonia",22],["TL","Timor-Leste",20],["ID","Indonesia",19],["SE","Sweden",19],["CM","Cameroon",19],["DJ","Djibouti",19],["MO","Macau",19],["LA","Laos",19],["MK","Macedonia (FYROM)",18],["MZ","Mozambique",17],["GL","Greenland",17],["HT","Haiti",17],["DK","Denmark",16],["NL","Netherlands",15],["MC","Monaco",15],["KR","South Korea",15],["GE","Georgia",15],["FI","Finland",14],["RO","Romania",14],["LU","Luxembourg",14],["SI","Slovenia",13],["JO","Jordan",13],["TH","Thailand",13],["GR","Greece",13],["IL","Israel",13],["LV","Latvia",13],["AL","Albania",13],["HN","Honduras",13],["BJ","Benin",13],["BE","Belgium",12],["HR","Croatia",12],["TG","Togo",12],["CH","Switzerland",12],["SA","Saudi Arabia",12],["XK","Kosovo",12],["LT","Lithuania",12],["PT","Portugal",12],["CR","Costa Rica",12],["RS","Serbia",11],["MA","Morocco",11],["ME","Montenegro",11],["BG","Bulgaria",11],["PA","Panama",11],["HU","Hungary",11],["CV","Cape Verde",11],["CD","Congo (DRC)",11],["AM","Armenia",11],["TW","Taiwan",11],["FR","France",11],["TN","Tunisia",11],["MG","Madagascar",10],["SV","El Salvador",10],["EG","Egypt",10],["AO","Angola",10],["CZ","Czech Republic",10],["SN","Senegal",10],["PF","French Polynesia",10],["LI","Liechtenstein",10],["DE","Germany",10],["BA","Bosnia \u0026 Herzegovina",10],["NI","Nicaragua",10],["GT","Guatemala",9],["DO","Dominican Republic",9],["AT","Austria",9],["MX","Mexico",9],["SK","Slovakia",9],["SD","Sudan",9],["PL","Poland",9],["MQ","Martinique",8],["BR","Brazil",8],["GF","French Guiana",8],["CL","Chile",8],["GP","Guadeloupe",8],["VN","Vietnam",8],["MD","Moldova",8],["LY","Libya",8],["SY","Syria",8],["IT","Italy",8],["AR","Argentina",8],["UZ","Uzbekistan",8],["GA","Gabon",8],["KG","Kyrgyzstan",8],["PY","Paraguay",8],["ES","Spain",7],["DZ","Algeria",7],["NC","New Caledonia",7],["PE","Peru",7],["AZ","Azerbaijan",7],["YE","Yemen",7],["IR","Iran",7],["IQ","Iraq",7],["CI","Côte d\u2019Ivoire",7],["UY","Uruguay",7],["ML","Mali",7],["EC","Ecuador",6],["KZ","Kazakhstan",6],["AD","Andorra",6],["RE","Réunion",6],["TJ","Tajikistan",6],["CU","Cuba",6],["TM","Turkmenistan",6],["CN","China",6],["PS","Palestine",6],["MR","Mauritania",6],["CO","Colombia",5],["RU","Russia",5],["BF","Burkina Faso",5],["UA","Ukraine",5],["JP","Japan",5],["VE","Venezuela",5],["TR","Turkey",5],["BY","Belarus",5],["AQ","Antarctica",0],["AS","American Samoa",0],["BL","St. Barthélemy",0],["BQ","Caribbean Netherlands",0],["BV","Bouvet Island",0],["CC","Cocos (Keeling) Islands",0],["CF","Central African Republic",0],["CG","Congo (Republic)",0],["CK","Cook Islands",0],["CX","Christmas Island",0],["EH","Western Sahara",0],["FK","Falkland Islands (Islas Malvinas)",0],["FM","Micronesia",0],["GN","Guinea",0],["GQ","Equatorial Guinea",0],["GS","South Georgia \u0026 South Sandwich Islands",0],["GW","Guinea-Bissau",0],["HM","Heard \u0026 McDonald Islands",0],["IO","British Indian Ocean Territory",0],["KI","Kiribati",0],["KM","Comoros",0],["KP","North Korea",0],["MF","St. Martin",0],["MH","Marshall Islands",0],["MS","Montserrat",0],["NE","Niger",0],["NF","Norfolk Island",0],["NR","Nauru",0],["NU","Niue",0],["PM","St. Pierre \u0026 Miquelon",0],["PN","Pitcairn Islands",0],["PW","Palau",0],["SJ","Svalbard \u0026 Jan Mayen",0],["SM","San Marino",0],["ST","São Tomé \u0026 Príncipe",0],["TD","Chad",0],["TF","French Southern Territories",0],["TK","Tokelau",0],["TV","Tuvalu",0],["UM","U.S. Outlying Islands",0],["VA","Vatican City",0],["WF","Wallis \u0026 Futuna",0],["YT","Mayotte",0]];
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'regionCode');
+        data.addColumn('string', 'name');
+        data.addColumn('number', 'FREQUENCY (0-100)');
+        data.addRows(array_paises);
+        var options = {
+            colorAxis: {
+                colors: ['#f9fcf5', '#FDDE06']
+            },
+            backgroundColor: "#fff",
+            legend: "none"
+        };
+        var chart = new google.visualization.GeoChart(document.getElementById('div_trends_map'));
+        chart.draw(data, options);
+    }
 </script>
 </body></html>

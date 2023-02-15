@@ -45,7 +45,7 @@ __download__ = 'https://pypi.python.org/pypi/goslate'
 def _is_sequence(arg):
     return (not isinstance(arg, str)) and (
         not isinstance(arg, bytes)) and (
-                   hasattr(arg, "__getitem__") or hasattr(arg, "__iter__"))
+        hasattr(arg, "__getitem__") or hasattr(arg, "__iter__"))
 
 
 def _is_bytes(arg):
@@ -169,7 +169,7 @@ class Goslate(object):
 
         exception = None
         # retry when get (<class 'socket.error'>, error(54, 'Connection reset by peer')
-        for i in range(self._RETRY_TIMES):
+        for _ in range(self._RETRY_TIMES):
             try:
                 response = self._opener.open(request, timeout=self._TIMEOUT)
                 response_content = response.read().decode('utf-8')
@@ -179,6 +179,7 @@ class Goslate(object):
             except socket.error as e:
                 if self._DEBUG:
                     import threading
+                    # noinspection PyDeprecation
                     print(threading.currentThread(), e)
                 if 'Connection reset by peer' not in str(e):
                     raise e

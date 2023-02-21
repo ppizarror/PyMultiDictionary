@@ -143,7 +143,7 @@ class MultiDictionary(object):
         _CACHED_SOUPS[link] = bs
         if len(bs_keys) >= self._max_cached_websites:
             # noinspection PyTypeChecker
-            del _CACHED_SOUPS[bs[0]]
+            del _CACHED_SOUPS[bs_keys[0]]
         return bs
 
     def _save_bsoup(self, link: str, filename: str, encoding: str = 'utf-8') -> None:

@@ -268,6 +268,21 @@ class DictionaryTest(unittest.TestCase):
         # Test invalid dictionary
         # self.assertRaises(InvalidDictionary, lambda: d.antonym('es', 'word', dictionary=DICT_SYNONYMCOM))
 
+    def test_overwrite_cache(self) -> None:
+        """
+        Test request with maxed out cache.
+        """
+        d = self._get_dictionary('words', 'are', 'super', 'fun')
+        d.set_words_lang('en')
+        d._max_cached_websites = 3
+
+        self.assertEqual(len(d.get_synonyms()), 4)
+        self.assertEqual(len(d.get_synonyms(dictionary=DICT_EDUCALINGO)), 4)
+        self.assertEqual(len(d.get_synonyms(dictionary=DICT_SYNONYMCOM)), 4)
+        self.assertEqual(len(d.get_synonyms(dictionary=DICT_THESAURUS)), 4)
+        self.assertEqual(len(d.get_meanings(dictionary=DICT_WORDNET)), 4)
+
+
     def test_language_name(self) -> None:
         """
         Test language name.

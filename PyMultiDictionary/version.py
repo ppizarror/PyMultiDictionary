@@ -8,8 +8,6 @@ Defines version.
 
 __all__ = ['Version', 'vernum', 'ver', 'rev']
 
-from typing import Tuple
-
 
 class Version(tuple):
     """
@@ -19,7 +17,7 @@ class Version(tuple):
     __slots__ = ()
     fields = 'major', 'minor', 'patch'
 
-    def __new__(cls, major, minor, patch) -> Tuple:
+    def __new__(cls, major, minor, patch) -> 'Version':
         return tuple.__new__(cls, (major, minor, patch))
 
     def __repr__(self) -> str:

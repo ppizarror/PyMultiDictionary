@@ -262,7 +262,7 @@ class Goslate(object):
         `supported languages <https://developers.google.com/translate/v2/using_rest#language-params>`_
         for translation. Some language codes also include a country code, like zh-CN or zh-TW.
 
-        .. note:: It only queries Google once for the first time and use cached result afterwards
+        .. note:: It only queries Google once for the first time and use cached result afterward
 
         :returns: a dict of all supported language code and language name mapping ``{'language-code', 'Language name'}``
 

@@ -21,7 +21,7 @@ import PyMultiDictionary._goslate as goslate
 import PyMultiDictionary._utils as ut
 
 from bs4 import BeautifulSoup
-from urllib.request import urlopen
+from urllib.request import urlopen, Request
 from typing import Dict, Tuple, Optional, List, Union
 from warnings import warn
 
@@ -136,7 +136,8 @@ class MultiDictionary(object):
             f.close()
         else:
             try:
-                data = str(urlopen(link, context=ssl.SSLContext()).read().decode(encoding))
+                req = Request(link, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36'})
+                data = str(urlopen(req, context=ssl.SSLContext()).read().decode(encoding))
             except (urllib.error.HTTPError, ValueError):
                 return None
         bs = BeautifulSoup(data, 'html.parser')
@@ -279,7 +280,7 @@ class MultiDictionary(object):
 
     def antonym(self, lang: str, word: str, dictionary: str = DICT_SYNONYMCOM) -> AntonymType:
         """
-        Finds a aynonyms for a given word.
+        Finds an aynonym for a given word.
 
         :param lang: Lang code
         :param word: Word to retrieve

@@ -257,7 +257,7 @@ class MultiDictionary(object):
             bs = self._bsoup(f'https://www.thesaurus.com/browse/{word}')
             if bs is None:
                 return words
-            results = [i for i in bs.find_all('div', {'id': 'meanings'})]
+            results = [i for i in bs.find_all('section', {'data-type': 'thesaurus-synonyms-card'})]
             if len(results) == 1:
                 results = results[0]
                 for li in results.find_all('li'):

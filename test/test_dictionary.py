@@ -166,7 +166,8 @@ class DictionaryTest(unittest.TestCase):
         self.assertEqual(d.synonym('en', 'for this reason', DICT_THESAURUS),
                          ['accordingly', 'so', 'then', 'thus', 'consequently', 'hence', 'thence', 'and so',
                           'ergo', 'for', 'forasmuch as', 'inasmuch as', 'in consequence', 'in that event',
-                          'on account of', 'on the grounds', 'since', 'therefrom', 'thereupon', 'to that end', 'whence', 'wherefore'])
+                          'on account of', 'on the grounds', 'since', 'therefrom', 'thereupon', 'to that end', 'whence',
+                          'wherefore'])
 
         # Synonyms
         syn = ['able', 'acceptable', 'accomplished', 'accurate', 'adept', 'adequate', 'admirable', 'adroit',

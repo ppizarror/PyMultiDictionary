@@ -14,11 +14,13 @@ __all__ = [
     'MultiDictionary'
 ]
 
+import json
+import PyMultiDictionary._goslate as goslate
+import PyMultiDictionary._utils as ut
 import re
 import ssl
 import urllib.error
-import PyMultiDictionary._goslate as goslate
-import PyMultiDictionary._utils as ut
+import urllib.parse
 
 from bs4 import BeautifulSoup
 from urllib.request import urlopen, Request
@@ -48,7 +50,6 @@ class MultiDictionary(object):
     """
     Dictionary. Support synonyms, antonyms, meanings, and translations from some languages.
     """
-
     _max_cached_websites: int  # Maximum stored websites
     _langs: Dict[str, Tuple[bool, bool, bool, bool]]  # synonyms, meaning, translation, antonym
     _test_cached_file: Dict[str, str]  # If defined, loads that file instead
@@ -131,13 +132,12 @@ class MultiDictionary(object):
         if link in bs_keys:
             return _CACHED_SOUPS[link]
         if link in self._test_cached_file.keys():
-            f = open(self._test_cached_file[link], 'r', encoding='utf8')
+            f = open(self._test_cached_file[link], encoding='utf8')
             data = ''.join(f.readlines())
             f.close()
         else:
             try:
-                req = Request(link, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36'})
-                data = str(urlopen(req, context=ssl.SSLContext()).read().decode(encoding))
+                data = self._request(link, encoding)
             except (urllib.error.HTTPError, ValueError):
                 return None
         bs = BeautifulSoup(data, 'html.parser')
@@ -146,6 +146,19 @@ class MultiDictionary(object):
             # noinspection PyTypeChecker
             del _CACHED_SOUPS[bs_keys[0]]
         return bs
+
+    @staticmethod
+    def _request(link: str, encoding: str) -> str:
+        """
+        Attempt a request.
+
+        :param link: Link
+        :param encoding: Encoding
+        :return: Content
+        """
+        req = Request(link, headers={
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36'})
+        return str(urlopen(req, context=ssl.SSLContext()).read().decode(encoding))
 
     def _save_bsoup(self, link: str, filename: str, encoding: str = 'utf-8') -> None:
         """
@@ -177,7 +190,7 @@ class MultiDictionary(object):
         :return: Word list
         """
         assert _type in ('Synonyms', 'Antonyms')
-        word = word.replace(' ', '-')
+        word = urllib.parse.quote_plus(word.replace(' ', '-'))
         bs = self._bsoup(f'https://www.synonym.com/synonyms/{word}')
         if bs is None:
             return []
@@ -233,8 +246,7 @@ class MultiDictionary(object):
             return words
 
         if dictionary == DICT_EDUCALINGO and lang in _EDUCALINGO_LANGS:
-            word = word.replace(' ', '-')
-            bs = self._bsoup(f'https://educalingo.com/en/dic-{lang}/{word}')
+            bs = self.__search_educalingo(lang, word=urllib.parse.quote_plus(word.replace(' ', '-')))
             if bs is None:
                 return words
             results = [i for i in bs.find_all('div', {'class': 'contenido_sinonimos_antonimos0'})]
@@ -250,10 +262,9 @@ class MultiDictionary(object):
             for w in en_words:
                 if w not in words:
                     words.append(w)
-            # words.sort()
 
         elif dictionary == DICT_THESAURUS and lang == 'en':
-            word = word.replace(' ', '%20')
+            word = urllib.parse.quote_plus(word.replace(' ', '%20'))
             bs = self._bsoup(f'https://www.thesaurus.com/browse/{word}')
             if bs is None:
                 return words
@@ -318,6 +329,25 @@ class MultiDictionary(object):
         self._check_defined_lang()
         return [self.antonym(self._words_lang, w, dictionary) for w in self._words]
 
+    def __search_educalingo(self, lang: str, word: str) -> Optional['BeautifulSoup']:
+        """
+        Searches word for educalingo.
+
+        :param lang: Language
+        :param word: Word to search for
+        :return: Search word content
+        """
+        bs = self._bsoup(f'https://educalingo.com/en/dic-{lang}/{word}')
+        if bs is None:  # If failed, search word
+            try:
+                r = json.loads(self._request(f'https://search.educalingo.com/?dic={lang}&q={word}', 'utf-8'))
+                if 'palabras' in r and len(r['palabras']) > 0:
+                    word = r['palabras'][0]['url']
+                    return self._bsoup(f'https://educalingo.com/en/dic-{lang}/{word}')
+            except (json.JSONDecodeError, KeyError):
+                pass
+        return word
+
     def meaning(self, lang: str, word: str, dictionary: str = DICT_EDUCALINGO) -> MeaningType:
         """
         Finds the meaning for a given word.
@@ -337,8 +367,7 @@ class MultiDictionary(object):
             return types, words, wiki
 
         if dictionary == DICT_EDUCALINGO and lang in _EDUCALINGO_LANGS:
-            word = word.replace(' ', '-')
-            bs = self._bsoup(f'https://educalingo.com/en/dic-{lang}/{word}')
+            bs = self.__search_educalingo(lang, word=urllib.parse.quote_plus(word.replace(' ', '-')))
             if bs is not None:
                 results = [i for i in bs.find_all('div', {'id': 'cuadro_categoria_gramatical'})]
                 if len(results) == 1:
@@ -369,7 +398,7 @@ class MultiDictionary(object):
         elif dictionary == DICT_WORDNET and lang == 'en':
             if word == '':
                 return {}
-            word = word.replace(' ', '+')
+            word = urllib.parse.quote_plus(word.replace(' ', '+'))
             # noinspection HttpUrlsUsage
             html = self._bsoup(f'http://wordnetweb.princeton.edu/perl/webwn?s={word}')
             types = html.findAll('h3')
@@ -427,8 +456,7 @@ class MultiDictionary(object):
             raise InvalidLangCode(f'{lang} code is not supported for translation')
 
         if lang in _EDUCALINGO_LANGS:
-            word = word.replace(' ', '-')
-            bs = self._bsoup(f'https://educalingo.com/en/dic-{lang}/{word}')
+            bs = self.__search_educalingo(lang, word=urllib.parse.quote_plus(word.replace(' ', '-')))
             if bs is None:
                 return words
             results = [i for i in bs.find_all('div', {'class': 'traduccion0'})]

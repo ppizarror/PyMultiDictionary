@@ -50,8 +50,8 @@ class MultiDictionary(object):
     """
     Dictionary. Support synonyms, antonyms, meanings, and translations from some languages.
     """
-    _max_cached_websites: int  # Maximum stored websites
     _langs: Dict[str, Tuple[bool, bool, bool, bool]]  # synonyms, meaning, translation, antonym
+    _max_cached_websites: int  # Maximum stored websites
     _test_cached_file: Dict[str, str]  # If defined, loads that file instead
     _tokenize: bool  # Enables word tokenizer
     _words: List[str]  # List of words passed to the constructor

@@ -136,7 +136,6 @@ class Goslate(object):
         >>> print(gs_roman.translate('hello', 'zh'))
         Nín hǎo
     """
-
     _MAX_LENGTH_PER_QUERY = 1800
 
     def __init__(self, writing=WRITING_NATIVE, opener=None, retry_times=4, executor=_g_executor,
@@ -295,7 +294,7 @@ class Goslate(object):
         self._languages = languages
         return self._languages
 
-    _SEPERATORS = [quote_plus(i.encode('utf-8')) for i in
+    _SEPERATORS = [quote_plus(i.encode()) for i in
                    u'.!?,;。，？！:："“”’‘#$%&()（）*×+/<=>@＃￥[\]…［］^`{|}｛｝～~\n\r\t ']
 
     def _translate_single_text(self, text, target_language, source_lauguage):
@@ -332,7 +331,7 @@ class Goslate(object):
 
          - Input all source strings at once. Goslate will batch and fetch concurrently for maximize speed.
          - `futures <https://pypi.python.org/pypi/futures>`_ is required for best performance.
-         - It returns generator on batch input in order to better fit pipeline architecture
+         - It returns generator on batch input to better fit pipeline architecture
 
         :param text: The source text(s) to be translated. Batch translation is supported via sequence input
         :type text: UTF-8 str; unicode; string sequence (list, tuple, iterator, generator)
@@ -394,17 +393,17 @@ class Goslate(object):
 
         if not _is_sequence(text):
             if isinstance(text, str):
-                text = text.encode('utf-8')
+                text = text.encode()
             return _unwrapper_single_element(self._translate_single_text(text, target_language, source_language))
 
         JOINT = u'\u26ff'
-        UTF8_JOINT = (u'\n%s\n' % JOINT).encode('utf-8')
+        UTF8_JOINT = (u'\n%s\n' % JOINT).encode()
 
         def join_texts(texts):
             def convert_to_utf8(texts):
                 for i in texts:
                     if isinstance(i, str):
-                        i = i.encode('utf-8')
+                        i = i.encode()
                     yield i.strip()
 
             texts = convert_to_utf8(texts)
@@ -443,7 +442,7 @@ class Goslate(object):
 
          - Input all source strings at once. Goslate will detect concurrently for maximize speed.
          - `futures <https://pypi.python.org/pypi/futures>`_ is required for best performance.
-         - It returns generator on batch input in order to better fit pipeline architecture.
+         - It returns generator on batch input to better fit pipeline architecture.
 
         :param text: The source text(s) whose language you want to identify.
                      Batch detection is supported via sequence input

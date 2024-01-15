@@ -121,7 +121,6 @@ class RegexpTokenizer(TokenizerI):
     :param flags: The regexp flags used to compile this
         tokenizer's pattern.  By default, the following flags are
         used: `re.UNICODE | re.MULTILINE | re.DOTALL`.
-
     """
 
     def __init__(

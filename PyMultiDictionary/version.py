@@ -17,7 +17,7 @@ class Version(tuple):
     __slots__ = ()
     fields = 'major', 'minor', 'patch'
 
-    def __new__(cls, major, minor, patch) -> 'Version':
+    def __new__(cls, major, minor, patch) -> tuple:
         return tuple.__new__(cls, (major, minor, patch))
 
     def __repr__(self) -> str:

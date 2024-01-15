@@ -2,7 +2,7 @@
 
 <!doctype html>
 <html  lang="en">
-<!-- v7.27 SERVER 2 [RAI2] -->
+<!-- v7.29 SERVER 2 [RAI2] -->
 <head>
 <meta charset="utf-8">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V39N0EWTBW"></script>
@@ -46,7 +46,7 @@
 <link rel="icon" type="image/png" href="/assets/img/favicon.png">
 <style>/*! normalize.css v2.1.0 | MIT License | git.io/normalize */article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}#fondo_buscar,#fondo_buscar_inicio{z-index:999999;width:100%;top:0;height:100%;display:none}#botones_cookies a,#compartir a,a{text-decoration:none}#volver_arriba,.fondo_comun{background-color:#181c1e;position:absolute}#boton_buscar,#cerrar_anuncio_app,#fondo_buscar_inicio,#header,#volver_arriba,.center-div,.center-div_fondo,.fondo_comun{position:absolute}#buscador_input,#color_rosa,.buscador_input,.enlace_menu,.select_idioma_diccionario{background-repeat:no-repeat}#buscador,#form_cabecera,#frase_intro{max-width:500px}#ancla_m1,#cabecera_seccion_diccionario,#descripcion_seccion_diccionario,#intro2,#titulo_cabecera_seccion_diccionario{z-index:5}#logo,#logo_menu_buscar{margin-bottom:5px;z-index:999}html{height:100%;color:#222;font-family:Montserrat,sans-serif}.fondo_comun{width:100%;height:100%}*{-ms-box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}h1{font-size:1em;font-weight:400;margin:0}.fc-close{scale:0!important}#fondo_buscar{position:fixed}#fondo_buscar2{position:fixed;width:100%;height:100%;background-color:rgba(0,0,0,.4)}[contenteditable]:focus{outline:transparent solid 0}.center-div_fondo{max-width:1024px;margin:0 auto;left:0;right:0}.center-div{top:0;margin:0 auto;width:100%}.buscador_contenedor_elementos_busqueda{position:relative;width:100%;height:58px;background-color:#0085b8;padding:14px 120px 20px 20px}.buscador_contenedor_resultados{position:relative;width:100%;background-color:#f2f2f2;overflow:hidden;-webkit-box-shadow:0 3px 5px 0 rgba(0,0,0,.75);-moz-box-shadow:0 3px 5px 0 rgba(0,0,0,.75);box-shadow:0 3px 5px 0 rgba(0,0,0,.75)}#palabra_buscador,.bg_palabra1,.buscador_palabra{background-color:#fff}#buscador_input{position:relative;width:100%;height:33px;border:2px solid #fff;background-color:#fff!important;padding-left:35px;padding-right:20px;color:#000;-webkit-border-top-left-radius:20px;-webkit-border-bottom-left-radius:20px;-moz-border-radius-topleft:20px;-moz-border-radius-bottomleft:20px;border-top-left-radius:20px;border-bottom-left-radius:20px;margin-right:15px;outline:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;background-size:20px;background-position:10px center}#boton_buscar{right:20px;top:14px;width:100px;text-align:center;height:33px;line-height:32px;color:#0085b8;font-weight:700;font-size:1em;z-index:10;background-color:#fdde06;-webkit-border-top-right-radius:20px;-webkit-border-bottom-right-radius:20px;-moz-border-radius-topright:20px;-moz-border-radius-bottomright:20px;border-top-right-radius:20px;border-bottom-right-radius:20px;cursor:pointer;overflow:hidden;border:2px solid #fdde06}#boton_buscar:hover{border:2px solid #fcf3be}#div_resultados{overflow-y:auto;width:100%;height:100%;max-height:405px}#div_resultados::-webkit-scrollbar{display:none}#buscador_separador_idiomas_txt{height:40px;font-size:.9em;padding-left:25px;padding-top:11px;background-color:#eee}.buscador_cambio_dic{text-align:right;font-size:.9em}.buscador_cambio_dic_enlace{color:#000;text-decoration:none;padding-right:15px}.buscador_cambio_dic_enlace:hover,.select_idioma_diccionario option{color:#000}.buscador_cambio_dic_enlace:hover .ico_idioma_dic_flecha,.enlace_idioma_diccionario_pie2:hover .ico_idioma_dic_flecha{-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);rotation:90deg}.buscador_palabra{padding-top:7px;padding-bottom:7px;padding-left:18px;border-bottom:1px solid #f3f3f3;cursor:pointer}.bg_palabra2{background-color:#f3f3f3}.buscador_palabra:hover,.buscador_palabra_activa{background-color:#e1effb}.buscador_palabra_circulo_idioma{font-size:.9em;display:inline-block;margin-right:10px;padding-bottom:5px;width:30px;height:30px;border-radius:30px;left:25px;font-weight:700;line-height:30px;top:9px;text-align:center}.t_ja_pr_tabla,.t_ja_pr_tabla_play{padding-top:0;padding-bottom:0;text-align:center;display:inline-block}.bg_color1{background-color:#06b2be;color:#fff}.bg_color2{background-color:#e63446;color:#fff}.palabra_seleccionada{display:inline-block;background-color:#ccc;width:100%}a:hover{color:#0044fd}img{border:none}.t_ja_pr_tabla{margin-top:15px}.t_ja_pr_tabla_play{vertical-align:top;margin-left:20px;margin-top:0}.t_ja_pr_furigana{font-size:14px}.t_ja_pr_letra{font-size:25px;font-weight:700;padding:0 7px}.t_ja_pr_pronunciacion{font-size:18px;padding:2px 7px 0}.anuncio_modo_test{background-color:#deff00;color:#333;text-align:center;font-size:1.3em;padding-top:10px;cursor:pointer}.nocursor{cursor:default}.anuncio_modo_test_resolucion{font-size:.7em;color:#ffa200}.anuncio_modo_test_color{font-size:.7em;color:#999;font-style:italic}.anuncio_modo_test_size{font-size:1em;color:#333;font-style:italic}#c_anuncio_top{text-align:center;overflow:hidden;z-index:20}@media all and (min-width:728px){.t_ja_pr_furigana{font-size:17px}.t_ja_pr_letra{font-size:35px;padding-top:5px;padding-bottom:7px}.t_ja_pr_pronunciacion{font-size:19px}#c_anuncio_top{padding-top:10px;padding-bottom:10px}}#cookies{position:fixed;width:100%;bottom:0;background-color:#222;z-index:100000;color:#fff}#cookies a{color:#ddd;padding-left:5px;display:inline-block}#texto_cookies{position:relative;display:inline-block;padding-top:13px;margin-right:15px;margin-left:25px;top:3px}#botones_cookies{top:3px;position:relative;display:inline-block;margin-bottom:20px;margin-top:17px;margin-left:25px}#botones_cookies a{background-color:#3b3b3b;border:1px solid rgba(255,255,255,.1);-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;color:#fff;cursor:pointer;line-height:19px;padding:4px 15px;white-space:nowrap;min-width:110px;text-align:center}#botones_cookies a:hover{background-color:#484848}.select_idioma_diccionario{background-color:transparent;border:none;font-weight:400;color:#fff;width:45px;text-transform:uppercase;cursor:pointer;background-size:13px;background-position:right center;-webkit-appearance:none;-moz-appearance:none;-o-appearance:none;appearance:none}#menu_buscador2,.logo_header{background-color:#0085b8;position:relative}#palabra_buscador,#volver_arriba{-moz-border-radius:23px;-webkit-border-radius:23px}#titulo_anuncio_app,.boton_buscar{text-align:center;font-weight:700}.select_idioma_diccionario::-ms-expand{display:none}#anuncio_app{position:relative;width:100%;height:150px;background-color:#000;border-bottom:2px solid #06b2be;border-top:2px solid #06b2be;color:#fff;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;padding-top:12px;overflow:hidden}#titulo_anuncio_app{position:relative;width:100%;justify-content:center;align-items:center;overflow:hidden;padding-left:10px;padding-right:10px;font-size:1.1em;margin-bottom:4px}#titulo_anuncio_app .color_marca,.anuncio_amarillo{color:#fcdd06}#titulo_anuncio_app img{position:relative;width:24px;margin-left:10px;top:5px}.anuncio_app_play_store{position:relative;height:77px}.anuncio_app_app_store{position:relative;height:52px;margin:10px}#anuncio_app_estrellas{position:absolute;width:100px;height:100px;background-color:#f1f2f2;text-align:center;padding-top:8px;left:0;top:0}#anuncio_app_estrellas img{margin-top:10px}#logo_google_play_app{position:relative;width:120px;margin-top:5px}#cerrar_anuncio_app{top:10px;right:10px}.enlace_redes_acerca{position:relative;width:20px;height:20px}body{font-size:1em;font-weight:400;height:100%;overflow-x:hidden;line-height:1.4em;padding-top:0!important}.subrayado{text-decoration:underline!important}#volver_arriba{width:40px;height:40px;top:-43px;right:10px;z-index:3000;border-radius:23px;-webkit-transition:.5s ease-in-out;-moz-transition:.5s ease-in-out;-o-transition:.5s ease-in-out;transition:.5s ease-in-out;text-align:center;padding-top:10px}#header{width:100%;z-index:20000}.header_top_anuncio{top:240px}.logo_header{width:100%;height:90px;text-align:center;padding-top:20px;padding-bottom:10px}.logo_header_img{width:210px}#menu_buscador2{text-align:center;z-index:1}#menu_buscador_seleccion{position:relative;text-align:center;z-index:1}.color_menu_buscador_seleccion_oscuro{background-color:#006b8c}#color_rosa,#compartir,#cuerpo_comun_seleccion,.background_rosa_claro,.background_rosa_menu,.color_menu_buscador_seleccion_claro{background-color:#0085b8}#menu_buscador{position:relative;max-width:1024px;width:100%;padding:0 35px 0 34px;height:65px;margin:0 auto;display:none}#buscador,.boton_buscar{height:33px;position:absolute}#buscar_menu{position:absolute;left:10px;top:14px;cursor:pointer}#atras_buscar_menu{position:absolute;left:10px;top:15px;cursor:pointer;display:none}#buscador{width:100%;text-align:left;left:0;top:7px;display:none}#palabra_buscador{position:absolute;text-align:left;width:350px;height:35px;line-height:35px;color:#333;font-size:1em;top:14px;left:198px;z-index:10;padding-left:20px;border-radius:23px}.boton_buscar{width:128px;line-height:33px;color:#0085b8;font-size:1em;z-index:10;background-color:#fdde06;-moz-border-radius:23px;-webkit-border-radius:23px;border-radius:23px;display:inline-block;border:2px solid #fdde06;left:286px;top:2px}.ico_lupa_blanco2{position:absolute;width:24px;right:25px;top:17px}.ico_lupa_blanco2_palabra{position:absolute;width:24px;right:25px;top:12px}.menu_palabra,.menu_palabra_seleccion{position:relative;width:100%;max-width:1024px;padding-left:65px;color:#fff;line-height:48px;text-align:left;margin:0 auto;font-weight:700}.menu_palabra{background-color:#006584;height:45px}.menu_palabra_seleccion{height:59px}.menu_circulo_idioma_diccionario{position:absolute;width:30px;height:30px;border-radius:30px;background-color:#fdde06;left:25px;font-weight:700;line-height:30px;top:9px;color:#0084b7;text-align:center}#autor_frase_intro,#espacio_menu,#form_cabecera,#frase_intro,#intro2,#menu_enlaces,#menu_enlaces2,.buscador_input,.circulo,.enlace_menu,.imagen_compartir,.imagen_compartir2{position:relative}#cabecera_logos{z-index:20}#palabra_h1{font-size:1em;font-weight:400}.buscador_input{width:267px;height:33px;background-color:#fff!important;padding-left:35px!important;padding-right:20px;font-size:1em;color:#000;border-radius:30px;margin-right:15px;border:2px solid #fff;top:2px;background-size:20px;background-position:10px center}#cruz_buscar_menu{position:absolute;right:10px;top:10px;z-index:10;cursor:pointer;width:15px;visibility:hidden}#logo_menu_buscar{position:absolute;height:46px;left:12px;top:8px;margin-top:5px;display:none}#compartir{position:absolute;width:120px;height:25px;right:0;overflow:hidden;text-align:right;top:0}.imagen_compartir{margin-top:5px;margin-left:7px;width:20px}.imagen_compartir2{margin-left:7px;display:inline-block}.imagen_compartir2_inicio_facebook,.imagen_compartir2_inicio_twitter,.imagen_compartir2_inicio_whatsapp{height:15px}.imagen_compartir2_inicio_google{height:15px;display:none}.imagen_compartir2_facebook,.imagen_compartir2_google,.imagen_compartir2_twitter{width:30px}#menu_enlaces2{padding-top:5px;background:#ececec;height:86px;overflow:hidden;-webkit-transition:.2s ease-in-out;-moz-transition:.2s ease-in-out;-o-transition:.2s ease-in-out;transition:.2s ease-in-out}#color_azul,#color_rosa{-webkit-transition:background-color 1s linear;-moz-transition:background-color .1s linear;-o-transition:background-color .1s linear;-ms-transition:background-color .1s linear}#menu_enlaces{height:90px;max-width:1024px;margin:0 auto}.enlace_menu{height:75px;width:20%;float:left;text-align:center;font-size:.6em;color:#757575;padding-left:3px;padding-right:3px;text-decoration:none;background-position:right 50%;outline:0!important}.link_s1,.link_s3,.link_s4,.texto_pie73 a:hover{text-decoration:underline}.circulo{width:46px;height:46px;background:0 0;-moz-border-radius:23px;-webkit-border-radius:23px;border-radius:23px;margin:7px auto}#color_rosa{transition:background-color .1s linear;background-position:center;background-size:17px;border:1px solid #0085b8}#color_rosa:hover{background-color:#0085b8!important}#color_azul{background-color:#e73446;transition:background-color .1s linear;background-position:center;background-size:17px;background-repeat:no-repeat;border:1px solid #e73446}#color_amarillo,#color_verde{-webkit-transition:background-color 1s linear;-moz-transition:background-color .1s linear;-o-transition:background-color .1s linear;-ms-transition:background-color .1s linear;background-position:center;background-size:17px;background-repeat:no-repeat}#color_azul:hover{background-color:#e73446!important}#color_amarillo{background-color:#06b3bf;transition:background-color .1s linear;border:1px solid #06b3bf}#color_amarillo:hover{background-color:#06b3bf!important}#color_verde{background-color:#fdde06;transition:background-color .1s linear;border:1px solid #fdde06}#color_verde:hover{background-color:#fdde06!important}#color_marron{background-color:#4eb691;-webkit-transition:background-color 1s linear;-moz-transition:background-color .1s linear;-o-transition:background-color .1s linear;-ms-transition:background-color .1s linear;transition:background-color .1s linear;background-position:center;background-size:17px;background-repeat:no-repeat;border:1px solid #4eb691}#color_marron:hover{background-color:#4eb691!important}.imagen_enlace_menu{position:relative;width:80%;margin-top:5px}#raya_transparente_menu{width:100%;height:2px;background-color:#7c7c7c;opacity:.7}#espacio_menu{height:132px;background-color:#222}#intro2{background:#f9f9f9}#intro{max-width:1024px;margin:0 auto;padding:20px 0 10px}#frase_intro{width:90%;margin:12px auto 20px;color:#777;padding-left:40px;padding-right:40px}#autor_frase_intro{color:#bbb;font-size:.9em;margin-top:10px;font-style:italic}.comillas_abrir{position:absolute;left:0;top:0}.comillas_cerrar{position:absolute;right:0;bottom:0}.separador_seccion{position:relative;width:100%;background-color:#222;height:25px}.circulo_rosa{position:relative;width:8px;height:8px;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;margin:0 auto;top:8.5px}.descripcion_seccion{position:relative;width:100%;background-color:#7c7c7c;min-height:25px;font-size:.9em;color:#fff;font-style:italic;overflow:hidden;padding:4px 10px;text-align:center}#palabra_silabas u,.destacado_rosa,.link_s1{color:#0085b8}.descripcion_seccion a,.descripcion_seccion a:hover,.enlace_idioma_diccionario_pie2 .idioma_diccionario,.enlace_idioma_diccionario_pie2 .idioma_diccionario_anuncio{color:#fff}.cabecera_seccion{position:relative;width:100%;height:55px;text-align:center}.icono_cabecera_seccion{position:relative;height:100%;margin:0 auto}.titulo_cabecera_seccion{position:relative;width:100%;font-size:2em;font-weight:700;text-align:center;margin:20px auto;max-width:1024px}.palabra_titulo_cabecera_seccion{line-height:1.1em;position:relative;background-color:#fff;padding:0 10px;z-index:1;text-align:center}#cuerpo_comun_seleccion,.subseccion{padding-left:33px;margin:auto;max-width:1024px}.raya_titulo_cabecera_seccion{position:absolute;height:2px;width:100%;background-color:#000;top:18px;z-index:0}.subseccion{position:relative;width:100%;padding-right:10px;z-index:5}.cuadro_subseccion{position:absolute;height:24px;width:24px;left:3px}.flecha_cuadro{position:absolute;width:10px;top:4px}.titulo_subseccion{position:relative;font-weight:700}.link_s1:hover{color:#2db1e4}.link_s4{color:#757151}.link_s4:hover{color:#a39d71}.link_s3{color:#e73446}.link_s3:hover{color:#bf323e}.pointer{cursor:pointer}.cuadro_info2{position:relative;padding-left:11px}.cuadro_info{position:relative;background-color:#f4f4f4;width:100%;padding:20px 30px;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;margin-top:30px;margin-bottom:30px;color:#666}.circulo_cuadro_info{position:absolute;width:50px;height:50px;-moz-border-radius:25px;-webkit-border-radius:25px;border-radius:25px;background-color:#fff;left:-25px;top:-25px}.circulo_cuadro_info2{position:absolute;width:25px;height:25px;-moz-border-radius:15px;-webkit-border-radius:15px;border-radius:15px;right:10px;bottom:10px;padding-top:5px;text-align:center}.separador_subseccion{position:relative;height:5px;width:100%;max-width:1024px;background:#fff;background:-moz-linear-gradient(left,#fff 0,#e5e5e5 50%,#fff 100%);background:-webkit-gradient(left top,right top,color-stop(0,#fff),color-stop(50%,#e5e5e5),color-stop(100%,#fff));background:-webkit-linear-gradient(left,#fff 0,#e5e5e5 50%,#fff 100%);background:-o-linear-gradient(left,#fff 0,#e5e5e5 50%,#fff 100%);background:-ms-linear-gradient(left,#fff 0,#e5e5e5 50%,#fff 100%);background:linear-gradient(to right,#fff 0,#e5e5e5 50%,#fff 100%);text-align:center;margin:50px auto}#cuerpo_comun,.cuerpo_comun_fondo,.separador_subseccion2{background-color:#fff;position:relative}.separador_subseccion2{height:5px;width:90px;margin:0 auto;-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px}.circulo_separador_subseccion{position:relative;width:6px;height:6px;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;margin:0 auto}#palabra_silabas{line-height:1.1em;position:relative;margin-bottom:20px;margin-top:-15px;word-wrap:break-word;font-size:1.2em}#palabra_silabas a{text-decoration:none;color:#222}#altavoz_silaba{position:relative;width:35px;cursor:pointer;margin-left:7px;top:10px}#cuerpo_comun{width:100%;max-width:1024px;padding-left:23px;padding-right:10px;padding-top:30px;margin:auto}#cuerpo_comun_seleccion{position:relative;width:100%;padding-right:10px;padding-top:20px}.idioma_diccionario_seleccion_fondo{position:relative;column-count:1}.cuerpo_comun_fondo_seleccion{background-color:#0085b8;position:relative}.contenedor_palabras_por,.contenedor_palabras_por2{position:relative;margin-bottom:50px}.contenedor_palabras_por a,.contenedor_palabras_por2 a{color:#000;text-decoration:none;line-height:1.3em}.contenedor_palabras_por li,.contenedor_palabras_por2 li{color:ec0064}.idioma_diccionario_pie2,.pie8{color:#fff;position:relative;width:100%}.contenedor_palabras_por a:hover,.contenedor_palabras_por2 a:hover{border-bottom:1px solid #0085b8}.palabras_empiezan_por{position:relative;margin-bottom:20px;margin-left:40px}.iniciales_por,.palabras_por{margin-top:10px;margin-left:41px;padding-left:10px}.iniciales_por{border-left:5px solid #0085b8;line-height:2em}.palabras_por{border-left:5px solid #ddd;margin-bottom:20px}#iniciales_h1{font-size:1.6em;line-height:1.2em;margin-left:8px;margin-top:20px}.slide{-webkit-transition:.25s ease-in-out;-moz-transition:.25s ease-in-out;-o-transition:.25s ease-in-out;transition:.25s ease-in-out}.slide--reset{top:0!important}.slide--up{top:-142px!important}#logo{position:absolute;height:35px;left:10px;margin-top:5px}.h1_estatico{font-size:1.2em;font-weight:700;margin-bottom:25px}.aviso_legal{border-left:5px solid #e73446;padding-left:10px;margin-bottom:30px}.acerca_de{border-left:5px solid #4eb691;padding-left:10px}.ico_flecha_palabra,.logo_header_img2{display:none}.logo_header_seleccion{position:absolute;height:45px;left:25px;display:block;top:7px}.logo_seleccion{position:relative;width:114px;vertical-align:bottom;top:5px}.titulo_pie_fondo{background-color:#24292d;display:none}.pie8,.pie8_fondo{background-color:#181c1e}.pie8{bottom:0;height:53px;text-align:center;font-size:.9em;z-index:200;left:0;max-width:1024px;margin:0 auto}.idioma_diccionario_pie2{height:67px;background-color:#006b8c;padding-left:87px;line-height:67px;text-align:left;font-weight:700;z-index:2}.idioma_diccionario_circulo2{position:absolute;width:32px;height:32px;background-color:#fdde06;border-radius:32px;line-height:32px;text-align:center;color:#0084b7;font-weight:700;top:17px;left:33px}.ico_idioma_dic_flecha{position:relative;width:24px;margin-left:10px;top:7px;-webkit-transition:1s linear;-moz-transition:.1s linear;-o-transition:.1s linear;-ms-transition:.1s linear;transition:.1s linear}.idioma_interfaz2{position:absolute;width:30px;left:33px;padding-left:25px;top:17px}.ico_idioma_interfaz{position:absolute;height:18px;width:18px;left:0}.pie_inicio_enlaces2{position:absolute;width:112px;right:10px;top:12px}#buscador_palabra5,.texto_pie71,.texto_pie72,.texto_pie73{position:relative;display:inline-block}.texto_pie71 a,.texto_pie72 a{color:#fff;text-decoration:none}.texto_pie72{padding-left:10px;padding-right:10px;font-weight:700}.texto_pie73 a{color:#5d5d5d;text-decoration:none}.iconos_pie_acerca,.iconos_pie_aviso,.iconos_pie_contactar{width:28px;height:28px}.copyright_pie{position:absolute;right:155px;top:17px;display:none}.ico_carpeta_indice{width:20px}.indice_text{font-weight:700;color:#fbdc08}.indice_text a{text-decoration:none;color:#fbdc08}#buscador_palabra5{width:100%;padding-bottom:7px}@media all and (max-height:380px){.idioma_diccionario_pie2{top:0;height:53px;line-height:53px}.idioma_diccionario_circulo2{top:10px}}@media all and (min-width:440px){#menu_buscador{padding-right:110px}#compartir:hover{height:auto}.imagen_compartir{display:none}.imagen_compartir2{float:left;margin-left:10px}}@media all and (min-width:450px){#menu_enlaces{height:75px}}@media all and (min-width:550px){#menu_buscador{text-align:center}#menu_enlaces{position:relative;height:87px;max-width:1024px;margin:0 auto}.enlace_menu{font-size:.8em;font-weight:400}.idioma_diccionario_seleccion_fondo{position:relative;column-count:2}}@media all and (min-width:800px){.menu_palabra,.menu_palabra_seleccion{padding-right:65px;text-align:right}#menu_enlaces,.menu_palabra{text-align:right}#anuncio_app,.ico_lupa_blanco2_palabra,.imagen_compartir2_inicio_whatsapp,.logo_header,.texto_menu{display:none}.ico_flecha_palabra,.imagen_compartir2_inicio_google{display:inline-block}#volver_arriba{top:-47px}.idioma_diccionario_seleccion_fondo{position:relative;column-count:3}#cuerpo_comun{padding-top:109px}#cuerpo_comun_seleccion{padding-top:100px;padding-bottom:20px}#color_amarillo,#color_azul,#color_marron,#color_rosa,#color_verde{background-color:#ddd;-webkit-transition:background-color 1s linear;-moz-transition:background-color .1s linear;-o-transition:background-color .1s linear;-ms-transition:background-color .1s linear;transition:background-color .1s linear;background-position:center;background-size:17px;background-repeat:no-repeat;border:1px solid #bdc6cc}#color_rosa:hover{background-color:#0085b8!important}#color_azul:hover{background-color:#e73446!important}#color_amarillo:hover{background-color:#06b3bf!important}#color_verde:hover{background-color:#fdde06!important}#color_marron:hover{background-color:#4eb691!important}#menu_buscador2,#menu_buscador_seleccion{position:fixed;width:100%;height:59px;top:0;z-index:100}.menu_palabra{background-color:#0085b8;top:7px}.menu_circulo_idioma_diccionario{right:25px;left:auto}.ico_flecha_palabra{position:relative;width:19px;top:1px;margin-right:5px}#buscador,.logo_header_img2{display:block;left:25px}.logo_header_img2{position:absolute;height:100%}.circulo{width:34px;height:34px}.enlace_menu{width:34px;float:none;display:inline-block}#menu_enlaces2{height:60px!important;padding-right:25px}#header{padding-top:56px}.header_sin_anuncio,.header_top_anuncio{top:0}#espacio_menu{height:115px}}@media all and (min-width:950px){#logo_menu_buscar{display:block}#palabra_silabas{font-size:1.5em}}@media all and (min-width:1024px){.iniciales_por{line-height:1.5em}.slide--reset,.slide--up{top:0!important}#buscador,.logo_header_img2{left:0}.menu_palabra,.menu_palabra_seleccion{padding-right:45px}.palabra_cabecera{font-size:1.1em}.menu_circulo_idioma_diccionario{right:0}#menu_enlaces2{padding-right:0}.copyright_pie,.titulo_pie_fondo{display:block}.idioma_diccionario_pie2{display:none}}.palabra_expresiones { background-image: url(/assets/img/bandera_es.png) }
 .traduccion_expresiones { background-image: url(/assets/img/bandera_en.png) }
-.ejemplos_expresiones {    list-style: square url(/assets/img/cuadro_li.png) }
+.ejemplos_expresiones {	list-style: square url(/assets/img/cuadro_li.png) }
 .sprite_banderas { background-image: url(/assets/img/banderas2.png) }
 .enlace_cuadro_palabra_rima:hover + .pronunciacion_rimas .altavoz_rimas { background-image: url(/assets/svg/ico_altavoz2.svg); }
 .altavoz_rimas { background-image: url(/assets/svg/ico_altavoz.svg); }
@@ -66,18 +66,18 @@
 #color_marron:hover { background-image: url(/assets/svg/ico_seccion_ejemplos_menu.svg) !important; }
 .iconos_pie_aviso { background-image: url(/assets/svg/ico_pie_aviso.svg); }
 .iconos_pie_acerca { background-image: url(/assets/svg/ico_pie_acerca.svg); }
-.iconos_pie_contactar {    background-image: url(/assets/svg/ico_pie_contactar.svg); }
+.iconos_pie_contactar {	background-image: url(/assets/svg/ico_pie_contactar.svg); }
 @media all and (min-width: 1024px) {
-    #color_rosa { background-image: url(/assets/svg/ico_seccion_diccionario_menu2.svg); }
-    #color_rosa:hover { background-image: url(/assets/svg/ico_seccion_diccionario_menu.svg) !important; }
-    #color_azul { background-image: url(/assets/svg/ico_seccion_traductor_menu2.svg); }
-    #color_azul:hover { background-image: url(/assets/svg/ico_seccion_traductor_menu.svg) !important; }
-    #color_amarillo { background-image: url(/assets/svg/ico_seccion_sinonimos_menu2.svg); }
-    #color_amarillo:hover { background-image: url(/assets/svg/ico_seccion_sinonimos_menu.svg) !important; }
-    #color_verde { background-image: url(/assets/svg/ico_seccion_tendencias_menu2.svg); }
-    #color_verde:hover { background-image: url(/assets/svg/ico_seccion_tendencias_menu.svg) !important; }
-    #color_marron { background-image: url(/assets/svg/ico_seccion_ejemplos_menu2.svg); }
-    #color_marron:hover { background-image: url(/assets/svg/ico_seccion_ejemplos_menu.svg) !important; }
+	#color_rosa { background-image: url(/assets/svg/ico_seccion_diccionario_menu2.svg); }
+	#color_rosa:hover { background-image: url(/assets/svg/ico_seccion_diccionario_menu.svg) !important; }
+	#color_azul { background-image: url(/assets/svg/ico_seccion_traductor_menu2.svg); }
+	#color_azul:hover { background-image: url(/assets/svg/ico_seccion_traductor_menu.svg) !important; }
+	#color_amarillo { background-image: url(/assets/svg/ico_seccion_sinonimos_menu2.svg); }
+	#color_amarillo:hover { background-image: url(/assets/svg/ico_seccion_sinonimos_menu.svg) !important; }
+	#color_verde { background-image: url(/assets/svg/ico_seccion_tendencias_menu2.svg); }
+	#color_verde:hover { background-image: url(/assets/svg/ico_seccion_tendencias_menu.svg) !important; }
+	#color_marron { background-image: url(/assets/svg/ico_seccion_ejemplos_menu2.svg); }
+	#color_marron:hover { background-image: url(/assets/svg/ico_seccion_ejemplos_menu.svg) !important; }
 }
 
 #input_cuadro_buscar_inicio { background-image: url(/assets/svg/ico_lupa2.svg); }
@@ -105,32 +105,32 @@ var sa=function(a){ta(a);S(a.m,a.o,3,!1,function(){a:{var b=a.i;var c=r.btoa(b);
 
 window.__h82AlnkH6D91__("WyJwdWItMjM4MjM3MDgxMzIwOTA2MSIsW251bGwsbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9iL3B1Yi0yMzgyMzcwODEzMjA5MDYxIl0sbnVsbCxudWxsLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9lbC9BR1NLV3hXZmMzckV2N0gxUWp5ZER0UnJySE9CYVROZlRmOE1WeDBrOW90M3A4YnhFb2hFbkk3Y3IzRXBOdTF1RG9rTHR4ZVdPUE5DcmpFT3NmUzdGZDFDRTUtSzBBXHUwMDNkXHUwMDNkP3RlXHUwMDNkVE9LRU5fRVhQT1NFRCIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFVfcnZENVJGXzlTM185SFdfSGgxU1hsUHdTQ3F6V3NyTHpjaEdGVkJnRXZGSGpySGtCQ1B3SnJrTDd4dHNxUUlzUWRzZFlhaDliQTNhaWlxU1lRNEVrYmdcdTAwM2RcdTAwM2Q/YWJcdTAwM2QxXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFdOTTVCUkJER3pLM0xyNTc0S1pocTVuVXNuYXY4RDktY2xiRFN3MUs2RjZ5aWZlTjFHR01EUXR4R3ZKUU4xN21CS3REai1RYnRCRUFjZnhMbWdTeFFMMlFcdTAwM2RcdTAwM2Q/YWJcdTAwM2QyXHUwMDI2c2JmXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2VsL0FHU0tXeFZKNlhLTV9mN2p4cVNzMktCaHhqcHRCcER3c1ZnUkxPMzhuM2stazlWdlVka3Q1ZzNHU3JETjYxVGJTcWxZT3JacEFDOW1pMEQyYU04dXNTR2JYaGx4bWdcdTAwM2RcdTAwM2Q/c2JmXHUwMDNkMiIsImRpdi1ncHQtYWQiLDIwLDEwMCwiY0hWaUxUSXpPREl6TnpBNE1UTXlNRGt3TmpFXHUwMDNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wL3B1Yi0yMzgyMzcwODEzMjA5MDYxLmpzP3VzcXBcdTAwM2RDQUkiXSwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZWwvQUdTS1d4WFR0azNGdkJTMHRGVjVkeEhZMVZyaGZGb21TRWJ2M1BKa1V2TUFUUlJDd0oxLWg2V3ZRZldIdDlZN3ZqZDhMSzFVbVBGbC0zM25RSW5YbW9qY05KdU52Z1x1MDAzZFx1MDAzZCJd");</script></head>
 <body>
-<!-- 7.27 -->
+<!-- 7.29 -->
 <script>
-        var JS_RUTA_ASSETS = '/assets/';
-        var JS_IDIOMA = "en";
-        var JS_IDIOMA_DICCIONARIO = "en";
-        var JS_STATIC = "https://static.educalingo.com/img/en";
-        var JS_DOMINIO_HTTP = "https://educalingo.com";
-        var JS_LINK_ROOT = "https://educalingo.com";
-        var JS_IDIOMA_INTERFAZ = "en";
-        var JS_SEARCH_URL = "https://search.educalingo.com";
-        var JS_DICCIONARIO_ACTUAL = "English dictionary";
-                    var OFFSET_TOP1 = 240;
-            var OFFSET_TOP2 = 240;
-            </script>
+		var JS_RUTA_ASSETS = '/assets/';
+		var JS_IDIOMA = "en";
+		var JS_IDIOMA_DICCIONARIO = "en";
+		var JS_STATIC = "https://static.educalingo.com/img/en";
+		var JS_DOMINIO_HTTP = "https://educalingo.com";
+		var JS_LINK_ROOT = "https://educalingo.com";
+		var JS_IDIOMA_INTERFAZ = "en";
+		var JS_SEARCH_URL = "https://search.educalingo.com";
+		var JS_DICCIONARIO_ACTUAL = "English dictionary";
+					var OFFSET_TOP1 = 240;
+			var OFFSET_TOP2 = 240;
+			</script>
 <script>
-        eval((function(x){var d="";var p=0;while(p<x.length){if(x.charAt(p)!="`")d+=x.charAt(p++);else{var l=x.charCodeAt(p+3)-28;if(l>4)d+=d.substr(d.length-x.charCodeAt(p+1)*96-x.charCodeAt(p+2)+3104-l,l);else d+="`";p+=4}}return d})("if (window != ` $\".top) {top.location.href = ` #);}if (` ;( !` 9&` S+ = self` '%;}func` 5!CerrarCookies() {document.getElementById(\"c` >\"\").style.display = \"none\";var xhttp = new XMLHttpRequest;` 6!.onreadystatechange = `!E%() {if (` F\"` E!State == 4 &&` z\".status == 200`!7Y}}`!P$pen(\"GET\", JS_LINK_ROOT + \"/a`!Y!s/ok_` k#.php\", true)` [#send()`#P'Submit(id`!G7id).s` B\"` O(Buscar`#r9buscador_input`\"9%visibilit`\"@!` )!le\";` I:r_menu`\"l6` E5palabra_`!E$` 0Oatras` [\"`!-6block` J7cruz` O1`\":Q`#J(value = \"` )Hfocus`$d)Atras`$.dhidden`\"-^` G=`#W[`%:@` D<`%:A`*%#`(U&orrar`#j!do`#BK`$SZ"))	</script>
+		eval((function(x){var d="";var p=0;while(p<x.length){if(x.charAt(p)!="`")d+=x.charAt(p++);else{var l=x.charCodeAt(p+3)-28;if(l>4)d+=d.substr(d.length-x.charCodeAt(p+1)*96-x.charCodeAt(p+2)+3104-l,l);else d+="`";p+=4}}return d})("if (window != ` $\".top) {top.location.href = ` #);}if (` ;( !` 9&` S+ = self` '%;}func` 5!CerrarCookies() {document.getElementById(\"c` >\"\").style.display = \"none\";var xhttp = new XMLHttpRequest;` 6!.onreadystatechange = `!E%() {if (` F\"` E!State == 4 &&` z\".status == 200`!7Y}}`!P$pen(\"GET\", JS_LINK_ROOT + \"/a`!Y!s/ok_` k#.php\", true)` [#send()`#P'Submit(id`!G7id).s` B\"` O(Buscar`#r9buscador_input`\"9%visibilit`\"@!` )!le\";` I:r_menu`\"l6` E5palabra_`!E$` 0Oatras` [\"`!-6block` J7cruz` O1`\":Q`#J(value = \"` )Hfocus`$d)Atras`$.dhidden`\"-^` G=`#W[`%:@` D<`%:A`*%#`(U&orrar`#j!do`#BK`$SZ"))	</script>
 <script>
-        window.google_analytics_uacct = "UA-112439377-1";
-    </script>
+		window.google_analytics_uacct = "UA-112439377-1";
+	</script>
 <div id="to_top"></div>
 <div class="logo_header"> <a href="https://educalingo.com/en/dic-en"> <img class="logo_header_img" src="/assets/svg/logo_educalingo.svg"> </a> </div>
 
 <div id="anuncio_app">
     <div id="titulo_anuncio_app">Download the app<br>
         <span class="color_marca">educalingo</span><img src="/assets/img/favicon.png"></div>
-    <a title="Educalingo online dictionaries" id="boton_anuncio_android" target="_blank" href="https://play.google.com/store/apps/details?id=com.educalingo.app"><img class="anuncio_app_play_store" src="/assets/img/app/play_store/en.png"/></a><a title="Educalingo online dictionaries" id="boton_anuncio_ios" target="_blank" href="https://apps.apple.com/us/app/educalingo-dictionary/id1487957260#?platform=iphone"><img class="anuncio_app_app_store" src="/assets/img/app/app_store/en.svg"/></a>
+    <a title="Educalingo online dictionaries" id="boton_anuncio_android" target="_blank" href="https://play.google.com/store/apps/details?id=com.educalingo.app"><img class="anuncio_app_play_store" src="/assets/img/app/play_store/en.png"/></a><a title="Educalingo online dictionaries" id="boton_anuncio_ios" target="_blank" href="https://apps.apple.com/us/app/educalingo-dictionary/id1487957260?platform=iphone"><img class="anuncio_app_app_store" src="/assets/img/app/app_store/en.svg"/></a>
 </div>
 
 
@@ -151,23 +151,23 @@ window.__h82AlnkH6D91__("WyJwdWItMjM4MjM3MDgxMzIwOTA2MSIsW251bGwsbnVsbCxudWxsLCJ
 <div id="header" class="header_top_anuncio">
 
 <div id="menu_buscador2">
-    <div id="menu_buscador">
-        <!--<img onClick="Buscar()" id="buscar_menu" src="/assets/svg/ico_lupa_blanco.svg" alt="Search" title="Search">-->
-        <!--<img onClick="AtrasBuscar();" id="atras_buscar_menu" src="/assets/svg/ico_atras.svg" alt="back">-->
-    </div>
-    <div class="menu_palabra">
-        <a href="https://educalingo.com/en/dic-en" title="English dictionary">
-            <img class="logo_header_img2" src="/assets/svg/logo_educalingo.svg" alt="educalingo">
-        </a>
-                            <a href="https://educalingo.com/en/dic-en" title="English dictionary">
-                        <div class="menu_circulo_idioma_diccionario">
-                            en                        </div>
-                    </a>
-                                     <img class="ico_flecha_palabra" src="/assets/svg/ico_flecha_palabra.svg" alt="good">
-                     <span class="palabra_cabecera">good</span>
-                        <img alt="Search" title="Search" class="ico_lupa_blanco2_palabra" src="/assets/svg/ico_lupa_blanco2.svg" onClick="AbrirBuscador(0)">
+	<div id="menu_buscador">
+		<!--<img onClick="Buscar()" id="buscar_menu" src="/assets/svg/ico_lupa_blanco.svg" alt="Search" title="Search">-->
+		<!--<img onClick="AtrasBuscar();" id="atras_buscar_menu" src="/assets/svg/ico_atras.svg" alt="back">-->
+	</div>
+	<div class="menu_palabra">
+		<a href="https://educalingo.com/en/dic-en" title="English dictionary">
+			<img class="logo_header_img2" src="/assets/svg/logo_educalingo.svg" alt="educalingo">
+		</a>
+							<a href="https://educalingo.com/en/dic-en" title="English dictionary">
+						<div class="menu_circulo_idioma_diccionario">
+							en						</div>
+					</a>
+									 <img class="ico_flecha_palabra" src="/assets/svg/ico_flecha_palabra.svg" alt="good">
+					 <span class="palabra_cabecera">good</span>
+						<img alt="Search" title="Search" class="ico_lupa_blanco2_palabra" src="/assets/svg/ico_lupa_blanco2.svg" onClick="AbrirBuscador(0)">
 
-            </div>
+			</div>
 </div>    <div id="menu_enlaces2">
         <div id="menu_enlaces">
             <div id="buscador">
@@ -191,7 +191,7 @@ window.__h82AlnkH6D91__("WyJwdWItMjM4MjM3MDgxMzIwOTA2MSIsW251bGwsbnVsbCxudWxsLCJ
 <div id="espacio_menu"></div>
 <div id="intro2">
     <div id="intro">
-        <div id="frase_intro"> Of course I want my films to look really <span class="destacado_rosa"><strong>good</strong></span>, but every single element is chosen for a reason. It's telling something in the story.            <div id="autor_frase_intro"> Pedro Almodovar </div>
+        <div id="frase_intro"> By and large my relations with the US were <span class="destacado_rosa"><strong>good</strong></span>.            <div id="autor_frase_intro"> Hans Blix </div>
             <img class="comillas_abrir" width="30" height="19" alt="" src="/assets/svg/ico_comilla_abrir.svg"> <img class="comillas_cerrar" width="30" height="19" alt="" src="/assets/svg/ico_comilla_cerrar.svg"> </div>
     </div>
 </div>
@@ -205,9 +205,9 @@ window.__h82AlnkH6D91__("WyJwdWItMjM4MjM3MDgxMzIwOTA2MSIsW251bGwsbnVsbCxudWxsLCJ
 <div style="margin-top: -30px">
     <div id="c_anuncio_top" class="anuncios" style="margin-top:30px"><style type="text/css" scoped>.adslot_1 {display:inline-block; max-width:1200px; max-height:1200px; width: 100%; height: 250px; } @media (min-width: 336px) { .adslot_1 { width: 100%; height: 280px; } } @media (min-width: 760px) { .adslot_1 { width: 728px; height: 90px; } } @media (min-width: 950px) { .adslot_1 { width: 900px; height: 90px; } } </style><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle adslot_1"
                     data-full-width-responsive="true"
-                    data-ad-client="ca-pub-2382370813209061"
-                    data-ad-slot="5505668980"></ins>
-                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div>
+					data-ad-client="ca-pub-2382370813209061"
+					data-ad-slot="5505668980"></ins>
+				 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div></div>
 <div style="height:10px;"></div>
 <div class="titulo_cabecera_seccion" id="titulo_cabecera_seccion_diccionario"> <span class="palabra_titulo_cabecera_seccion"> DICTIONARY </span>
     <div class="raya_titulo_cabecera_seccion"></div>
@@ -253,20 +253,20 @@ window.__h82AlnkH6D91__("WyJwdWItMjM4MjM3MDgxMzIwOTA2MSIsW251bGwsbnVsbCxudWxsLCJ
         <div class="circulo_separador_subseccion background_rosa_claro"></div>
     </div>
 </div>
-<link href="/assets/css/deferred_styles.min.css?v=7.27" rel="stylesheet" type="text/css">
+<link href="/assets/css/deferred_styles.min.css?v=7.29" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="/assets/css/edu_font.min.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
-<script src="/assets/js/inc/ss.js?v=7.27"></script>
-<script src="/assets/js/min/cabecera_scroll.min.js?v=7.27"></script>
-<script src="/assets/js/inc/jq.js?v=7.27"></script>
-<script src="/assets/js/min/lan.min.js?v=7.27"></script>
-<script src="/assets/js/min/buscar.min.js?v=7.27"></script>
+<script src="/assets/js/inc/ss.js?v=7.29"></script>
+<script src="/assets/js/min/cabecera_scroll.min.js?v=7.29"></script>
+<script src="/assets/js/inc/jq.js?v=7.29"></script>
+<script src="/assets/js/min/lan.min.js?v=7.29"></script>
+<script src="/assets/js/min/buscar.min.js?v=7.29"></script>
 <script>
-    var JS_ANCLA_M1 = 'dictionary';
-    var JS_ANCLA_M2 = 'synonyms';
-    var JS_ANCLA_M3 = 'translator';
-    var JS_ANCLA_M4 = 'trends';
-    var JS_ANCLA_M5 = 'examples';
+	var JS_ANCLA_M1 = 'dictionary';
+	var JS_ANCLA_M2 = 'synonyms';
+	var JS_ANCLA_M3 = 'translator';
+	var JS_ANCLA_M4 = 'trends';
+	var JS_ANCLA_M5 = 'examples';
 </script>
 <div id="grammar" class="subseccion">
     <div class="cuadro_subseccion"> <span class="icon-ico_flecha_diccionario"></span>
@@ -349,9 +349,9 @@ window.__h82AlnkH6D91__("WyJwdWItMjM4MjM3MDgxMzIwOTA2MSIsW251bGwsbnVsbCxudWxsLCJ
         <div id="c_anuncio_gramatica">
         <style type="text/css" scoped>.adslot_2 {display:inline-block; max-width:1200px; max-height:1200px; width: 100%; height: 250px; } @media (min-width: 336px) { .adslot_2 { width: 100%; height: 280px; } } @media (min-width: 700px) { .adslot_2 { width: 336px; height: 280px; } } </style><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle adslot_2"
                     data-full-width-responsive="true"
-                    data-ad-client="ca-pub-2382370813209061"
-                    data-ad-slot="6982402186"></ins>
-                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>    </div>
+					data-ad-client="ca-pub-2382370813209061"
+					data-ad-slot="6982402186"></ins>
+				 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>    </div>
     </div>
 <div class="separador_subseccion">
     <div class="separador_subseccion2">
@@ -381,9 +381,9 @@ window.__h82AlnkH6D91__("WyJwdWItMjM4MjM3MDgxMzIwOTA2MSIsW251bGwsbnVsbCxudWxsLCJ
             <div id="c_anuncio_definicion" class="anuncios">
         <div id="c_anuncio_definicion" class="anuncios"><style type="text/css" scoped>.adslot_3 {display:inline-block; max-width:1200px; max-height:1200px; width: 100%; height: 250px; } @media (min-width: 336px) { .adslot_3 { width: 100%; height: 280px; } } @media (min-width: 760px) { .adslot_3 { width: 728px; height: 90px; } } @media (min-width: 950px) { .adslot_3 { width: 900px; height: 90px; } } @media (min-width: 1024px) { .adslot_3 { width: 970px; height: 250px; } } </style><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle adslot_3"
                     data-full-width-responsive="true"
-                    data-ad-client="ca-pub-2382370813209061"
-                    data-ad-slot="8459135385"></ins>
-                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>    </div>
+					data-ad-client="ca-pub-2382370813209061"
+					data-ad-slot="8459135385"></ins>
+				 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>    </div>
         <h4 id="titulo_significado_de"> <span class="icon-ico_definicion"></span>
                 Definition of <span id="significado_de_destacado" class="destacado_rosa">good</span> in the English dictionary </h4>
     <div id="significado_de">
@@ -432,9 +432,9 @@ window.__h82AlnkH6D91__("WyJwdWItMjM4MjM3MDgxMzIwOTA2MSIsW251bGwsbnVsbCxudWxsLCJ
 <div id="c_anuncio_sinonimos" class="anuncios">
     <style type="text/css" scoped>.adslot_4 {display:inline-block; max-width:1200px; max-height:1200px; width: 100%; height: 250px; } @media (min-width: 336px) { .adslot_4 { width: 100%; height: 280px; } } @media (min-width: 760px) { .adslot_4 { width: 728px; height: 90px; } } </style><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle adslot_4"
                     data-full-width-responsive="true"
-                    data-ad-client="ca-pub-2382370813209061"
-                    data-ad-slot="9935868581"></ins>
-                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+					data-ad-client="ca-pub-2382370813209061"
+					data-ad-slot="9935868581"></ins>
+				 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
 <div style="height:5px"></div>
 <div id="synonyms" class="subseccion">
     <div class="cuadro_subseccion"> <span class="icon-ico_flecha_sinonimos"></span>
@@ -467,112 +467,88 @@ window.__h82AlnkH6D91__("WyJwdWItMjM4MjM3MDgxMzIwOTA2MSIsW251bGwsbnVsbCxudWxsLCJ
     <div id="wordcloud1" class="wordcloud">
 
 <span data-weight="300">good</span>
-<span data-weight="146">able</span>
-<span data-weight="121">acceptable</span>
-<span data-weight="175">accomplished</span>
-<span data-weight="57">accurate</span>
-<span data-weight="101">adept</span>
-<span data-weight="168">adequate</span>
-<span data-weight="122">admirable</span>
-<span data-weight="56">adroit</span>
-<span data-weight="97">advantage</span>
-<span data-weight="64">advantageous</span>
-<span data-weight="120">agreeable</span>
-<span data-weight="105">altruistic</span>
-<span data-weight="68">ample</span>
-<span data-weight="169">appropriate</span>
-<span data-weight="59">auspicious</span>
-<span data-weight="93">authentic</span>
-<span data-weight="199">avail</span>
-<span data-weight="88">awesome</span>
-<span data-weight="89">balmy</span>
-<span data-weight="151">barrie</span>
-<span data-weight="87">beaut</span>
-<span data-weight="59">good</span>
-<span data-weight="85">creative</span>
-<span data-weight="55">solutions</span>
-<span data-weight="86">living</span>
-<span data-weight="82">well</span>
-<span data-weight="66">doing</span>
-<span data-weight="65">global</span>
-<span data-weight="20">community</span>
-<span data-weight="43">people</span>
-<span data-weight="29">organizations</span>
-<span data-weight="68">working</span>
-<span data-weight="68">towards</span>
-<span data-weight="62">individual</span>
-<span data-weight="20">collective</span>
-<span data-weight="54">progress</span>
-<span data-weight="79">technology</span>
-<span data-weight="71">describes</span>
-<span data-weight="78">product</span>
-<span data-weight="79">wireless</span>
-<span data-weight="98">data</span>
-<span data-weight="22">management</span>
-<span data-weight="89">systems</span>
-<span data-weight="68">define</span>
-<span data-weight="65">morally</span>
-<span data-weight="75">excellent</span>
-<span data-weight="88">virtuous</span>
-<span data-weight="94">righteous</span>
-<span data-weight="79">pious</span>
-<span data-weight="93">satisfactory</span>
-<span data-weight="29">quality</span>
-<span data-weight="67">quantity</span>
-<span data-weight="91">degree</span>
-<span data-weight="90">teacher</span>
-<span data-weight="50">health</span>
-<span data-weight="77">high</span>
-<span data-weight="36">more</span>
-<span data-weight="93">from</span>
-<span data-weight="46">merriam</span>
-<span data-weight="40">webster</span>
-<span data-weight="75">with</span>
-<span data-weight="67">audio</span>
-<span data-weight="51">pronunciations</span>
-<span data-weight="28">word</span>
-<span data-weight="84">games</span>
-<span data-weight="78">magazine</span>
-<span data-weight="88">zealand</span>
-<span data-weight="81">guide</span>
-<span data-weight="60">sustainable</span>
-<span data-weight="40">housekeeping</span>
-<span data-weight="55">triple</span>
-<span data-weight="44">tested</span>
-<span data-weight="87">recipes</span>
-<span data-weight="25">reviews</span>
-<span data-weight="99">anti</span>
-<span data-weight="91">your</span>
-<span data-weight="39">source</span>
-<span data-weight="88">trusted</span>
-<span data-weight="41">latest</span>
-<span data-weight="84">beauty</span>
-<span data-weight="26">aging</span>
-<span data-weight="58">wiktionary</span>
-<span data-weight="86">middle</span>
-<span data-weight="67">gōd</span>
-<span data-weight="98">favorable</span>
-<span data-weight="80">salutary</span>
-<span data-weight="94">pleasant</span>
-<span data-weight="96">valid</span>
-<span data-weight="41">suitable</span>
-<span data-weight="80">sufficiently</span>
-<span data-weight="21">definitions</span>
-<span data-weight="98">imdb</span>
-<span data-weight="53">rise</span>
-<span data-weight="23">national</span>
-<span data-weight="50">socialism</span>
-<span data-weight="20">germany</span>
-<span data-weight="62">should</span>
-<span data-weight="80">regarded</span>
-<span data-weight="91">conspiracy</span>
-<span data-weight="59">madmen</span>
-<span data-weight="20">millions</span>
-<span data-weight="42">found</span>
-<span data-weight="64">themselves</span>
-<span data-weight="26">society</span>
-<span data-weight="79">spiralling</span>
-<span data-weight="49">goodsearch</span></div>
+<span data-weight="129">able</span>
+<span data-weight="152">acceptable</span>
+<span data-weight="96">accomplished</span>
+<span data-weight="64">accurate</span>
+<span data-weight="139">adept</span>
+<span data-weight="56">adequate</span>
+<span data-weight="144">admirable</span>
+<span data-weight="78">adroit</span>
+<span data-weight="91">advantage</span>
+<span data-weight="51">advantageous</span>
+<span data-weight="152">agreeable</span>
+<span data-weight="168">altruistic</span>
+<span data-weight="149">ample</span>
+<span data-weight="200">appropriate</span>
+<span data-weight="151">auspicious</span>
+<span data-weight="143">authentic</span>
+<span data-weight="104">avail</span>
+<span data-weight="171">awesome</span>
+<span data-weight="137">balmy</span>
+<span data-weight="160">barrie</span>
+<span data-weight="147">beaut</span>
+<span data-weight="44">good</span>
+<span data-weight="69">creative</span>
+<span data-weight="33">solutions</span>
+<span data-weight="56">living</span>
+<span data-weight="50">well</span>
+<span data-weight="36">doing</span>
+<span data-weight="75">global</span>
+<span data-weight="26">community</span>
+<span data-weight="50">people</span>
+<span data-weight="73">organizations</span>
+<span data-weight="84">working</span>
+<span data-weight="85">towards</span>
+<span data-weight="52">individual</span>
+<span data-weight="42">collective</span>
+<span data-weight="71">progress</span>
+<span data-weight="97">technology</span>
+<span data-weight="100">describes</span>
+<span data-weight="80">product</span>
+<span data-weight="82">wireless</span>
+<span data-weight="79">data</span>
+<span data-weight="41">management</span>
+<span data-weight="51">systems</span>
+<span data-weight="69">define</span>
+<span data-weight="34">morally</span>
+<span data-weight="71">excellent</span>
+<span data-weight="96">virtuous</span>
+<span data-weight="82">righteous</span>
+<span data-weight="85">pious</span>
+<span data-weight="98">satisfactory</span>
+<span data-weight="40">quality</span>
+<span data-weight="30">quantity</span>
+<span data-weight="59">degree</span>
+<span data-weight="78">teacher</span>
+<span data-weight="37">health</span>
+<span data-weight="48">high</span>
+<span data-weight="75">more</span>
+<span data-weight="95">from</span>
+<span data-weight="70">merriam</span>
+<span data-weight="55">webster</span>
+<span data-weight="61">with</span>
+<span data-weight="23">audio</span>
+<span data-weight="41">pronunciations</span>
+<span data-weight="89">word</span>
+<span data-weight="54">games</span>
+<span data-weight="43">magazine</span>
+<span data-weight="32">zealand</span>
+<span data-weight="83">guide</span>
+<span data-weight="79">sustainable</span>
+<span data-weight="44">housekeeping</span>
+<span data-weight="42">triple</span>
+<span data-weight="41">tested</span>
+<span data-weight="45">recipes</span>
+<span data-weight="97">reviews</span>
+<span data-weight="27">anti</span>
+<span data-weight="70">your</span>
+<span data-weight="38">source</span>
+<span data-weight="49">trusted</span>
+<span data-weight="83">latest</span>
+<span data-weight="39">beauty</span>
+<span data-weight="73">aging</span>
+<span data-weight="79">wiktionary</span></div>
 
     <div class="redes redes_rel"> <a class="enlace_redes_citas enlace_redes_citas_whatsapp" rel="nofollow" target="_blank" title="Share on Whatsapp «WORDS RELATING TO «GOOD»»" href="whatsapp://send?text=WORDS+RELATING+TO+%C2%ABGOOD%C2%BB+-+educalingo.com%2Fen%2Fdic-en%2Fgood%23related-words" data-action="share/whatsapp/share"><span class="icon-ico_redes_circulo_whatsapp_2 icon-ico_redes_ajuste"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span></a><a class="enlace_redes_citas" rel="nofollow" target="_blank" title="Share on Pinterest «WORDS RELATING TO «GOOD»»" href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Feducalingo.com%2Fen%2Fdic-en%2Fgood%23related-words&media=https%3A%2F%2Fstatic.educalingo.com%2Fimg%2Fcommon%2Fdefault.jpg&description=EDUCALINGO+-+WORDS+RELATING+TO+%C2%ABGOOD%C2%BB"><span class="icon-ico_redes_circulo_pinterest_2 icon-ico_redes_ajuste"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span></a><a class="enlace_redes_citas" rel="nofollow" target="_blank" title="Share on Twitter «WORDS RELATING TO «GOOD»»" href="https://twitter.com/intent/tweet?text=WORDS+RELATING+TO+%C2%ABGOOD%C2%BB&url=https%3A%2F%2Feducalingo.com%2Fen%2Fdic-en%2Fgood%23related-words&via=educalingo"><span class="icon-ico_redes_circulo_twitter_2 icon-ico_redes_ajuste"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span></a><a class="enlace_redes_citas" rel="nofollow" target="_blank" title="Share on Facebook «WORDS RELATING TO «GOOD»»" href="https://www.facebook.com/dialog/share?app_id=1417524188376058&display=popup&href=https%3A%2F%2Feducalingo.com%2Fen%2Fdic-en%2Fgood%23related-words&redirect_uri=https%3A%2F%2Feducalingo.com%2Fen%2Fdic-en%2Fgood%23related-words&quote=WORDS+RELATING+TO+%C2%ABGOOD%C2%BB"><span class="icon-ico_redes_circulo_facebook_2 icon-ico_redes_ajuste"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span></a> </div>
     </div>
@@ -598,9 +574,9 @@ window.__h82AlnkH6D91__("WyJwdWItMjM4MjM3MDgxMzIwOTA2MSIsW251bGwsbnVsbCxudWxsLCJ
     Find out the translation of <span class="destacado_azul"><strong>good</strong></span> to <strong>25 languages</strong> with our <a href="https://educalingo.com/en/dic-en" class="enlace_azul">English multilingual translator</a>.        <div id="c_anuncio_sinonimos" class="anuncios" style="margin-top:20px">
         <style type="text/css" scoped>.adslot_5 {display:inline-block; max-width:1200px; max-height:1200px; width: 100%; height: 250px; } @media (min-width: 336px) { .adslot_5 { width: 100%; height: 280px; } } @media (min-width: 760px) { .adslot_5 { width: 728px; height: 90px; } } @media (min-width: 950px) { .adslot_5 { width: 900px; height: 90px; } } @media (min-width: 1024px) { .adslot_5 { width: 970px; height: 250px; } } </style><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle adslot_5"
                     data-full-width-responsive="true"
-                    data-ad-client="ca-pub-2382370813209061"
-                    data-ad-slot="5128939577"></ins>
-                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>    </div>
+					data-ad-client="ca-pub-2382370813209061"
+					data-ad-slot="5128939577"></ins>
+				 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>    </div>
         <div id="cuadro_info_traduccion2">
         <div id="cuadro_info_traduccion" class="cuadro_info2">
             <div class="cuadro_info">
@@ -1395,7 +1371,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3236', end
         </div>
 <!-- <div class="separador_subseccion">
 <div class="separador_subseccion2">
-    <div class="circulo_separador_subseccion background_marron"></div>
+	<div class="circulo_separador_subseccion background_marron"></div>
 </div>
 </div> -->
 
@@ -1493,14 +1469,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3236', end
     <div style="height:10px;"></div>
     <style type="text/css" scoped>.adslot_6 {display:inline-block; max-width:1200px; max-height:1200px; width: 100%; height: 250px; } @media (min-width: 336px) { .adslot_6 { width: 100%; height: 280px; } } @media (min-width: 760px) { .adslot_6 { width: 728px; height: 90px; } } @media (min-width: 950px) { .adslot_6 { width: 900px; height: 90px; } } @media (min-width: 1024px) { .adslot_6 { width: 970px; height: 250px; } } </style><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><ins class="adsbygoogle adslot_6"
                     data-full-width-responsive="true"
-                    data-ad-client="ca-pub-2382370813209061"
-                    data-ad-slot="4488729602"></ins>
-                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
+					data-ad-client="ca-pub-2382370813209061"
+					data-ad-slot="4488729602"></ins>
+				 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script></div>
 <div style="height:40px;"></div>
 <div id="referencia">
     <div class="subseccion"> <span id="referencia_icono" class="icon-ico_referencia"><span class="path1"></span><span class="path2"></span></span>
                 <div id="referencia_titulo"> REFERENCE </div>
-        <div id="referencia_texto"> « EDUCALINGO. <em>Good</em> [online]. Available &lt;https://educalingo.com/en/dic-en/good&gt;.  Jun 2023 ». </div>
+        <div id="referencia_texto"> « EDUCALINGO. <em>Good</em> [online]. Available &lt;https://educalingo.com/en/dic-en/good&gt;.  Jan 2024 ». </div>
     </div>
 </div>
 <div id="pie">
@@ -1526,7 +1502,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3236', end
         </div>
                         <div class="anuncio_app_pie">
             <div id="titulo_anuncio_app2"><img id="ico_app2" src="/assets/img/favicon.png">Download the <span class="color_marca">educalingo</span> app<img id="ico_app1" src="/assets/img/favicon.png"></div>
-            <div class="anuncio_app_pie_botones"> <a title="Educalingo online dictionaries" id="boton_anuncio_android" target="_blank" href="https://play.google.com/store/apps/details?id=com.educalingo.app"><img class="anuncio_app_play_store2" src="/assets/img/app/play_store/en.png"/></a> <a title="Educalingo online dictionaries" id="boton_anuncio_ios" target="_blank" href="https://apps.apple.com/us/app/educalingo-dictionary/id1487957260#?platform=iphone"><img class="anuncio_app_app_store2" src="/assets/img/app/app_store/en.svg"/></a> </div>
+            <div class="anuncio_app_pie_botones"> <a title="Educalingo online dictionaries" id="boton_anuncio_android" target="_blank" href="https://play.google.com/store/apps/details?id=com.educalingo.app"><img class="anuncio_app_play_store2" src="/assets/img/app/play_store/en.png"/></a> <a title="Educalingo online dictionaries" id="boton_anuncio_ios" target="_blank" href="https://apps.apple.com/us/app/educalingo-dictionary/id1487957260?platform=iphone"><img class="anuncio_app_app_store2" src="/assets/img/app/app_store/en.svg"/></a> </div>
         </div>
                 <a class="enlace_idioma_diccionario_pie2" href="https://educalingo.com/en/dic-sel">
         <div class="idioma_diccionario_pie2">
@@ -1557,7 +1533,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3236', end
             <div class="pie8">
                                 <a data-scroll data-speed="500" data-easing="easeInOutCubic" data-url="false" href="https://educalingo.com/en/dic-en/good#to_top" id="volver_arriba"> <span class="icon-ico_volver_arriba"></span>
                                 </a>
-                                <div class="copyright_pie">© educalingo, 2023 </div>
+                                <div class="copyright_pie">© educalingo, 2024 </div>
                 <div class="idioma_interfaz2"><span class="icon-ico_idioma_interfaz ico_idioma_interfaz"></span>
                                         <select class="select_idioma_diccionario" onChange="window.location.href=this.value"><option value="https://educalingo.com/bn/dic-en/good">bn</option><option value="https://educalingo.com/de/dic-en/good">de</option><option value="https://educalingo.com/en/dic-en/good" selected="selected">en</option><option value="https://educalingo.com/es/dic-en/good">es</option><option value="https://educalingo.com/fr/dic-en/good">fr</option><option value="https://educalingo.com/hi/dic-en/good">hi</option><option value="https://educalingo.com/it/dic-en/good">it</option><option value="https://educalingo.com/ja/dic-en/good">ja</option><option value="https://educalingo.com/jv/dic-en/good">jv</option><option value="https://educalingo.com/ko/dic-en/good">ko</option><option value="https://educalingo.com/mr/dic-en/good">mr</option><option value="https://educalingo.com/ms/dic-en/good">ms</option><option value="https://educalingo.com/pl/dic-en/good">pl</option><option value="https://educalingo.com/pt/dic-en/good">pt</option><option value="https://educalingo.com/ro/dic-en/good">ro</option><option value="https://educalingo.com/ru/dic-en/good">ru</option><option value="https://educalingo.com/ta/dic-en/good">ta</option><option value="https://educalingo.com/tr/dic-en/good">tr</option><option value="https://educalingo.com/uk/dic-en/good">uk</option><option value="https://educalingo.com/zh/dic-en/good">zh</option></select>                </div>
                 <div class="pie_inicio_enlaces2">
@@ -1573,192 +1549,192 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3236', end
     </div>
 </div>
 </div>
-<script src="/assets/js/min/tags.min.js?v=7.27"></script>
-<script src="/assets/js/min/palabra.min.js?v=7.27"></script>
+<script src="/assets/js/min/tags.min.js?v=7.29"></script>
+<script src="/assets/js/min/palabra.min.js?v=7.29"></script>
 <script>
-    if ( window.innerWidth > 800 ) {
+	if ( window.innerWidth > 800 ) {
 
-        var offser_smooth = 115;
-    } else {
-        var offser_smooth = 130;
-    }
+		var offser_smooth = 115;
+	} else {
+		var offser_smooth = 130;
+	}
 
-    var cancelar_cabecera = 0;
-    var scroll = new SmoothScroll( 'a[href*="#"]', {
-        // Selectors
-        ignore: '#volver_arriba', // Selector for links to ignore (must be a valid CSS selector)
-        header: null, // Selector for fixed headers (must be a valid CSS selector)
+	var cancelar_cabecera = 0;
+	var scroll = new SmoothScroll( 'a[href*="#"]', {
+		// Selectors
+		ignore: '#volver_arriba', // Selector for links to ignore (must be a valid CSS selector)
+		header: null, // Selector for fixed headers (must be a valid CSS selector)
 
-        // Speed & Easing
-        speed: 500, // Integer. How fast to complete the scroll in milliseconds
-        offset: offser_smooth, // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
-        easing: 'easeInOutCubic', // Easing pattern to use
-        // Function. Custom easing pattern
+		// Speed & Easing
+		speed: 500, // Integer. How fast to complete the scroll in milliseconds
+		offset: offser_smooth, // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
+		easing: 'easeInOutCubic', // Easing pattern to use
+		// Function. Custom easing pattern
 
-        // Callback API
-        before: function () {
-            cancelar_cabecera = 1;
-            document.getElementById( 'header' ).style.position = 'fixed';
-            document.getElementById( 'header' ).style.top = '0px';
-            document.getElementById( 'header' ).style.transition = 'all 0.05s ease-in-out';
-        }, // Callback to run before scroll
-        after: function () {
+		// Callback API
+		before: function () {
+			cancelar_cabecera = 1;
+			document.getElementById( 'header' ).style.position = 'fixed';
+			document.getElementById( 'header' ).style.top = '0px';
+			document.getElementById( 'header' ).style.transition = 'all 0.05s ease-in-out';
+		}, // Callback to run before scroll
+		after: function () {
 
-                document.getElementById( 'header' ).style.position = 'fixed';
-                document.getElementById( 'header' ).style.top = '0px';
-                document.getElementById( 'header' ).style.transition = 'all 0.5s ease-in-out';
-                setTimeout( function () {
-                    cancelar_cabecera = 0;
-                }, 100, "JavaScript" );
+				document.getElementById( 'header' ).style.position = 'fixed';
+				document.getElementById( 'header' ).style.top = '0px';
+				document.getElementById( 'header' ).style.transition = 'all 0.5s ease-in-out';
+				setTimeout( function () {
+					cancelar_cabecera = 0;
+				}, 100, "JavaScript" );
 
-            } // Callback to run after scroll
+			} // Callback to run after scroll
 
-    } );
+	} );
 
-    var scroll2 = new SmoothScroll( '#volver_arriba', {
-        // Selectors
-        ignore: '[data-scroll-ignore]', // Selector for links to ignore (must be a valid CSS selector)
-        header: null, // Selector for fixed headers (must be a valid CSS selector)
+	var scroll2 = new SmoothScroll( '#volver_arriba', {
+		// Selectors
+		ignore: '[data-scroll-ignore]', // Selector for links to ignore (must be a valid CSS selector)
+		header: null, // Selector for fixed headers (must be a valid CSS selector)
 
-        // Speed & Easing
-        speed: 500, // Integer. How fast to complete the scroll in milliseconds
-        offset: offser_smooth, // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
-        easing: 'easeInOutCubic', // Easing pattern to use
-        // Function. Custom easing pattern
+		// Speed & Easing
+		speed: 500, // Integer. How fast to complete the scroll in milliseconds
+		offset: offser_smooth, // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
+		easing: 'easeInOutCubic', // Easing pattern to use
+		// Function. Custom easing pattern
 
-        // Callback API
-        before: function () {
-            //cancelar_cabecera = 1;
-            document.getElementById( 'header' ).style.position = 'fixed';
-            document.getElementById( 'header' ).style.top = '0px';
-            document.getElementById( 'header' ).style.transition = 'all 0.05s ease-in-out';
-        }, // Callback to run before scroll
-        after: function () {
+		// Callback API
+		before: function () {
+			//cancelar_cabecera = 1;
+			document.getElementById( 'header' ).style.position = 'fixed';
+			document.getElementById( 'header' ).style.top = '0px';
+			document.getElementById( 'header' ).style.transition = 'all 0.05s ease-in-out';
+		}, // Callback to run before scroll
+		after: function () {
 
-                document.getElementById( 'header' ).style.position = 'fixed';
-                document.getElementById( 'header' ).style.top = '0px';
-                document.getElementById( 'header' ).style.transition = 'all 0.5s ease-in-out';
-                setTimeout( function () {
-                    cancelar_cabecera = 0;
-                }, 100, "JavaScript" );
+				document.getElementById( 'header' ).style.position = 'fixed';
+				document.getElementById( 'header' ).style.top = '0px';
+				document.getElementById( 'header' ).style.transition = 'all 0.5s ease-in-out';
+				setTimeout( function () {
+					cancelar_cabecera = 0;
+				}, 100, "JavaScript" );
 
-            } // Callback to run after scroll
+			} // Callback to run after scroll
 
-    } );
+	} );
 </script>
 <script src="https://www.google.com/jsapi"></script>
 <script>
-    google.load( "visualization", "1", {
-        packages: [ "geochart" ]
-    } );
-    google.setOnLoadCallback( drawRegionsMap );
+	google.load( "visualization", "1", {
+		packages: [ "geochart" ]
+	} );
+	google.setOnLoadCallback( drawRegionsMap );
 
-    function drawRegionsMap() {
-        var array_paises=new Array();
-        array_paises=[["AU","Australia",100],["US","United States",97],["SZ","Swaziland",95],["MP","Northern Mariana Islands",91],["BT","Bhutan",90],["LS","Lesotho",90],["AI","Anguilla",89],["SX","Sint Maarten",86],["TO","Tonga",85],["SG","Singapore",85],["KN","St. Kitts \u0026 Nevis",84],["TC","Turks \u0026 Caicos Islands",81],["GU","Guam",80],["VG","British Virgin Islands",79],["GH","Ghana",79],["WS","Samoa",77],["GD","Grenada",76],["VI","U.S. Virgin Islands",75],["NG","Nigeria",74],["CA","Canada",73],["GY","Guyana",73],["SC","Seychelles",73],["BW","Botswana",72],["BS","Bahamas",71],["JE","Jersey",71],["TT","Trinidad \u0026 Tobago",70],["VC","St. Vincent \u0026 Grenadines",70],["PH","Philippines",70],["LC","St. Lucia",70],["BZ","Belize",69],["GB","United Kingdom",69],["DM","Dominica",69],["ZM","Zambia",69],["UG","Uganda",69],["GG","Guernsey",69],["KE","Kenya",68],["KY","Cayman Islands",68],["IM","Isle of Man",67],["MW","Malawi",67],["JM","Jamaica",67],["BB","Barbados",67],["IN","India",66],["NZ","New Zealand",66],["AG","Antigua \u0026 Barbuda",66],["VU","Vanuatu",64],["ZA","South Africa",63],["MV","Maldives",62],["NA","Namibia",62],["FJ","Fiji",61],["BM","Bermuda",61],["ZW","Zimbabwe",59],["IE","Ireland",59],["GI","Gibraltar",57],["SB","Solomon Islands",57],["BN","Brunei",52],["NP","Nepal",52],["GM","Gambia",51],["AE","United Arab Emirates",50],["ER","Eritrea",49],["MT","Malta",49],["CW","Curaçao",48],["AW","Aruba",46],["RW","Rwanda",45],["LK","Sri Lanka",44],["MU","Mauritius",44],["LR","Liberia",44],["PK","Pakistan",43],["MY","Malaysia",43],["KH","Cambodia",42],["PG","Papua New Guinea",41],["TZ","Tanzania",41],["ET","Ethiopia",41],["AF","Afghanistan",41],["SL","Sierra Leone",40],["FO","Faroe Islands",40],["SS","South Sudan",39],["SH","St. Helena",39],["LB","Lebanon",38],["QA","Qatar",38],["IS","Iceland",36],["HK","Hong Kong",35],["SO","Somalia",35],["BH","Bahrain",33],["BD","Bangladesh",32],["BO","Bolivia",32],["SR","Suriname",32],["OM","Oman",27],["KW","Kuwait",26],["PR","Puerto Rico",26],["AX","Åland Islands",25],["BI","Burundi",24],["CY","Cyprus",23],["MM","Myanmar (Burma)",23],["NO","Norway",23],["MN","Mongolia",22],["EE","Estonia",22],["TL","Timor-Leste",20],["ID","Indonesia",19],["SE","Sweden",19],["CM","Cameroon",19],["DJ","Djibouti",19],["MO","Macau",19],["LA","Laos",19],["MK","Macedonia (FYROM)",18],["MZ","Mozambique",17],["GL","Greenland",17],["HT","Haiti",17],["DK","Denmark",16],["NL","Netherlands",15],["MC","Monaco",15],["KR","South Korea",15],["GE","Georgia",15],["FI","Finland",14],["RO","Romania",14],["LU","Luxembourg",14],["SI","Slovenia",13],["JO","Jordan",13],["TH","Thailand",13],["GR","Greece",13],["IL","Israel",13],["LV","Latvia",13],["AL","Albania",13],["HN","Honduras",13],["BJ","Benin",13],["BE","Belgium",12],["HR","Croatia",12],["TG","Togo",12],["CH","Switzerland",12],["SA","Saudi Arabia",12],["XK","Kosovo",12],["LT","Lithuania",12],["PT","Portugal",12],["CR","Costa Rica",12],["RS","Serbia",11],["MA","Morocco",11],["ME","Montenegro",11],["BG","Bulgaria",11],["PA","Panama",11],["HU","Hungary",11],["CV","Cape Verde",11],["CD","Congo (DRC)",11],["AM","Armenia",11],["TW","Taiwan",11],["FR","France",11],["TN","Tunisia",11],["MG","Madagascar",10],["SV","El Salvador",10],["EG","Egypt",10],["AO","Angola",10],["CZ","Czech Republic",10],["SN","Senegal",10],["PF","French Polynesia",10],["LI","Liechtenstein",10],["DE","Germany",10],["BA","Bosnia \u0026 Herzegovina",10],["NI","Nicaragua",10],["GT","Guatemala",9],["DO","Dominican Republic",9],["AT","Austria",9],["MX","Mexico",9],["SK","Slovakia",9],["SD","Sudan",9],["PL","Poland",9],["MQ","Martinique",8],["BR","Brazil",8],["GF","French Guiana",8],["CL","Chile",8],["GP","Guadeloupe",8],["VN","Vietnam",8],["MD","Moldova",8],["LY","Libya",8],["SY","Syria",8],["IT","Italy",8],["AR","Argentina",8],["UZ","Uzbekistan",8],["GA","Gabon",8],["KG","Kyrgyzstan",8],["PY","Paraguay",8],["ES","Spain",7],["DZ","Algeria",7],["NC","New Caledonia",7],["PE","Peru",7],["AZ","Azerbaijan",7],["YE","Yemen",7],["IR","Iran",7],["IQ","Iraq",7],["CI","Côte d\u2019Ivoire",7],["UY","Uruguay",7],["ML","Mali",7],["EC","Ecuador",6],["KZ","Kazakhstan",6],["AD","Andorra",6],["RE","Réunion",6],["TJ","Tajikistan",6],["CU","Cuba",6],["TM","Turkmenistan",6],["CN","China",6],["PS","Palestine",6],["MR","Mauritania",6],["CO","Colombia",5],["RU","Russia",5],["BF","Burkina Faso",5],["UA","Ukraine",5],["JP","Japan",5],["VE","Venezuela",5],["TR","Turkey",5],["BY","Belarus",5],["AQ","Antarctica",0],["AS","American Samoa",0],["BL","St. Barthélemy",0],["BQ","Caribbean Netherlands",0],["BV","Bouvet Island",0],["CC","Cocos (Keeling) Islands",0],["CF","Central African Republic",0],["CG","Congo (Republic)",0],["CK","Cook Islands",0],["CX","Christmas Island",0],["EH","Western Sahara",0],["FK","Falkland Islands (Islas Malvinas)",0],["FM","Micronesia",0],["GN","Guinea",0],["GQ","Equatorial Guinea",0],["GS","South Georgia \u0026 South Sandwich Islands",0],["GW","Guinea-Bissau",0],["HM","Heard \u0026 McDonald Islands",0],["IO","British Indian Ocean Territory",0],["KI","Kiribati",0],["KM","Comoros",0],["KP","North Korea",0],["MF","St. Martin",0],["MH","Marshall Islands",0],["MS","Montserrat",0],["NE","Niger",0],["NF","Norfolk Island",0],["NR","Nauru",0],["NU","Niue",0],["PM","St. Pierre \u0026 Miquelon",0],["PN","Pitcairn Islands",0],["PW","Palau",0],["SJ","Svalbard \u0026 Jan Mayen",0],["SM","San Marino",0],["ST","São Tomé \u0026 Príncipe",0],["TD","Chad",0],["TF","French Southern Territories",0],["TK","Tokelau",0],["TV","Tuvalu",0],["UM","U.S. Outlying Islands",0],["VA","Vatican City",0],["WF","Wallis \u0026 Futuna",0],["YT","Mayotte",0]];
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'regionCode');
-        data.addColumn('string', 'name');
-        data.addColumn('number', 'FREQUENCY (0-100)');
-        data.addRows(array_paises);
-        var options = {
-            colorAxis: {
-                colors: ['#f9fcf5', '#FDDE06']
-            },
-            backgroundColor: "#fff",
-            legend: "none"
-        };
-        var chart = new google.visualization.GeoChart(document.getElementById('div_trends_map'));
-        chart.draw(data, options);
-
-
+	function drawRegionsMap() {
+		var array_paises=new Array();
+		array_paises=[["AU","Australia",100],["US","United States",97],["SZ","Swaziland",95],["MP","Northern Mariana Islands",91],["BT","Bhutan",90],["LS","Lesotho",90],["AI","Anguilla",89],["SX","Sint Maarten",86],["TO","Tonga",85],["SG","Singapore",85],["KN","St. Kitts \u0026 Nevis",84],["TC","Turks \u0026 Caicos Islands",81],["GU","Guam",80],["VG","British Virgin Islands",79],["GH","Ghana",79],["WS","Samoa",77],["GD","Grenada",76],["VI","U.S. Virgin Islands",75],["NG","Nigeria",74],["CA","Canada",73],["GY","Guyana",73],["SC","Seychelles",73],["BW","Botswana",72],["BS","Bahamas",71],["JE","Jersey",71],["TT","Trinidad \u0026 Tobago",70],["VC","St. Vincent \u0026 Grenadines",70],["PH","Philippines",70],["LC","St. Lucia",70],["BZ","Belize",69],["GB","United Kingdom",69],["DM","Dominica",69],["ZM","Zambia",69],["UG","Uganda",69],["GG","Guernsey",69],["KE","Kenya",68],["KY","Cayman Islands",68],["IM","Isle of Man",67],["MW","Malawi",67],["JM","Jamaica",67],["BB","Barbados",67],["IN","India",66],["NZ","New Zealand",66],["AG","Antigua \u0026 Barbuda",66],["VU","Vanuatu",64],["ZA","South Africa",63],["MV","Maldives",62],["NA","Namibia",62],["FJ","Fiji",61],["BM","Bermuda",61],["ZW","Zimbabwe",59],["IE","Ireland",59],["GI","Gibraltar",57],["SB","Solomon Islands",57],["BN","Brunei",52],["NP","Nepal",52],["GM","Gambia",51],["AE","United Arab Emirates",50],["ER","Eritrea",49],["MT","Malta",49],["CW","Curaçao",48],["AW","Aruba",46],["RW","Rwanda",45],["LK","Sri Lanka",44],["MU","Mauritius",44],["LR","Liberia",44],["PK","Pakistan",43],["MY","Malaysia",43],["KH","Cambodia",42],["PG","Papua New Guinea",41],["TZ","Tanzania",41],["ET","Ethiopia",41],["AF","Afghanistan",41],["SL","Sierra Leone",40],["FO","Faroe Islands",40],["SS","South Sudan",39],["SH","St. Helena",39],["LB","Lebanon",38],["QA","Qatar",38],["IS","Iceland",36],["HK","Hong Kong",35],["SO","Somalia",35],["BH","Bahrain",33],["BD","Bangladesh",32],["BO","Bolivia",32],["SR","Suriname",32],["OM","Oman",27],["KW","Kuwait",26],["PR","Puerto Rico",26],["AX","Åland Islands",25],["BI","Burundi",24],["CY","Cyprus",23],["MM","Myanmar (Burma)",23],["NO","Norway",23],["MN","Mongolia",22],["EE","Estonia",22],["TL","Timor-Leste",20],["ID","Indonesia",19],["SE","Sweden",19],["CM","Cameroon",19],["DJ","Djibouti",19],["MO","Macau",19],["LA","Laos",19],["MK","Macedonia (FYROM)",18],["MZ","Mozambique",17],["GL","Greenland",17],["HT","Haiti",17],["DK","Denmark",16],["NL","Netherlands",15],["MC","Monaco",15],["KR","South Korea",15],["GE","Georgia",15],["FI","Finland",14],["RO","Romania",14],["LU","Luxembourg",14],["SI","Slovenia",13],["JO","Jordan",13],["TH","Thailand",13],["GR","Greece",13],["IL","Israel",13],["LV","Latvia",13],["AL","Albania",13],["HN","Honduras",13],["BJ","Benin",13],["BE","Belgium",12],["HR","Croatia",12],["TG","Togo",12],["CH","Switzerland",12],["SA","Saudi Arabia",12],["XK","Kosovo",12],["LT","Lithuania",12],["PT","Portugal",12],["CR","Costa Rica",12],["RS","Serbia",11],["MA","Morocco",11],["ME","Montenegro",11],["BG","Bulgaria",11],["PA","Panama",11],["HU","Hungary",11],["CV","Cape Verde",11],["CD","Congo (DRC)",11],["AM","Armenia",11],["TW","Taiwan",11],["FR","France",11],["TN","Tunisia",11],["MG","Madagascar",10],["SV","El Salvador",10],["EG","Egypt",10],["AO","Angola",10],["CZ","Czech Republic",10],["SN","Senegal",10],["PF","French Polynesia",10],["LI","Liechtenstein",10],["DE","Germany",10],["BA","Bosnia \u0026 Herzegovina",10],["NI","Nicaragua",10],["GT","Guatemala",9],["DO","Dominican Republic",9],["AT","Austria",9],["MX","Mexico",9],["SK","Slovakia",9],["SD","Sudan",9],["PL","Poland",9],["MQ","Martinique",8],["BR","Brazil",8],["GF","French Guiana",8],["CL","Chile",8],["GP","Guadeloupe",8],["VN","Vietnam",8],["MD","Moldova",8],["LY","Libya",8],["SY","Syria",8],["IT","Italy",8],["AR","Argentina",8],["UZ","Uzbekistan",8],["GA","Gabon",8],["KG","Kyrgyzstan",8],["PY","Paraguay",8],["ES","Spain",7],["DZ","Algeria",7],["NC","New Caledonia",7],["PE","Peru",7],["AZ","Azerbaijan",7],["YE","Yemen",7],["IR","Iran",7],["IQ","Iraq",7],["CI","Côte d\u2019Ivoire",7],["UY","Uruguay",7],["ML","Mali",7],["EC","Ecuador",6],["KZ","Kazakhstan",6],["AD","Andorra",6],["RE","Réunion",6],["TJ","Tajikistan",6],["CU","Cuba",6],["TM","Turkmenistan",6],["CN","China",6],["PS","Palestine",6],["MR","Mauritania",6],["CO","Colombia",5],["RU","Russia",5],["BF","Burkina Faso",5],["UA","Ukraine",5],["JP","Japan",5],["VE","Venezuela",5],["TR","Turkey",5],["BY","Belarus",5],["AQ","Antarctica",0],["AS","American Samoa",0],["BL","St. Barthélemy",0],["BQ","Caribbean Netherlands",0],["BV","Bouvet Island",0],["CC","Cocos (Keeling) Islands",0],["CF","Central African Republic",0],["CG","Congo (Republic)",0],["CK","Cook Islands",0],["CX","Christmas Island",0],["EH","Western Sahara",0],["FK","Falkland Islands (Islas Malvinas)",0],["FM","Micronesia",0],["GN","Guinea",0],["GQ","Equatorial Guinea",0],["GS","South Georgia \u0026 South Sandwich Islands",0],["GW","Guinea-Bissau",0],["HM","Heard \u0026 McDonald Islands",0],["IO","British Indian Ocean Territory",0],["KI","Kiribati",0],["KM","Comoros",0],["KP","North Korea",0],["MF","St. Martin",0],["MH","Marshall Islands",0],["MS","Montserrat",0],["NE","Niger",0],["NF","Norfolk Island",0],["NR","Nauru",0],["NU","Niue",0],["PM","St. Pierre \u0026 Miquelon",0],["PN","Pitcairn Islands",0],["PW","Palau",0],["SJ","Svalbard \u0026 Jan Mayen",0],["SM","San Marino",0],["ST","São Tomé \u0026 Príncipe",0],["TD","Chad",0],["TF","French Southern Territories",0],["TK","Tokelau",0],["TV","Tuvalu",0],["UM","U.S. Outlying Islands",0],["VA","Vatican City",0],["WF","Wallis \u0026 Futuna",0],["YT","Mayotte",0]];
+		var data = new google.visualization.DataTable();
+		data.addColumn('string', 'regionCode');
+		data.addColumn('string', 'name');
+		data.addColumn('number', 'FREQUENCY (0-100)');
+		data.addRows(array_paises);
+		var options = {
+			colorAxis: {
+				colors: ['#f9fcf5', '#FDDE06']
+			},
+			backgroundColor: "#fff",
+			legend: "none"
+		};
+		var chart = new google.visualization.GeoChart(document.getElementById('div_trends_map'));
+		chart.draw(data, options);
 
 
 
 
 
 
-    }
+
+
+	}
 </script>
 <script>
-    google.load("visualization", "1", {
-            packages: ["corechart"]
-        });
-        google.setOnLoadCallback(drawChart);
+	google.load("visualization", "1", {
+			packages: ["corechart"]
+		});
+		google.setOnLoadCallback(drawChart);
 
-    function drawChart() {
-        var array_frec=new Array();
-        array_frec=[[1500,5.1987481128890067e-06], [1501,4.4560698110477204e-06], [1502,3.16286632369156e-05], [1503,2.8114367321702754e-05], [1504,2.5302930589532478e-05], [1505,2.3002664172302254e-05], [1506,2.3002664172302254e-05], [1507,2.3002664172302254e-05], [1508,2.3002664172302254e-05], [1509,2.3002664172302254e-05], [1510,3.2439235259186141e-05], [1511,2.9603554470337588e-05], [1512,2.9603554470337588e-05], [1513,9.4365710868838839e-06], [1514,9.4365710868838839e-06], [1515,0.00012354913434881547], [1516,0.00012354913434881547], [1517,0.00012354913434881547], [1518,0.00012354913434881547], [1519,0.00013969375537602571], [1520,0.00016523719254605979], [1521,0.00015580062145917591], [1522,0.00015580062145917591], [1523,0.00015580062145917591], [1524,0.00015580062145917591], [1525,0.00015580062145917591], [1526,4.1688058197244324e-05], [1527,4.1688058197244324e-05], [1528,4.1688058197244324e-05], [1529,4.1688058197244324e-05], [1530,2.5543437170034107e-05], [1531,0.0], [1532,0.0], [1533,0.0], [1534,0.0], [1535,0.0], [1536,5.1731275479224593e-05], [1537,5.1731275479224593e-05], [1538,5.1731275479224593e-05], [1539,5.1731275479224593e-05], [1540,5.1731275479224593e-05], [1541,5.1731275479224593e-05], [1542,5.1731275479224593e-05], [1543,5.1731275479224593e-05], [1544,5.1731275479224593e-05], [1545,5.1731275479224593e-05], [1546,5.1731275479224593e-05], [1547,0.0], [1548,0.0], [1549,0.0], [1550,0.0], [1551,0.0], [1552,0.0], [1553,0.0], [1554,0.0], [1555,0.0], [1556,0.0], [1557,0.0], [1558,7.0144919763234526e-05], [1559,0.00011511443881317973], [1560,0.00011511443881317973], [1561,0.00011511443881317973], [1562,0.00011511443881317973], [1563,0.00027900553752922201], [1564,0.00027900553752922201], [1565,0.00027900553752922201], [1566,0.00027900553752922201], [1567,0.00044905927180397242], [1568,0.00044905927180397242], [1569,0.00043150095205584711], [1570,0.00042986645712517202], [1571,0.00042986645712517202], [1572,0.00042986645712517202], [1573,0.00042986645712517202], [1574,0.00042489636954004794], [1575,0.00042489636954004794], [1576,0.00055437090817246246], [1577,0.00064046362637203526], [1578,0.00047040989209728485], [1579,0.00050691115426492286], [1580,0.00045432455424981362], [1581,0.00041098953013054347], [1582,0.00049444576407867396], [1583,0.00059728410666469824], [1584,0.0008402761780995537], [1585,0.00074540273900228465], [1586,0.00074540273900228465], [1587,0.0007772026424804194], [1588,0.00080930060093206441], [1589,0.0009238987642509693], [1590,0.0009171028240499171], [1591,0.0009171028240499171], [1592,0.0010003300426019864], [1593,0.0011530957152982328], [1594,0.0010502573727122085], [1595,0.00080928448121333281], [1596,0.00074523690917968372], [1597,0.00074523690917968372], [1598,0.00082226145588554743], [1599,0.00070407077923432962], [1600,0.00084037745794127909], [1601,0.00091036424865623383], [1602,0.0010025204271435293], [1603,0.00091929320859146003], [1604,0.00068307130194708327], [1605,0.00091550107473184733], [1606,0.0010288557334041054], [1607,0.0011113472494550726], [1608,0.0011113472494550726], [1609,0.0010491283081302588], [1610,0.0010491283081302588], [1611,0.00079822346610440445], [1612,0.00069853135342286396], [1613,0.00086784136312251746], [1614,0.0010556156154383314], [1615,0.001225484259934588], [1616,0.0010525305035778067], [1617,0.00093715666496956885], [1618,0.00092108660927889025], [1619,0.0010341995882547715], [1620,0.001069334674287926], [1621,0.001325416611507535], [1622,0.001325416611507535], [1623,0.0013678644344591621], [1624,0.0011958047477740117], [1625,0.0011283941170073706], [1626,0.00097557842276397753], [1627,0.0010659850271291691], [1628,0.0010659850271291691], [1629,0.0013101429450960661], [1630,0.0012928907553115014], [1631,0.0013339301407210189], [1632,0.0011622604824052278], [1633,0.0012680978635961021], [1634,0.001225650040644475], [1635,0.001260858806993135], [1636,0.0012346143379214811], [1637,0.0012738227484409106], [1638,0.0011910377546552229], [1639,0.0012688062058507719], [1640,0.0010172227312895384], [1641,0.0010261525061320174], [1642,0.00085483028405261314], [1643,0.00083003702192482626], [1644,0.00080501174406063831], [1645,0.00091014983957972038], [1646,0.0008349601412191987], [1647,0.00085077776615931225], [1648,0.00095712005647576666], [1649,0.00094233202451670707], [1650,0.00099725442388179635], [1651,0.0010657716828229075], [1652,0.0010010984472253106], [1653,0.00099423014961013746], [1654,0.0010752412437630649], [1655,0.0010878071823919361], [1656,0.0010652335212481294], [1657,0.0011109780805947428], [1658,0.001039364655629139], [1659,0.00097619277022948324], [1660,0.0010435855894518847], [1661,0.00096105055523697626], [1662,0.00093809499892152167], [1663,0.00099208071531558585], [1664,0.0010278013280846856], [1665,0.00098472139374776316], [1666,0.00097263622394000947], [1667,0.00094470285958695138], [1668,0.00090883111327209258], [1669,0.00093728826719928872], [1670,0.00092151368417861784], [1671,0.00090015737805515528], [1672,0.00091915834292938768], [1673,0.00090348215202208269], [1674,0.00089211128017103135], [1675,0.00087556218601424587], [1676,0.00086594597880982542], [1677,0.00087885994104329836], [1678,0.00091913476882671773], [1679,0.0009466661828231405], [1680,0.00098617985019121648], [1681,0.00098425953183323145], [1682,0.00092601146951148451], [1683,0.00093387657861140644], [1684,0.0009091142300431701], [1685,0.00090566208183934748], [1686,0.00086948041147975755], [1687,0.000845322602386163], [1688,0.00087166661714118993], [1689,0.000855587020685727], [1690,0.00084631443976170635], [1691,0.00082350421739234162], [1692,0.00079288437899032772], [1693,0.00084022929976609623], [1694,0.00084561648228290403], [1695,0.00087963025064461613], [1696,0.00088676109656014228], [1697,0.00090787559218535364], [1698,0.00093787321185862481], [1699,0.00090598983330313456], [1700,0.00090218727498061276], [1701,0.00090141464236446404], [1702,0.00090841629902239549], [1703,0.00092755896250971341], [1704,0.00093359180556779563], [1705,0.00094007090030407369], [1706,0.00091406193942847574], [1707,0.00093431667086075652], [1708,0.00092657396188852465], [1709,0.00091314225309443748], [1710,0.000896218259268525], [1711,0.00094677894164554095], [1712,0.00098468906203792858], [1713,0.00096984741023995662], [1714,0.00097271541281687939], [1715,0.00099848397605290461], [1716,0.00097783102484589267], [1717,0.0010107265340841629], [1718,0.00099853415634821772], [1719,0.0010171503262509677], [1720,0.0010196008158593693], [1721,0.0010219165758991783], [1722,0.00096799829043447971], [1723,0.00092802094613117253], [1724,0.00092044767965985966], [1725,0.00092300201702693642], [1726,0.00087522903711281038], [1727,0.00089458551850508559], [1728,0.00085419524905525827], [1729,0.00082266618582335388], [1730,0.00081913111816075718], [1731,0.00081173311495645476], [1732,0.00081869893157008016], [1733,0.00082656633193519985], [1734,0.000827798323536461], [1735,0.00084784987848252058], [1736,0.00085406510730866682], [1737,0.0008527570594610138], [1738,0.00085594209270890462], [1739,0.00087741377699950874], [1740,0.00088488197335126722], [1741,0.00087739890229634261], [1742,0.00087308864617212248], [1743,0.00085477561647580432], [1744,0.00083490343108265233], [1745,0.00082917419918389487], [1746,0.00083061965944414794], [1747,0.00082021506122228777], [1748,0.00082992415727031505], [1749,0.00082641212396662343], [1750,0.00083389110461046755], [1751,0.00082558300346136093], [1752,0.00083294661652127445], [1753,0.00083692750724201858], [1754,0.00083930961343205786], [1755,0.00084945747882805085], [1756,0.00083817093929445207], [1757,0.00080800895706157792], [1758,0.00080176115840334785], [1759,0.00078730949264189064], [1760,0.00077669391810724676], [1761,0.0007637094716880132], [1762,0.00077311790400100028], [1763,0.00076708538902246141], [1764,0.00075641972414979876], [1765,0.0007646082085557282], [1766,0.00077488065951249814], [1767,0.00079663116908208894], [1768,0.00079375989629294384], [1769,0.00080303045053204357], [1770,0.00080124922731721938], [1771,0.00078461052511226046], [1772,0.00077215450900522148], [1773,0.00076513195579702199], [1774,0.0007405812873251059], [1775,0.00074483438352630901], [1776,0.00072586578211154449], [1777,0.00070874873993240976], [1778,0.00068283475808460605], [1779,0.00069855374749749899], [1780,0.00068274827737530529], [1781,0.00067601639735089111], [1782,0.00066440141315317965], [1783,0.00065220606682652772], [1784,0.00063890506598082459], [1785,0.00064678644676777447], [1786,0.00064598047703673899], [1787,0.00066084802595221185], [1788,0.00066066613230346275], [1789,0.00067056733479892671], [1790,0.00065821243598210538], [1791,0.00066209951711987912], [1792,0.0006635944009758532], [1793,0.00068012499038807368], [1794,0.0006774892787110399], [1795,0.00068025527500801468], [1796,0.0006841700100763278], [1797,0.00066642059986902905], [1798,0.00065941781609911811], [1799,0.00065208591033958578], [1800,0.00064872709547423506], [1801,0.00064843065444041383], [1802,0.0006484202723103491], [1803,0.00066211241805417967], [1804,0.0006663833575492555], [1805,0.00067823811497708618], [1806,0.00069300986995751203], [1807,0.00069582167039202022], [1808,0.00070582243444567382], [1809,0.00070352841761301863], [1810,0.00071033270267600358], [1811,0.00071005678778006268], [1812,0.00070960421792485499], [1813,0.00070691088595512235], [1814,0.00069670770211483944], [1815,0.00069533591687848627], [1816,0.00068958953488618135], [1817,0.00068597818872976029], [1818,0.00067978077144785357], [1819,0.00069264129904860795], [1820,0.00069483832075175917], [1821,0.00069448228565637362], [1822,0.00069167845437980509], [1823,0.00069700626508248126], [1824,0.00069790365259078419], [1825,0.00070651274555447424], [1826,0.0006963651129891249], [1827,0.00069577778710729695], [1828,0.00069445266324857414], [1829,0.00069125339029018176], [1830,0.00067657273559069097], [1831,0.0006730879593471235], [1832,0.00067170976597646416], [1833,0.00067307593681934202], [1834,0.00067574244034899903], [1835,0.00067589774367992175], [1836,0.0006637582290832969], [1837,0.00067060620693320573], [1838,0.00067280939335680819], [1839,0.00067257107002660632], [1840,0.00067415663083507252], [1841,0.00067807227076793254], [1842,0.00068054373100907969], [1843,0.0006817425019107759], [1844,0.00067716460167007017], [1845,0.0006686209817416966], [1846,0.0006665297392332418], [1847,0.00066819254160774028], [1848,0.00066514383599331438], [1849,0.00066375808620994746], [1850,0.00065802320816808128], [1851,0.00065700683890926564], [1852,0.00065660751318897712], [1853,0.00065322336740791798], [1854,0.00065451005833562124], [1855,0.0006607532744634558], [1856,0.00066364393040368498], [1857,0.0006656450145369904], [1858,0.00066670489666814149], [1859,0.00066568256906149065], [1860,0.00066473969491198659], [1861,0.0006636544077826494], [1862,0.0006625369847328825], [1863,0.00066138419259170235], [1864,0.00066627456213940275], [1865,0.0006680168497206813], [1866,0.00067306792003695261], [1867,0.00067111958262764597], [1868,0.00067492923699319363], [1869,0.00067809320965104484], [1870,0.00067869134099138057], [1871,0.00068004882301796567], [1872,0.00068079871760511935], [1873,0.00068187540058385241], [1874,0.00068089963381432676], [1875,0.00067802398486740208], [1876,0.00067285375817763532], [1877,0.00067054013065485788], [1878,0.00067478691397065461], [1879,0.00067105370213870299], [1880,0.00066798373485322702], [1881,0.00066518703666092324], [1882,0.00066792942710559476], [1883,0.00067248481156473815], [1884,0.00067051083632660186], [1885,0.0006711642279035666], [1886,0.00067273278678344059], [1887,0.00067556380632926118], [1888,0.00067239416636187923], [1889,0.00066777234050360596], [1890,0.00066457779294895852], [1891,0.00066368555946444928], [1892,0.00066635075067593289], [1893,0.00066290660337968302], [1894,0.00066541133194484496], [1895,0.00067011098144575953], [1896,0.00067150268957696176], [1897,0.00067191557239063763], [1898,0.00067125898997553372], [1899,0.00067357965004207062], [1900,0.00067330451301214373], [1901,0.00067581718427721751], [1902,0.00067722551334141326], [1903,0.00067599856464022935], [1904,0.00067696781744333828], [1905,0.00067203589820895684], [1906,0.00066653478742492473], [1907,0.00066202520710331475], [1908,0.00065886910835450351], [1909,0.0006534725014882332], [1910,0.00064601783048022878], [1911,0.0006416197178292681], [1912,0.00063887030542404818], [1913,0.000634630369445817], [1914,0.00063128303736448288], [1915,0.00062671151350844991], [1916,0.00062211284900761461], [1917,0.00062024593882432043], [1918,0.00062028480566699397], [1919,0.00061967005868527019], [1920,0.0006207348990508101], [1921,0.00062112986448813569], [1922,0.00062259721082889223], [1923,0.00062051634515889668], [1924,0.00061885728394951332], [1925,0.00061725544087080789], [1926,0.00061489260141653096], [1927,0.00061244600642980504], [1928,0.00060808721040798855], [1929,0.00060330559393729675], [1930,0.00059775731907310808], [1931,0.00059196289988573301], [1932,0.0005876737943088466], [1933,0.00058272906938906419], [1934,0.00057690567866137087], [1935,0.00057111909634179688], [1936,0.00056653268719938671], [1937,0.00056351018561558294], [1938,0.00056209929541430688], [1939,0.00056402518583292306], [1940,0.00056702368469400835], [1941,0.00056851638311689555], [1942,0.0005697880670512942], [1943,0.0005685342158275572], [1944,0.00056701520225033164], [1945,0.00056728865125809204], [1946,0.00056713071799921716], [1947,0.00056759191317145121], [1948,0.00056602132760665631], [1949,0.00056481177770448005], [1950,0.00056019883116029882], [1951,0.00055213471535931933], [1952,0.00054512904237278485], [1953,0.00053800082638521087], [1954,0.00053207102676176214], [1955,0.00052631771276620304], [1956,0.00052033953993073237], [1957,0.00051362096564844251], [1958,0.00050583578625016594], [1959,0.00049893603533167732], [1960,0.00049027009200389409], [1961,0.00048229384331286633], [1962,0.0004752878713506189], [1963,0.00046944165263663638], [1964,0.00046512965557419443], [1965,0.00046148037918927997], [1966,0.00045716459333727306], [1967,0.00045289898248897356], [1968,0.000448355353331532], [1969,0.00044369916114109486], [1970,0.00043930591412142598], [1971,0.00043586295743642205], [1972,0.00043282279247333378], [1973,0.00042993091681802815], [1974,0.00042567880750125784], [1975,0.00042162782681936568], [1976,0.00041805604335174644], [1977,0.00041563414164226163], [1978,0.00041343461436388844], [1979,0.00041210370942611587], [1980,0.0004107662799387154], [1981,0.00041108088176274163], [1982,0.00041128737608563495], [1983,0.00041158611367625946], [1984,0.0004121581230058589], [1985,0.00041339668413539499], [1986,0.00041452384373935109], [1987,0.00041496101237664169], [1988,0.00041597416963089597], [1989,0.00041692316616800696], [1990,0.00041812464108013296], [1991,0.0004202744087458334], [1992,0.00042152790543199939], [1993,0.00042298853937113148], [1994,0.00042477805982343853], [1995,0.00042750450666062534], [1996,0.00043038205793974072], [1997,0.00043354547233320773], [1998,0.00043909016478044742], [1999,0.00044601146047088235], [2000,0.00045205748491835863], [2001,0.00045851938458244234], [2002,0.00046617912647145039], [2003,0.0004821352353742854], [2004,0.00048689596005715432], [2005,0.00049219533361287578], [2006,0.00049762882918003015], [2007,0.00050450039062915105], [2008,0.00051213796056496597]];
-        for(var i=0; i<array_frec.length; i++) {
-            array_frec[i].push(array_frec[i][0]);
-        }
-        var data = new google.visualization.DataTable();
-        data.addColumn('number', 'year');
-        data.addColumn('number', '', 'no_mostrar');
-        data.addColumn({type: 'number', role: 'tooltip'});
-        data.addRows(array_frec);
-
-
-        var options = {
-            chartArea: {
-                width: '95%',
-                height: '85%'
-            },
-            height: 320,
-            curveType: 'function',
-            legend: "none",
-            hAxis: {
-                gridlines: {
-                    count: 6,
-                    color: '#eee'
-                },
-                minValue: 1500,
-                baselineColor: '#eee',
-            },
-            vAxis: {
-                textPosition: 'none',
-                gridlines: {
-                    count: 8,
-                    color: '#eee'
-                },
-                viewWindow: {
-                    min: 0
-                }
-            },
-            enableInteractivity: true,
-            series: {
-                0: {
-                    color: '#3f3e37'
-                }
-            }
-        };
-        var chart = new google.visualization.LineChart(document.getElementById('div_historico'));
-        chart.draw(data, options);
+	function drawChart() {
+		var array_frec=new Array();
+		array_frec=[[1500,5.1987481128890067e-06], [1501,4.4560698110477204e-06], [1502,3.16286632369156e-05], [1503,2.8114367321702754e-05], [1504,2.5302930589532478e-05], [1505,2.3002664172302254e-05], [1506,2.3002664172302254e-05], [1507,2.3002664172302254e-05], [1508,2.3002664172302254e-05], [1509,2.3002664172302254e-05], [1510,3.2439235259186141e-05], [1511,2.9603554470337588e-05], [1512,2.9603554470337588e-05], [1513,9.4365710868838839e-06], [1514,9.4365710868838839e-06], [1515,0.00012354913434881547], [1516,0.00012354913434881547], [1517,0.00012354913434881547], [1518,0.00012354913434881547], [1519,0.00013969375537602571], [1520,0.00016523719254605979], [1521,0.00015580062145917591], [1522,0.00015580062145917591], [1523,0.00015580062145917591], [1524,0.00015580062145917591], [1525,0.00015580062145917591], [1526,4.1688058197244324e-05], [1527,4.1688058197244324e-05], [1528,4.1688058197244324e-05], [1529,4.1688058197244324e-05], [1530,2.5543437170034107e-05], [1531,0.0], [1532,0.0], [1533,0.0], [1534,0.0], [1535,0.0], [1536,5.1731275479224593e-05], [1537,5.1731275479224593e-05], [1538,5.1731275479224593e-05], [1539,5.1731275479224593e-05], [1540,5.1731275479224593e-05], [1541,5.1731275479224593e-05], [1542,5.1731275479224593e-05], [1543,5.1731275479224593e-05], [1544,5.1731275479224593e-05], [1545,5.1731275479224593e-05], [1546,5.1731275479224593e-05], [1547,0.0], [1548,0.0], [1549,0.0], [1550,0.0], [1551,0.0], [1552,0.0], [1553,0.0], [1554,0.0], [1555,0.0], [1556,0.0], [1557,0.0], [1558,7.0144919763234526e-05], [1559,0.00011511443881317973], [1560,0.00011511443881317973], [1561,0.00011511443881317973], [1562,0.00011511443881317973], [1563,0.00027900553752922201], [1564,0.00027900553752922201], [1565,0.00027900553752922201], [1566,0.00027900553752922201], [1567,0.00044905927180397242], [1568,0.00044905927180397242], [1569,0.00043150095205584711], [1570,0.00042986645712517202], [1571,0.00042986645712517202], [1572,0.00042986645712517202], [1573,0.00042986645712517202], [1574,0.00042489636954004794], [1575,0.00042489636954004794], [1576,0.00055437090817246246], [1577,0.00064046362637203526], [1578,0.00047040989209728485], [1579,0.00050691115426492286], [1580,0.00045432455424981362], [1581,0.00041098953013054347], [1582,0.00049444576407867396], [1583,0.00059728410666469824], [1584,0.0008402761780995537], [1585,0.00074540273900228465], [1586,0.00074540273900228465], [1587,0.0007772026424804194], [1588,0.00080930060093206441], [1589,0.0009238987642509693], [1590,0.0009171028240499171], [1591,0.0009171028240499171], [1592,0.0010003300426019864], [1593,0.0011530957152982328], [1594,0.0010502573727122085], [1595,0.00080928448121333281], [1596,0.00074523690917968372], [1597,0.00074523690917968372], [1598,0.00082226145588554743], [1599,0.00070407077923432962], [1600,0.00084037745794127909], [1601,0.00091036424865623383], [1602,0.0010025204271435293], [1603,0.00091929320859146003], [1604,0.00068307130194708327], [1605,0.00091550107473184733], [1606,0.0010288557334041054], [1607,0.0011113472494550726], [1608,0.0011113472494550726], [1609,0.0010491283081302588], [1610,0.0010491283081302588], [1611,0.00079822346610440445], [1612,0.00069853135342286396], [1613,0.00086784136312251746], [1614,0.0010556156154383314], [1615,0.001225484259934588], [1616,0.0010525305035778067], [1617,0.00093715666496956885], [1618,0.00092108660927889025], [1619,0.0010341995882547715], [1620,0.001069334674287926], [1621,0.001325416611507535], [1622,0.001325416611507535], [1623,0.0013678644344591621], [1624,0.0011958047477740117], [1625,0.0011283941170073706], [1626,0.00097557842276397753], [1627,0.0010659850271291691], [1628,0.0010659850271291691], [1629,0.0013101429450960661], [1630,0.0012928907553115014], [1631,0.0013339301407210189], [1632,0.0011622604824052278], [1633,0.0012680978635961021], [1634,0.001225650040644475], [1635,0.001260858806993135], [1636,0.0012346143379214811], [1637,0.0012738227484409106], [1638,0.0011910377546552229], [1639,0.0012688062058507719], [1640,0.0010172227312895384], [1641,0.0010261525061320174], [1642,0.00085483028405261314], [1643,0.00083003702192482626], [1644,0.00080501174406063831], [1645,0.00091014983957972038], [1646,0.0008349601412191987], [1647,0.00085077776615931225], [1648,0.00095712005647576666], [1649,0.00094233202451670707], [1650,0.00099725442388179635], [1651,0.0010657716828229075], [1652,0.0010010984472253106], [1653,0.00099423014961013746], [1654,0.0010752412437630649], [1655,0.0010878071823919361], [1656,0.0010652335212481294], [1657,0.0011109780805947428], [1658,0.001039364655629139], [1659,0.00097619277022948324], [1660,0.0010435855894518847], [1661,0.00096105055523697626], [1662,0.00093809499892152167], [1663,0.00099208071531558585], [1664,0.0010278013280846856], [1665,0.00098472139374776316], [1666,0.00097263622394000947], [1667,0.00094470285958695138], [1668,0.00090883111327209258], [1669,0.00093728826719928872], [1670,0.00092151368417861784], [1671,0.00090015737805515528], [1672,0.00091915834292938768], [1673,0.00090348215202208269], [1674,0.00089211128017103135], [1675,0.00087556218601424587], [1676,0.00086594597880982542], [1677,0.00087885994104329836], [1678,0.00091913476882671773], [1679,0.0009466661828231405], [1680,0.00098617985019121648], [1681,0.00098425953183323145], [1682,0.00092601146951148451], [1683,0.00093387657861140644], [1684,0.0009091142300431701], [1685,0.00090566208183934748], [1686,0.00086948041147975755], [1687,0.000845322602386163], [1688,0.00087166661714118993], [1689,0.000855587020685727], [1690,0.00084631443976170635], [1691,0.00082350421739234162], [1692,0.00079288437899032772], [1693,0.00084022929976609623], [1694,0.00084561648228290403], [1695,0.00087963025064461613], [1696,0.00088676109656014228], [1697,0.00090787559218535364], [1698,0.00093787321185862481], [1699,0.00090598983330313456], [1700,0.00090218727498061276], [1701,0.00090141464236446404], [1702,0.00090841629902239549], [1703,0.00092755896250971341], [1704,0.00093359180556779563], [1705,0.00094007090030407369], [1706,0.00091406193942847574], [1707,0.00093431667086075652], [1708,0.00092657396188852465], [1709,0.00091314225309443748], [1710,0.000896218259268525], [1711,0.00094677894164554095], [1712,0.00098468906203792858], [1713,0.00096984741023995662], [1714,0.00097271541281687939], [1715,0.00099848397605290461], [1716,0.00097783102484589267], [1717,0.0010107265340841629], [1718,0.00099853415634821772], [1719,0.0010171503262509677], [1720,0.0010196008158593693], [1721,0.0010219165758991783], [1722,0.00096799829043447971], [1723,0.00092802094613117253], [1724,0.00092044767965985966], [1725,0.00092300201702693642], [1726,0.00087522903711281038], [1727,0.00089458551850508559], [1728,0.00085419524905525827], [1729,0.00082266618582335388], [1730,0.00081913111816075718], [1731,0.00081173311495645476], [1732,0.00081869893157008016], [1733,0.00082656633193519985], [1734,0.000827798323536461], [1735,0.00084784987848252058], [1736,0.00085406510730866682], [1737,0.0008527570594610138], [1738,0.00085594209270890462], [1739,0.00087741377699950874], [1740,0.00088488197335126722], [1741,0.00087739890229634261], [1742,0.00087308864617212248], [1743,0.00085477561647580432], [1744,0.00083490343108265233], [1745,0.00082917419918389487], [1746,0.00083061965944414794], [1747,0.00082021506122228777], [1748,0.00082992415727031505], [1749,0.00082641212396662343], [1750,0.00083389110461046755], [1751,0.00082558300346136093], [1752,0.00083294661652127445], [1753,0.00083692750724201858], [1754,0.00083930961343205786], [1755,0.00084945747882805085], [1756,0.00083817093929445207], [1757,0.00080800895706157792], [1758,0.00080176115840334785], [1759,0.00078730949264189064], [1760,0.00077669391810724676], [1761,0.0007637094716880132], [1762,0.00077311790400100028], [1763,0.00076708538902246141], [1764,0.00075641972414979876], [1765,0.0007646082085557282], [1766,0.00077488065951249814], [1767,0.00079663116908208894], [1768,0.00079375989629294384], [1769,0.00080303045053204357], [1770,0.00080124922731721938], [1771,0.00078461052511226046], [1772,0.00077215450900522148], [1773,0.00076513195579702199], [1774,0.0007405812873251059], [1775,0.00074483438352630901], [1776,0.00072586578211154449], [1777,0.00070874873993240976], [1778,0.00068283475808460605], [1779,0.00069855374749749899], [1780,0.00068274827737530529], [1781,0.00067601639735089111], [1782,0.00066440141315317965], [1783,0.00065220606682652772], [1784,0.00063890506598082459], [1785,0.00064678644676777447], [1786,0.00064598047703673899], [1787,0.00066084802595221185], [1788,0.00066066613230346275], [1789,0.00067056733479892671], [1790,0.00065821243598210538], [1791,0.00066209951711987912], [1792,0.0006635944009758532], [1793,0.00068012499038807368], [1794,0.0006774892787110399], [1795,0.00068025527500801468], [1796,0.0006841700100763278], [1797,0.00066642059986902905], [1798,0.00065941781609911811], [1799,0.00065208591033958578], [1800,0.00064872709547423506], [1801,0.00064843065444041383], [1802,0.0006484202723103491], [1803,0.00066211241805417967], [1804,0.0006663833575492555], [1805,0.00067823811497708618], [1806,0.00069300986995751203], [1807,0.00069582167039202022], [1808,0.00070582243444567382], [1809,0.00070352841761301863], [1810,0.00071033270267600358], [1811,0.00071005678778006268], [1812,0.00070960421792485499], [1813,0.00070691088595512235], [1814,0.00069670770211483944], [1815,0.00069533591687848627], [1816,0.00068958953488618135], [1817,0.00068597818872976029], [1818,0.00067978077144785357], [1819,0.00069264129904860795], [1820,0.00069483832075175917], [1821,0.00069448228565637362], [1822,0.00069167845437980509], [1823,0.00069700626508248126], [1824,0.00069790365259078419], [1825,0.00070651274555447424], [1826,0.0006963651129891249], [1827,0.00069577778710729695], [1828,0.00069445266324857414], [1829,0.00069125339029018176], [1830,0.00067657273559069097], [1831,0.0006730879593471235], [1832,0.00067170976597646416], [1833,0.00067307593681934202], [1834,0.00067574244034899903], [1835,0.00067589774367992175], [1836,0.0006637582290832969], [1837,0.00067060620693320573], [1838,0.00067280939335680819], [1839,0.00067257107002660632], [1840,0.00067415663083507252], [1841,0.00067807227076793254], [1842,0.00068054373100907969], [1843,0.0006817425019107759], [1844,0.00067716460167007017], [1845,0.0006686209817416966], [1846,0.0006665297392332418], [1847,0.00066819254160774028], [1848,0.00066514383599331438], [1849,0.00066375808620994746], [1850,0.00065802320816808128], [1851,0.00065700683890926564], [1852,0.00065660751318897712], [1853,0.00065322336740791798], [1854,0.00065451005833562124], [1855,0.0006607532744634558], [1856,0.00066364393040368498], [1857,0.0006656450145369904], [1858,0.00066670489666814149], [1859,0.00066568256906149065], [1860,0.00066473969491198659], [1861,0.0006636544077826494], [1862,0.0006625369847328825], [1863,0.00066138419259170235], [1864,0.00066627456213940275], [1865,0.0006680168497206813], [1866,0.00067306792003695261], [1867,0.00067111958262764597], [1868,0.00067492923699319363], [1869,0.00067809320965104484], [1870,0.00067869134099138057], [1871,0.00068004882301796567], [1872,0.00068079871760511935], [1873,0.00068187540058385241], [1874,0.00068089963381432676], [1875,0.00067802398486740208], [1876,0.00067285375817763532], [1877,0.00067054013065485788], [1878,0.00067478691397065461], [1879,0.00067105370213870299], [1880,0.00066798373485322702], [1881,0.00066518703666092324], [1882,0.00066792942710559476], [1883,0.00067248481156473815], [1884,0.00067051083632660186], [1885,0.0006711642279035666], [1886,0.00067273278678344059], [1887,0.00067556380632926118], [1888,0.00067239416636187923], [1889,0.00066777234050360596], [1890,0.00066457779294895852], [1891,0.00066368555946444928], [1892,0.00066635075067593289], [1893,0.00066290660337968302], [1894,0.00066541133194484496], [1895,0.00067011098144575953], [1896,0.00067150268957696176], [1897,0.00067191557239063763], [1898,0.00067125898997553372], [1899,0.00067357965004207062], [1900,0.00067330451301214373], [1901,0.00067581718427721751], [1902,0.00067722551334141326], [1903,0.00067599856464022935], [1904,0.00067696781744333828], [1905,0.00067203589820895684], [1906,0.00066653478742492473], [1907,0.00066202520710331475], [1908,0.00065886910835450351], [1909,0.0006534725014882332], [1910,0.00064601783048022878], [1911,0.0006416197178292681], [1912,0.00063887030542404818], [1913,0.000634630369445817], [1914,0.00063128303736448288], [1915,0.00062671151350844991], [1916,0.00062211284900761461], [1917,0.00062024593882432043], [1918,0.00062028480566699397], [1919,0.00061967005868527019], [1920,0.0006207348990508101], [1921,0.00062112986448813569], [1922,0.00062259721082889223], [1923,0.00062051634515889668], [1924,0.00061885728394951332], [1925,0.00061725544087080789], [1926,0.00061489260141653096], [1927,0.00061244600642980504], [1928,0.00060808721040798855], [1929,0.00060330559393729675], [1930,0.00059775731907310808], [1931,0.00059196289988573301], [1932,0.0005876737943088466], [1933,0.00058272906938906419], [1934,0.00057690567866137087], [1935,0.00057111909634179688], [1936,0.00056653268719938671], [1937,0.00056351018561558294], [1938,0.00056209929541430688], [1939,0.00056402518583292306], [1940,0.00056702368469400835], [1941,0.00056851638311689555], [1942,0.0005697880670512942], [1943,0.0005685342158275572], [1944,0.00056701520225033164], [1945,0.00056728865125809204], [1946,0.00056713071799921716], [1947,0.00056759191317145121], [1948,0.00056602132760665631], [1949,0.00056481177770448005], [1950,0.00056019883116029882], [1951,0.00055213471535931933], [1952,0.00054512904237278485], [1953,0.00053800082638521087], [1954,0.00053207102676176214], [1955,0.00052631771276620304], [1956,0.00052033953993073237], [1957,0.00051362096564844251], [1958,0.00050583578625016594], [1959,0.00049893603533167732], [1960,0.00049027009200389409], [1961,0.00048229384331286633], [1962,0.0004752878713506189], [1963,0.00046944165263663638], [1964,0.00046512965557419443], [1965,0.00046148037918927997], [1966,0.00045716459333727306], [1967,0.00045289898248897356], [1968,0.000448355353331532], [1969,0.00044369916114109486], [1970,0.00043930591412142598], [1971,0.00043586295743642205], [1972,0.00043282279247333378], [1973,0.00042993091681802815], [1974,0.00042567880750125784], [1975,0.00042162782681936568], [1976,0.00041805604335174644], [1977,0.00041563414164226163], [1978,0.00041343461436388844], [1979,0.00041210370942611587], [1980,0.0004107662799387154], [1981,0.00041108088176274163], [1982,0.00041128737608563495], [1983,0.00041158611367625946], [1984,0.0004121581230058589], [1985,0.00041339668413539499], [1986,0.00041452384373935109], [1987,0.00041496101237664169], [1988,0.00041597416963089597], [1989,0.00041692316616800696], [1990,0.00041812464108013296], [1991,0.0004202744087458334], [1992,0.00042152790543199939], [1993,0.00042298853937113148], [1994,0.00042477805982343853], [1995,0.00042750450666062534], [1996,0.00043038205793974072], [1997,0.00043354547233320773], [1998,0.00043909016478044742], [1999,0.00044601146047088235], [2000,0.00045205748491835863], [2001,0.00045851938458244234], [2002,0.00046617912647145039], [2003,0.0004821352353742854], [2004,0.00048689596005715432], [2005,0.00049219533361287578], [2006,0.00049762882918003015], [2007,0.00050450039062915105], [2008,0.00051213796056496597]];
+		for(var i=0; i<array_frec.length; i++) {
+			array_frec[i].push(array_frec[i][0]);
+		}
+		var data = new google.visualization.DataTable();
+		data.addColumn('number', 'year');
+		data.addColumn('number', '', 'no_mostrar');
+		data.addColumn({type: 'number', role: 'tooltip'});
+		data.addRows(array_frec);
 
 
-    }
+		var options = {
+			chartArea: {
+				width: '95%',
+				height: '85%'
+			},
+			height: 320,
+			curveType: 'function',
+			legend: "none",
+			hAxis: {
+				gridlines: {
+					count: 6,
+					color: '#eee'
+				},
+				minValue: 1500,
+				baselineColor: '#eee',
+			},
+			vAxis: {
+				textPosition: 'none',
+				gridlines: {
+					count: 8,
+					color: '#eee'
+				},
+				viewWindow: {
+					min: 0
+				}
+			},
+			enableInteractivity: true,
+			series: {
+				0: {
+					color: '#3f3e37'
+				}
+			}
+		};
+		var chart = new google.visualization.LineChart(document.getElementById('div_historico'));
+		chart.draw(data, options);
+
+
+	}
 </script>
 <script>
-    window.onload = function () {
-        InicializarBuscador();
-        IluminarMenu();
-    };
+	window.onload = function () {
+		InicializarBuscador();
+		IluminarMenu();
+	};
 
-    window.onresize = function () {
-        IluminarMenu();
-        CabeceraScroll();
-            };
+	window.onresize = function () {
+		IluminarMenu();
+		CabeceraScroll();
+			};
 </script>
 <script>
-    window.onload = function () {
-        InicializarBuscador();
-        IluminarMenu();
-    };
+	window.onload = function () {
+		InicializarBuscador();
+		IluminarMenu();
+	};
 
-    window.onresize = function () {
-        IluminarMenu();
-        CabeceraScroll();
-            };
+	window.onresize = function () {
+		IluminarMenu();
+		CabeceraScroll();
+			};
 </script>
 <script async src="https://fundingchoicesmessages.google.com/i/pub-2382370813209061?ers=1" nonce="NEaSSPSWMl_CbkihAqCcUA"></script><script nonce="NEaSSPSWMl_CbkihAqCcUA">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script></body>
 </html>

@@ -100,7 +100,7 @@ For example,
     from PyMultiDictionary import MultiDictionary
     dictionary = MultiDictionary()
 
-This will create a local instance of the MultiDictionary class and now it can
+This will create a local instance of the MultiDictionary class, and now it can
 be used to get meanings, translations, etc.
 
 For **Meanings**,

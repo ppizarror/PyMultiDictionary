@@ -159,7 +159,7 @@ For **Translations**,
 
     print(dictionary.translate('en', 'Range'))
 
-This will return the Translation of the word 'Range' in 20 different languages.
+This will return the word 'Range' translation in 20 different languages.
 You can also extend the scope of the translations by providing a target language,
 which will use Google Translate API, for example:
 
@@ -168,7 +168,7 @@ which will use Google Translate API, for example:
     print(dictionary.translate('en', 'Range', to='ru'))
 
 Alternatively, you can set a fixed number of words to the Dictionary Instance. This
-is useful if you just want to get the meanings of some words quickly without any development need.
+is helpful if you want to get the meanings of some words quickly without any development need.
 
 Example:
 

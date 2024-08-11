@@ -9,7 +9,7 @@ import os
 import shutil
 import sys
 
-assert len(sys.argv) == 2, 'Argument is required, usage: build.py pip/twine/gource'
+assert len(sys.argv) == 2, 'Argument is required, usage: build.py pip/twine'
 mode = sys.argv[1].strip()
 
 if mode == 'pip':
@@ -28,10 +28,6 @@ elif mode == 'twine':
         os.system(f'python -m twine upload dist/*')
     else:
         raise FileNotFoundError('Not distribution been found, execute build.py pip')
-
-elif mode == 'gource':
-    os.system('gource -s 0.25 --title PyMultiDictionary --disable-auto-rotate --key '
-              '--highlight-users --disable-bloom --multi-sampling -w --transparent --path ./')
 
 else:
     raise ValueError(f'Unknown mode {mode}')

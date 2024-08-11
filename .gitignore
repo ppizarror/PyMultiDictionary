@@ -1,6 +1,7 @@
 __pycache__/
 ._*
 .idea/
+.vscode/
 
 # Build
 build/

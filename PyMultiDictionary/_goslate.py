@@ -18,7 +18,7 @@ import socket
 import random
 import re
 
-from urllib.request import build_opener, Request, HTTPHandler, HTTPSHandler
+from urllib.request import build_opener, Request, HTTPHandler
 from urllib.parse import quote_plus, urlencode, unquote_plus, urljoin
 
 izip = zip
@@ -145,11 +145,6 @@ class Goslate(object):
         self._opener = opener
         self._languages = None
         self._TIMEOUT = timeout
-        if not self._opener:
-            debuglevel = self._DEBUG and 1 or 0
-            self._opener = build_opener(
-                HTTPHandler(debuglevel=debuglevel),
-                HTTPSHandler(debuglevel=debuglevel))
 
         self._RETRY_TIMES = retry_times
         self._executor = executor
@@ -165,6 +160,13 @@ class Goslate(object):
 
         # Google forbits urllib2 User-Agent: Python-urllib/2.7
         request = Request(url, headers={'User-Agent': 'Mozilla/4.0'})
+
+        if not self._opener:
+            debuglevel = self._DEBUG and 1 or 0
+            from urllib.request import HTTPSHandler
+            self._opener = build_opener(
+                HTTPHandler(debuglevel=debuglevel),
+                HTTPSHandler(debuglevel=debuglevel))
 
         exception = None
         # retry when get (<class 'socket.error'>, error(54, 'Connection reset by peer')

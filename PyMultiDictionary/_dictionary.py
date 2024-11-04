@@ -18,7 +18,6 @@ import json
 import PyMultiDictionary._goslate as goslate
 import PyMultiDictionary._utils as ut
 import re
-import ssl
 import urllib.error
 import urllib.parse
 
@@ -158,7 +157,11 @@ class MultiDictionary(object):
         """
         req = Request(link, headers={
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36'})
-        return str(urlopen(req, context=ssl.SSLContext()).read().decode(encoding))
+        try:
+            import ssl
+            return str(urlopen(req, context=ssl.SSLContext()).read().decode(encoding))
+        except ImportError:
+            return str(urlopen(req).read().decode(encoding))
 
     def _save_bsoup(self, link: str, filename: str, encoding: str = 'utf-8') -> None:
         """

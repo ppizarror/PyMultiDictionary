@@ -10,7 +10,7 @@ __all__ = [
     'DICT_EDUCALINGO',
     'DICT_SYNONYMCOM',
     'DICT_THESAURUS',
-    'DICT_WORDNET',
+    'DICT_MW',
     'MultiDictionary'
 ]
 
@@ -33,7 +33,7 @@ _EDUCALINGO_LANGS = ('bn', 'de', 'en', 'es', 'fr', 'hi', 'it', 'ja', 'jv', 'ko',
 DICT_EDUCALINGO = 'educalingo'
 DICT_SYNONYMCOM = 'synonym'
 DICT_THESAURUS = 'thesaurus'
-DICT_WORDNET = 'wordnet'
+DICT_MW = 'merriam-webster'
 
 # Cache
 _CACHED_SOUPS: Dict[str, 'BeautifulSoup'] = {}  # Stores cached web
@@ -362,7 +362,7 @@ class MultiDictionary(object):
         types, words, wiki = [], '', ''
         word = self._process(word)
 
-        assert dictionary in (DICT_EDUCALINGO, DICT_WORDNET), 'Unsupported dictionary'
+        assert dictionary in (DICT_EDUCALINGO, DICT_MW), 'Unsupported dictionary'
         if lang not in self._langs.keys() or not self._langs[lang][1]:
             raise InvalidLangCode(f'{lang} code is not supported for meanings')
         elif word == '':
@@ -397,27 +397,29 @@ class MultiDictionary(object):
 
             return types, words, wiki
 
-        elif dictionary == DICT_WORDNET and lang == 'en':
-            if word == '':
+        elif dictionary == DICT_MW and lang == 'en':
+            if not word.strip():
                 return {}
-            word = word.replace(' ', '+')
-            # noinspection HttpUrlsUsage
-            html = self._bsoup(f'http://wordnetweb.princeton.edu/perl/webwn?s={word}')
-            types = html.findAll('h3')
-            lists = html.findAll('ul')
-            out = {}
-            for a in types:
-                reg = str(lists[types.index(a)])
-                meanings = []
-                for x in re.findall(r'\((.*?)\)', reg):
-                    if 'often followed by' in x:
-                        pass
-                    elif len(x) > 5 or ' ' in str(x):
-                        meanings.append(x.strip())
-                name = a.text.strip()
-                out[name] = meanings
-            return out
-
+            url = f'https://www.merriam-webster.com/dictionary/{word}'
+            response = requests.get(url)
+            soup = BeautifulSoup(response.text, 'html.parser')
+            definitions = {}
+            pos_entries = soup.find_all('h2', class_='parts-of-speech')
+            for pos_tag in pos_entries:
+                part_of_speech = pos_tag.get_text(strip=True)
+                if part_of_speech in definitions:
+                    continue
+                definitions[part_of_speech] = []
+                definition_section = pos_tag.find_next('div', class_='vg')
+                if not definition_section:
+                    continue
+                for sense in definition_section.find_all('div', class_='sb'):
+                    definition_texts = sense.find_all('span', class_='dtText')
+                    for def_text in definition_texts:
+                        definition = def_text.get_text().lstrip(": ")
+                        if definition:
+                            definitions[part_of_speech].append(definition)
+            return definitions
         else:
             raise InvalidDictionary(f'Dictionary {dictionary} cannot handle language {lang}')
 

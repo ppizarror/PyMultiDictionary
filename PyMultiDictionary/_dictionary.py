@@ -26,6 +26,8 @@ from urllib.request import urlopen, Request
 from typing import Dict, Tuple, Optional, List, Union
 from warnings import warn
 
+import requests
+
 # Dicts
 _EDUCALINGO_LANGS = ('bn', 'de', 'en', 'es', 'fr', 'hi', 'it', 'ja', 'jv', 'ko', 'mr',
                      'ms', 'pl', 'pt', 'ro', 'ru', 'ta', 'tr', 'uk', 'zh')
@@ -33,7 +35,7 @@ _EDUCALINGO_LANGS = ('bn', 'de', 'en', 'es', 'fr', 'hi', 'it', 'ja', 'jv', 'ko',
 DICT_EDUCALINGO = 'educalingo'
 DICT_SYNONYMCOM = 'synonym'
 DICT_THESAURUS = 'thesaurus'
-DICT_MW = 'merriam-webster'
+DICT_MW = 'Merriam-Webster'
 
 # Cache
 _CACHED_SOUPS: Dict[str, 'BeautifulSoup'] = {}  # Stores cached web
@@ -400,26 +402,36 @@ class MultiDictionary(object):
         elif dictionary == DICT_MW and lang == 'en':
             if not word.strip():
                 return {}
+
             url = f'https://www.merriam-webster.com/dictionary/{word}'
             response = requests.get(url)
             soup = BeautifulSoup(response.text, 'html.parser')
+
             definitions = {}
+
             pos_entries = soup.find_all('h2', class_='parts-of-speech')
+
             for pos_tag in pos_entries:
                 part_of_speech = pos_tag.get_text(strip=True)
+
                 if part_of_speech in definitions:
                     continue
+                
                 definitions[part_of_speech] = []
+
                 definition_section = pos_tag.find_next('div', class_='vg')
                 if not definition_section:
                     continue
+
                 for sense in definition_section.find_all('div', class_='sb'):
                     definition_texts = sense.find_all('span', class_='dtText')
                     for def_text in definition_texts:
                         definition = def_text.get_text().lstrip(": ")
                         if definition:
                             definitions[part_of_speech].append(definition)
+
             return definitions
+
         else:
             raise InvalidDictionary(f'Dictionary {dictionary} cannot handle language {lang}')
 

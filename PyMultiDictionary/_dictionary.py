@@ -17,7 +17,6 @@ __all__ = [
 import json
 import PyMultiDictionary._goslate as goslate
 import PyMultiDictionary._utils as ut
-import re
 import urllib.error
 import urllib.parse
 
@@ -26,16 +25,14 @@ from urllib.request import urlopen, Request
 from typing import Dict, Tuple, Optional, List, Union
 from warnings import warn
 
-import requests
-
 # Dicts
 _EDUCALINGO_LANGS = ('bn', 'de', 'en', 'es', 'fr', 'hi', 'it', 'ja', 'jv', 'ko', 'mr',
                      'ms', 'pl', 'pt', 'ro', 'ru', 'ta', 'tr', 'uk', 'zh')
 
-DICT_EDUCALINGO = 'educalingo'
-DICT_SYNONYMCOM = 'synonym'
-DICT_THESAURUS = 'thesaurus'
-DICT_MW = 'Merriam-Webster'
+DICT_EDUCALINGO: str = 'educalingo'
+DICT_MW: str = 'Merriam-Webster'
+DICT_SYNONYMCOM: str = 'synonym'
+DICT_THESAURUS: str = 'thesaurus'
 
 # Cache
 _CACHED_SOUPS: Dict[str, 'BeautifulSoup'] = {}  # Stores cached web
@@ -174,9 +171,8 @@ class MultiDictionary(object):
         :param encoding: Website encoding
         """
         bs = self._bsoup(link, encoding)
-        html = str(bs.prettify())
         with open(filename, 'w', encoding='utf8') as out:
-            out.write(html)
+            out.write(str(bs.prettify()))
 
     def __check_defined_lang(self) -> None:
         """
@@ -402,23 +398,17 @@ class MultiDictionary(object):
         elif dictionary == DICT_MW and lang == 'en':
             if not word.strip():
                 return {}
-
-            url = f'https://www.merriam-webster.com/dictionary/{word}'
-            response = requests.get(url)
-            soup = BeautifulSoup(response.text, 'html.parser')
+            soup = self._bsoup(f'https://www.merriam-webster.com/dictionary/{word}')
 
             definitions = {}
-
             pos_entries = soup.find_all('h2', class_='parts-of-speech')
-
             for pos_tag in pos_entries:
                 part_of_speech = pos_tag.get_text(strip=True)
 
                 if part_of_speech in definitions:
                     continue
-                
-                definitions[part_of_speech] = []
 
+                definitions[part_of_speech] = []
                 definition_section = pos_tag.find_next('div', class_='vg')
                 if not definition_section:
                     continue
@@ -512,7 +502,7 @@ class MultiDictionary(object):
 
     def get_translations(self, to: str = '', dictionary: str = DICT_EDUCALINGO) -> List[TranslationType]:
         """
-        Get the wordnet meanings for all words of the dictionary.
+        Get the translations for all words of the dictionary.
 
         :param to: Target language (Google API)
         :param dictionary: Dictionary to retrieve the translations if ``to`` is empty

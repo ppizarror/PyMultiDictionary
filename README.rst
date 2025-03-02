@@ -49,7 +49,7 @@ PyMultiDictionary
 
 PyMultiDictionary is a dictionary module for Python 3+ to get meanings, translations,
 synonyms and antonyms of words in 20 different languages. It uses educalingo.com,
-synonym.com, and WordNet for getting meanings, translations, synonyms, and antonyms.
+synonym.com, and Merriam-Webster for getting meanings, translations, synonyms, and antonyms.
 
 Supported languages
 -------------------
@@ -118,23 +118,23 @@ This will return a tuple containing the meanings of the word, in the format
      'The first definition of good in the dictionary is having admirable  ...',
      'Good may refer to: ▪ Good and evil, the distinction between positive...')
 
-All methods support other dictionaries, for example, 'wordnet' can be used
+All methods support other dictionaries, for example, 'Merriam-Webster' can be used
 for English words.
 
 .. code-block:: python
 
-    from PyMultiDictionary import DICT_WORDNET
+    from PyMultiDictionary import MultiDictionary, DICT_MW
     dictionary = MultiDictionary()
-    print(dictionary.meaning('en', 'good', dictionary=DICT_WORDNET))
+    print(dictionary.meaning('en', 'good', dictionary=DICT_MW))
 
 Will return:
 
 .. code-block:: python
 
     {
-        'Noun': ['benefit', 'moral excellence or admirableness', ...],
-        'Adjective': ['morally admirable', ...],
-        'Adverb': [...]
+        'adjective': ['of a favorable character or tendency', ...],
+        'noun': ['something that is good', ...],
+        'adverb': ['well']
     }
 
 For **Synonyms**,
@@ -189,13 +189,13 @@ Supported dictionaries
 ----------------------
 
 - **DICT_EDUCALINGO**: Meaning, synonym, translation for all languages
+- **DICT_MW**: Meanings (English) - Merriam-Webster
 - **DICT_SYNONYMCOM**: Synonyms and Antonyms (English)
 - **DICT_THESAURUS**: Synonyms (English)
-- **DICT_WORDNET**: Meanings (English)
 
 There are many more dictionaries to come. Just contribute to this repo!
 
 Author
 ------
 
-`Pablo Pizarro R. <https://ppizarror.com>`_ | 2021 - 2024
+`Pablo Pizarro R. <https://ppizarror.com>`_ | 2021 - 2025

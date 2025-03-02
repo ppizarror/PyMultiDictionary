@@ -27,7 +27,7 @@ class DictionaryTest(unittest.TestCase):
 
         # Set example pages
         d._test_cached_file = {
-            'http://wordnetweb.princeton.edu/perl/webwn?s=good': _actualpath + 'data/wordnet_en_good.txt',
+            'https://www.merriam-webster.com/dictionary/good': _actualpath + 'data/mw_en_good.txt',
             'https://educalingo.com/en/dic-en/good': _actualpath + 'data/educalingo_en_good.txt',
             'https://www.synonym.com/synonyms/bad': _actualpath + 'data/synonyms_en_bad.txt',
             'https://www.synonym.com/synonyms/good': _actualpath + 'data/synonyms_en_good.txt',
@@ -88,26 +88,62 @@ class DictionaryTest(unittest.TestCase):
         # Empty
         self.assertEqual(d.meaning('en', ''), ([], '', ''))
 
-        # Test wordnet
-        out = {'Noun': ['benefit', 'moral excellence or admirableness', 'that which is pleasing or valuable or useful',
-                        'articles of commerce'],
-               'Adjective': ['having desirable or positive qualities especially those suitable for a thing specified',
-                             'having the normally expected amount', 'morally admirable',
-                             'deserving of esteem and respect', 'promoting or enhancing well-being',
-                             'agreeable or pleasing', 'of moral excellence',
-                             'having or showing knowledge and skill and aptitude', 'thorough',
-                             'with or in a close or intimate relationship', 'financially safe',
-                             'most suitable or right for a particular purpose', 'resulting favorably',
-                             'exerting force or influence', 'or in force', 'capable of pleasing',
-                             'appealing to the mind', 'in excellent physical condition',
-                             'tending to promote physical well-being; beneficial to health', 'not forged',
-                             'not left to spoil', 'generally admired'],
-               'Adverb': ['(often used as a combining form', "`good' is a nonstandard dialectal variant for `well'",
-                          "completely and absolutely (`good' is sometimes used informally for `thoroughly'"]}
-        self.assertEqual(d.meaning('en', 'good', DICT_WORDNET), out)
+        # Test mw
+        out = {'adjective': ['of a favorable character or tendency',
+                             'bountiful, fertile',
+                             'handsome, attractive',
+                             'suitable, fit',
+                             'free from injury or disease',
+                             'not depreciated',
+                             'commercially sound',
+                             'that can be relied on',
+                             'profitable, advantageous',
+                             'agreeable, pleasant',
+                             'salutary, wholesome',
+                             'amusing, clever',
+                             'of a noticeably large size or quantity : considerable',
+                             'full',
+                             'well-founded, cogent',
+                             'true',
+                             'deserving of respect : honorable',
+                             'legally valid or effectual',
+                             'adequate, satisfactory',
+                             'conforming to a standard',
+                             'liking only things that are of good quality : choice, '
+                             'discriminating',
+                             'containing less fat and being less tender than higher grades',
+                             'landing in the proper area of the court in tennis and similar '
+                             'games',
+                             'successfully done',
+                             'having everything desired or required : content and not '
+                             'wanting or needing to do anything further',
+                             'virtuous, right, commendable',
+                             'kind, benevolent',
+                             'upper-class',
+                             'competent, skillful',
+                             'loyal',
+                             'close',
+                             'free from infirmity or sorrow'],
+               'adverb': ['well'],
+               'noun': ['something that is good',
+                        'something conforming to the moral order of the universe',
+                        'praiseworthy character : goodness',
+                        'a good element or portion',
+                        'advancement of prosperity or well-being',
+                        'something useful or beneficial',
+                        'something that has economic utility or satisfies an economic want',
+                        'personal property having intrinsic value but usually excluding '
+                        'money, securities, and negotiable instruments',
+                        'cloth',
+                        'something manufactured or produced for sale : wares, merchandise',
+                        'freight',
+                        'good persons',
+                        'the qualities required to achieve an end',
+                        'proof of wrongdoing']}
+        self.assertEqual(d.meaning('en', 'good', DICT_MW), out)
 
         # Test invalid dictionary
-        self.assertRaises(InvalidDictionary, lambda: d.meaning('es', 'word', DICT_WORDNET))
+        self.assertRaises(InvalidDictionary, lambda: d.meaning('es', 'word', DICT_MW))
 
     def test_translate(self) -> None:
         """
@@ -281,7 +317,7 @@ class DictionaryTest(unittest.TestCase):
         self.assertEqual(len(d.get_synonyms(dictionary=DICT_EDUCALINGO)), 4)
         self.assertEqual(len(d.get_synonyms(dictionary=DICT_SYNONYMCOM)), 4)
         self.assertEqual(len(d.get_synonyms(dictionary=DICT_THESAURUS)), 4)
-        self.assertEqual(len(d.get_meanings(dictionary=DICT_WORDNET)), 4)
+        self.assertEqual(len(d.get_meanings(dictionary=DICT_MW)), 4)
 
     def test_language_name(self) -> None:
         """

@@ -29,14 +29,14 @@ class UtilsTest(unittest.TestCase):
         """
         Test tokenize.
         """
-        s = """
+        s: str = """
         # ----------------------------------------------------------------------
         # Settings button
         # ----------------------------------------------------------------------
 
 
         """
-        t = []
+        t: list = []
         for w in s.split(' '):
             tw = tokenize(w)
             if tw == '' or '\n' in tw:

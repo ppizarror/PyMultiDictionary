@@ -301,9 +301,6 @@ class DictionaryTest(unittest.TestCase):
         # Empty
         self.assertEqual(d.antonym('en', '!!!'), [])
 
-        # Test invalid dictionary
-        # self.assertRaises(InvalidDictionary, lambda: d.antonym('es', 'word', dictionary=DICT_SYNONYMCOM))
-
     def test_overwrite_cache(self) -> None:
         """
         Test request with maxed out cache.

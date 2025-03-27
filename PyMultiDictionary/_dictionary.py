@@ -257,7 +257,7 @@ class MultiDictionary(object):
         elif word == '':
             return words
 
-        if dictionary == DICT_EDUCALINGO and lang in _EDUCALINGO_LANGS:
+        elif dictionary == DICT_EDUCALINGO and lang in _EDUCALINGO_LANGS:
             bs = self.__search_educalingo(lang, word=word.replace(' ', '-'))
             if bs is None:
                 return words
@@ -409,11 +409,12 @@ class MultiDictionary(object):
         elif dictionary == DICT_MW and lang == 'en':
             if not word.strip():
                 return {}
-            soup = self._bsoup(f'https://www.merriam-webster.com/dictionary/{word}')
+            bs = self._bsoup(f'https://www.merriam-webster.com/dictionary/{word}')
+            if bs is None:
+                return {}
 
-            definitions = {}
-            pos_entries = soup.find_all('h2', class_='parts-of-speech')
-            for pos_tag in pos_entries:
+            definitions: MeaningType = {}
+            for pos_tag in bs.find_all('h2', class_='parts-of-speech'):
                 part_of_speech = pos_tag.get_text(strip=True)
 
                 if part_of_speech in definitions:

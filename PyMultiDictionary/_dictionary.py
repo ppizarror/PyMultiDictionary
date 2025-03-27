@@ -117,8 +117,8 @@ class MultiDictionary(object):
         :param word: Word
         :return: Word without invalid chars
         """
-        assert isinstance(word, str), 'word must be an string'
-        s = ''.join(i for i in word if not i.isdigit())  # remove numbers
+        assert isinstance(word, str), 'word must be a string'
+        s: str = ''.join(i for i in word if not i.isdigit())  # remove numbers
         if self._tokenize:  # tokenize
             s = ut.tokenize(s)
         s = s.lower()  # lowercase
@@ -133,19 +133,18 @@ class MultiDictionary(object):
         :param encoding: Web encoding
         :return: Parsed web. None if error
         """
-        bs_keys = list(_CACHED_SOUPS.keys())
+        bs_keys: List[str] = list(_CACHED_SOUPS.keys())
         if link in bs_keys:
             return _CACHED_SOUPS[link]
         if link in self._test_cached_file.keys():
-            f = open(self._test_cached_file[link], encoding='utf8')
-            data = ''.join(f.readlines())
-            f.close()
+            with open(self._test_cached_file[link], encoding='utf8') as f:
+                data = ''.join(f.readlines())
         else:
             try:
                 data = self.__request(link, encoding)
             except (urllib.error.HTTPError, ValueError):
                 return None
-        bs = BeautifulSoup(data, 'html.parser')
+        bs: 'BeautifulSoup' = BeautifulSoup(data, 'html.parser')
         _CACHED_SOUPS[link] = bs
         if len(bs_keys) >= self._max_cached_websites:
             # noinspection PyTypeChecker
@@ -182,7 +181,7 @@ class MultiDictionary(object):
         :param filename: Output file
         :param encoding: Website encoding
         """
-        bs = self._bsoup(link, encoding)
+        bs: 'BeautifulSoup' = self._bsoup(link, encoding)
         with open(filename, 'w', encoding='utf8') as out:
             out.write(str(bs.prettify()))
 
@@ -208,7 +207,7 @@ class MultiDictionary(object):
         if bs is None:
             return []
         results = bs.find_all('div', {'class': 'section'})
-        en_words = []
+        en_words: SynonymType = []
         for section in results:  # Iterate each section
             title = section.find_all('h3', {'class': 'section-title'})
             if len(title) == 0:
@@ -229,12 +228,12 @@ class MultiDictionary(object):
                 sectionlist = sectionlist[0]
                 if 'href' not in str(sectionlist):  # Not links, but words
                     for w in sectionlist.findAll('li'):
-                        wr = w.text.strip()
+                        wr: str = w.text.strip()
                         if '(' not in wr and wr not in en_words:  # Avoid onld english
                             en_words.append(wr)
                 else:
                     for w in sectionlist.findAll('a'):
-                        wr = w.text.strip()
+                        wr: str = w.text.strip()
                         if '(' not in wr and wr not in en_words:  # Avoid onld english
                             en_words.append(wr)
         return en_words
@@ -248,14 +247,14 @@ class MultiDictionary(object):
         :param dictionary: Dictionary to retrieve the synonyms
         :return: Synonyms list
         """
-        words = []
+        words: SynonymType = []
         word = self._process(word)
         lang = lang.lower()
 
         assert dictionary in (DICT_EDUCALINGO, DICT_SYNONYMCOM, DICT_THESAURUS), 'Unsupported dictionary'
         if lang not in self._langs.keys() or not self._langs[lang][0]:
             raise InvalidLangCode(f'{lang} code is not supported for synonyms')
-        if word == '':
+        elif word == '':
             return words
 
         if dictionary == DICT_EDUCALINGO and lang in _EDUCALINGO_LANGS:
@@ -313,16 +312,16 @@ class MultiDictionary(object):
         :param dictionary: Dictionary to retrieve the antonyms
         :return: Synonyms list
         """
-        words = []
+        words: AntonymType = []
         word = self._process(word)
 
         assert dictionary in DICT_SYNONYMCOM, 'Unsupported dictionary'
         if lang not in self._langs.keys() or not self._langs[lang][3]:
             raise InvalidLangCode(f'{lang} code is not supported for antonyms')
-        if word == '':
+        elif word == '':
             return words
 
-        if dictionary == DICT_SYNONYMCOM and lang == 'en':
+        elif dictionary == DICT_SYNONYMCOM and lang == 'en':
             en_words = self.__synonym_com(word, 'Antonyms')
             for w in en_words:
                 if w not in words:
@@ -378,7 +377,7 @@ class MultiDictionary(object):
         elif word == '':
             return types, words, wiki
 
-        if dictionary == DICT_EDUCALINGO and lang in _EDUCALINGO_LANGS:
+        elif dictionary == DICT_EDUCALINGO and lang in _EDUCALINGO_LANGS:
             bs = self.__search_educalingo(lang, word=word.replace(' ', '-'))
             if bs is not None:
                 results = [i for i in bs.find_all('div', {'id': 'cuadro_categoria_gramatical'})]
@@ -434,8 +433,7 @@ class MultiDictionary(object):
 
             return definitions
 
-        else:
-            raise InvalidDictionary(f'Dictionary {dictionary} cannot handle language {lang}')
+        raise InvalidDictionary(f'Dictionary {dictionary} cannot handle language {lang}')
 
     def get_meanings(self, dictionary: str = DICT_EDUCALINGO) -> List[MeaningType]:
         """
@@ -457,9 +455,9 @@ class MultiDictionary(object):
         :param dictionary: Dictionary to retrieve the translations if ``to`` is empty
         :return: List of (Lang tag, translated word)
         """
-        assert isinstance(lang, str), 'lang code must be an string'
-        assert isinstance(to, str), 'to lang code must be an string'
-        words = []
+        assert isinstance(lang, str), 'lang code must be a string'
+        assert isinstance(to, str), 'to lang code must be a string'
+        words: TranslationType = []
         word = self._process(word)
 
         assert dictionary in DICT_EDUCALINGO, 'Unsupported dictionary'
@@ -473,7 +471,7 @@ class MultiDictionary(object):
         if lang not in self._langs.keys() or not self._langs[lang][2]:
             raise InvalidLangCode(f'{lang} code is not supported for translation')
 
-        if lang in _EDUCALINGO_LANGS:
+        elif lang in _EDUCALINGO_LANGS:
             bs = self.__search_educalingo(lang, word=word.replace(' ', '-'))
             if bs is None:
                 return words
@@ -488,7 +486,6 @@ class MultiDictionary(object):
                 lang_name = lang_name[0].find_all('strong', {})
                 if len(lang_name) != 1:
                     continue
-                # lang_name = lang_name[0].text.strip().capitalize()
 
                 # Find non-links
                 lang_nonlink = j.find_all('span', {'class': 'negro'})
@@ -506,9 +503,6 @@ class MultiDictionary(object):
 
             # Sort translations
             words = sorted(words, key=lambda x: x[0])
-
-        # else:
-        #     raise InvalidDictionary(f'Dictionary {dictionary} cannot handle language {lang}')
 
         return words
 

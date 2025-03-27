@@ -15,6 +15,8 @@ __all__ = [
 ]
 
 import json
+import requests
+
 import PyMultiDictionary._goslate as goslate
 import PyMultiDictionary._utils as ut
 import urllib.error
@@ -33,6 +35,11 @@ DICT_EDUCALINGO: str = 'educalingo'
 DICT_MW: str = 'Merriam-Webster'
 DICT_SYNONYMCOM: str = 'synonym'
 DICT_THESAURUS: str = 'thesaurus'
+
+# URL header
+_HEADER: Dict[str, str] = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36'
+}
 
 # Cache
 _CACHED_SOUPS: Dict[str, 'BeautifulSoup'] = {}  # Stores cached web
@@ -154,13 +161,18 @@ class MultiDictionary(object):
         :param encoding: Encoding
         :return: Content
         """
-        req = Request(link, headers={
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36'})
+        # noinspection PyBroadException
         try:
-            import ssl
-            return str(urlopen(req, context=ssl.SSLContext()).read().decode(encoding))
-        except ImportError:
-            return str(urlopen(req).read().decode(encoding))
+            response = requests.get(link, headers=_HEADER)
+            response.raise_for_status()
+            return response.text
+        except Exception:
+            req = Request(link, headers=_HEADER)
+            try:
+                import ssl
+                return str(urlopen(req, context=ssl.SSLContext()).read().decode(encoding))
+            except ImportError:
+                return str(urlopen(req).read().decode(encoding))
 
     def _save_bsoup(self, link: str, filename: str, encoding: str = 'utf-8') -> None:
         """

@@ -15,7 +15,7 @@ mode = sys.argv[1].strip()
 if mode == 'pip':
     if os.path.isdir('dist/'):
         for k in os.listdir('dist/'):
-            if 'PyMultiDictionary-' in k:
+            if 'pymultidictionary-' in k:
                 os.remove(f'dist/{k}')
     if os.path.isdir('build'):
         for k in os.listdir('build'):

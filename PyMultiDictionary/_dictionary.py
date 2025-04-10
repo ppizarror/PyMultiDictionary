@@ -227,12 +227,12 @@ class MultiDictionary(object):
                     continue
                 sectionlist = sectionlist[0]
                 if 'href' not in str(sectionlist):  # Not links, but words
-                    for w in sectionlist.findAll('li'):
+                    for w in sectionlist.find_all('li'):
                         wr: str = w.text.strip()
                         if '(' not in wr and wr not in en_words:  # Avoid onld english
                             en_words.append(wr)
                 else:
-                    for w in sectionlist.findAll('a'):
+                    for w in sectionlist.find_all('a'):
                         wr: str = w.text.strip()
                         if '(' not in wr and wr not in en_words:  # Avoid onld english
                             en_words.append(wr)
@@ -266,7 +266,7 @@ class MultiDictionary(object):
                 results = results[0]
             else:
                 return words
-            for j in results.findAll('a'):
+            for j in results.find_all('a'):
                 words.append(j.get('title').strip())
 
         elif dictionary == DICT_SYNONYMCOM and lang == 'en':
@@ -481,6 +481,7 @@ class MultiDictionary(object):
                 return words
             for j in results:
                 lang_tag = j.get('id')
+                # noinspection PyTypeChecker
                 lang_name = j.find_all('h4', {'class', 'traductor'})
                 if len(lang_name) != 1:
                     continue

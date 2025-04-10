@@ -297,7 +297,7 @@ class Goslate(object):
         return self._languages
 
     _SEPERATORS = [quote_plus(i.encode()) for i in
-                   u'.!?,;。，？！:："“”’‘#$%&()（）*×+/<=>@＃￥[\]…［］^`{|}｛｝～~\n\r\t ']
+                   u'.!?,;。，？！:："“”’‘#$%&()（）*×+/<=>@＃￥[\\]…［］^`{|}｛｝～~\n\r\t ']
 
     def _translate_single_text(self, text, target_language, source_lauguage):
         assert _is_bytes(text)

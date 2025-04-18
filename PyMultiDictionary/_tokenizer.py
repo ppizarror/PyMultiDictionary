@@ -64,6 +64,7 @@ class TokenizerI(ABC):
         """
         if overridden(self.tokenize_sents):
             return self.tokenize_sents([s])[0]
+        return []
 
     def span_tokenize(self, s):
         """

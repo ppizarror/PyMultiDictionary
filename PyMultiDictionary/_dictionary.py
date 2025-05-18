@@ -22,7 +22,7 @@ import PyMultiDictionary._utils as ut
 import urllib.error
 import urllib.parse
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup  # type: ignore
 from urllib.request import urlopen, Request
 from typing import Dict, Tuple, Optional, List, Union
 from warnings import warn
@@ -38,7 +38,7 @@ DICT_THESAURUS: str = 'thesaurus'
 
 # URL header
 _HEADER: Dict[str, str] = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36'
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36'
 }
 
 # Cache
